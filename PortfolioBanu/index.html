@@ -8,11 +8,11 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <!-- bg-black = fond noir-->
-<body class="bg-black text-blue-300">
+<body class="bg-purple-200 text-blue-300">
     
     <!-- Header -->
     <!-- bg-gradient-to-r = dégradé de gauche à droite | shadow-lg = ombre large -->
-    <header class="bg-gradient-to-r from-blue-300 to-indigo-700 text-white shadow-lg">
+    <header class=" text-white bg-gradient-to-r from-blue-300 to-purple-900 shadow-lg">
         <!-- container = conteneur centré | mx-auto = marges horizontales auto (centrage) | px-6 = padding horizontal | py-8 = padding vertical -->
         <div class="container mx-auto px-6 py-8">
             <!-- text-4xl = texte très grand | font-bold = police grasse | mb-6 = marge en bas -->
@@ -33,6 +33,7 @@
     <!-- Main Content -->
     <!-- max-w-4xl = largeur maximale | py-12 = padding vertical -->
     <main class="container mx-auto px-6 py-12 max-w-4xl">
+        <h1 class ="text-5xl font-bold text-purple-700 mb-8 py-6 text-center "> Bonjour :)</h1>
         
         <!-- À propos -->
         <!-- mb-16 = marge en bas grande -->
@@ -40,7 +41,7 @@
             <!-- text-3xl = texte grand | text-indigo-700 = couleur indigo | border-b-4 = bordure en bas épaisse | inline-block = affichage en ligne bloc -->
             <h3 class="text-3xl font-bold text-indigo-700 mb-6 border-b-4 border-indigo-300 pb-2 inline-block">À propos de moi</h3>
             <!-- leading-relaxed = interligne espacé | bg-gray-900 = fond gris très foncé | p-6 = padding uniforme | rounded-lg = coins arrondis | shadow-md = ombre moyenne -->
-            <p class="text-lg leading-relaxed text-blue-200 bg-gray-900 p-6 rounded-lg shadow-md">
+            <p class="text-lg leading-relaxed text-blue-600 bg-white p-6 rounded-lg shadow-md">
                 Développeuse web, titulaire d'un BTS SIO, j'ai choisi de préparer une licence professionnelle métiers de
                 l'informatique au CNAM en alternance. Je suis motivée d'y joindre, je mettrai mes
                 compétences et mes qualités au service des projets de votre entreprise.
@@ -56,24 +57,24 @@
             <div class="space-y-8">
                 <!-- Formation 1 -->
                 <!-- hover:shadow-xl = ombre extra large au survol | transition = animation fluide | hover:shadow-blue-500/50 = ombre bleue au survol -->
-                <div class="bg-gray-900 p-6 rounded-lg shadow-md hover:shadow-xl hover:shadow-blue-500/50 transition border-l-4 border-blue-500">
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl hover:shadow-blue-500/50 transition border-l-4 border-blue-500">
                     <!-- text-xl = texte extra large | mb-3 = marge en bas | text-blue-400 = bleu moyen -->
-                    <h5 class="text-xl font-semibold text-blue-400 mb-3">
+                    <h5 class="text-xl font-semibold text-blue-700 mb-3">
                         Licence professionnelle Métiers de l'informatique : conception, développement et test des logiciels
                     </h5>
                     <!-- italic = texte italique | text-blue-300 = bleu clair -->
-                    <p class="text-blue-300 italic">Parcours chef de projet dév, sécurité et exploitation</p>
+                    <p class="text-blue-600 italic">Parcours chef de projet dév, sécurité et exploitation</p>
                 </div>
 
                 <!-- Formation 2 -->
-                <div class="bg-gray-900 p-6 rounded-lg shadow-md hover:shadow-xl hover:shadow-blue-500/50 transition border-l-4 border-blue-500">
-                    <h5 class="text-xl font-semibold text-blue-400 mb-3">
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl hover:shadow-blue-500/50 transition border-l-4 border-blue-500">
+                    <h5 class="text-xl font-semibold text-blue-700 mb-3">
                         BTS Services Informatiques aux Organisations option SLAM
                     </h5>
                     <!-- mb-2 = petite marge en bas -->
-                    <p class="text-blue-200 leading-relaxed mb-2">(Solutions Logiciels Applicatif et métiers)</p>
+                    <p class="text-blue-700 leading-relaxed mb-2">(Solutions Logiciels Applicatif et métiers)</p>
                     <!-- space-y-2 = espacement vertical entre items | list-disc = puces | list-inside = puces à l'intérieur -->
-                    <ul class="text-blue-300 space-y-2 list-disc list-inside">
+                    <ul class="text-blue-700 space-y-2 list-disc list-inside">
                         <li>Programmation API REST (Java, IntelliJ, Spring, Angular, Kotlin, PostgreSQL)</li>
                         <li>Programmation web (HTML, CSS, PHP, Laragon, PhpMyAdmin, VSCode)</li>
                         <li>Réseau, système (Packet Tracer, Virtual Machine, Ubuntu/Windows)</li>
@@ -81,19 +82,19 @@
                         <li>Projet (Trello, Slack, GitHub, Teams)</li>
                         <li>Auto-formations sur Cisco Netacad (English for IT1, CyberOps Associate)</li>
                         <!-- font-semibold = police semi-grasse | text-cyan-400 = texte cyan -->
-                        <li><span class="font-semibold text-cyan-400">Certification English for IT1</span></li>
+                        <li><span class="font-semibold text-cyan-500">Certification English for IT1</span></li>
                     </ul>
                 </div>
 
                 <!-- Formation 3 -->
-                <div class="bg-gray-900 p-6 rounded-lg shadow-md hover:shadow-xl hover:shadow-blue-500/50 transition border-l-4 border-blue-500">
-                    <h5 class="text-xl font-semibold text-blue-400 mb-3">
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl hover:shadow-blue-500/50 transition border-l-4 border-blue-500">
+                    <h5 class="text-xl font-semibold text-blue-700 mb-3">
                         BAC Sciences Techniques du Sanitaire et Social
                     </h5>
                     <!-- space-y-1 = petit espacement vertical -->
-                    <ul class="text-blue-300 space-y-1 list-disc list-inside">
-                        <li><span class="font-semibold text-cyan-400">Certification Pix</span></li>
-                        <li><span class="font-semibold text-cyan-400">Certification du Projet Voltaire</span></li>
+                    <ul class="text-blue-700 space-y-1 list-disc list-inside">
+                        <li><span class="font-semibold text-cyan-500">Certification Pix</span></li>
+                        <li><span class="font-semibold text-cyan-500">Certification du Projet Voltaire</span></li>
                     </ul>
                 </div>
             </div>
@@ -104,9 +105,9 @@
             <h3 class="text-3xl font-bold text-indigo-700 mb-8 border-b-4 border-indigo-300 pb-2 inline-block">Mes expériences professionnelles</h3>
             <div class="space-y-8">
                 <!-- Expérience 1 -->
-            <div class="bg-gray-900 p-6 rounded-lg shadow-md hover:shadow-xl hover:shadow-blue-500/50 transition border-l-4 border-blue-500">
-                    <h5 class="text-xl font-semibold text-blue-400 mb-3">Stage en Pôle Transformation Numérique, Conseil Régional d'île de France</h5>
-                    <ul class="text-blue-300 space-y-2 list-disc list-inside">
+            <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl hover:shadow-blue-500/50 transition border-l-4 border-blue-500">
+                    <h5 class="text-xl font-semibold text-blue-700 mb-3">Stage en Pôle Transformation Numérique, Conseil Régional d'île de France</h5>
+                    <ul class="text-blue-600 space-y-2 list-disc list-inside">
                         <li>Qualification des avis, utilisation PowerBI</li>
                         <li>Tester une IA</li>
                         <li>Faire une recherche sur le Numérique Responsable et présenter les idées</li>
@@ -115,9 +116,9 @@
                 </div>
                 <!-- Expérience 2 -->
                 <!-- border-l-4 = bordure gauche épaisse | border-blue-500 = couleur de la bordure bleue -->
-                <div class="bg-gray-900 p-6 rounded-lg shadow-md hover:shadow-xl hover:shadow-blue-500/50 transition border-l-4 border-blue-500">
-                    <h5 class="text-xl font-semibold text-blue-400 mb-3">Stage en développement web, Images30</h5>
-                    <ul class="text-blue-300 space-y-2 list-disc list-inside">
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl hover:shadow-blue-500/50 transition border-l-4 border-blue-500">
+                    <h5 class="text-xl font-semibold text-blue-700 mb-3">Stage en développement web, Images30</h5>
+                    <ul class="text-blue-600 space-y-2 list-disc list-inside">
                         <li>Analyser des sites d'investissement et Images30</li>
                         <li>Faire des cahiers de charge de deux sites d'investissement</li>
                         <li>Maquette de site Cineweb Invest sur Balsamiq</li>
@@ -127,9 +128,9 @@
                 </div>
 
             <!-- Expérience 3 -->
-             <div class="bg-gray-900 p-6 rounded-lg shadow-md hover:shadow-xl hover:shadow-blue-500/50 transition border-l-4 border-blue-500">
-                    <h5 class="text-xl font-semibold text-blue-400 mb-3">Stage en tant que bibliothécaire, Bibliothèque Valeyre</h5>
-                    <ul class="text-blue-300 space-y-2 list-disc list-inside">
+             <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl hover:shadow-blue-500/50 transition border-l-4 border-blue-500">
+                    <h5 class="text-xl font-semibold text-blue-700 mb-3">Stage en tant que bibliothécaire, Bibliothèque Valeyre</h5>
+                    <ul class="text-blue-600 space-y-2 list-disc list-inside">
                         <li>Accueil et renseignement du public</li>
                         <li>Scanner les journaux</li>
                     </ul>
@@ -142,7 +143,7 @@
         <!-- text-center = texte centré -->
         <div class="text-center">
             <!-- inline-block = affichage inline-block | hover:bg-blue-700 = couleur de fond au survol | px-8 py-4 = padding | transform hover:scale-105 = agrandissement au survol -->
-            <a href="projet.html" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold text-lg px-8 py-4 rounded-lg shadow-lg hover:shadow-xl transition transform hover:scale-105">
+            <a href="projet.html" class="inline-block bg-blue-500 hover:bg-blue-800 text-white font-bold text-lg px-8 py-4 rounded-lg shadow-lg hover:shadow-xl transition transform hover:scale-105">
                 Voir mes travaux
             </a>
         </div>
