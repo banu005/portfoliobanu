@@ -1,0 +1,80 @@
+/*header{
+    background-color: lightskyblue;
+    padding: 20px;
+}
+
+header h1 {
+    text-align: center;
+    color: black;
+    font-size: 20px;
+
+}
+
+.menu-principal ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex; 
+    background-color:lightskyblue;
+    text-align: center;
+}
+
+.menu-principal li a {
+    display: block; 
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.menu-principal li a:hover {
+    background-color: lightblue;
+}
+
+body {
+    font-family: Arial;
+    margin: 30;
+    padding: 50;
+    background-color: white;
+}
+
+footer {
+    background-color: lightskyblue;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.titres {
+    color: deepskyblue;
+
+}
+
+p{
+    font-size: 12px;
+    font-family: Arial;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 14px;
+    color: black;
+    background-color: lightskyblue;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+*/
+
+@keyframes slideIn {
+    from { transform: translateX(-100%); }
+    to { transform: translateX(0); }
+}
+
+.animate-slide-in {
+    animation: slideIn 0.5s ease-out;
+}
+

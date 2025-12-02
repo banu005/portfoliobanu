@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BALENDRAN Banumathey</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<!--fond noir sur le body-->
+<body class="bg-black text-blue-300"> 
+     <header class="bg-gradient-to-r from-blue-300 to-indigo-700 text-white shadow-lg">
+        <!-- container = conteneur centré | mx-auto = marges horizontales auto (centrage) | px-6 = padding horizontal | py-8 = padding vertical -->
+        <div class="container mx-auto px-6 py-8">
+            <!-- text-4xl = texte très grand | font-bold = police grasse | mb-6 = marge en bas -->
+            <h1 class="text-4xl font-bold mb-6">BALENDRAN Banumathey</h1>
+            <nav>
+                <!-- flex = flexbox | flex-wrap = retour à la ligne si nécessaire | gap-6 = espacement entre éléments | text-lg = texte large -->
+                <ul class="flex flex-wrap gap-6 text-lg">
+                    <!-- hover:text-blue-200 = couleur au survol | transition = animation fluide | border-b-2 = bordure en bas | pb-1 = padding en bas -->
+                    <li><a href="index.html" class="hover:text-blue-200 transition">À propos</a></li>
+                    <li><a href="projet.html" class="hover:text-blue-200 transition">Projets</a></li>
+                    <li><a href="competences.html" class="hover:text-blue-200 transition border-b-2 border-white pb-1">Compétences</a></li>
+                    <li><a href="contact.html" class="hover:text-blue-200 transition">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+<section id="competences">
+            <h2>Compétences Techniques</h2>
+            <ul>
+                <li>Langages : Java, SQL, HTML, CSS, TypeScript, PHP</li>
+                <li>Framework : Angular, Spring, Materialize css</li>
+                <li>Méthodologie : Responsive Design, Accessibilité (A11Y)</li>
+                <li>Outils(IDE) : Intellij, VS Code, Git/GitHub, Laragon</li>
+                <li>Réseau : Matériels informatiques, modèle OSI</li>
+                <li>Système : commande sur le terminal Linux, tubes et signaux </li>
+            </ul>
+        </section>
+</body>
+</html>

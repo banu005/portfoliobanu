@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BALENDRAN Banumathey</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<!--fond noir sur le body-->
+<body class="bg-black text-blue-300"> 
+     <header class="bg-gradient-to-r from-blue-300 to-indigo-700 text-white shadow-lg">
+        <!-- container = conteneur centré | mx-auto = marges horizontales auto (centrage) | px-6 = padding horizontal | py-8 = padding vertical -->
+        <div class="container mx-auto px-6 py-8">
+            <!-- text-4xl = texte très grand | font-bold = police grasse | mb-6 = marge en bas -->
+            <h1 class="text-4xl font-bold mb-6">BALENDRAN Banumathey</h1>
+            <nav>
+                <!-- flex = flexbox | flex-wrap = retour à la ligne si nécessaire | gap-6 = espacement entre éléments | text-lg = texte large -->
+                <ul class="flex flex-wrap gap-6 text-lg">
+                    <!-- hover:text-blue-200 = couleur au survol | transition = animation fluide | border-b-2 = bordure en bas | pb-1 = padding en bas -->
+                    <li><a href="index.html" class="hover:text-blue-200 transition">À propos</a></li>
+                    <li><a href="projet.html" class="hover:text-blue-200 transition border-b-2 border-white pb-1">Projets</a></li>
+                    <li><a href="competences.html" class="hover:text-blue-200 transition">Compétences</a></li>
+                    <li><a href="contact.html" class="hover:text-blue-200 transition">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+     <main class="container mx-auto px-6 py-12 max-w-4xl">
+        
+        <!-- À propos -->
+        <!-- mb-16 = marge en bas grande -->
+        <section class="mb-16">
+            <!-- text-3xl = texte grand | text-indigo-700 = couleur indigo | border-b-4 = bordure en bas épaisse | inline-block = affichage en ligne bloc -->
+            <h2 class="text-3xl font-bold text-indigo-700 mb-6 border-b-4 border-indigo-300 pb-2 inline-block">Mes Projets</h2>
+            <div class="bg-gray-900 p-6 rounded-lg shadow-md hover:shadow-xl hover:shadow-blue-500/50 transition">
+            <h5 class="text-xl font-semibold text-blue-400 mb-3"> Création d'un site web pour l'association 93moove </h5>
+
+            <!-- leading-relaxed = interligne espacé | bg-gray-900 = fond gris très foncé | p-6 = padding uniforme | rounded-lg = coins arrondis | shadow-md = ombre moyenne -->
+            <p class="text-lg leading-relaxed text-blue-200 bg-gray-900 p-6 rounded-lg shadow-md">
+               Présentation : créer un site web pour l'assocation 93moove qui proposent des activités sportives, créatif etc ...
+                  Et souhaitent que ses utilisateurs utilisent ce site pour se connecter et à s'inscire sur un cours.
+            </p>
+             <p class="text-lg leading-relaxed text-blue-200 bg-gray-900 p-6 rounded-lg shadow-md">Rôle : j'ai été product owner, je devais mettre les tâches à faire (sprint) sur le Backlog et d'utiliser trello pour suivre l'avancement du projet</p>
+            </div>
+        </section>
+
+    </main>
+</body>
+</html>

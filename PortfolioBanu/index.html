@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BALENDRAN Banumathey</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<!-- bg-black = fond noir-->
+<body class="bg-black text-blue-300">
+    
+    <!-- Header -->
+    <!-- bg-gradient-to-r = dégradé de gauche à droite | shadow-lg = ombre large -->
+    <header class="bg-gradient-to-r from-blue-300 to-indigo-700 text-white shadow-lg">
+        <!-- container = conteneur centré | mx-auto = marges horizontales auto (centrage) | px-6 = padding horizontal | py-8 = padding vertical -->
+        <div class="container mx-auto px-6 py-8">
+            <!-- text-4xl = texte très grand | font-bold = police grasse | mb-6 = marge en bas -->
+            <h1 class="text-4xl font-bold mb-6">BALENDRAN Banumathey</h1>
+            <nav>
+                <!-- flex = flexbox | flex-wrap = retour à la ligne si nécessaire | gap-6 = espacement entre éléments | text-lg = texte large -->
+                <ul class="flex flex-wrap gap-6 text-lg">
+                    <!-- hover:text-blue-200 = couleur au survol | transition = animation fluide | border-b-2 = bordure en bas | pb-1 = padding en bas -->
+                    <li><a href="index.html" class="hover:text-blue-200 transition border-b-2 border-white pb-1">À propos</a></li>
+                    <li><a href="projet.html" class="hover:text-blue-200 transition">Projets</a></li>
+                    <li><a href="competences.html" class="hover:text-blue-200 transition">Compétences</a></li>
+                    <li><a href="contact.html" class="hover:text-blue-200 transition">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <!-- max-w-4xl = largeur maximale | py-12 = padding vertical -->
+    <main class="container mx-auto px-6 py-12 max-w-4xl">
+        
+        <!-- À propos -->
+        <!-- mb-16 = marge en bas grande -->
+        <section class="mb-16">
+            <!-- text-3xl = texte grand | text-indigo-700 = couleur indigo | border-b-4 = bordure en bas épaisse | inline-block = affichage en ligne bloc -->
+            <h3 class="text-3xl font-bold text-indigo-700 mb-6 border-b-4 border-indigo-300 pb-2 inline-block">À propos de moi</h3>
+            <!-- leading-relaxed = interligne espacé | bg-gray-900 = fond gris très foncé | p-6 = padding uniforme | rounded-lg = coins arrondis | shadow-md = ombre moyenne -->
+            <p class="text-lg leading-relaxed text-blue-200 bg-gray-900 p-6 rounded-lg shadow-md">
+                Développeuse web, titulaire d'un BTS SIO, j'ai choisi de préparer une licence professionnelle métiers de
+                l'informatique au CNAM en alternance. Je suis motivée d'y joindre, je mettrai mes
+                compétences et mes qualités au service des projets de votre entreprise.
+            </p>
+        </section>
+
+        <!-- Formations -->
+        <section class="mb-16">
+            <!-- mb-8 = marge en bas -->
+            <h3 class="text-3xl font-bold text-indigo-700 mb-8 border-b-4 border-indigo-300 pb-2 inline-block">Mes formations</h3>
+            
+            <!-- space-y-8 = espacement vertical automatique entre enfants -->
+            <div class="space-y-8">
+                <!-- Formation 1 -->
+                <!-- hover:shadow-xl = ombre extra large au survol | transition = animation fluide | hover:shadow-blue-500/50 = ombre bleue au survol -->
+                <div class="bg-gray-900 p-6 rounded-lg shadow-md hover:shadow-xl hover:shadow-blue-500/50 transition border-l-4 border-blue-500">
+                    <!-- text-xl = texte extra large | mb-3 = marge en bas | text-blue-400 = bleu moyen -->
+                    <h5 class="text-xl font-semibold text-blue-400 mb-3">
+                        Licence professionnelle Métiers de l'informatique : conception, développement et test des logiciels
+                    </h5>
+                    <!-- italic = texte italique | text-blue-300 = bleu clair -->
+                    <p class="text-blue-300 italic">Parcours chef de projet dév, sécurité et exploitation</p>
+                </div>
+
+                <!-- Formation 2 -->
+                <div class="bg-gray-900 p-6 rounded-lg shadow-md hover:shadow-xl hover:shadow-blue-500/50 transition border-l-4 border-blue-500">
+                    <h5 class="text-xl font-semibold text-blue-400 mb-3">
+                        BTS Services Informatiques aux Organisations option SLAM
+                    </h5>
+                    <!-- mb-2 = petite marge en bas -->
+                    <p class="text-blue-200 leading-relaxed mb-2">(Solutions Logiciels Applicatif et métiers)</p>
+                    <!-- space-y-2 = espacement vertical entre items | list-disc = puces | list-inside = puces à l'intérieur -->
+                    <ul class="text-blue-300 space-y-2 list-disc list-inside">
+                        <li>Programmation API REST (Java, IntelliJ, Spring, Angular, Kotlin, PostgreSQL)</li>
+                        <li>Programmation web (HTML, CSS, PHP, Laragon, PhpMyAdmin, VSCode)</li>
+                        <li>Réseau, système (Packet Tracer, Virtual Machine, Ubuntu/Windows)</li>
+                        <li>Cybersécurité (Injection SQL, OWASP, journalisation, hachage, RGPD)</li>
+                        <li>Projet (Trello, Slack, GitHub, Teams)</li>
+                        <li>Auto-formations sur Cisco Netacad (English for IT1, CyberOps Associate)</li>
+                        <!-- font-semibold = police semi-grasse | text-cyan-400 = texte cyan -->
+                        <li><span class="font-semibold text-cyan-400">Certification English for IT1</span></li>
+                    </ul>
+                </div>
+
+                <!-- Formation 3 -->
+                <div class="bg-gray-900 p-6 rounded-lg shadow-md hover:shadow-xl hover:shadow-blue-500/50 transition border-l-4 border-blue-500">
+                    <h5 class="text-xl font-semibold text-blue-400 mb-3">
+                        BAC Sciences Techniques du Sanitaire et Social
+                    </h5>
+                    <!-- space-y-1 = petit espacement vertical -->
+                    <ul class="text-blue-300 space-y-1 list-disc list-inside">
+                        <li><span class="font-semibold text-cyan-400">Certification Pix</span></li>
+                        <li><span class="font-semibold text-cyan-400">Certification du Projet Voltaire</span></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Expériences -->
+        <section class="mb-16">
+            <h3 class="text-3xl font-bold text-indigo-700 mb-8 border-b-4 border-indigo-300 pb-2 inline-block">Mes expériences professionnelles</h3>
+            
+            <div class="space-y-8">
+                <!-- Expérience 1 -->
+                <!-- border-l-4 = bordure gauche épaisse | border-blue-500 = couleur de la bordure bleue -->
+                <div class="bg-gray-900 p-6 rounded-lg shadow-md hover:shadow-xl hover:shadow-blue-500/50 transition border-l-4 border-blue-500">
+                    <h5 class="text-xl font-semibold text-blue-400 mb-3">Stage développeuse web, Images30</h5>
+                    <ul class="text-blue-300 space-y-2 list-disc list-inside">
+                        <li>Analyser des sites d'investissement et Images30</li>
+                        <li>Faire des cahiers de charge de deux sites d'investissement</li>
+                        <li>Maquette de site Cineweb Invest sur Balsamiq</li>
+                        <li>Créer un site web Cineweb Invest sur Google Sites</li>
+                        <li>Fiche technique des outils utilisés</li>
+                    </ul>
+                </div>
+
+                <!-- Expérience 2 -->
+                <div class="bg-gray-900 p-6 rounded-lg shadow-md hover:shadow-xl hover:shadow-blue-500/50 transition border-l-4 border-blue-500">
+                    <h5 class="text-xl font-semibold text-blue-400 mb-3">Stage pôle transformation numérique</h5>
+                    <ul class="text-blue-300 space-y-2 list-disc list-inside">
+                        <li>Qualification des avis, utilisation PowerBI</li>
+                        <li>Tester une IA</li>
+                        <li>Faire une recherche sur le Numérique Responsable et présenter les idées</li>
+                        <li>Découvrir l'accessibilité numérique</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Button -->
+        <!-- text-center = texte centré -->
+        <div class="text-center">
+            <!-- inline-block = affichage inline-block | hover:bg-blue-700 = couleur de fond au survol | px-8 py-4 = padding | transform hover:scale-105 = agrandissement au survol -->
+            <a href="projet.html" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold text-lg px-8 py-4 rounded-lg shadow-lg hover:shadow-xl transition transform hover:scale-105">
+                Voir mes travaux
+            </a>
+        </div>
+        
+    </main>
+
+    <!-- Footer -->
+    <!-- bg-gray-800 = fond gris très foncé | mt-16 = marge en haut grande -->
+    <footer class="bg-gray-800 text-white text-center py-6 mt-16">
+        <p>&copy; 2025 BALENDRAN Banumathey. Tous droits réservés.</p>
+    </footer>
+
+</body>
+</html>
