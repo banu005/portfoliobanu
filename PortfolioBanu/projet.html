@@ -7,9 +7,12 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="style.css">
 </head>
-<!--fond noir sur le body-->
-<body class="bg-black text-blue-300"> 
-     <header class="bg-gradient-to-r from-blue-300 to-indigo-700 text-white shadow-lg">
+<!-- bg-black = fond noir-->
+<body class="bg-white text-purple-300">
+    
+    <!-- Header -->
+    <!-- bg-gradient-to-r = dégradé de gauche à droite | shadow-lg = ombre large -->
+    <header class=" text-purple-900 bg-gradient-to-r from-blue-200 to-purple-300 shadow-lg">
         <!-- container = conteneur centré | mx-auto = marges horizontales auto (centrage) | px-6 = padding horizontal | py-8 = padding vertical -->
         <div class="container mx-auto px-6 py-8">
             <!-- text-4xl = texte très grand | font-bold = police grasse | mb-6 = marge en bas -->
@@ -18,10 +21,10 @@
                 <!-- flex = flexbox | flex-wrap = retour à la ligne si nécessaire | gap-6 = espacement entre éléments | text-lg = texte large -->
                 <ul class="flex flex-wrap gap-6 text-lg">
                     <!-- hover:text-blue-200 = couleur au survol | transition = animation fluide | border-b-2 = bordure en bas | pb-1 = padding en bas -->
-                    <li><a href="index.html" class="hover:text-blue-200 transition">Accueil</a></li>
-                    <li><a href="projet.html" class="hover:text-blue-200 transition border-b-2 border-white pb-1">Projets</a></li>
-                    <li><a href="competences.html" class="hover:text-blue-200 transition">Compétences</a></li>
-                    <li><a href="contact.html" class="hover:text-blue-200 transition">Contact</a></li>
+                    <li><a href="index.html" class="hover:text-purple-500 transition">Accueil</a></li>
+                    <li><a href="projet.html" class="hover:text-purple-500 transition border-b-2 border-blue-100 pb-1">Projets</a></li>
+                    <li><a href="certification.html" class="hover:text-purple-500 transition">Certifications</a></li>
+                    <li><a href="contact.html" class="hover:text-purple-500 transition">Contact</a></li>
                 </ul>
             </nav>
         </div>
@@ -33,22 +36,29 @@
         <!-- mb-16 = marge en bas grande -->
         <section class="mb-16">
             <!-- text-3xl = texte grand | text-indigo-700 = couleur indigo | border-b-4 = bordure en bas épaisse | inline-block = affichage en ligne bloc -->
-            <h2 class="text-3xl font-bold text-indigo-700 mb-6 border-b-4 border-indigo-300 pb-2 inline-block">Mes Projets</h2>
-            <div class="bg-gray-900 p-6 rounded-lg shadow-md hover:shadow-xl hover:shadow-blue-500/50 transition">
-            <h5 class="text-xl font-semibold text-blue-400 mb-3"> Création d'un site web pour l'association 93moove </h5>
+            <h2 class="text-3xl font-bold text-purple-700 mb-6 border-b-4 border-purple-300 pb-2 inline-block">Mes Projets</h2>
 
-            <!-- leading-relaxed = interligne espacé | bg-gray-900 = fond gris très foncé | p-6 = padding uniforme | rounded-lg = coins arrondis | shadow-md = ombre moyenne -->
-            <p class="text-lg leading-relaxed text-blue-200 bg-gray-900 p-6 rounded-lg shadow-md">
+            <div class="bg-purple-100 p-6 rounded-lg shadow-md hover:shadow-xl hover:shadow-purple-500/50 transition">
+            <h5 class="text-xl font-semibold text-purple-700 mb-3"> Création d'un site web pour l'association 93moove </h5>
+
+            <!-- leading-relaxed = interligne espacé | p-6 = padding uniforme | rounded-lg = coins arrondis | shadow-md = ombre moyenne -->
+            <p class="text-left text-black leading-relaxed mb-4">
                Présentation : créer un site web pour l'assocation 93moove qui proposent des activités sportives, créatif etc ...
-                  Et souhaitent que ses utilisateurs utilisent ce site pour se connecter et à s'inscire sur un cours.
-            </p>
-             <p class="text-lg leading-relaxed text-blue-200 bg-gray-900 p-6 rounded-lg shadow-md">Rôle : j'ai été product owner, je devais mettre les tâches à faire (sprint) sur le Backlog et d'utiliser trello pour suivre l'avancement du projet</p>
+                  Et souhaitent que ses utilisateurs utilisent ce site pour se connecter et à s'inscire sur un cours. <br>
+               Rôle : j'ai été product owner, je devais mettre les tâches à faire (sprint) sur le Backlog et d'utiliser trello pour suivre 
+               l'avancement du projet
+            <br>     Technologies utilisées : Framework Spring, Angular. Langages : Java, SQL, HTML, CSS, TypeScript. Bases de données : Supabase<br>
+               Lien du projet : <a href="https://github.com/banu005/93MooveFrontEnd.git"></a>
+        
+        </p>
             </div>
         </section>
 
         <section id="competences">
-            <h2>Compétences Techniques</h2>
-            <ul>
+            <h2 class="text-3xl font-bold text-purple-700 mb-6 border-b-4 border-purple-300 pb-2 inline-block">Compétences Techniques</h2>
+
+            <div class="bg-purple-100 p-6 rounded-lg shadow-md hover:shadow-xl hover:shadow-purple-500/50 transition">
+            <ul class="text-left text-black leading-relaxed mb-4">
                 <li>Langages : Java, SQL, HTML, CSS, TypeScript, PHP</li>
                 <li>Framework : Angular, Spring, Materialize css</li>
                 <li>Méthodologie : Responsive Design, Accessibilité (A11Y)</li>
@@ -56,8 +66,12 @@
                 <li>Réseau : Matériels informatiques, modèle OSI</li>
                 <li>Système : commande sur le terminal Linux, tubes et signaux </li>
             </ul>
+            </div>
         </section>
-
+<!-- Footer -->
+    <footer class="bg-gradient-to-r from-blue-200 to-purple-300 text-purple-700 text-center py-6 mt-16">
+        <p>&copy; 2025 BALENDRAN Banumathey. Tous droits réservés.</p>
+    </footer>
     </main>
 </body>
 </html>
