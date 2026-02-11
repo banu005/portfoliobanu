@@ -1,62 +1,241 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BALENDRAN Banumathey</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <header>
-      <h1>BALENDRAN Banumathey</h1>
-        <nav class="menu-principal">
-            <ul>
-                <li><a href="index.html">À propos</a></li>
-                <li><a href="projet.html">Projets</a></li>
-                <li><a href="competences.html">Compétences</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+    <!DOCTYPE html>
+    <html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>BALENDRAN Banumathey - Développeuse Web</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="stylesheet" href="style.css">
+    </head>
 
-    <main>
-        <section id="à propos">
-            <h3 class="titres">À propos de moi</h2>
-            <p> Développeuse web, titulaire d'un BTS SIO, j'ai choisi de préparer une licence professionnelle métiers de
- l'informatique au CNAM en alternance. Je suis motivée d'y joindre, je mettrai mes
- compétences et mes qualités au service des projets de votre entreprise.</p>
-            <h3 class="titres">Mes formations</h3>
-            <h5>Licence professionnelle Métiers de l'informatique : conception, développement et test des logiciels</h5>
-            <p> Parcours chef de projet dév, sécurité et exploitation</p>
-            <h5>BTS Services Informatiques aux Organisations option SLAM(Solutions Logiciels Applicatif et métiers)</h5>
-            <p>Programmation API REST (java, intellij, spring, angular, kotlin, postgresQL).
- Programmation web (HTML, CSS, PHP, Laragon, PhpMyAdmin, vscode). Réseau,
- système (Packet Tracer, virtual machine, ubuntu/windows()).
- Réseau, système (Packet Tracer, virtual machine, ubuntu/windows)
- Cybersécurité (Injection SQL, Owasp journalisation, hachage, RGPD). Projet (Trello,
- Slack, GitHub, Teams).
- Auto-formations sur Cisco Netacad ( English for IT1, CyberOps Associate).
- Certification English for IT1</p>
-            <h5>BAC Sciences Techniques du Sanitaire et Social</h5>
-            <p> Certification de Pix
- Certification du Projet Voltaire</p>
-            <h3 class="titres">Mes expériences professionnelles</h3>
-            <h5>stage développeuse web, Images30</h5>
-            <p> Analyser des sites d'investissement et Images30. Faire des cahiers de charge de deux
- sites d'investissement. Maquette de site Cineweb Invest sur Balsamiq. Créer un site
- web Cineweb Invest sur Google Sites. Fiche technique des outils utilisés</p>
-            <h5>Stage pôle transformation numérique</h5>
-            <p> Qualification des avis, utilisation PowerBI. Tester une IA. Faire une recherche sur le
- Numérique Responsable et présenter les idées. Découvrir l'accessibilité numérique</p>
-            <p></p>
-            <a href="projet.html" class="button">Voir mes travaux</a>
+    <body class="bg-gray-900 text-gray-100">
+
+        <!-- Header -->
+        <header class="fixed w-full top-0 z-50 bg-gray-900/90 backdrop-blur-sm border-b border-gray-800">
+            <div class="container mx-auto px-6 py-4">
+                <div class="flex justify-between items-center">
+                    <h1 class="text-2xl font-bold gradient-text">Banumathey BALENDRAN</h1>
+                    <nav>
+                        <ul class="flex gap-8 text-lg">
+                            <li><a href="index.html" class="text-purple-400 font-semibold border-b-2 border-purple-400 pb-1">Accueil</a></li>
+                            <li><a href="projet.html" class="text-gray-300 hover:text-blue-200 transition">Projets</a></li>
+                            <li><a href="certification.html" class="text-gray-300 hover:text-purple-400 transition">Certifications</a></li>
+                            <li><a href="contact.html" class="text-gray-300 hover:text-blue-200 transition">Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+
+        <section class="min-h-screen flex items-center justify-center px-6 pt-24 pb-12">
+            <div class="container mx-auto max-w-6xl">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+
+                    <!-- Texte principal -->
+                    <div>
+                        <div class="text-purple-300 font-semibold mb-3 animate-fadeInUp">Bonjour :)</div>
+                        <h2 class="text-5xl md:text-6xl font-bold mb-6 animate-fadeInUp delay-200 text-white">
+                            Développeuse web <span class="gradient-text">passionnée</span>
+                        </h2>
+                        <p class="text-xl text-gray-400 mb-8 leading-relaxed animate-fadeInUp delay-400">
+                            Actuellement en licence professionnelle métiers de l'informatique au CNAM. 
+                            Je suis à la recherche d'un stage de 2 mois pour approfondir mes compétences en informatique.
+                        </p>
+                        <div class="flex gap-4 animate-fadeInUp delay-600">
+                            <a href="projet.html" class="px-8 py-3 border-2 border-purple-300 text-purple-300 rounded-full font-semibold hover:bg-purple-300 hover:text-gray-900 transition-all">
+                                Découvrir mes projets
+                            </a>
+                            <a href="contact.html" class="px-8 py-3 border-2 border-blue-300 text-blue-300 rounded-full font-semibold hover:bg-blue-300 hover:text-gray-900 transition-all">
+                                Me contacter
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Illustration visuelle -->
+                    <div class="relative animate-fadeInUp delay-600">
+                        <div class="w-full h-96 relative">
+
+                            <!-- Cercles décoratifs -->
+                            <div class="absolute top-0 right-0 w-64 h-64 bg-purple-400 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-float"></div>
+                            <div class="absolute bottom-0 left-0 w-64 h-64 bg-blue-200 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-float" style="animation-delay: 1s;"></div>
+
+                            <!-- Image centrale -->
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <img src="..." alt="Photo pro" class="w-80 h-80 object-contain filter drop-shadow-lg hover:scale-105 hover:drop-shadow-2xl transition-transform duration-300">
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
 
-    </main>
+        <!-- Section Parcours -->
+        <section class="py-20 px-6 bg-gray-800/50">
+            <div class="container mx-auto max-w-6xl">
+                <h3 class="text-4xl font-bold text-center mb-16 text-white">
+                    Mon <span class="gradient-text">parcours</span>
+                </h3>
+                <div class="grid md:grid-cols-2 gap-8">
 
-    <footer>
-        <p>&copy; 2025 BALENDRAN Banumathey. Tous droits réservés.</p>
-    </footer>
+                    <!-- Formations -->
+                    <div>
+                        <div class="flex items-center gap-3 mb-6">
+                            <div class="text-3xl">🎓</div>
+                            <h4 class="text-2xl font-bold text-purple-300">Formations</h4>
+                        </div>
+                        <div class="space-y-6">
+                            <div class="bg-gray-800 p-6 rounded-xl shadow-md hover:shadow-xl transition card-hover border-l-4 border-purple-300">
+                                <h5 class="font-bold text-purple-300 mb-2">Licence professionnelle Métiers de l'informatique : conception, développement et test de logiciels</h5>
+                                <p class="text-sm text-blue-200">CNAM, En cours</p>
+                                <p class="text-sm text-gray-300 mt-2">Parcours Chef de projet dev, sécurité et exploitation</p>
+                            </div>
 
-</body>
-</html>
+                            <div class="bg-gray-800 p-6 rounded-xl shadow-md hover:shadow-xl transition card-hover border-l-4 border-purple-400">
+                                <h5 class="font-bold text-purple-300 mb-2">BTS SIO option SLAM (Solutions Logiciels et Applications Métiers)</h5>
+                                <p class="text-sm text-blue-200">Lycée Auguste Blanqui, 2023-2025</p>
+                            <div class="space-y-6 flex gap-2 mt-2">
+                                <ul class="text-sm text-gray-300 space-y-1">
+                                    <li>• Programmation API REST (java, intellij, spring, angular, kotlin, postgresQL)</li>
+                                    <li>• Programmation web (HTML, CSS, PHP, Laragon, PhpMyAdmin, vscode)</li>
+                                    <li>• Réseau, système (Packet Tracer, virtual machine, ubuntu/windows)</li>
+                                    <li>• Cybersécurité (Injection SQL, Owasp journalisation, hachage, RGPD)</li>
+                                    <li>• Projet (Trello,Slack, GitHub, Teams)</li>
+                                    <li class="text-blue-400">• Auto-formations sur Cisco Netacad (<a href="certification.html">English for IT1</a>, CyberOps Associate)</li>
+                                </ul>
+                            </div>
+                            </div>
+
+                        
+                            <div class="bg-gray-800 p-6 rounded-xl shadow-md hover:shadow-xl transition card-hover border-l-4 border-purple-300">
+                                <h5 class="font-bold text-purple-300 mb-2">BAC ST2S (Sciences et Technologies de la Santé et du Social)</h5>
+                                <p class="text-sm text-blue-200">Lycée Jacques Monod, 2021-2023</p>
+                                <div class="flex gap-2 mt-2">
+                                    <a href="certification.html" class="text-yellow-300 text-sm">Certification Pix</a>
+                                    <a href="certification.html" class="text-green-300 text-sm">Certification Projet Voltaire</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Expériences -->
+                    <div>
+                        <div class="flex items-center gap-3 mb-6">
+                            <div class="text-3xl">💼</div>
+                            <h4 class="text-2xl font-bold text-blue-300">Expériences</h4>
+                        </div>
+
+                        <div class="space-y-6">
+                            <div class="bg-gray-800 p-6 rounded-xl shadow-md hover:shadow-xl transition card-hover border-l-4 border-blue-400">
+                                <h5 class="font-bold text-blue-300 mb-2">Stage Transformation Numérique</h5>
+                                <p class="text-sm text-purple-200 mb-3">Conseil Régional Île-de-France</p>
+                                <ul class="text-sm text-gray-300 space-y-1">
+                                    <li>• Qualification des avis, utilisation PowerBI</li>
+                                    <li>• Formation RGPD </li>
+                                    <li>• Tester une IA qui répond aux aides régionales </li>
+                                    <li>• Faire une recherche sur le Numérique Responsable et présenter les idées</li>
+                                    <li>• Accessibilité numérique</li>
+                                    <li>• Concevoir un formulaire de la bourse sanitaire et social sur Microsoft Form</li>
+                                    <li>• Atelier Design</li>
+                                </ul>
+                            </div>
+
+        
+                            <div class="bg-gray-800 p-6 rounded-xl shadow-md hover:shadow-xl transition card-hover border-l-4 border-blue-300">
+                                <h5 class="font-bold text-blue-300 mb-2">Stage Développement Web</h5>
+                                <p class="text-sm text-purple-200 mb-3">Images30</p>
+                                <ul class="text-sm text-gray-300 space-y-1">
+                                    <li>• Analyse de sites d'investissement et Images30</li>
+                                    <li>• Cahiers des charges des sites d'investissement et Images30 </li>
+                                    <li>• Création de maquette sur Balsamiq</li>
+                                    <li>• Création du site web Cineweb Invest sur Google sites</li>
+                                    <li>• Fiche technique des outils utilisés</li>
+                                </ul>
+                            </div>
+
+                            <div class="bg-gray-800 p-6 rounded-xl shadow-md hover:shadow-xl transition card-hover border-l-4 border-blue-400">
+                                <h5 class="font-bold text-blue-300 mb-2">Stage Bibliothécaire</h5>
+                                <p class="text-sm text-purple-200 mb-3">Bibliothèque Valeyre</p>
+                                <ul class="text-sm text-gray-300 space-y-1">
+                                    <li>• Accueil et renseignement du public</li>
+                                    <li>• Numérisation de documents, scanner les journaux</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- Section Compétences clés -->
+        <section class="py-20 px-6 bg-gray-900">
+            <div class="container mx-auto max-w-6xl">
+                <h3 class="text-4xl font-bold text-center mb-16 text-white">
+                    Domaines d'<span class="gradient-text">expertise</span>
+                </h3>
+
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="text-center p-8 bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl transition card-hover border border-gray-700">
+                        <div class="text-5xl mb-4">🚀</div>
+                        <h4 class="text-xl font-bold text-purple-300 mb-3">Développement Web</h4>
+                        <p class="text-gray-400">API REST, développement full-stack avec Java Spring, Angular et PostgreSQL</p>
+                    </div>
+
+                    <div class="text-center p-8 bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl transition card-hover border border-gray-700">
+                        <div class="text-5xl mb-4">🌐</div>
+                        <h4 class="text-xl font-bold text-blue-200 mb-3">Réseau, système</h4>
+                        <p class="text-gray-400">TCP/IP, protocoles réseau. gestion des processus</p>
+                    </div>
+
+                    <div class="text-center p-8 bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl transition card-hover border border-gray-700">
+                        <div class="text-5xl mb-4">🔒</div>
+                        <h4 class="text-xl font-bold text-green-200 mb-3">Cybersécurité</h4>
+                        <p class="text-gray-400">OWASP, injection SQL, hachage, RGPD et bonnes pratiques de sécurité</p>
+                    </div>
+
+                    <!--<div class="text-center p-8 bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl transition card-hover border border-gray-700">
+
+                        <div class="text-5xl mb-4">📊</div>
+
+                        <h4 class="text-xl font-bold text-purple-300 mb-3">Data & BI</h4>
+
+                        <p class="text-gray-400">PowerBI, analyse de données et visualisation d'informations</p>
+
+                    </div>
+
+                -->
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- CTA Section -->
+        <section class="py-20 px-6 bg-gradient-to-br from-purple-900/30 via-gray-800 to-blue-900/30">
+            <div class="container mx-auto max-w-4xl text-center">
+                <h3 class="text-4xl font-bold mb-6 text-white">Prête à relever de <span class="gradient-text">nouveaux défis</span></h3>
+                <p class="text-xl text-gray-300 mb-8">
+                    Je recherche un stage où je pourrai mettre mes compétences au service de projets innovants
+                </p>
+
+                <div class="flex gap-4 justify-center">
+                    <a href="projet.html" class="px-8 py-4 bg-purple-300 text-gray-900 font-bold text-lg rounded-full shadow-lg hover:bg-purple-300 hover:shadow-xl transition transform hover:scale-105">
+                        Voir mes projets</a>
+                    <a href="contact.html" class="px-8 py-4 bg-gray-800 text-purple-200 font-bold text-lg rounded-full shadow-lg hover:bg-gray-700 transition transform hover:scale-105 border-2 border-purple-400">
+                        Contact 
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-gradient-to-r from-blue-200 to-purple-300 text-purple-900 text-center py-8">
+            <p class="font-semibold">&copy; 2025 BALENDRAN Banumathey. Tous droits réservés.</p>
+            <div class="flex gap-6 justify-center mt-4">
+                <a href="https://github.com/banu005" class="text-purple-700 hover:text-purple-900 transition-colors font-medium">GitHub</a>
+                <a href="https://www.linkedin.com/in/banumathey-balendran" class="text-purple-700 hover:text-purple-900 transition-colors font-medium">LinkedIn</a>
+            </div>
+        </footer>
+
+    </body>
+    </html>

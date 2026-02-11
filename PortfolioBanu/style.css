@@ -1,69 +1,65 @@
-header{
-    background-color: lightskyblue;
-    padding: 20px;
+/* Animations */
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
 }
 
-header h1 {
-    text-align: center;
-    color: black;
-    font-size: 20px;
-
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-.menu-principal ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex; 
-    background-color:lightskyblue;
-    text-align: center;
+.animate-float {
+    animation: float 3s ease-in-out infinite;
 }
 
-.menu-principal li a {
-    display: block; 
-    color: black;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
+.animate-fadeInUp {
+    animation: fadeInUp 0.8s ease-out forwards;
 }
 
-.menu-principal li a:hover {
-    background-color: lightblue;
+.delay-200 {
+    animation-delay: 0.2s;
+    opacity: 0;
 }
 
-body {
-    font-family: Arial;
-    margin: 30;
-    padding: 50;
-    background-color: white;
+.delay-400 {
+    animation-delay: 0.4s;
+    opacity: 0;
 }
 
-footer {
-    background-color: lightskyblue;
-    text-align: center;
-    padding: 10px;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+.delay-600 {
+    animation-delay: 0.6s;
+    opacity: 0;
 }
 
-.titres {
-    color: deepskyblue;
-
+/* Gradient text */
+.gradient-text {
+    background: linear-gradient(135deg, #c084fc, #bfdbfe);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
-p{
-    font-size: 12px;
-    font-family: Arial;
+/* Card hover effect */
+.card-hover {
+    transition: all 0.3s ease;
 }
 
-.button {
-    display: inline-block;
-    padding: 10px 20px;
-    font-size: 14px;
-    color: black;
-    background-color: lightskyblue;
-    text-decoration: none;
-    border-radius: 5px;
-    margin-top: 10px;
+.card-hover:hover {
+    transform: translateY(-5px);
+}
+
+/* Project image hover */
+.project-image {
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover .project-image {
+    transform: scale(1.05);
 }

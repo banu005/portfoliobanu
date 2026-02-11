@@ -3,33 +3,369 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BALENDRAN Banumathey</title>
+    <title>BALENDRAN Banumathey - Mes Projets</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
 </head>
-<body>
-    <header>
-      <h1>BALENDRAN Banumathey</h1>
-        <nav class="menu-principal">
-            <ul>
-                <li><a href="index.html">À propos</a></li>
-                <li><a href="projet.html">Projets</a></li>
-                <li><a href="competences.html">Compétences</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
+<body class="bg-gray-900 text-gray-100">
+    
+    <!-- Header -->
+    <header class="fixed w-full top-0 z-50 bg-gray-900/90 backdrop-blur-sm border-b border-gray-800">
+        <div class="container mx-auto px-4 md:px-6 py-4">
+            <div class="flex justify-between items-center">
+                <h1 class="text-xl md:text-2xl font-bold gradient-text">Banumathey BALENDRAN</h1>
+                <nav>
+                    <ul class="flex gap-4 md:gap-8 text-sm md:text-lg">
+                        <li><a href="index.html" class="text-gray-300 hover:text-purple-400 transition">Accueil</a></li>
+                        <li><a href="projet.html" class="text-purple-400 font-semibold border-b-2 border-purple-400 pb-1">Projets</a></li>
+                        <li class="hidden sm:block"><a href="certification.html" class="text-gray-300 hover:text-purple-400 transition">Certifications</a></li>
+                        <li><a href="contact.html" class="text-gray-300 hover:text-blue-200 transition">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
     </header>
 
-<section id="projets">
-            <h2>Mes Projets</h2>
-            
-            <article class="projet-case-study">
-                <h3>Création d'un site web 93moove</h3>
-                <p>Présentation : créer un site web pour l'assocation 93moove qui proposent des activités sportives, créatif etc ...
-                  Et souhaitent que ses utilisateurs utilisent ce site pour se connecter et à s'inscire sur un cours.</p>
-                <p>Rôle : j'ai été product owner, je devais mettre les tâches à faire (sprint) sur le Backlog et d'utiliser trello pour suivre l'avancement du projet</p>
-                <a href="#" target="_blank">Voir le site en ligne</a>
-            </article>
+    <main class="container mx-auto px-4 md:px-6 py-12 max-w-7xl mt-20">
+        
+        <!-- Hero Section -->
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-5xl font-bold mb-4">
+                Mes <span class="gradient-text">Projets</span>
+            </h2>
+        </div>
 
-            </section>
+        <!-- Projets Grid -->
+        <div class="grid md:grid-cols-2 gap-8 mb-16">
+            
+            <!-- Projet 1 - 93moove1-->
+            <div class="h-64 md:h-auto bg-gray-700 overflow-hidden">
+            <img src="Images/93moove1.png" alt="Site web 93moove - page d'authentification" class="w-full h-full object-cover project-image">
+            </div>
+                    
+                    <!-- Contenu -->
+                    <div class="p-6 md:p-8">
+                        <div class="flex items-center gap-2 mb-4">
+                            <span class="px-3 py-1 bg-purple-400/20 text-purple-400 rounded-full text-xs font-semibold">1er projet</span>
+                        </div>
+                        
+                        <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+                            Site web 93moove fait en première année de BTS SIO
+                        </h3>
+                        
+                        <p class="text-gray-300 mb-4 leading-relaxed text-sm md:text-base">
+                            Plateforme web complète pour une association proposant des activités sportives et créatives. Le site permet aux utilisateurs de se connecter et de s'inscrire aux cours proposés.
+                        </p>
+                        
+                        <div class="mb-4">
+                            <h4 class="text-purple-400 font-semibold mb-2 text-sm md:text-base">Rôle : Développeuse</h4>
+                            <p class="text-gray-400 text-sm">Travail fait en binôme, voici la page d'authentification</p>
+                        </div>
+
+                        <!-- Compétences techniques -->
+                       <div class="mb-6">
+                            <h4 class="text-blue-200 font-semibold mb-3 text-sm md:text-base">💻 Compétences techniques</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-purple-400/20 text-purple-300 rounded-full text-xs md:text-sm">
+                                    Laragon
+                                </span>
+                                <span class="px-3 py-1 bg-blue-200/20 text-blue-200 rounded-full text-xs md:text-sm flex items-center gap-1">
+                                    <i class="devicon-php-plain"></i> PHP
+                                </span>
+                                <span class="px-3 py-1 bg-purple-400/20 text-purple-300 rounded-full text-xs md:text-sm flex items-center gap-1">
+                                    <i class="devicon-html5-plain"></i> HTML
+                                </span>
+                                <span class="px-3 py-1 bg-blue-200/20 text-blue-200 rounded-full text-xs md:text-sm flex items-center gap-1">
+                                    <i class="devicon-css3-plain"></i> CSS
+                                </span>
+                                <span class="px-3 py-1 bg-purple-400/20 text-purple-300 rounded-full text-xs md:text-sm flex items-center gap-1">
+                                    <i class="devicon-postgresql-plain"></i> PostgreSQL
+                                </span>
+                            </div>
+                       </div>
+                        <div class="flex flex-wrap gap-3">
+                            <a href="https://github.com/cisse000/lab1-93moov.git" target="_blank" class="px-6 py-2 bg-purple-400 text-gray-900 rounded-full font-semibold hover:bg-purple-300 transition text-sm md:text-base">
+                                Code 93Moove1
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Projet 2 - 93moove2 -->
+           <div class="h-64 md:h-auto bg-gray-700 overflow-hidden">
+               <img src="Images/93moove2.png" alt="Site web 93moove - page d'accue" class="w-full h-full object-cover project-image">
+           </div>
+                    
+                    <!-- Contenu -->
+                    <div class="p-6 md:p-8">
+                        <div class="flex items-center gap-2 mb-4">
+                            <span class="px-3 py-1 bg-purple-400/20 text-purple-400 rounded-full text-xs font-semibold">2e projet</span>
+                        </div>
+                        
+                        <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+                            Site web 93moove fait en deuxième année de BTS SIO
+                        </h3>
+                        
+                        <p class="text-gray-300 mb-4 leading-relaxed text-sm md:text-base">
+                            Plateforme web complète pour une association proposant des activités sportives et créatives. Le site permet aux utilisateurs de se connecter et de s'inscrire aux cours proposés. C'est une nouvelle version faite en groupe de 3 personnes.
+                        </p>
+                        
+                        <div class="mb-4">
+                            <h4 class="text-purple-400 font-semibold mb-2 text-sm md:text-base">Rôle : Product Owner, Développeuse</h4>
+                            <p class="text-gray-400 text-sm">Gestion du backlog, mise en sprint des fonctionnalités utilisateurs, utilisation de Trello pour la gestion des missions et suivi du projet</p>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <h4 class="text-blue-200 font-semibold mb-3 text-sm md:text-base">💻 Compétences techniques</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-purple-400/20 text-purple-300 rounded-full text-xs md:text-sm flex items-center gap-1">
+                                    <i class="devicon-spring-plain"></i> Spring
+                                </span>
+                                <span class="px-3 py-1 bg-blue-200/20 text-blue-200 rounded-full text-xs md:text-sm flex items-center gap-1">
+                                    <i class="devicon-angularjs-plain"></i> Angular
+                                </span>
+                                <span class="px-3 py-1 bg-purple-400/20 text-purple-300 rounded-full text-xs md:text-sm flex items-center gap-1">
+                                    <i class="devicon-java-plain"></i> Java
+                                </span>
+                                <span class="px-3 py-1 bg-blue-200/20 text-blue-200 rounded-full text-xs md:text-sm flex items-center gap-1">
+                                    <i class="devicon-typescript-plain"></i> TypeScript
+                                </span>
+                                <span class="px-3 py-1 bg-purple-400/20 text-purple-300 rounded-full text-xs md:text-sm flex items-center gap-1">
+                                    <i class="devicon-postgresql-plain"></i> PostgreSQL
+                                </span>
+                                <span class="px-3 py-1 bg-blue-200/20 text-blue-200 rounded-full text-xs md:text-sm">
+                                    Supabase
+                                </span>
+                            </div>
+                        </div>
+                        
+                        <div class="flex flex-wrap gap-3">
+                            <a href="https://github.com/banu005/93MooveFrontEnd.git" target="_blank" class="px-6 py-2 bg-purple-400 text-gray-900 rounded-full font-semibold hover:bg-purple-300 transition text-sm md:text-base">
+                                Code 93Moove2 - Frontend
+                            </a>
+                        </div>
+                        
+                        <div class="flex flex-wrap gap-3 mt-3">
+                            <a href="https://github.com/banu005/93MooveBackEnd.git" target="_blank" class="px-6 py-2 bg-purple-400 text-gray-900 rounded-full font-semibold hover:bg-purple-300 transition text-sm md:text-base">
+                                Code 93Moove2 - Backend
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Projet 3 - Jeu 2D Godot -->
+            <div class="h-48 md:h-64 bg-gray-700 overflow-hidden">
+                <img src="Images/jeu2d.png" alt="Jeu 2D Godot" class="w-full h-full object-cover">
+            </div>
+                
+                <div class="p-6">
+                    <h3 class="text-xl md:text-2xl font-bold text-white mb-3">
+                        Jeu 2D - Shooter Survival
+                    </h3>
+                    
+                    <p class="text-gray-300 mb-4 text-sm md:text-base leading-relaxed">
+                        Jeu de survie où le personnage doit éliminer des blobs verts en tirant pour survivre. Développé en suivant un tutoriel pour découvrir le développement de jeux.
+                    </p>
+                    
+                    <div class="mb-4">
+                        <h4 class="text-blue-200 font-semibold mb-2 text-sm">Technologies utilisées</h4>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-green-400/20 text-green-300 rounded-full text-xs flex items-center gap-1">
+                                <i class="devicon-godot-plain"></i> Godot
+                            </span>
+                            <span class="px-3 py-1 bg-blue-200/20 text-blue-200 rounded-full text-xs flex items-center gap-1">
+                                <i class="devicon-csharp-plain"></i> C#
+                            </span>
+                        </div>
+                    </div>
+                    
+                   <div class="flex flex-wrap gap-3">
+                        <a href="https://github.com/banu005/2dgame.git" target="_blank" class="px-6 py-2 bg-purple-400 text-gray-900 rounded-full font-semibold hover:bg-purple-300 transition text-sm md:text-base">
+                            Code du jeu 2D
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Projet 4 - HTML CSS Course -->
+            <div class="h-48 md:h-64 bg-gray-700 overflow-hidden">
+                <img src="Images/youtube-clone.png" alt="Clone YouTube" class="w-full h-full object-cover">
+            </div>
+                
+                <div class="p-6">
+                    <h3 class="text-xl md:text-2xl font-bold text-white mb-3">
+                        HTML CSS Course du youtubeur SuperSimpleDev
+                    </h3>
+                    
+                    <p class="text-gray-300 mb-4 text-sm md:text-base leading-relaxed">
+                        Réplique de l'interface YouTube pour apprendre les bases du HTML et CSS. Tutoriel avec cours, exemples et exercices pratiques pour s'entraîner.
+                    </p>
+                    
+                    <div class="mb-4">
+                        <h4 class="text-blue-200 font-semibold mb-2 text-sm">Technologies utilisées</h4>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-orange-400/20 text-orange-300 rounded-full text-xs flex items-center gap-1">
+                                <i class="devicon-html5-plain"></i> HTML5
+                            </span>
+                            <span class="px-3 py-1 bg-blue-400/20 text-blue-300 rounded-full text-xs flex items-center gap-1">
+                                <i class="devicon-css3-plain"></i> CSS3
+                            </span>
+                        </div>
+                        <p class="text-sm text-gray-400 mt-2">
+                            <span class="text-purple-400 font-semibold">IDE:</span> VS Code
+                        </p>
+                    </div>
+
+                    <div class="flex flex-wrap gap-3">
+                        <a href="https://github.com/banu005/html_css_course.git" target="_blank" class="px-6 py-2 bg-purple-400 text-gray-900 rounded-full font-semibold hover:bg-purple-300 transition text-sm md:text-base">
+                            Code HTML CSS Course
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Section Compétences -->
+        <div class="mt-20 mb-16">
+            <h3 class="text-3xl md:text-4xl font-bold text-center mb-12">
+                Mes Compétences <span class="gradient-text">Techniques</span>
+            </h3>
+            
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <!-- Langages -->
+                <div class="bg-gray-800 p-6 rounded-xl border border-gray-700 card-hover">
+                    <div class="flex items-center gap-2 mb-4">
+                        <div class="text-3xl">💻</div>
+                        <h4 class="text-purple-400 font-bold text-lg">Langages</h4>
+                    </div>
+                    <ul class="text-gray-300 space-y-3 text-sm">
+                        <li class="flex items-center gap-2">
+                            <i class="devicon-java-plain text-2xl text-orange-500"></i>
+                            <span>Java</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="devicon-typescript-plain text-2xl text-blue-400"></i>
+                            <span>TypeScript</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="devicon-php-plain text-2xl text-purple-400"></i>
+                            <span>PHP</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="devicon-html5-plain text-2xl text-orange-600"></i>
+                            <span>HTML</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="devicon-css3-plain text-2xl text-blue-500"></i>
+                            <span>CSS</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="devicon-azuresqldatabase-plain text-2xl text-blue-300"></i>
+                            <span>SQL</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Frameworks -->
+                <div class="bg-gray-800 p-6 rounded-xl border border-gray-700 card-hover">
+                    <div class="flex items-center gap-2 mb-4">
+                        <div class="text-3xl">⚡</div>
+                        <h4 class="text-purple-400 font-bold text-lg">Frameworks</h4>
+                    </div>
+                    <ul class="text-gray-300 space-y-3 text-sm">
+                        <li class="flex items-center gap-2">
+                            <i class="devicon-spring-plain text-2xl text-green-500"></i>
+                            <span>Spring</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="devicon-angularjs-plain text-2xl text-red-500"></i>
+                            <span>Angular</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="devicon-materialui-plain text-2xl text-blue-400"></i>
+                            <span>Materialize CSS</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- IDE/Outils -->
+                <div class="bg-gray-800 p-6 rounded-xl border border-gray-700 card-hover">
+                    <div class="flex items-center gap-2 mb-4">
+                        <div class="text-3xl">🛠️</div>
+                        <h4 class="text-purple-400 font-bold text-lg">IDE & Outils</h4>
+                    </div>
+                    <ul class="text-gray-300 space-y-3 text-sm">
+                        <li class="flex items-center gap-2">
+                            <i class="devicon-intellij-plain text-2xl text-purple-500"></i>
+                            <span>IntelliJ IDEA</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="devicon-vscode-plain text-2xl text-blue-400"></i>
+                            <span>VS Code</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="devicon-git-plain text-2xl text-orange-600"></i>
+                            <span>Git / GitHub</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="devicon-eclipse-plain text-2xl text-indigo-500"></i>
+                            <span>Eclipse</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="text-gray-400">•</span>
+                            <span>Laragon</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Bases de données & Réseau -->
+                <div class="bg-gray-800 p-6 rounded-xl border border-gray-700 card-hover">
+                    <div class="flex items-center gap-2 mb-4">
+                        <div class="text-3xl">🗄️</div>
+                        <h4 class="text-purple-400 font-bold text-lg">BDD & Réseau</h4>
+                    </div>
+                    <ul class="text-gray-300 space-y-3 text-sm">
+                        <li class="flex items-center gap-2">
+                            <i class="devicon-postgresql-plain text-2xl text-blue-400"></i>
+                            <span>PostgreSQL</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="devicon-supabase-plain text-2xl text-green-400"></i>
+                            <span>Supabase</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="devicon-linux-plain text-2xl text-yellow-500"></i>
+                            <span>Linux / Bash</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="text-gray-400">•</span>
+                            <span>Modèle OSI</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="text-gray-400">•</span>
+                            <span>Adresse IPv4</span>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gradient-to-r from-blue-200 to-purple-300 text-purple-900 text-center py-8 mt-20">
+        <p class="font-semibold">&copy; 2025 BALENDRAN Banumathey. Tous droits réservés.</p>
+        <div class="flex gap-6 justify-center mt-4">
+            <a href="https://github.com/banu005" target="_blank" class="text-purple-700 hover:text-purple-900 transition-colors font-medium">GitHub</a>
+            <a href="https://www.linkedin.com/in/banumathey-balendran" target="_blank" class="text-purple-700 hover:text-purple-900 transition-colors font-medium">LinkedIn</a>
+        </div>
+    </footer>
+
 </body>
 </html>
