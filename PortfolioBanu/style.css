@@ -1,9 +1,12 @@
 /* Animations */
+
+/*Mouvement de haut en bas (effet de flottement)*/
 @keyframes float {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-15px); }
+    0%, 100% { transform: translateY(0px); }  /*L'élément est à sa position d'origine (pas de mouvement) */
+    50% { transform: translateY(-15px); } /*L'élément monte de 15 pixels à mi-chemin de l'animation */
 }
 
+/*Animation de montée avec fondu (effet d'apparition)*/
 @keyframes fadeInUp {
     from {
         opacity: 0;
