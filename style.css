@@ -1,0 +1,68 @@
+/* Animations */
+
+/*Mouvement de haut en bas (effet de flottement)*/
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }  /*L'élément est à sa position d'origine (pas de mouvement) */
+    50% { transform: translateY(-15px); } /*L'élément monte de 15 pixels à mi-chemin de l'animation */
+}
+
+/*Animation de montée avec fondu (effet d'apparition)*/
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-float {
+    animation: float 3s ease-in-out infinite;
+}
+
+.animate-fadeInUp {
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.delay-200 {
+    animation-delay: 0.2s;
+    opacity: 0;
+}
+
+.delay-400 {
+    animation-delay: 0.4s;
+    opacity: 0;
+}
+
+.delay-600 {
+    animation-delay: 0.6s;
+    opacity: 0;
+}
+
+/* Gradient text */
+.gradient-text {
+    background: linear-gradient(135deg, #b7a3ec, #60a5fa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Card hover effect */
+.card-hover {
+    transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+    transform: translateY(-5px);
+}
+
+/* Project image hover */
+.project-image {
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover .project-image {
+    transform: scale(1.05);
+}

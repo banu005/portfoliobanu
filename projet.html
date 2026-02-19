@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BALENDRAN Banumathey - Mes Projets</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+    <style>
+        .gradient-text {
+            background: linear-gradient(to right, #a78bfa, #60a5fa);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-100">
+    
+    <header class="fixed w-full top-0 z-50 bg-gray-900/90 backdrop-blur-sm border-b border-gray-800">
+        <div class="w-full px-4 md:px-12 py-4">
+            <div class="flex justify-between items-center">
+                <h1 class="text-xl md:text-2xl font-bold gradient-text">Banumathey BALENDRAN</h1>
+                <nav>
+                    <ul class="flex gap-4 md:gap-8 text-sm md:text-lg">
+                        <li><a href="index.html" class="text-gray-300 hover:text-purple-400 transition">Accueil</a></li>
+                        <li><a href="projet.html" class="text-blue-200 font-semibold border-b-2 border-blue-200 pb-1">Projets</a></li>
+                        <li class="hidden sm:block"><a href="certification.html" class="text-gray-300 hover:text-purple-400 transition">Certifications</a></li>
+                        <li><a href="contact.html" class="text-gray-300 hover:text-blue-200 transition">Contact</a></li>
+                        <li><a href="Documents/CV_Banumathey_BALENDRAN_stagetech.pdf" download class="text-purple-400 font-semibold button">📄 CV</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="w-full px-4 md:px-12 py-12 mt-20">
+        
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-5xl font-bold mb-4">
+                Mes <span class="gradient-text">Projets</span>
+            </h2>
+            <p class="text-gray-400 text-lg mt-4">Découvrez mes réalisations suite à mes formations et à mes projets personnels</p>
+        </div>
+
+        <div class="flex flex-col gap-16 mb-16">
+            
+            <!-- Projet 1: 93Moove v1 -->
+            <div class="bg-gray-800 rounded-3xl overflow-hidden shadow-xl border border-gray-700">
+                <div class="grid md:grid-cols-2 gap-0">
+                    <div class="h-80 md:h-[500px] overflow-hidden group bg-gray-900">
+                        <img src="Images/93moove1.png" alt="Site web 93moove 1" class="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105">
+                    </div>
+                    <div class="p-8 md:p-16 flex flex-col justify-center">
+                        <div class="flex gap-2 mb-4">
+                            <span class="w-fit px-4 py-1 bg-purple-400/20 text-purple-400 rounded-full text-xs font-semibold tracking-wider">1er PROJET</span>
+                            <span class="w-fit px-4 py-1 bg-blue-400/20 text-blue-400 rounded-full text-xs font-semibold tracking-wider">EN BINÔME</span>
+                        </div>
+                        <h3 class="text-3xl md:text-4xl font-bold text-white mb-6">Site web 93moove - Première année BTS SIO</h3>
+                        <p class="text-gray-300 mb-6 text-lg">Plateforme web complète pour une association proposant des activités sportives et créatives. Le site permet aux utilisateurs de se connecter et de s'inscrire aux cours proposés.</p>
+                        <div class="mb-6">
+                            <h4 class="text-purple-400 font-semibold mb-2 text-lg">Rôle : Développeuse</h4>
+                            <p class="text-gray-400 mb-4">Développement de la page d'authentification et gestion de la base de données</p>
+                            <div class="flex flex-wrap gap-3">
+                                <span class="px-4 py-2 bg-gray-700/50 rounded-lg text-sm flex items-center gap-2"><i class="devicon-php-plain text-purple-400"></i> PHP</span>
+                                <span class="px-4 py-2 bg-gray-700/50 rounded-lg text-sm flex items-center gap-2"><i class="devicon-postgresql-plain text-blue-400"></i> PostgreSQL</span>
+                                <span class="px-4 py-2 bg-gray-700/50 rounded-lg text-sm">Laragon</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Projet 2: 93Moove v2 -->
+            <div class="bg-gray-800 rounded-3xl overflow-hidden shadow-xl border border-gray-700">
+                <div class="grid md:grid-cols-2 gap-0">
+                    <div class="h-80 md:h-[500px] overflow-hidden group bg-gray-900">
+                        <img src="Images/93moove2.png" alt="Site web 93moove 2" class="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105">
+                    </div>
+                    <div class="p-8 md:p-16 flex flex-col justify-center">
+                        <div class="flex gap-2 mb-4">
+                            <span class="w-fit px-4 py-1 bg-purple-400/20 text-purple-400 rounded-full text-xs font-semibold tracking-wider">2ème PROJET</span>
+                            <span class="w-fit px-4 py-1 bg-blue-400/20 text-blue-400 rounded-full text-xs font-semibold tracking-wider">EN ÉQUIPE (3)</span>
+                        </div>
+                        <h3 class="text-3xl md:text-4xl font-bold text-white mb-6">Site web 93moove - Deuxième année BTS SIO</h3>
+                        <p class="text-gray-300 mb-6 text-lg">Refonte complète du projet en stack moderne. Plateforme web pour une association d'activités sportives et créatives avec système d'inscription aux cours. Utilisation de la méthode Scrum.</p>
+                        <div class="mb-6">
+                            <h4 class="text-purple-400 font-semibold mb-2 text-lg">Rôle : Product Owner & Développeuse</h4>
+                            <p class="text-gray-400 mb-4">Gestion du backlog, mise en sprint des fonctionnalités utilisateurs, utilisation de Trello pour la gestion des missions et suivi du projet. Développement d'API REST et gestion de la base de données.</p>
+                            <div class="flex flex-wrap gap-3 mb-6">
+                                <span class="px-3 py-1 bg-gray-700 rounded-lg flex items-center gap-1"><i class="devicon-angularjs-plain text-red-600"></i> Angular</span>
+                                <span class="px-3 py-1 bg-gray-700 rounded-lg flex items-center gap-1"><i class="devicon-spring-plain text-green-500"></i> Spring</span>
+                                <span class="px-3 py-1 bg-gray-700 rounded-lg flex items-center gap-1"><i class="devicon-java-plain text-orange-500"></i> Java</span>
+                                <span class="px-3 py-1 bg-gray-700 rounded-lg flex items-center gap-1"><i class="devicon-typescript-plain text-blue-400"></i> TypeScript</span>
+                               <span class="px-3 py-1 bg-gray-700 rounded-lg flex items-center gap-1"><i class="devicon-supabase-plain text-blue-400"></i> Supabase</span>
+                               <span class="px-3 py-1 bg-gray-700 rounded-lg flex items-center gap-1"><i class="devicon-postgresql-plain text-blue-400"></i> PostgreSQL</span>
+                            </div>
+                        </div>
+                        <div class="flex flex-wrap gap-3">
+                            <a href="https://github.com/angelo1967817162/angular.git" target="_blank" class="px-6 py-2 bg-purple-400 text-gray-900 rounded-full font-bold text-sm hover:bg-purple-500 transition">
+                                <i class="devicon-github-original mr-1"></i> Code Frontend
+                            </a>
+                            <a href="https://github.com/angelo1967817162/93-MOOVE-2025.git" target="_blank" class="px-6 py-2 border border-purple-400 text-purple-400 rounded-full font-bold text-sm hover:bg-purple-400 hover:text-gray-900 transition">
+                                <i class="devicon-github-original mr-1"></i> Code Backend
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+             <!--Stage Images30 -->
+            <div class="bg-gray-800 rounded-3xl overflow-hidden shadow-xl border border-gray-700">
+                <div class="grid md:grid-cols-2 gap-0">
+                     <div class="h-80 md:h-[500px] overflow-hidden group bg-gray-900">
+                        <img src="Images/cineweb.png" alt="Site Cineweb Invest" class="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105">
+                    </div>
+                <div class="p-8 md:p-16 flex flex-col justify-center">
+                    <div class="flex gap-2 mb-4">
+                       <span class="w-fit px-4 py-1 bg-purple-400/20 text-purple-400 rounded-full text-xs font-semibold tracking-wider">STAGE PROFESSIONNEL</span>
+                       <span class="w-fit px-4 py-1 bg-orange-400/20 text-orange-400 rounded-full text-xs font-semibold tracking-wider">ENTREPRISE</span>
+                    </div>
+                <h3 class="text-3xl md:text-4xl font-bold text-white mb-6">Site web Cineweb Invest - Stage Images30</h3>
+                <p class="text-gray-300 mb-6 text-lg">Création d'un site web d'investissement pour Images30. Réalisation complète du projet : analyse du besoin, cahier des charges, maquettage sur Balsamiq et développement sur Google Sites.</p>
+                <div class="mb-6">
+                  <h4 class="text-purple-400 font-semibold mb-2 text-lg">Rôle : Développeuse Web - Stagiaire</h4>
+                  <p class="text-gray-400 mb-4">Première année BTS SIO - Stage de 5 semaines</p>
+                  <div class="flex flex-wrap gap-3">
+                    <span class="px-4 py-2 bg-gray-700/50 rounded-lg text-sm">Google Sites</span>
+                    <span class="px-4 py-2 bg-gray-700/50 rounded-lg text-sm">Balsamiq</span>
+                    <span class="px-4 py-2 bg-gray-700/50 rounded-lg text-sm">Cahier des charges</span>
+                    <span class="px-4 py-2 bg-gray-700/50 rounded-lg text-sm">Analyse fonctionnelle</span>
+                 </div>
+             </div>
+        </div>
+    </div>
+</div>
+
+            <!-- Projet 3: Jeu 2D -->
+            <div class="bg-gray-800 rounded-3xl overflow-hidden shadow-xl border border-gray-700">
+                <div class="grid md:grid-cols-2 gap-0">
+                    <div class="h-80 md:h-[500px] overflow-hidden group bg-gray-900">
+                        <img src="Images/2dgame.png" alt="Jeu 2D Godot" class="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105">
+                    </div>
+                    <div class="p-8 md:p-16 flex flex-col justify-center">
+                        <div class="flex gap-2 mb-4">
+                            <span class="w-fit px-4 py-1 bg-purple-400/20 text-purple-400 rounded-full text-xs font-semibold tracking-wider">3ème PROJET</span>
+                            <span class="w-fit px-4 py-1 bg-green-400/20 text-green-400 rounded-full text-xs font-semibold tracking-wider">SOLO</span>
+                        </div>
+                        <h3 class="text-3xl md:text-4xl font-bold text-white mb-6">Jeu 2D - Shooter Survival</h3>
+                        <p class="text-gray-300 mb-6 text-lg">Jeu de survie où le personnage doit éliminer des blobs verts en tirant pour survivre. Développé en suivant un tutoriel pour découvrir le développement de jeux vidéo avec Godot.</p>
+                        <div class="mb-8">
+                            <h4 class="text-blue-200 font-semibold mb-4">Technologies utilisées</h4>
+                            <div class="flex flex-wrap gap-3">
+                                <span class="px-4 py-2 bg-gray-700/50 rounded-lg text-sm flex items-center gap-2"><i class="devicon-godot-plain text-white"></i> Godot</span>
+                                <span class="px-4 py-2 bg-gray-700/50 rounded-lg text-sm flex items-center gap-2"><i class="devicon-csharp-plain text-purple-400"></i> C#</span>
+                            </div>
+                        </div>
+                        <a href="https://github.com/banu005/2dgame.git" target="_blank" class="w-fit px-10 py-3 bg-purple-400 text-gray-900 rounded-full font-bold text-sm hover:bg-purple-500 transition">
+                            <i class="devicon-github-original mr-1"></i> Voir le code
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Projet 4: Exercice YouTube -->
+            <div class="bg-gray-800 rounded-3xl overflow-hidden shadow-xl border border-gray-700">
+                <div class="grid md:grid-cols-2 gap-0">
+                    <div class="h-80 md:h-[500px] overflow-hidden group bg-gray-900">
+                        <img src="Images/expractice.png" alt="Exercice sur les cards" class="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105">               
+                    </div>
+                    <div class="p-8 md:p-16 flex flex-col justify-center">
+                        <div class="flex gap-2 mb-4">
+                            <span class="w-fit px-4 py-1 bg-purple-400/20 text-purple-400 rounded-full text-xs font-semibold tracking-wider">4ème PROJET</span>
+                            <span class="w-fit px-4 py-1 bg-green-400/20 text-green-400 rounded-full text-xs font-semibold tracking-wider">AUTO-FORMATION</span>
+                        </div>
+                        <h3 class="text-3xl md:text-4xl font-bold text-white mb-6">HTML CSS Course - SuperSimpleDev</h3>
+                        <p class="text-gray-300 mb-6 text-lg">Réplique de l'interface YouTube pour apprendre les bases du HTML et CSS. Formation complète avec cours théoriques, exemples pratiques et exercices pour maîtriser les fondamentaux du développement web.</p>
+                        <div class="mb-4">
+                            <h4 class="text-blue-200 font-semibold mb-4 text-lg">Technologies utilisées</h4>
+                            <div class="flex flex-wrap gap-3">
+                                <span class="px-4 py-2 bg-gray-700/50 rounded-lg text-sm flex items-center gap-2"><i class="devicon-html5-plain text-orange-500"></i> HTML5</span>
+                                <span class="px-4 py-2 bg-gray-700/50 rounded-lg text-sm flex items-center gap-2"><i class="devicon-css3-plain text-blue-500"></i> CSS3</span>
+                                <span class="px-4 py-2 bg-gray-700/50 rounded-lg text-sm flex items-center gap-2"><i class="devicon-vscode-plain text-blue-400"></i> VS Code</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+</div>
+
+        </div>
+    </main>
+
+    <footer class="bg-gradient-to-r from-blue-200 to-purple-300 text-purple-900 text-center py-10 mt-16">
+        <p class="font-bold text-lg">&copy; 2025 BALENDRAN Banumathey. Tous droits réservés.</p>
+        <div class="flex gap-6 justify-center mt-4">
+            <a href="https://github.com/banu005" class="text-purple-700 hover:text-purple-900 transition-colors font-medium">GitHub</a>
+            <a href="https://www.linkedin.com/in/banumathey-balendran" class="text-purple-700 hover:text-purple-900 transition-colors font-medium">LinkedIn</a>
+        </div>
+    </footer>
+
+</body>
+</html>
