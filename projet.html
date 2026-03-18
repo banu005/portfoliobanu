@@ -97,10 +97,42 @@
             <!-- Projet 2: 93Moove v2 -->
             <div class="bg-gray-800 rounded-3xl overflow-hidden shadow-xl border border-gray-700">
                 <div class="grid md:grid-cols-2 gap-0">
-                    <div class="h-80 md:h-[500px] overflow-hidden group bg-gray-900">
-                        <img src="Images/93moove2.png" alt="Site web 93moove 2"
-                            class="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105">
+
+                    <!-- Carrousel à gauche -->
+                    <div class="relative h-80 md:h-full bg-gray-900 overflow-hidden">
+
+                        <!-- Images -->
+                        <div id="carousel-p2" class="flex transition-transform duration-500 ease-in-out h-full">
+                            <div class="min-w-full h-80 md:h-full flex items-center justify-center">
+                                <img src="Images/93moove2.png" alt="Site web 93moove 2 - Image 1"
+                                    class="w-full h-full object-contain">
+                            </div>
+                            <div class="min-w-full h-80 md:h-full flex items-center justify-center">
+                                <img src="Images/93moove2login.png" alt="Site web 93moove 2 - Image 2"
+                                    class="w-full h-full object-contain">
+                            </div>
+                        </div>
+
+                        <!-- Bouton précédent -->
+                        <button onclick="moveCarousel('p2', -1)"
+                            class="absolute left-3 top-1/2 -translate-y-1/2 bg-purple-400/50 hover:bg-blue-300/50 text-white rounded-full w-10 h-10 flex items-center justify-center transition">
+                            &#8592;
+                        </button>
+
+                        <!-- Bouton suivant -->
+                        <button onclick="moveCarousel('p2', 1)"
+                            class="absolute right-3 top-1/2 -translate-y-1/2 bg-purple-400/50 hover:bg-blue-300/50 text-white rounded-full w-10 h-10 flex items-center justify-center transition">
+                            &#8594;
+                        </button>
+
+                        <!-- Points indicateurs -->
+                        <div class="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2">
+                            <span id="dot-p2-0" class="w-2.5 h-2.5 rounded-full bg-white cursor-pointer" onclick="goToSlide('p2', 0)"></span>
+                            <span id="dot-p2-1" class="w-2.5 h-2.5 rounded-full bg-white/40 cursor-pointer" onclick="goToSlide('p2', 1)"></span>
+                        </div>
                     </div>
+
+                    <!-- Texte à droite -->
                     <div class="p-8 md:p-16 flex flex-col justify-center">
                         <div class="flex gap-2 mb-4">
                             <span
@@ -110,8 +142,7 @@
                         </div>
                         <h3 class="text-3xl md:text-4xl font-bold text-white mb-6">Site web 93moove - Deuxième année BTS
                             SIO</h3>
-                        <p class="text-gray-300 mb-6 text-lg">Refonte complète du projet en stack moderne. Plateforme
-                            web pour une association d'activités sportives et créatives avec système d'inscription aux
+                        <p class="text-gray-300 mb-6 text-lg">Deuxième version du site 93moove, une plateforme web pour une association d'activités sportives et créatives avec système d'inscription aux
                             cours. Utilisation de la méthode Scrum.</p>
                         <div class="mb-6">
                             <h4 class="text-purple-400 font-semibold mb-2 text-lg">Rôle : Product Owner & Développeuse
@@ -152,7 +183,7 @@
                     </div>
                 </div>
             </div>
-
+                  
             <!--Stage Images30 -->
             <div class="bg-gray-800 rounded-3xl overflow-hidden shadow-xl border border-gray-700">
                 <div class="grid md:grid-cols-2 gap-0">
@@ -268,15 +299,15 @@
                         <!-- Images -->
                         <div id="carousel-snake" class="flex transition-transform duration-500 ease-in-out h-full">
                             <div class="min-w-full h-80 md:h-full flex items-center justify-center">
-                                <img src="Images/snakegameaccueil.png" alt="Site snake game"
+                                <img src="Images/jeusnakelogin.png" alt="Site snake game"
                                     class="w-full h-full object-contain">
                             </div>
                             <div class="min-w-full h-80 md:h-full flex items-center justify-center">
-                                <img src="Images/snakegamejeu.png" alt="Profil snake game"
+                                <img src="Images/jeusnakejouer.png" alt="Profil snake game"
                                     class="w-full h-full object-contain">
                             </div>
                             <div class="min-w-full h-80 md:h-full flex items-center justify-center">
-                                <img src="Images/snakegameover.png" alt="Score snake game"
+                                <img src="Images/jeusnakegameover.png" alt="Score snake game"
                                     class="w-full h-full object-contain">
                             </div>
                         </div>
