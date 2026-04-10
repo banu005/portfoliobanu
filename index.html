@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" data-theme="light">
 
 <head>
     <meta charset="UTF-8">
@@ -7,86 +7,72 @@
     <meta name="description"
         content="Portfolio de Banumathey BALENDRAN - Développeuse informatique en recherche de stage">
     <title>BALENDRAN Banumathey - Développeuse informatique</title>
-    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="style.css">
-    <!-- Devicons utilisé pour les icônes des langages, logiciels et frameworks -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 
-<body class="bg-black text-white">
+<body>
 
-    <!-- Header -->
-    <header class="fixed w-full top-0 z-50 bg-black backdrop-blur-sm border-b border-gray-800">
-        <div class="container mx-auto px-6 py-4">
-            <div class="flex justify-between items-center">
-                <h1 class="text-2xl font-bold gradient-text">Banumathey BALENDRAN</h1>
-                <nav>
-                    <ul class="flex gap-8 text-lg">
-                        <li><a href="index.html"
-                                class="text-purple-400 font-semibold border-b-2 border-purple-400 pb-1">Accueil</a></li>
-                        <li><a href="projet.html" class="text-gray-300 hover:text-purple-400 transition">Projets</a>
-                        </li>
-                        <li><a href="certification.html"
-                                class="text-gray-300 hover:text-purple-400 transition">Certifications</a></li>
-                        <li><a href="contact.html" class="text-gray-300 hover:text-blue-200 transition">Contact</a></li>
-                        <li><a href="Documents/CV_Banumathey_BALENDRAN_master.pdf" download
-                                class="text-purple-400 font-semibold button">CV</a></li>
-                    </ul>
-                </nav>
-            </div>
+    <header class="header">
+        <div class="container header-content">
+            <h1 class="header-logo title-gradient">Banumathey BALENDRAN</h1>
+            <nav class="header-nav">
+                <a href="index.html" class="active">Accueil</a>
+                <a href="projet.html">Projets</a>
+                <a href="certification.html">Certifications</a>
+                <a href="contact.html">Contact</a>
+                <a href="Documents/CV_Banumathey_BALENDRAN_master.pdf" download class="btn btn-outline active">CV</a>
+                <button id="theme-toggle" class="theme-toggle" aria-label="Changer de thème">
+                    <i class="fas fa-moon"></i>
+                    <span class="theme-label">Clair</span>
+                </button>
+            </nav>
+
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <main class="pt-20">
-        <div class="text-center bg-red-500 text-white">Ce site est actuellement en cours de construction</div>
-        <section class="min-h-screen flex items-center justify-center px-6 py-12">
-            <div class="container mx-auto max-w-6xl">
-                <div class="grid md:grid-cols-2 gap-12 items-center">
-                    <!-- Texte -->
-                    <div class="animate-fadeInUp">
-                        <p class="text-purple-400 text-lg mb-4">Bonjour, je suis</p>
-                        <h2 class="text-5xl md:text-6xl font-bold mb-6">
-                            Banumathey <span class="gradient-text">BALENDRAN</span>
-                        </h2>
-                        <p class="text-2xl text-purple-300 mb-6">Développeuse informatique</p>
-                        <p class="text-lg text-gray-400 mb-8 leading-relaxed">
-                            Actuellement en Licence Professionnelle Métiers de l'informatique : conception,
-                            développement et test de logiciels parcours chef de projet, développement, exploitation et
-                            sécurité au CNAM.
-                            Je suis à la recherche d'une alternance en informatique pour l'année 2026-2027 pour
-                            approfondir mes compétences techniques.
-                        </p>
-                        <div class="flex gap-4 flex-wrap">
-                            <a href="projet.html"
-                                class="bg-gradient-to-r from-purple-500 to-blue-500 text-white px-8 py-3 rounded-lg font-semibold hover:shadow-lg hover:shadow-purple-500/50 transition-all">
-                                Voir mes projets
-                            </a>
-                            <a href="contact.html"
-                                class="bg-gray-800 text-white px-8 py-3 rounded-lg font-semibold border border-gray-700 hover:bg-gray-700 transition-all">
-                                Me contacter
-                            </a>
-                        </div>
-                    </div>
+    <main>
+        <div class="alert">Ce site est actuellement en cours de construction</div>
 
-                    <!-- Image / Illustration -->
-                    <div class="animate-fadeInUp delay-200">
-                        <div
-                            class="bg-gradient-to-br from-purple-500/20 to-blue-500/20 rounded-2xl p-8 border border-gray-700">
-                            <div class="text-center">
-                                <i class="fas fa-laptop-code text-9xl text-purple-400 mb-6 animate-float"></i>
-                                <div class="flex gap-4 justify-center mt-6">
-                                    <a href="https://github.com/banu005" target="_blank"
-                                        class="text-gray-400 hover:text-purple-400 transition-colors">
-                                        <i class="devicon-github-original text-4xl"></i>
-                                    </a>
-                                    <a href="https://www.linkedin.com/in/banumathey-balendran" target="_blank"
-                                        class="text-gray-400 hover:text-blue-400 transition-colors">
-                                        <i class="fa-brands fa-linkedin text-4xl"></i>
-                                    </a>
-                                </div>
-                            </div>
+        <!-- Hero Section -->
+        <section class="hero section">
+            <div class="container hero-grid">
+                <div class="animate-fadeInUp">
+                    <p class="hero-badge">Bonjour, je suis</p>
+                    <h2 class="title-xl">Banumathey <span class="title-gradient">BALENDRAN</span></h2>
+                    <p class="hero-subtitle">Développeuse informatique</p>
+                    <p class="hero-description">
+                        Actuellement en Licence Professionnelle Métiers de l'informatique : conception,
+                        développement et test de logiciels parcours chef de projet, développement, exploitation et
+                        sécurité au CNAM.
+                        Je suis à la recherche d'une alternance en informatique pour l'année 2026-2027 pour
+                        approfondir mes compétences techniques.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="projet.html" class="btn btn-primary">
+                            <i class="fas fa-folder-open"></i>
+                            Voir mes projets
+                        </a>
+                        <a href="contact.html" class="btn btn-secondary">
+                            <i class="fas fa-envelope"></i>
+                            Me contacter
+                        </a>
+                    </div>
+                </div>
+
+                <div class="hero-image animate-fadeInUp delay-200">
+                    <div class="hero-card">
+                        <i class="fas fa-laptop-code hero-icon animate-float"></i>
+                        <div class="hero-social">
+                            <a href="https://github.com/banu005" target="_blank" aria-label="GitHub">
+                                <i class="devicon-github-original"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/banumathey-balendran" target="_blank"
+                                aria-label="LinkedIn">
+                                <i class="fa-brands fa-linkedin"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -94,60 +80,53 @@
         </section>
 
         <!-- Section Parcours -->
-        <section class="py-20 px-6 bg-gray-800/50">
-            <div class="container mx-auto max-w-6xl">
-                <h3 class="text-4xl font-bold text-center mb-16 text-white">
-                    Mon <span class="gradient-text">parcours</span>
-                </h3>
-                <div class="grid md:grid-cols-2 gap-8">
+        <section class="section section-alt">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="title-lg">Mon <span class="text-gradient">parcours</span></h2>
+                </div>
+                <div class="grid grid-2">
 
                     <!-- Formations -->
                     <div>
-                        <div class="flex items-center gap-3 mb-6">
-                            <div class="text-3xl">🎓</div>
-                            <h4 class="text-2xl font-bold text-purple-300">Formations</h4>
+                        <div class="section-title-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                            <h3 class="title-md text-primary">Formations</h3>
                         </div>
-                        <div class="space-y-6">
-                            <div
-                                class="bg-gray-800 p-6 rounded-xl shadow-md hover:shadow-xl transition card-hover border-l-4 border-purple-300">
-                                <h5 class="font-bold text-purple-300 mb-2">Licence professionnelle Métiers de
-                                    l'informatique : conception, développement et test de logiciels</h5>
-                                <p class="text-sm text-blue-200">CNAM, En cours</p>
-                                <p class="text-sm text-gray-300 mt-2">Parcours Chef de projet dev, sécurité et
-                                    exploitation</p>
+                        <div class="grid grid-1" style="gap: 1.5rem;">
+                            <div class="card card-accent">
+                                <h4 class="experience-title">Licence professionnelle Métiers de l'informatique :
+                                    conception, développement et test de logiciels</h4>
+                                <p class="experience-company">CNAM, En cours</p>
+                                <p class="text-muted">Parcours Chef de projet dev, sécurité et exploitation</p>
                             </div>
 
-                            <div
-                                class="bg-gray-800 p-6 rounded-xl shadow-md hover:shadow-xl transition card-hover border-l-4 border-purple-400">
-                                <h5 class="font-bold text-purple-300 mb-2">BTS SIO option SLAM (Solutions Logiciels et
-                                    Applications Métiers)</h5>
-                                <p class="text-sm text-blue-200">Lycée Auguste Blanqui, 2023-2025</p>
-                                <div class="space-y-6 flex gap-2 mt-2">
-                                    <ul class="text-sm text-gray-300 space-y-1">
-                                        <li>• Programmation API REST (java, intellij, spring, angular, kotlin,
-                                            postgresQL)</li>
-                                        <li>• Programmation web (HTML, CSS, PHP, Laragon, PhpMyAdmin, vscode)</li>
-                                        <li>• Réseau, système (Packet Tracer, virtual machine, ubuntu/windows)</li>
-                                        <li>• Cybersécurité (Injection SQL, Owasp journalisation, hachage, RGPD)</li>
-                                        <li>• Projet (Trello,Slack, GitHub, Teams)</li>
-                                        <li class="text-blue-400">• Auto-formations sur Cisco Netacad (<a
-                                                href="certification.html" class="hover:underline">English for IT1</a>,
-                                            CyberOps Associate)</li>
-                                    </ul>
-                                </div>
+                            <div class="card card-accent" style="border-color: var(--secondary);">
+                                <h4 class="experience-title">BTS SIO option SLAM (Solutions Logiciels et Applications
+                                    Métiers)</h4>
+                                <p class="experience-company">Lycée Auguste Blanqui, 2023-2025</p>
+                                <ul class="experience-list">
+                                    <li>Programmation API REST (Java, IntelliJ, Spring, Angular, Kotlin, PostgreSQL)
+                                    </li>
+                                    <li>Programmation web (HTML, CSS, PHP, Laragon, PhpMyAdmin, VSCode)</li>
+                                    <li>Réseau, système (Packet Tracer, Virtual Machine, Ubuntu/Windows)</li>
+                                    <li>Cybersécurité (Injection SQL, Owasp, journalisation, hachage, RGPD)</li>
+                                    <li>Projet (Trello, Slack, GitHub, Teams)</li>
+                                    <li class="text-blue-200">Auto-formations sur Cisco Netacad (<a
+                                            href="certification.html" class="link-primary">English for IT1</a>, CyberOps
+                                        Associate)</li>
+                                </ul>
                             </div>
 
-
-                            <div
-                                class="bg-gray-800 p-6 rounded-xl shadow-md hover:shadow-xl transition card-hover border-l-4 border-purple-300">
-                                <h5 class="font-bold text-purple-300 mb-2">BAC ST2S (Sciences et Technologies de la
-                                    Santé et du Social)</h5>
-                                <p class="text-sm text-blue-200">Lycée Jacques Monod, 2021-2023</p>
-                                <div class="flex gap-2 mt-2">
-                                    <a href="certification.html"
-                                        class="text-yellow-300 text-sm hover:underline">Certification Pix</a>
-                                    <a href="certification.html"
-                                        class="text-green-300 text-sm hover:underline">Certification Projet Voltaire</a>
+                            <div class="card card-accent">
+                                <h4 class="experience-title">BAC ST2S (Sciences et Technologies de la Santé et du
+                                    Social)</h4>
+                                <p class="experience-company">Lycée Jacques Monod, 2021-2023</p>
+                                <div class="flex gap-4 mt-4">
+                                    <a href="certification.html" class="badge badge-warning">Certification Pix</a>
+                                    <a href="certification.html" class="badge"
+                                        style="background-color: rgba(34, 197, 94, 0.2); color: #22c55e;">Certification
+                                        Projet Voltaire</a>
                                 </div>
                             </div>
                         </div>
@@ -155,49 +134,54 @@
 
                     <!-- Expériences -->
                     <div>
-                        <div class="flex items-center gap-3 mb-6">
-                            <div class="text-3xl">💼</div>
-                            <h4 class="text-2xl font-bold text-blue-300">Expériences</h4>
+                        <div class="section-title-icon">
+                            <i class="fas fa-briefcase"></i>
+                            <h3 class="title-md text-primary">Expériences</h3>
                         </div>
-
-                        <div class="space-y-6">
-                            <div
-                                class="bg-gray-800 p-6 rounded-xl shadow-md hover:shadow-xl transition card-hover border-l-4 border-blue-400">
-                                <h5 class="font-bold text-blue-300 mb-2">Stage Transformation Numérique</h5>
-                                <p class="text-sm text-purple-200 mb-3">Conseil Régional Île-de-France</p>
-                                <ul class="text-sm text-gray-300 space-y-1">
-                                    <li>• Qualification des avis, utilisation PowerBI</li>
-                                    <li>• Formation RGPD</li>
-                                    <li>• Tester une IA qui répond aux aides régionales</li>
-                                    <li>• Faire une recherche sur le Numérique Responsable et présenter les idées</li>
-                                    <li>• Accessibilité numérique</li>
-                                    <li>• Concevoir un formulaire de la bourse sanitaire et social sur Microsoft Form
-                                    </li>
-                                    <li>• Atelier Design</li>
+                        <div class="grid grid-1" style="gap: 1.5rem;">
+                            <div class="card">
+                                <h4 class="experience-title">Stage Développeuse Full Stack</h4>
+                                <p class="experience-company">Sixième Etoile, En cours</p>
+                                <ul class="experience-list">
+                                    <li>Création d'une application full stack en groupe</li>
+                                    <li>Développement frontend et backend</li>
+                                    <li>Collaboration en équipe sur un projet complet</li>
                                 </ul>
                             </div>
 
-
-                            <div
-                                class="bg-gray-800 p-6 rounded-xl shadow-md hover:shadow-xl transition card-hover border-l-4 border-blue-300">
-                                <h5 class="font-bold text-blue-300 mb-2">Stage Développement Web</h5>
-                                <p class="text-sm text-purple-200 mb-3">Images30</p>
-                                <ul class="text-sm text-gray-300 space-y-1">
-                                    <li>• Analyse de sites d'investissement et Images30</li>
-                                    <li>• Cahiers des charges des sites d'investissement et Images30</li>
-                                    <li>• Création de maquette sur Balsamiq</li>
-                                    <li>• Création du site web Cineweb Invest sur Google sites</li>
-                                    <li>• Fiche technique des outils utilisés</li>
+                            <div class="card">
+                                <h4 class="experience-title">Stage Transformation Numérique</h4>
+                                <p class="experience-company">Conseil Régional Île-de-France, janvier 2025- février 2025
+                                </p>
+                                <ul class="experience-list">
+                                    <li>Qualification des avis, utilisation PowerBI</li>
+                                    <li>Formation RGPD</li>
+                                    <li>Tester une IA qui répond aux aides régionales</li>
+                                    <li>Recherche sur le Numérique Responsable et présentation des idées</li>
+                                    <li>Accessibilité numérique</li>
+                                    <li>Concevoir un formulaire de la bourse sanitaire et social sur Microsoft Form</li>
+                                    <li>Atelier Design</li>
                                 </ul>
                             </div>
 
-                            <div
-                                class="bg-gray-800 p-6 rounded-xl shadow-md hover:shadow-xl transition card-hover border-l-4 border-blue-400">
-                                <h5 class="font-bold text-blue-300 mb-2">Stage Bibliothécaire</h5>
-                                <p class="text-sm text-purple-200 mb-3">Bibliothèque Valeyre</p>
-                                <ul class="text-sm text-gray-300 space-y-1">
-                                    <li>• Accueil et renseignement du public</li>
-                                    <li>• Numérisation de documents, scanner les journaux</li>
+                            <div class="card">
+                                <h4 class="experience-title">Stage Développement Web</h4>
+                                <p class="experience-company">Images30, mai 2024- juin 2024</p>
+                                <ul class="experience-list">
+                                    <li>Analyse de sites d'investissement et Images30</li>
+                                    <li>Cahiers des charges des sites d'investissement et Images30</li>
+                                    <li>Création de maquette sur Balsamiq</li>
+                                    <li>Création du site web Cineweb Invest sur Google Sites</li>
+                                    <li>Fiche technique des outils utilisés</li>
+                                </ul>
+                            </div>
+
+                            <div class="card">
+                                <h4 class="experience-title">Stage Bibliothécaire</h4>
+                                <p class="experience-company">Bibliothèque Valeyre, 2020</p>
+                                <ul class="experience-list">
+                                    <li>Accueil et renseignement du public</li>
+                                    <li>Numérisation de documents, scanner les journaux</li>
                                 </ul>
                             </div>
                         </div>
@@ -207,93 +191,93 @@
         </section>
 
         <!-- Section Compétences -->
-        <section id="competences" class="py-20 px-6">
-            <div class="container mx-auto max-w-6xl">
-                <h3 class="text-4xl font-bold text-center mb-16 animate-fadeInUp">
-                    Mes <span class="gradient-text">Compétences</span>
-                </h3>
+        <section id="competences" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="title-lg animate-fadeInUp">Mes <span class="text-gradient">Compétences</span></h2>
+                </div>
 
                 <!-- Langages -->
                 <div class="mb-12 animate-fadeInUp delay-200">
-                    <h4 class="text-2xl font-bold text-purple-400 mb-6 text-center">Langages</h4>
-                    <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
-                        <div class="bg-gray-800 p-6 rounded-lg text-center card-hover border border-gray-700">
-                            <i class="devicon-c-plain text-6xl text-orange-500 mb-3"></i>
-                            <p class="text-gray-300 font-semibold">C</p>
+                    <h3 class="skill-section-title text-primary">Langages</h3>
+                    <div class="grid grid-6">
+                        <div class="skill-card card-hover">
+                            <i class="devicon-c-plain skill-icon" style="color: #f97316;"></i>
+                            <p class="skill-name">C</p>
                         </div>
-                        <div class="bg-gray-800 p-6 rounded-lg text-center card-hover border border-gray-700">
-                            <i class="devicon-java-plain text-6xl text-orange-500 mb-3"></i>
-                            <p class="text-gray-300 font-semibold">Java</p>
+                        <div class="skill-card card-hover">
+                            <i class="devicon-java-plain skill-icon" style="color: #f97316;"></i>
+                            <p class="skill-name">Java</p>
                         </div>
-                        <div class="bg-gray-800 p-6 rounded-lg text-center card-hover border border-gray-700">
-                            <i class="devicon-python-plain text-6xl text-orange-500 mb-3"></i>
-                            <p class="text-gray-300 font-semibold">Python</p>
+                        <div class="skill-card card-hover">
+                            <i class="devicon-python-plain skill-icon" style="color: #f97316;"></i>
+                            <p class="skill-name">Python</p>
                         </div>
-                        <div class="bg-gray-800 p-6 rounded-lg text-center card-hover border border-gray-700">
-                            <i class="devicon-html5-plain text-6xl text-orange-600 mb-3"></i>
-                            <p class="text-gray-300 font-semibold">HTML5</p>
+                        <div class="skill-card card-hover">
+                            <i class="devicon-html5-plain skill-icon" style="color: #ea580c;"></i>
+                            <p class="skill-name">HTML5</p>
                         </div>
-                        <div class="bg-gray-800 p-6 rounded-lg text-center card-hover border border-gray-700">
-                            <i class="devicon-css3-plain text-6xl text-blue-500 mb-3"></i>
-                            <p class="text-gray-300 font-semibold">CSS3</p>
+                        <div class="skill-card card-hover">
+                            <i class="devicon-css3-plain skill-icon" style="color: #3b82f6;"></i>
+                            <p class="skill-name">CSS3</p>
                         </div>
-                        <div class="bg-gray-800 p-6 rounded-lg text-center card-hover border border-gray-700">
-                            <i class="devicon-typescript-plain text-6xl text-blue-600 mb-3"></i>
-                            <p class="text-gray-300 font-semibold">TypeScript</p>
+                        <div class="skill-card card-hover">
+                            <i class="devicon-typescript-plain skill-icon" style="color: #2563eb;"></i>
+                            <p class="skill-name">TypeScript</p>
                         </div>
-                        <div class="bg-gray-800 p-6 rounded-lg text-center card-hover border border-gray-700">
-                            <i class="devicon-php-plain text-6xl text-purple-600 mb-3"></i>
-                            <p class="text-gray-300 font-semibold">PHP</p>
+                        <div class="skill-card card-hover">
+                            <i class="devicon-php-plain skill-icon" style="color: #7c3aed;"></i>
+                            <p class="skill-name">PHP</p>
                         </div>
-                        <div class="bg-gray-800 p-6 rounded-lg text-center card-hover border border-gray-700">
-                            <i class="devicon-mysql-plain text-6xl text-blue-400 mb-3"></i>
-                            <p class="text-gray-300 font-semibold">SQL</p>
+                        <div class="skill-card card-hover">
+                            <i class="devicon-mysql-plain skill-icon" style="color: #60a5fa;"></i>
+                            <p class="skill-name">SQL</p>
                         </div>
                     </div>
                 </div>
 
                 <!-- Frameworks & Outils -->
                 <div class="mb-12 animate-fadeInUp delay-400">
-                    <h4 class="text-2xl font-bold text-blue-400 mb-6 text-center">Frameworks & Outils</h4>
-                    <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-                        <div class="bg-gray-800 p-6 rounded-lg text-center card-hover border border-gray-700">
-                            <i class="devicon-angularjs-plain text-6xl text-red-600 mb-3"></i>
-                            <p class="text-gray-300 font-semibold">Angular</p>
+                    <h3 class="skill-section-title" style="color: var(--primary-light);">Frameworks & Outils</h3>
+                    <div class="grid grid-4">
+                        <div class="skill-card card-hover">
+                            <i class="devicon-angularjs-plain skill-icon" style="color: #dc2626;"></i>
+                            <p class="skill-name">Angular</p>
                         </div>
-                        <div class="bg-gray-800 p-6 rounded-lg text-center card-hover border border-gray-700">
-                            <i class="devicon-spring-plain text-6xl text-green-500 mb-3"></i>
-                            <p class="text-gray-300 font-semibold">Spring</p>
+                        <div class="skill-card card-hover">
+                            <i class="devicon-spring-plain skill-icon" style="color: #22c55e;"></i>
+                            <p class="skill-name">Spring</p>
                         </div>
-                        <div class="bg-gray-800 p-6 rounded-lg text-center card-hover border border-gray-700">
-                            <i class="devicon-materialui-plain text-6xl text-blue-400 mb-3"></i>
-                            <p class="text-gray-300 font-semibold">Materialize CSS</p>
+                        <div class="skill-card card-hover">
+                            <i class="devicon-materialui-plain skill-icon" style="color: #60a5fa;"></i>
+                            <p class="skill-name">Materialize CSS</p>
                         </div>
-                        <div class="bg-gray-800 p-6 rounded-lg text-center card-hover border border-gray-700">
-                            <i class="devicon-tailwindcss-plain text-6xl text-cyan-400 mb-3"></i>
-                            <p class="text-gray-300 font-semibold">Tailwind CSS</p>
+                        <div class="skill-card card-hover">
+                            <i class="devicon-tailwindcss-plain skill-icon" style="color: #22d3ee;"></i>
+                            <p class="skill-name">Tailwind CSS</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Outils de développement -->
+                <!-- Environnement de développement -->
                 <div class="animate-fadeInUp delay-600">
-                    <h4 class="text-2xl font-bold text-purple-400 mb-6 text-center">Environnement de développement</h4>
-                    <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-                        <div class="bg-gray-800 p-6 rounded-lg text-center card-hover border border-gray-700">
-                            <i class="devicon-intellij-plain text-6xl mb-3"></i>
-                            <p class="text-gray-300 font-semibold">IntelliJ</p>
+                    <h3 class="skill-section-title text-primary">Environnement de développement</h3>
+                    <div class="grid grid-4">
+                        <div class="skill-card card-hover">
+                            <i class="devicon-intellij-plain skill-icon"></i>
+                            <p class="skill-name">IntelliJ</p>
                         </div>
-                        <div class="bg-gray-800 p-6 rounded-lg text-center card-hover border border-gray-700">
-                            <i class="devicon-vscode-plain text-6xl text-blue-500 mb-3"></i>
-                            <p class="text-gray-300 font-semibold">VS Code</p>
+                        <div class="skill-card card-hover">
+                            <i class="devicon-vscode-plain skill-icon" style="color: #3b82f6;"></i>
+                            <p class="skill-name">VS Code</p>
                         </div>
-                        <div class="bg-gray-800 p-6 rounded-lg text-center card-hover border border-gray-700">
-                            <i class="devicon-git-plain text-6xl text-orange-600 mb-3"></i>
-                            <p class="text-gray-300 font-semibold">Git/GitHub</p>
+                        <div class="skill-card card-hover">
+                            <i class="devicon-git-plain skill-icon" style="color: #f97316;"></i>
+                            <p class="skill-name">Git/GitHub</p>
                         </div>
-                        <div class="bg-gray-800 p-6 rounded-lg text-center card-hover border border-gray-700">
-                            <i class="devicon-linux-plain text-6xl mb-3"></i>
-                            <p class="text-gray-300 font-semibold">Linux</p>
+                        <div class="skill-card card-hover">
+                            <i class="devicon-linux-plain skill-icon"></i>
+                            <p class="skill-name">Linux</p>
                         </div>
                     </div>
                 </div>
@@ -301,72 +285,72 @@
         </section>
 
         <!-- Section Domaines d'expertise -->
-        <section class="py-20 px-6 bg-gray-900">
-            <div class="container mx-auto max-w-6xl">
-                <h3 class="text-4xl font-bold text-center mb-16 text-white">
-                    Domaines d'<span class="gradient-text">expertise</span>
-                </h3>
+        <section class="section section-alt">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="title-lg">Domaines d'<span class="text-gradient">expertise</span></h2>
+                </div>
 
-                <div class="grid md:grid-cols-3 gap-8">
-                    <div
-                        class="text-center p-8 bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl transition card-hover border border-gray-700">
-                        <div class="text-5xl mb-4">🚀</div>
-                        <h4 class="text-xl font-bold text-purple-300 mb-3">Développement Web</h4>
-                        <p class="text-gray-400">API REST, développement full-stack avec Java Spring, Angular et
-                            PostgreSQL</p>
+                <div class="grid grid-3">
+                    <div class="card text-center card-hover" style="padding: 2rem;">
+                        <i class="fas fa-code card-icon" style="font-size: 3rem; color: var(--primary);"></i>
+                        <h3 class="title-md text-primary mb-4">Développement Web</h3>
+                        <p class="text-muted">API REST, développement full-stack avec Java Spring, Angular et PostgreSQL
+                        </p>
                     </div>
 
-                    <div
-                        class="text-center p-8 bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl transition card-hover border border-gray-700">
-                        <div class="text-5xl mb-4">🌐</div>
-                        <h4 class="text-xl font-bold text-blue-200 mb-3">Réseau, système</h4>
-                        <p class="text-gray-400">TCP/IP, protocoles réseau, gestion des processus</p>
+                    <div class="card text-center card-hover" style="padding: 2rem;">
+                        <i class="fas fa-network-wired card-icon"
+                            style="font-size: 3rem; color: var(--primary-light);"></i>
+                        <h3 class="title-md" style="color: var(--primary-light); margin-bottom: 1rem;">Réseau, système
+                        </h3>
+                        <p class="text-muted">TCP/IP, protocoles réseau, gestion des processus</p>
                     </div>
 
-                    <div
-                        class="text-center p-8 bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl transition card-hover border border-gray-700">
-                        <div class="text-5xl mb-4">🔒</div>
-                        <h4 class="text-xl font-bold text-green-200 mb-3">Cybersécurité</h4>
-                        <p class="text-gray-400">OWASP, injection SQL, hachage, RGPD et bonnes pratiques de sécurité</p>
+                    <div class="card text-center card-hover" style="padding: 2rem;">
+                        <i class="fas fa-shield-alt card-icon" style="font-size: 3rem; color: #4ade80;"></i>
+                        <h3 class="title-md" style="color: #4ade80; margin-bottom: 1rem;">Cybersécurité</h3>
+                        <p class="text-muted">OWASP, injection SQL, hachage, RGPD et bonnes pratiques de sécurité</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Call to Action -->
-        <section class="py-20 px-6 bg-gradient-to-r from-purple-900/30 to-blue-900/30">
-            <div class="container mx-auto max-w-4xl text-center animate-fadeInUp">
-                <h3 class="text-4xl font-bold mb-6">
-                    Vous pouvez me contacter ^^
-                </h3>
-                <p class="text-xl text-gray-300 mb-8">
-                    Je cherche une alternance en développement ou réseaux systèmes informatiques. N'hésitez pas à me
-                    contacter !
-                </p>
-                <div class="flex gap-4 justify-center flex-wrap">
-                    <a href="contact.html"
-                        class="bg-gradient-to-r from-purple-500 to-blue-500 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:shadow-lg hover:shadow-purple-500/50 transition-all">
-                        <i class="fas fa-envelope mr-2"></i>Me contacter
-                    </a>
-                    <a href="Documents/CV_Banumathey_BALENDRAN_master.pdf" download
-                        class="bg-gray-800 text-white px-8 py-4 rounded-lg font-semibold text-lg border border-gray-700 hover:bg-gray-700 transition-all">
-                        <i class="fas fa-download mr-2"></i>Télécharger mon CV
-                    </a>
+        <section class="section" style="background-color: var(--bg-primary);">
+            <div class="container text-center">
+                <div class="animate-fadeInUp">
+                    <h2 class="title-lg mb-6">Vous pouvez me contacter ^^</h2>
+                    <p class="text-lg text-muted mb-8" style="max-width: 600px; margin-left: auto; margin-right: auto;">
+                        Je cherche une alternance en développement ou réseaux systèmes informatiques. N'hésitez pas à me
+                        contacter !
+                    </p>
+                    <div class="hero-buttons justify-center">
+                        <a href="contact.html" class="btn btn-primary">
+                            <i class="fas fa-envelope"></i>
+                            Me contacter
+                        </a>
+                        <a href="Documents/CV_Banumathey_BALENDRAN_master.pdf" download class="btn btn-secondary">
+                            <i class="fas fa-download"></i>
+                            Télécharger mon CV
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- Footer -->
-    <footer class="bg-gradient-to-r from-blue-200 to-purple-300 text-purple-900 text-center py-8">
-        <p class="font-semibold">&copy; 2025 BALENDRAN Banumathey. Tous droits réservés.</p>
-        <div class="flex gap-6 justify-center mt-4">
-            <a href="https://github.com/banu005"
-                class="text-purple-700 hover:text-purple-900 transition-colors font-medium">GitHub</a>
-            <a href="https://www.linkedin.com/in/banumathey-balendran"
-                class="text-purple-700 hover:text-purple-900 transition-colors font-medium">LinkedIn</a>
+    <footer class="footer">
+        <p>&copy; 2025 BALENDRAN Banumathey. Tous droits réservés.</p>
+        <div class="footer-links">
+            <a href="https://github.com/banu005">GitHub</a>
+            <a href="https://www.linkedin.com/in/banumathey-balendran">LinkedIn</a>
         </div>
     </footer>
+
+
 </body>
+
+<script src="script.js"></script>
 
 </html>

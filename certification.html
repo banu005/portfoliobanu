@@ -1,100 +1,93 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" data-theme="light">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BALENDRAN Banumathey - Certifications</title>
-    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 
-<body class="bg-gray-900 text-gray-100">
+<body>
 
-    <!-- Header -->
-    <header class="fixed w-full top-0 z-50 bg-gray-900/90 backdrop-blur-sm border-b border-gray-800">
-        <div class="container mx-auto px-6 py-4">
-            <div class="flex justify-between items-center">
-                <h1 class="text-2xl font-bold gradient-text">Banumathey BALENDRAN</h1>
-                <nav>
-                    <ul class="flex gap-8 text-lg">
-                        <li><a href="index.html" class="text-gray-300 hover:text-purple-400 transition">Accueil</a></li>
-                        <li><a href="projet.html" class="text-gray-300 hover:text-purple-400 transition">Projets</a>
-                        </li>
-                        <li><a href="certification.html"
-                                class="text-purple-400 font-semibold border-b-2 border-purple-400 pb-1">Certifications</a>
-                        </li>
-                        <li><a href="contact.html" class="text-gray-300 hover:text-blue-200 transition">Contact</a></li>
-                        <li><a href="Documents/CV_Banumathey_BALENDRAN_master.pdf" download
-                                class="text-purple-400 font-semibold button"> CV</a></li>
-                    </ul>
-                </nav>
-            </div>
+    <header class="header">
+        <div class="container header-content">
+            <h1 class="header-logo title-gradient">Banumathey BALENDRAN</h1>
+            <nav class="header-nav">
+                <a href="index.html">Accueil</a>
+                <a href="projet.html">Projets</a>
+                <a href="certification.html" class="active">Certifications</a>
+                <a href="contact.html">Contact</a>
+                <a href="Documents/CV_Banumathey_BALENDRAN_master.pdf" download class="btn btn-outline">CV</a>
+                <button id="theme-toggle" class="theme-toggle" aria-label="Changer de thème">
+                    <i class="fas fa-moon"></i>
+                    <span class="theme-label">Clair</span>
+                </button>
+            </nav>
+            
         </div>
     </header>
 
+    <main class="section mt-20">
+        <div class="container" style="max-width: 900px;">
+            <div class="section-header">
+                <h1 class="title-lg">Mes <span class="text-gradient">Certifications</span></h1>
+            </div>
 
-    <main class="container mx-auto px-6 py-12 max-w-6xl mt-20">
+            <!-- Certification Pix -->
+            <article class="cert-card">
+                <h2 class="cert-title">Certification Pix</h2>
+                <p class="cert-description">
+                    C'est un test adaptatif sur les compétences numériques.
+                </p>
+                <iframe src="Documents/Certification-Pix.pdf" class="cert-iframe"></iframe>
+            </article>
 
-        <h3 class="text-4xl font-bold text-center mb-16 text-white">
-            Mes <span class="gradient-text">Certifications</span>
-        </h3>
+            <!-- Certification English for IT -->
+            <article class="cert-card">
+                <h2 class="cert-title">Certification English for IT</h2>
+                <p class="cert-description">
+                    Cette certification atteste de mes compétences en anglais pour l'informatique. J'ai suivi une formation approfondie et c'était en anglais. 
+                    J'ai fait un examen et j'ai réussi à obtenir un score de 90% pour valider cette certification.
+                </p>
+                <iframe src="Documents/EnglishforIT1-certification.pdf" class="cert-iframe"></iframe>
+            </article>
 
-        <!-- Certification Pix -->
-        <div class="bg-gray-700 p-6 rounded-lg shadow-md hover:shadow-xl hover:shadow-gray-800/50 transition mb-8">
-            <h5 class="text-xl font-semibold text-purple-300 mb-3">Certification Pix</h5>
-            <p class="text-left text-gray-200 leading-relaxed mb-4">
-                C'est un test adaptatif sur les compétences numériques.
-            </p>
-            <iframe src="Documents/Certification-Pix.pdf" class="w-full h-screen rounded-lg shadow-lg"></iframe>
+            <!-- Certification Projet Voltaire -->
+            <article class="cert-card">
+                <h2 class="cert-title">Certification Projet Voltaire</h2>
+                <p class="cert-description">
+                    Cette certification permet de tester notre niveau en orthographe, on doit passer un examen pour voir son niveau d'orthographe.
+                    J'ai suivi plusieurs cours et exercices pour améliorer mes compétences en orthographe, et j'ai réussi à obtenir un score de 588 points, ce qui correspond à un niveau professionnel.
+                </p>
+                <iframe src="Documents/Certification-ProjetVoltaire.pdf" class="cert-iframe"></iframe>
+            </article>
+
+            <!-- Certification Tamoul -->
+            <article class="cert-card">
+                <h2 class="cert-title">Certification Tamoul</h2>
+                <p class="cert-description">
+                    Cette certification permet de valider nos compétences linguistiques en tamoul, on doit passer un examen à la fin de l'année en tamoul. 
+                    J'étais en 6ème année de formation.
+                    Et auparavant j'ai déjà fait 2 années sans certifications et 8 en tout pour chaque année.
+                </p>
+                <iframe src="Documents/certificat_tamoul_BALENDRAN_Banumathey.pdf" class="cert-iframe"></iframe>
+            </article>
         </div>
-
-        <!-- Certification English for IT -->
-        <div class="bg-gray-700 p-6 rounded-lg shadow-md hover:shadow-xl hover:shadow-gray-800/50 transition mb-8">
-            <h5 class="text-xl font-semibold text-purple-300 mb-3">Certification English for IT</h5>
-            <p class="text-left text-gray-200 leading-relaxed mb-4">
-                Cette certification atteste de mes compétences en anglais pour l'informatique. J'ai suivi une formation approfondie et c'était en anglais. 
-                J'ai fait un examen et j'ai réussi à obtenir un score de 90% pour valider cette certification.
-            </p>
-            <iframe src="Documents/EnglishforIT1-certification.pdf"
-                class="w-full h-screen rounded-lg shadow-lg"></iframe>
-        </div>
-
-        <!-- Certification Projet Voltaire -->
-        <div class="bg-gray-700 p-6 rounded-lg shadow-md hover:shadow-xl hover:shadow-gray-800/50 transition mb-8">
-            <h5 class="text-xl font-semibold text-purple-300 mb-3">Certification Projet Voltaire</h5>
-            <p class="text-left text-gray-200 leading-relaxed mb-4">
-                Cette certification permet de tester notre niveau en orthographe, on doit passer un examen pour voir son niveau d'orthographe.
-                J'ai suivi plusieurs cours et exercices pour améliorer mes compétences en orthographe, et j'ai réussi à obtenir un score de 588 points, ce qui correspond à un niveau professionnel.
-            </p>
-            <iframe src="Documents/Certification-ProjetVoltaire.pdf"
-                class="w-full h-screen rounded-lg shadow-lg"></iframe>
-        </div>
-
-        <!-- Certification Tamoul -->
-        <div class="bg-gray-700 p-6 rounded-lg shadow-md hover:shadow-xl hover:shadow-gray-800/50 transition mb-8">
-            <h5 class="text-xl font-semibold text-purple-300 mb-3">Certification Tamoul</h5>
-            <p class="text-left text-gray-200 leading-relaxed mb-4">
-                Cette certification permet de valider nos compétences linguistiques en tamoul, on doit passer un examen à la fin de l'année en tamoul, 
-                j'étais suis en 6ème année de formation.
-                Et auparavant j'ai déja fait 2 année sans certifications et 8 en tout pour chaque année.
-            </p>
-            <iframe src="Documents/certificat_tamoul_BALENDRAN_Banumathey.pdf"
-                class="w-full h-screen rounded-lg shadow-lg"></iframe>
-        </div>
-
     </main>
 
-    <!-- Footer -->
-    <footer class="bg-gradient-to-r from-blue-200 to-purple-300 text-purple-900 text-center py-8">
-        <p class="font-semibold">&copy; 2025 BALENDRAN Banumathey. Tous droits réservés.</p>
-        <div class="flex gap-6 justify-center mt-4">
-            <a href="https://github.com/banu005"
-                class="text-purple-700 hover:text-purple-900 transition-colors font-medium">GitHub</a>
-            <a href="https://www.linkedin.com/in/banumathey-balendran"
-                class="text-purple-700 hover:text-purple-900 transition-colors font-medium">LinkedIn</a>
+    <footer class="footer">
+        <p>&copy; 2025 BALENDRAN Banumathey. Tous droits réservés.</p>
+        <div class="footer-links">
+            <a href="https://github.com/banu005">GitHub</a>
+            <a href="https://www.linkedin.com/in/banumathey-balendran">LinkedIn</a>
         </div>
     </footer>
+
+    
 </body>
+
+<script src="script.js"></script>
 
 </html>

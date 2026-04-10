@@ -1,4 +1,42 @@
 const carouselState = {};
+
+const themeToggle = document.getElementById('theme-toggle');
+const html = document.documentElement;
+
+if (themeToggle) {
+    const icon = themeToggle.querySelector('i');
+    const label = themeToggle.querySelector('.theme-label');
+    
+    function updateThemeIcon() {
+        const isDark = html.getAttribute('data-theme') === 'dark';
+        icon.className = isDark ? 'fas fa-sun' : 'fas fa-moon';
+        if (label) {
+            label.textContent = isDark ? 'Sombre' : 'Clair';
+        }
+    }
+    
+    function setTheme(theme) {
+        html.setAttribute('data-theme', theme);
+        localStorage.setItem('theme', theme);
+        updateThemeIcon();
+    }
+    
+    // Détecter le thème système
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const savedTheme = localStorage.getItem('theme');
+    
+    if (savedTheme) {
+        setTheme(savedTheme);
+    } else {
+        setTheme(prefersDark ? 'dark' : 'light');
+    }
+    
+    themeToggle.addEventListener('click', () => {
+        const currentTheme = html.getAttribute('data-theme');
+        const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+        setTheme(newTheme);
+    });
+}
 function moveCarousel(id, direction) {
     // Déterminer le nombre d'images selon l'ID
     const total = (id === 'p2') ? 2 : 3; // 2 images pour projet 2, 3 pour les autres
