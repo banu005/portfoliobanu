@@ -18,12 +18,13 @@
     <header class="header">
         <div class="container header-content">
             <h1 class="header-logo title-gradient">Banumathey BALENDRAN</h1>
-            <nav class="header-nav">
-                <a href="index.html" class="active">Accueil</a>
+            <nav class="header-nav" aria-label="Navigation principale">
+                <a href="index.html" class="active" aria-current="page">Accueil</a>
                 <a href="projet.html">Projets</a>
                 <a href="certification.html">Certifications</a>
                 <a href="contact.html">Contact</a>
-                <a href="Documents/CV_Banumathey_BALENDRAN_master.pdf" download class="btn btn-outline active">CV</a>
+                <a href="Documents/CV_Banumathey_BALENDRAN_master.pdf" download
+                    class="btn btn-outline active">Télécharger mon CV</a>
                 <button id="theme-toggle" class="theme-toggle" aria-label="Changer de thème">
                     <i class="fas fa-moon"></i>
                     <span class="theme-label">Clair</span>
@@ -33,11 +34,11 @@
         </div>
     </header>
 
-    <main>
-        <div class="alert">Ce site est actuellement en cours de construction</div>
+    <main id="main-content">
+        <div class="alert" role="alert">Ce site est actuellement en cours de construction</div>
 
         <!-- Hero Section -->
-        <section class="hero section">
+        <section class="hero section" tabindex="0" aria-label="Présentation de Banumathey BALENDRAN">
             <div class="container hero-grid">
                 <div class="animate-fadeInUp">
                     <p class="hero-badge">Bonjour, je suis</p>
@@ -64,14 +65,14 @@
 
                 <div class="hero-image animate-fadeInUp delay-200">
                     <div class="hero-card">
-                        <i class="fas fa-laptop-code hero-icon animate-float"></i>
+                        <i class="fas fa-laptop-code hero-icon animate-float" aria-hidden="true"></i>
                         <div class="hero-social">
-                            <a href="https://github.com/banu005" target="_blank" aria-label="GitHub">
-                                <i class="devicon-github-original"></i>
+                            <a href="https://github.com/banu005" target="_blank" aria-label="Voir mon profil GitHub">
+                                <i class="devicon-github-original" aria-hidden="true"></i>
                             </a>
                             <a href="https://www.linkedin.com/in/banumathey-balendran" target="_blank"
-                                aria-label="LinkedIn">
-                                <i class="fa-brands fa-linkedin"></i>
+                                aria-label="Voir mon profil LinkedIn">
+                                <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
                             </a>
                         </div>
                     </div>
@@ -80,7 +81,7 @@
         </section>
 
         <!-- Section Parcours -->
-        <section class="section section-alt">
+        <section class="section section-alt" tabindex="0" aria-label="Mon parcours académique et professionnel">
             <div class="container">
                 <div class="section-header">
                     <h2 class="title-lg">Mon <span class="text-gradient">parcours</span></h2>
@@ -90,18 +91,18 @@
                     <!-- Formations -->
                     <div>
                         <div class="section-title-icon">
-                            <i class="fas fa-graduation-cap"></i>
+                            <i class="fas fa-graduation-cap" aria-hidden="true"></i>
                             <h3 class="title-md text-primary">Formations</h3>
                         </div>
                         <div class="grid grid-1" style="gap: 1.5rem;">
-                            <div class="card card-accent">
+                            <div class="card card-accent" tabindex="0" aria-label="Formation : Licence professionnelle Métiers de l'informatique, CNAM, en cours">
                                 <h4 class="experience-title">Licence professionnelle Métiers de l'informatique :
                                     conception, développement et test de logiciels</h4>
                                 <p class="experience-company">CNAM, En cours</p>
                                 <p class="text-muted">Parcours Chef de projet dev, sécurité et exploitation</p>
                             </div>
 
-                            <div class="card card-accent" style="border-color: var(--secondary);">
+                            <div class="card card-accent" tabindex="0" aria-label="Formation : BTS SIO option SLAM, Lycée Auguste Blanqui, 2023-2025" style="border-color: var(--secondary);">
                                 <h4 class="experience-title">BTS SIO option SLAM (Solutions Logiciels et Applications
                                     Métiers)</h4>
                                 <p class="experience-company">Lycée Auguste Blanqui, 2023-2025</p>
@@ -118,7 +119,7 @@
                                 </ul>
                             </div>
 
-                            <div class="card card-accent">
+                            <div class="card card-accent" tabindex="0" aria-label="Formation : BAC ST2S, Lycée Jacques Monod, 2021-2023">
                                 <h4 class="experience-title">BAC ST2S (Sciences et Technologies de la Santé et du
                                     Social)</h4>
                                 <p class="experience-company">Lycée Jacques Monod, 2021-2023</p>
@@ -135,11 +136,11 @@
                     <!-- Expériences -->
                     <div>
                         <div class="section-title-icon">
-                            <i class="fas fa-briefcase"></i>
-                            <h3 class="title-md text-primary">Expériences</h3>
+                            <i class="fas fa-briefcase" aria-hidden="true"></i>
+                            <h3 class="title-md text-primary">Expériences Professionnelles</h3>
                         </div>
                         <div class="grid grid-1" style="gap: 1.5rem;">
-                            <div class="card">
+                            <div class="card" tabindex="0" aria-label="Expérience : Stage Développeuse Full Stack, Sixième Etoile, en cours">
                                 <h4 class="experience-title">Stage Développeuse Full Stack</h4>
                                 <p class="experience-company">Sixième Etoile, En cours</p>
                                 <ul class="experience-list">
@@ -149,7 +150,7 @@
                                 </ul>
                             </div>
 
-                            <div class="card">
+                            <div class="card" tabindex="0" aria-label="Expérience : Stage Transformation Numérique, Conseil Régional Île-de-France, janvier 2025 à février 2025">
                                 <h4 class="experience-title">Stage Transformation Numérique</h4>
                                 <p class="experience-company">Conseil Régional Île-de-France, janvier 2025- février 2025
                                 </p>
@@ -164,7 +165,7 @@
                                 </ul>
                             </div>
 
-                            <div class="card">
+                            <div class="card" tabindex="0" aria-label="Expérience : Stage Développement Web, Images30, mai 2024 à juin 2024">
                                 <h4 class="experience-title">Stage Développement Web</h4>
                                 <p class="experience-company">Images30, mai 2024- juin 2024</p>
                                 <ul class="experience-list">
@@ -176,7 +177,7 @@
                                 </ul>
                             </div>
 
-                            <div class="card">
+                            <div class="card" tabindex="0" aria-label="Expérience : Stage Bibliothécaire, Bibliothèque Valeyre, 2020">
                                 <h4 class="experience-title">Stage Bibliothécaire</h4>
                                 <p class="experience-company">Bibliothèque Valeyre, 2020</p>
                                 <ul class="experience-list">
@@ -191,92 +192,99 @@
         </section>
 
         <!-- Section Compétences -->
-        <section id="competences" class="section">
+        <section id="competences" class="section" tabindex="0" aria-label="Mes compétences techniques">
             <div class="container">
                 <div class="section-header">
                     <h2 class="title-lg animate-fadeInUp">Mes <span class="text-gradient">Compétences</span></h2>
                 </div>
 
                 <!-- Langages -->
-                <div class="mb-12 animate-fadeInUp delay-200">
+                <div class="mb-12 animate-fadeInUp delay-200" role="group" aria-label="Langages de programmation">
                     <h3 class="skill-section-title text-primary">Langages</h3>
                     <div class="grid grid-6">
-                        <div class="skill-card card-hover">
-                            <i class="devicon-c-plain skill-icon" style="color: #f97316;"></i>
+                        <div class="skill-card card-hover" tabindex="0" role="button" aria-label="Compétence C">
+                            <i class="devicon-c-plain skill-icon" style="color: #f97316;" aria-hidden="true"></i>
                             <p class="skill-name">C</p>
                         </div>
-                        <div class="skill-card card-hover">
-                            <i class="devicon-java-plain skill-icon" style="color: #f97316;"></i>
+                        <div class="skill-card card-hover" tabindex="0" role="button" aria-label="Compétence Java">
+                            <i class="devicon-java-plain skill-icon" style="color: #f97316;" aria-hidden="true"></i>
                             <p class="skill-name">Java</p>
                         </div>
-                        <div class="skill-card card-hover">
-                            <i class="devicon-python-plain skill-icon" style="color: #f97316;"></i>
+                        <div class="skill-card card-hover" tabindex="0" role="button" aria-label="Compétence Python">
+                            <i class="devicon-python-plain skill-icon" style="color: #f97316;" aria-hidden="true"></i>
                             <p class="skill-name">Python</p>
                         </div>
-                        <div class="skill-card card-hover">
-                            <i class="devicon-html5-plain skill-icon" style="color: #ea580c;"></i>
+                        <div class="skill-card card-hover" tabindex="0" role="button" aria-label="Compétence HTML5">
+                            <i class="devicon-html5-plain skill-icon" style="color: #ea580c;" aria-hidden="true"></i>
                             <p class="skill-name">HTML5</p>
                         </div>
-                        <div class="skill-card card-hover">
-                            <i class="devicon-css3-plain skill-icon" style="color: #3b82f6;"></i>
+                        <div class="skill-card card-hover" tabindex="0" role="button" aria-label="Compétence CSS3">
+                            <i class="devicon-css3-plain skill-icon" style="color: #3b82f6;" aria-hidden="true"></i>
                             <p class="skill-name">CSS3</p>
                         </div>
-                        <div class="skill-card card-hover">
-                            <i class="devicon-typescript-plain skill-icon" style="color: #2563eb;"></i>
+                        <div class="skill-card card-hover" tabindex="0" role="button"
+                            aria-label="Compétence TypeScript">
+                            <i class="devicon-typescript-plain skill-icon" style="color: #2563eb;"
+                                aria-hidden="true"></i>
                             <p class="skill-name">TypeScript</p>
                         </div>
-                        <div class="skill-card card-hover">
-                            <i class="devicon-php-plain skill-icon" style="color: #7c3aed;"></i>
+                        <div class="skill-card card-hover" tabindex="0" role="button" aria-label="Compétence PHP">
+                            <i class="devicon-php-plain skill-icon" style="color: #7c3aed;" aria-hidden="true"></i>
                             <p class="skill-name">PHP</p>
                         </div>
-                        <div class="skill-card card-hover">
-                            <i class="devicon-mysql-plain skill-icon" style="color: #60a5fa;"></i>
+                        <div class="skill-card card-hover" tabindex="0" role="button" aria-label="Compétence SQL">
+                            <i class="devicon-mysql-plain skill-icon" style="color: #60a5fa;" aria-hidden="true"></i>
                             <p class="skill-name">SQL</p>
                         </div>
                     </div>
                 </div>
 
                 <!-- Frameworks & Outils -->
-                <div class="mb-12 animate-fadeInUp delay-400">
+                <div class="mb-12 animate-fadeInUp delay-400" role="group" aria-label="Frameworks et outils">
                     <h3 class="skill-section-title" style="color: var(--primary-light);">Frameworks & Outils</h3>
                     <div class="grid grid-4">
-                        <div class="skill-card card-hover">
-                            <i class="devicon-angularjs-plain skill-icon" style="color: #dc2626;"></i>
+                        <div class="skill-card card-hover" tabindex="0" role="button" aria-label="Framework Angular">
+                            <i class="devicon-angularjs-plain skill-icon" style="color: #dc2626;"
+                                aria-hidden="true"></i>
                             <p class="skill-name">Angular</p>
                         </div>
-                        <div class="skill-card card-hover">
-                            <i class="devicon-spring-plain skill-icon" style="color: #22c55e;"></i>
+                        <div class="skill-card card-hover" tabindex="0" role="button" aria-label="Framework Spring">
+                            <i class="devicon-spring-plain skill-icon" style="color: #22c55e;" aria-hidden="true"></i>
                             <p class="skill-name">Spring</p>
                         </div>
-                        <div class="skill-card card-hover">
-                            <i class="devicon-materialui-plain skill-icon" style="color: #60a5fa;"></i>
+                        <div class="skill-card card-hover" tabindex="0" role="button"
+                            aria-label="Framework Materialize CSS">
+                            <i class="devicon-materialui-plain skill-icon" style="color: #60a5fa;"
+                                aria-hidden="true"></i>
                             <p class="skill-name">Materialize CSS</p>
                         </div>
-                        <div class="skill-card card-hover">
-                            <i class="devicon-tailwindcss-plain skill-icon" style="color: #22d3ee;"></i>
+                        <div class="skill-card card-hover" tabindex="0" role="button"
+                            aria-label="Framework Tailwind CSS">
+                            <i class="devicon-tailwindcss-plain skill-icon" style="color: #22d3ee;"
+                                aria-hidden="true"></i>
                             <p class="skill-name">Tailwind CSS</p>
                         </div>
                     </div>
                 </div>
 
                 <!-- Environnement de développement -->
-                <div class="animate-fadeInUp delay-600">
+                <div class="animate-fadeInUp delay-600" role="group" aria-label="Environnement de développement">
                     <h3 class="skill-section-title text-primary">Environnement de développement</h3>
                     <div class="grid grid-4">
-                        <div class="skill-card card-hover">
-                            <i class="devicon-intellij-plain skill-icon"></i>
+                        <div class="skill-card card-hover" tabindex="0" role="button" aria-label="Outil IntelliJ">
+                            <i class="devicon-intellij-plain skill-icon" aria-hidden="true"></i>
                             <p class="skill-name">IntelliJ</p>
                         </div>
-                        <div class="skill-card card-hover">
-                            <i class="devicon-vscode-plain skill-icon" style="color: #3b82f6;"></i>
+                        <div class="skill-card card-hover" tabindex="0" role="button" aria-label="Outil VS Code">
+                            <i class="devicon-vscode-plain skill-icon" style="color: #3b82f6;" aria-hidden="true"></i>
                             <p class="skill-name">VS Code</p>
                         </div>
-                        <div class="skill-card card-hover">
-                            <i class="devicon-git-plain skill-icon" style="color: #f97316;"></i>
+                        <div class="skill-card card-hover" tabindex="0" role="button" aria-label="Outil GitHub">
+                            <i class="devicon-git-plain skill-icon" style="color: #f97316;" aria-hidden="true"></i>
                             <p class="skill-name">Git/GitHub</p>
                         </div>
-                        <div class="skill-card card-hover">
-                            <i class="devicon-linux-plain skill-icon"></i>
+                        <div class="skill-card card-hover" tabindex="0" role="button" aria-label="Outil Linux">
+                            <i class="devicon-linux-plain skill-icon" aria-hidden="true"></i>
                             <p class="skill-name">Linux</p>
                         </div>
                     </div>
@@ -285,30 +293,30 @@
         </section>
 
         <!-- Section Domaines d'expertise -->
-        <section class="section section-alt">
+        <section class="section section-alt" tabindex="0" aria-label="Domaines d'expertise">
             <div class="container">
                 <div class="section-header">
                     <h2 class="title-lg">Domaines d'<span class="text-gradient">expertise</span></h2>
                 </div>
 
                 <div class="grid grid-3">
-                    <div class="card text-center card-hover" style="padding: 2rem;">
-                        <i class="fas fa-code card-icon" style="font-size: 3rem; color: var(--primary);"></i>
+                    <div class="card text-center card-hover" tabindex="0" aria-label="Domaine d expertise : Développement Web" style="padding: 2rem;">
+                        <i class="fas fa-code card-icon" style="font-size: 3rem; color: var(--primary);" aria-hidden="true"></i>
                         <h3 class="title-md text-primary mb-4">Développement Web</h3>
                         <p class="text-muted">API REST, développement full-stack avec Java Spring, Angular et PostgreSQL
                         </p>
                     </div>
 
-                    <div class="card text-center card-hover" style="padding: 2rem;">
+                    <div class="card text-center card-hover" tabindex="0" aria-label="Domaine d expertise : Réseau et système" style="padding: 2rem;">
                         <i class="fas fa-network-wired card-icon"
-                            style="font-size: 3rem; color: var(--primary-light);"></i>
+                            style="font-size: 3rem; color: var(--primary-light);" aria-hidden="true"></i>
                         <h3 class="title-md" style="color: var(--primary-light); margin-bottom: 1rem;">Réseau, système
                         </h3>
                         <p class="text-muted">TCP/IP, protocoles réseau, gestion des processus</p>
                     </div>
 
-                    <div class="card text-center card-hover" style="padding: 2rem;">
-                        <i class="fas fa-shield-alt card-icon" style="font-size: 3rem; color: #4ade80;"></i>
+                    <div class="card text-center card-hover" tabindex="0" aria-label="Domaine d expertise : Cybersécurité" style="padding: 2rem;">
+                        <i class="fas fa-shield-alt card-icon" style="font-size: 3rem; color: #4ade80;" aria-hidden="true"></i>
                         <h3 class="title-md" style="color: #4ade80; margin-bottom: 1rem;">Cybersécurité</h3>
                         <p class="text-muted">OWASP, injection SQL, hachage, RGPD et bonnes pratiques de sécurité</p>
                     </div>
@@ -317,7 +325,7 @@
         </section>
 
         <!-- Call to Action -->
-        <section class="section" style="background-color: var(--bg-primary);">
+        <section class="section" tabindex="0" aria-label="Section contact" style="background-color: var(--bg-primary);">
             <div class="container text-center">
                 <div class="animate-fadeInUp">
                     <h2 class="title-lg mb-6">Vous pouvez me contacter ^^</h2>
