@@ -717,8 +717,12 @@ img {
 
 .carousel {
   position: relative;
-  height: 100%;
+  height: auto;
+  min-height: 450px;
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .carousel-track {
@@ -1178,9 +1182,13 @@ img {
 }
 
 .project-row-image {
-  height: 300px;
+  height: auto;
+  min-height: 450px;
   overflow: hidden;
   background-color: var(--bg-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .project-row-content {

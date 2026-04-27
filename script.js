@@ -39,7 +39,11 @@ if (themeToggle) {
 }
 function moveCarousel(id, direction) {
     // Déterminer le nombre d'images selon l'ID
-    const total = (id === 'p2') ? 2 : 3; // 2 images pour projet 2, 3 pour les autres
+    const totals = {
+        'p2': 2,
+        'colocation': 7
+    };
+    const total = totals[id] || 3;
     
     if (!carouselState[id]) carouselState[id] = { index: 0, total: total };
     const state = carouselState[id];
@@ -47,7 +51,11 @@ function moveCarousel(id, direction) {
     updateCarousel(id, state.index);
 }
 function goToSlide(id, index) {
-    const total = (id === 'p2') ? 2 : 3;
+    const totals = {
+        'p2': 2,
+        'colocation': 7
+    };
+    const total = totals[id] || 3;
     if (!carouselState[id]) carouselState[id] = { index: 0, total: total };
     carouselState[id].index = index;
     updateCarousel(id, index);
