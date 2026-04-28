@@ -4,16 +4,16 @@
 
 /* Variables CSS - Mode Clair (blanc - défaut) */
 :root {
-  /* Couleurs principales - Bleu Turquoise */
-  --primary: #06b6d4;
-  --primary-dark: #0891b2;
-  --primary-light: #67e8f9;
-  --primary-glow: rgba(6, 182, 212, 0.4);
+  /* Couleurs principales - Bleu #0A5896 */
+  --primary: #0A5896;
+  --primary-dark: #084070;
+  --primary-light: #4da8e8;
+  --primary-glow: rgba(10, 88, 150, 0.4);
   
   /* Couleurs secondaires */
-  --secondary: #06b6d4;
-  --secondary-dark: #0891b2;
-  --secondary-light: #67e8f9;
+  --secondary: #0A5896;
+  --secondary-dark: #084070;
+  --secondary-light: #4da8e8;
   
   /* Backgrounds */
   --bg-primary: #ffffff;
@@ -43,10 +43,10 @@
 
 /* Mode Sombre */
 [data-theme="dark"] {
-  --primary: #22d3ee;
-  --primary-dark: #06b6d4;
-  --primary-light: #a5f3fc;
-  --primary-glow: rgba(34, 211, 238, 0.5);
+  --primary: #4da8e8;
+  --primary-dark: #0A5896;
+  --primary-light: #a8d4f7;
+  --primary-glow: rgba(77, 168, 232, 0.5);
   --bg-primary: #0a0a0a;
   --bg-secondary: #111111;
   --bg-card: #1a1a1a;
@@ -90,6 +90,7 @@ body {
   color: var(--text-primary);
   line-height: 1.6;
   transition: background-color var(--transition-normal), color var(--transition-normal);
+  padding-top: 0;
 }
 
 a {
@@ -131,7 +132,7 @@ img {
    ======================================== */
 
 .header {
-  position: fixed;
+  position: relative;
   top: 0;
   left: 0;
   right: 0;
@@ -973,10 +974,26 @@ img {
 }
 
 .alert {
+  display: block !important;
+  position: relative;
+  z-index: 200;
   text-align: center;
-  background-color: #ef4444;
-  color: white;
-  padding: 0.5rem;
+  background-color: #f59e0b !important;
+  color: #1a1a1a !important;
+  padding: 0.75rem 1rem;
+  font-weight: 600;
+  width: 100%;
+  min-height: 50px;
+}
+
+.alert * {
+  display: inline-block !important;
+  background-color: transparent !important;
+  color: #1a1a1a !important;
+}
+
+main {
+  margin-top: 20px;
 }
 
 /* ========================================
