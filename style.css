@@ -2,24 +2,24 @@
    Portfolio Banumathey BALENDRAN - CSS
    ======================================== */
 
-/* Variables CSS - Mode Clair (blanc - défaut) */
+/* Variables CSS - Mode Clair */
 :root {
-  /* Couleurs principales - Bleu #0A5896 */
-  --primary: #0A5896;
-  --primary-dark: #084070;
-  --primary-light: #4da8e8;
-  --primary-glow: rgba(10, 88, 150, 0.4);
+  /* Couleurs principales - Rose */
+  --primary: #db2777;
+  --primary-dark: #be1853;
+  --primary-light: #f472b6;
+  --primary-glow: rgba(219, 39, 119, 0.4);
   
   /* Couleurs secondaires */
-  --secondary: #0A5896;
-  --secondary-dark: #084070;
-  --secondary-light: #4da8e8;
+  --secondary: #ec4899;
+  --secondary-dark: #db2777;
+  --secondary-light: #f9a8d4;
   
   /* Backgrounds */
   --bg-primary: #ffffff;
-  --bg-secondary: #f8fafc;
+  --bg-secondary: #fdf2f8;
   --bg-card: #ffffff;
-  --bg-card-hover: #f1f5f9;
+  --bg-card-hover: #fce7f3;
   
   /* Textes */
   --text-primary: #1e293b;
@@ -27,11 +27,11 @@
   --text-muted: #475569;
   
   /* Bordures */
-  --border: #e2e8f0;
-  --border-light: #cbd5e1;
+  --border: #f9a8d4;
+  --border-light: #fbcfe8;
   
   /* Effets */
-  --shadow: rgba(0, 0, 0, 0.1);
+  --shadow: rgba(219, 39, 119, 0.1);
   --gradient-start: var(--primary);
   --gradient-end: var(--primary-light);
   
@@ -43,20 +43,20 @@
 
 /* Mode Sombre */
 [data-theme="dark"] {
-  --primary: #4da8e8;
-  --primary-dark: #0A5896;
-  --primary-light: #a8d4f7;
-  --primary-glow: rgba(77, 168, 232, 0.5);
-  --bg-primary: #0a0a0a;
-  --bg-secondary: #111111;
-  --bg-card: #1a1a1a;
-  --bg-card-hover: #222222;
+  --primary: #f472b6;
+  --primary-dark: #db2777;
+  --primary-light: #f9a8d4;
+  --primary-glow: rgba(244, 114, 182, 0.5);
+  --bg-primary: #1a0514;
+  --bg-secondary: #2d1022;
+  --bg-card: #2d1022;
+  --bg-card-hover: #3d1a30;
   --text-primary: #ffffff;
   --text-secondary: #d1d5db;
-  --text-muted: #9ca3af;
-  --border: #27272a;
-  --border-light: #3f3f46;
-  --shadow: rgba(0, 0, 0, 0.5);
+  --text-muted: #fbcfe8;
+  --border: #3d1a30;
+  --border-light: #500724;
+  --shadow: rgba(244, 114, 182, 0.5);
 }
 
 [data-theme="dark"] .section-alt {
@@ -329,97 +329,405 @@ img {
    HERO / ACCUEIL
    ======================================== */
 
-.hero {
-  min-height: auto;
-  padding: 6rem 1.5rem 3rem;
-  display: flex;
-  align-items: center;
-  padding-top: 5rem;
+/* ========================================
+   HERO - STYLE ROSE DYNAMIQUE
+    ======================================== */
+
+.hero-colorful {
+    position: relative;
+    min-height: auto;
+    padding: 8rem 1.5rem 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #fdf2f8 0%, #fce7f3 100%);
 }
 
-.hero-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 3rem;
-  align-items: center;
-}
-
-@media (min-width: 768px) {
-  .hero-grid {
-    grid-template-columns: 1fr 1fr;
-  }
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+    max-width: 800px;
 }
 
 .hero-badge {
-  display: inline-block;
-  color: var(--primary);
-  font-size: 1.125rem;
-  margin-bottom: 1rem;
+    color: #db2777;
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
 }
 
-.hero-title {
-  margin-bottom: 1rem;
+.hero-role {
+    font-size: 1.5rem;
+    color: #475569;
+    font-weight: 500;
 }
 
-.hero-subtitle {
-  font-size: 1.125rem;
-  color: var(--primary);
-  font-weight: 600;
-  margin-bottom: 1rem;
-}
-
-.hero-description {
-  color: var(--text-primary);
-  margin-bottom: 1.5rem;
-  line-height: 1.6;
+.hero-mission {
+    font-size: 1rem;
+    color: #64748b;
+    max-width: 500px;
 }
 
 .hero-buttons {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
-.hero-image {
-  display: flex;
-  justify-content: center;
+.hero-socials {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.social-icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #db2777;
+    color: white;
+    font-size: 1.25rem;
+    transition: all var(--transition-fast);
+}
+
+.social-icon:hover {
+    background: #be1853;
+    transform: translateY(-3px);
+}
+
+.title-gradient {
+    color: #db2777;
+}
+
+/* ========================================
+   BOUTONS - STYLE ROSE
+    ======================================== */
+
+.btn-primary {
+  background: #db2777;
+  color: white;
+  padding: 0.875rem 1.75rem;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  display: inline-flex;
   align-items: center;
+  gap: 0.5rem;
+  transition: all var(--transition-fast);
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
 }
 
-.hero-card {
-  background-color: var(--bg-card);
-  border-radius: 1.5rem;
-  padding: 3rem 4rem;
-  text-align: center;
+.btn-primary:hover {
+  background: #be1853;
+  color: white;
 }
 
-.hero-icon {
-  font-size: 8rem;
-  color: var(--primary);
-  margin-bottom: 2rem;
-}
-
-.hero-social {
-  display: flex;
-  gap: 2rem;
-  justify-content: center;
-  margin-top: 2rem;
-}
-
-.hero-social a {
-  color: var(--text-secondary);
-  font-size: 3rem;
+.btn-outline {
+  background: transparent;
+  color: #db2777;
+  padding: 0.875rem 1.75rem;
+  border: 2px solid #db2777;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
   transition: all var(--transition-fast);
 }
 
-.hero-social a:hover {
-  color: var(--primary);
-  transform: scale(1.2);
+.btn-outline:hover {
+  background: #db2777;
+  color: white;
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+    max-width: 800px;
+}
+
+.hero-badge {
+    color: var(--primary);
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.hero-role {
+    font-size: 1.5rem;
+    color: var(--text-secondary);
+    font-weight: 400;
+}
+
+.hero-mission {
+    font-size: 1rem;
+    color: var(--text-muted);
+    max-width: 500px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: white;
+  padding: 0.875rem 1.75rem;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all var(--transition-fast);
+  border: none;
+}
+
+.btn-primary:hover {
+  background: var(--primary-dark);
+  color: white;
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--text-primary);
+  padding: 0.875rem 1.75rem;
+  border: 2px solid var(--primary);
+  border-radius: 0.75rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all var(--transition-fast);
+}
+
+.btn-outline:hover {
+  background: var(--primary);
+  color: white;
+}
+
+.hero-socials {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.social-icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: var(--bg-secondary);
+    color: var(--text-secondary);
+    font-size: 1.25rem;
+    transition: all var(--transition-fast);
+}
+
+.social-icon:hover {
+    background: var(--primary);
+    color: white;
+}
+
+.text-gradient {
+    color: var(--primary);
+    background: none;
+    -webkit-text-fill-color: var(--primary);
+}
+
+/* ========================================
+   SKILLS TAGS - STYLE ROSE
+    ======================================== */
+
+.skills-flex {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.skill-tag {
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 2rem;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all var(--transition-fast);
+}
+
+.skill-tag:nth-child(1) { background: #db2777; }
+.skill-tag:nth-child(2) { background: #ec4899; }
+.skill-tag:nth-child(3) { background: #f472b6; }
+.skill-tag:nth-child(4) { background: #f9a8d4; color: #831843; }
+.skill-tag:nth-child(5) { background: #f472b6; }
+.skill-tag:nth-child(6) { background: #ec4899; }
+.skill-tag:nth-child(7) { background: #db2777; }
+.skill-tag:nth-child(8) { background: #be1853; }
+.skill-tag:nth-child(9) { background: #831843; }
+.skill-tag:nth-child(10) { background: #500724; }
+
+.skill-tag:hover {
+    transform: translateY(-3px);
+    filter: brightness(1.1);
+}
+
+/* ========================================
+   CARDS STACK - MÊME LIGNE
+    ======================================== */
+
+.cards-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+.info-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    background: var(--bg-card);
+    padding: 1.25rem;
+    border-radius: 1rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    transition: all var(--transition-fast);
+    flex: 1 1 300px;
+    max-width: 400px;
+}
+
+.info-card:hover {
+    transform: translateY(-4px);
+}
+
+.card-icon {
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+    border-radius: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.1rem;
+}
+
+.card-info h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+.card-info p {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+.card-desc {
+    font-size: 0.75rem !important;
+    margin-top: 0.5rem;
+    color: var(--text-muted) !important;
+}
+
+/* ========================================
+   CTA BOX - STYLE ROSE
+    ======================================== */
+
+.cta-box {
+    background: #db2777;
+    border-radius: 1.5rem;
+    padding: 4rem 2rem;
+    text-align: center;
+    color: white;
+}
+
+.cta-box .title-lg {
+    color: white;
+    margin-bottom: 0.5rem;
+}
+
+.cta-box .text-muted {
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 2rem;
+}
+
+.cta-box .btn-primary {
+    background: white;
+    color: #db2777;
+}
+
+.cta-box .btn-primary:hover {
+    background: #fce7f3;
+    color: #db2777;
+}
+
+.center {
+    text-align: center;
+}
+
+/* ========================================
+   COMPÉTENCES
+    ======================================== */
+
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.skill-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  padding: 1.5rem 2rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  transition: all var(--transition-fast);
+}
+
+.skill-card:hover {
+  border-color: var(--primary);
+  background-color: var(--bg-card-hover);
+}
+
+/* ========================================
+   CTA
+    ======================================== */
+
+.cta-card {
+  background-color: var(--bg-secondary);
+  border-radius: 1.5rem;
+  padding: 3rem 2rem;
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.cta-card .title-lg {
+  margin-bottom: 0.5rem;
 }
 
 /* ========================================
    CARDS
-   ======================================== */
+    ======================================== */
 
 .card {
   background-color: var(--bg-card);
