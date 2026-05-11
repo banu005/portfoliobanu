@@ -1,20 +1,33 @@
 <!DOCTYPE html>
-<html lang="fr" data-theme="light">
+<html lang="fr" data-theme="dark">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< HEAD
     <meta name="description"
         content="Portfolio de Banumathey BALENDRAN - Développeuse informatique en recherche d'alternance Master">
     <title>BALENDRAN Banumathey - Développeuse informatique</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+=======
+    <meta name="description" content="Portfolio de Banumathey BALENDRAN - Développeuse informatique">
+    <title>BALENDRAN Banumathey - Développeuse Full Stack</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+>>>>>>> 8693cb2 (changement complet du design)
 </head>
 
 <body>
 
+    <!-- HEADER -->
     <header class="header">
+<<<<<<< HEAD
         <div class="container header-content">
             <h1 class="header-logo title-gradient">Banumathey BALENDRAN</h1>
             <nav class="header-nav" aria-label="Navigation principale">
@@ -29,11 +42,57 @@
                     <span class="theme-label">Clair</span>
                 </button>
             </nav>
+=======
+        <div class="sticky-badge">
+            <i class="fas fa-thumbtack"></i>
+            <span>STICKY · FLOUTÉ AU SCROLL</span>
+        </div>
+
+        <div class="header-bar">
+            <div class="header-logo-group">
+                <div class="header-logo-icon">B</div>
+                <span class="header-logo-text">BANU</span>
+            </div>
+
+            <div class="header-right">
+                <a href="#accueil" class="nav-pill active">Accueil</a>
+                <a href="#projets" class="nav-pill">Projets</a>
+                <a href="#stack" class="nav-pill">Compétences</a>
+                <a href="#contact" class="nav-pill">Contact</a>
+                <a href="Documents/CV_2026-04-27_Banumathey_BALENDRAN.pdf" download class="download-btn">
+                    <i class="fas fa-download"></i>
+                    <span>Downloads</span>
+                </a>
+<button class="theme-btn">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button type="button" class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+        
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="#accueil" onclick="closeMobileMenu()">Accueil</a>
+            <a href="#projets" onclick="closeMobileMenu()">Projets</a>
+            <a href="#stack" onclick="closeMobileMenu()">Compétences</a>
+            <a href="#contact" onclick="closeMobileMenu()">Contact</a>
+            <a href="Documents/CV_2026-04-27_Banumathey_BALENDRAN.pdf" download>Voir mon CV</a>
+        </div>
+        
+        <div class="progress-bar">
+            <div class="progress-bar-fill"></div>
+>>>>>>> 8693cb2 (changement complet du design)
         </div>
     </header>
 
-    <main id="main-content">
+    <main>
+        <!-- HERO SECTION -->
+        <section id="accueil" class="hero">
+            <div class="hero-glow-1"></div>
+            <div class="hero-glow-2"></div>
 
+<<<<<<< HEAD
         <!-- Hero Section -->
         <section class="hero-colorful">
             <div class="container hero-content">
@@ -61,10 +120,61 @@
                     <a href="https://www.linkedin.com/in/banumathey-balendran" target="_blank" class="social-icon">
                         <i class="fab fa-linkedin"></i>
                     </a>
+=======
+            <div class="hero-content">
+                <div class="hero-left">
+                    <div class="hero-badge">
+                        <i class="fas fa-code"></i>
+                        <span> DEVELOPPEUSE FULL STACK</span>
+                    </div>
+                    <h1 class="hero-title">
+                        Banumathey<br>
+                        <span class="hero-title-accent">BALENDRAN</span>
+                    </h1>
+                    <p class="hero-subtitle">
+                        Développeuse informatique
+                    </p>
+                    <p class="hero-description">
+                        Actuellement en Licence Professionnelle Métiers de l'informatique : conception,
+                        développement et test de logiciels parcours chef de projet, développement, exploitation et
+                        sécurité au CNAM.
+                        Je suis à la recherche d'une alternance en Développement/Réseaux/Systèmes/Cybersecurité pour
+                        l'année 2026-2028 pour approfondir mes compétences techniques.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#projets" class="btn btn-primary">
+                            <span>Voir mes projets</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <a href="#contact" class="btn btn-secondary">
+                            <span>Me contacter</span>
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="hero-right">
+                    <div class="hero-card">
+                        <div class="hero-card-label">RÉSEAUX</div>
+                        <div class="hero-social-icons">
+                            <a href="https://github.com/banu005" target="_blank" class="social-icon">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/banumathey-balendran" target="_blank"
+                                class="social-icon">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="mailto:banumathey5@gmail.com" class="social-icon">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                        </div>
+                    </div>
+>>>>>>> 8693cb2 (changement complet du design)
                 </div>
             </div>
         </section>
 
+<<<<<<< HEAD
         <!-- Compétences -->
         <section class="section">
             <div class="container">
@@ -82,118 +192,53 @@
                     <div class="skill-tag"><span>Git</span></div>
                     <div class="skill-tag"><span>Docker</span></div>
 =======
+=======
+        <!-- PROJETS SECTION -->
+        <section id="projets" class="section projects-section">
+            <div class="section-content">
+>>>>>>> 8693cb2 (changement complet du design)
                 <div class="section-header">
-                    <h2 class="title-lg">Mon <span class="text-gradient">parcours</span></h2>
+                    <div class="section-kicker">PORTFOLIO</div>
+                    <h2 class="section-title">Mes projets</h2>
+                    <p class="section-subtitle">
+                        Cliquez sur la carte pour ouvrir le détail.
+                    </p>
                 </div>
-                <div class="grid grid-2">
 
-                    <!-- Formations -->
-                    <div>
-                        <div class="section-title-icon">
-                            <i class="fas fa-graduation-cap" aria-hidden="true"></i>
-                            <h3 class="title-md text-primary">Formations</h3>
-                        </div>
-                        <div class="grid grid-1" style="gap: 1.5rem;">
-                            <div class="card-static card-accent" tabindex="0"
-                                aria-label="Formation : Licence professionnelle Métiers de l'informatique, CNAM, en cours">
-                                <h4 class="experience-title">Licence professionnelle Métiers de l'informatique :
-                                    conception, développement et test de logiciels</h4>
-                                <p class="experience-company">CNAM, En cours</p>
-                                <p class="text-muted">Parcours Chef de projet dev, sécurité et exploitation</p>
-                            </div>
+                <!-- Filtres -->
+            </div>
 
-                            <div class="card-static card-accent" tabindex="0"
-                                aria-label="Formation : BTS SIO option SLAM, Lycée Auguste Blanqui, 2023-2025"
-                                style="border-color: var(--secondary);">
-                                <h4 class="experience-title">BTS SIO option SLAM (Solutions Logiciels et Applications
-                                    Métiers)</h4>
-                                <p class="experience-company">Lycée Auguste Blanqui, 2023-2025</p>
-                                <ul class="experience-list">
-                                    <li>Programmation API REST (Java, IntelliJ, Spring, Angular, Kotlin, PostgreSQL)
-                                    </li>
-                                    <li>Programmation web (HTML, CSS, PHP, Laragon, PhpMyAdmin, VSCode)</li>
-                                    <li>Réseau, système (Packet Tracer, Virtual Machine, Ubuntu/Windows)</li>
-                                    <li>Cybersécurité (Injection SQL, Owasp, journalisation, hachage, RGPD)</li>
-                                    <li>Projet (Trello, Slack, GitHub, Teams)</li>
-                                    <li class="text-blue-200">Auto-formations sur Cisco Netacad (<a
-                                            href="certification.html" class="link-primary">English for IT1</a>, CyberOps
-                                        Associate)</li>
-                                </ul>
-                            </div>
-
-                            <div class="card-static card-accent" tabindex="0"
-                                aria-label="Formation : BAC ST2S, Lycée Jacques Monod, 2021-2023">
-                                <h4 class="experience-title">BAC ST2S (Sciences et Technologies de la Santé et du
-                                    Social)</h4>
-                                <p class="experience-company">Lycée Jacques Monod, 2021-2023</p>
-                                <div class="flex gap-4 mt-4">
-                                    <a href="certification.html" class="badge badge-warning">Certification Pix</a>
-                                    <a href="certification.html" class="badge"
-                                        style="background-color: rgba(34, 197, 94, 0.2); color: #22c55e;">Certification
-                                        Projet Voltaire</a>
-                                </div>
-                            </div>
+            <!-- Projets -->
+            <div class="projects-grid">
+                <!-- Projet 1: 93Moove v1 -->
+                <article class="project-card">
+                    <div class="project-card-image"
+                        style="background-image: url('Images/93moove1.png'); background-size: cover; background-position: center;">
+                        <div class="project-card-overlay">
+                            <span class="project-year">2024</span>
                         </div>
                     </div>
-
-                    <!-- Expériences -->
-                    <div>
-                        <div class="section-title-icon">
-                            <i class="fas fa-briefcase" aria-hidden="true"></i>
-                            <h3 class="title-md text-primary">Expériences Professionnelles</h3>
+                    <div class="project-card-content">
+                        <span class="project-category">1er PROJET - Web</span>
+                        <h3 class="project-title">Site web 93moove - Première année BTS SIO</h3>
+                        <p class="project-description">
+                            Plateforme web complète pour une association proposant des activités sportives et créatives.
+                            Le site permet aux utilisateurs de se connecter et de s'inscrire aux cours proposés.
+                        </p>
+                        <div class="project-techs">
+                            <span class="tech-tag">PHP</span>
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">PostgreSQL</span>
                         </div>
-                        <div class="grid grid-1" style="gap: 1.5rem;">
-                            <div class="card-static" tabindex="0"
-                                aria-label="Expérience : Stage Développeuse Full Stack, Sixième Etoile, en cours">
-                                <h4 class="experience-title">Stage Développeuse Full Stack</h4>
-                                <p class="experience-company">Sixième Etoile, En cours</p>
-                                <ul class="experience-list">
-                                    <li>Création d'une application full stack en groupe</li>
-                                    <li>Développement frontend et backend</li>
-                                    <li>Collaboration en équipe sur un projet complet</li>
-                                </ul>
-                            </div>
-
-                            <div class="card-static" tabindex="0"
-                                aria-label="Expérience : Stage Transformation Numérique, Conseil Régional Île-de-France, janvier 2025 à février 2025">
-                                <h4 class="experience-title">Stage au Pôle Transformation Numérique</h4>
-                                <p class="experience-company">Conseil Régional Île-de-France, janvier 2025- février 2025
-                                </p>
-                                <ul class="experience-list">
-                                    <li>Qualification des avis, utilisation PowerBI</li>
-                                    <li>Formation RGPD</li>
-                                    <li>Tester une IA qui répond aux aides régionales</li>
-                                    <li>Recherche sur le Numérique Responsable et présentation des idées</li>
-                                    <li>Accessibilité numérique</li>
-                                    <li>Concevoir un formulaire de la bourse sanitaire et social sur Microsoft Form</li>
-                                    <li>Atelier Design</li>
-                                </ul>
-                            </div>
-
-                            <div class="card-static" tabindex="0"
-                                aria-label="Expérience : Stage Développement Web, Images30, mai 2024 à juin 2024">
-                                <h4 class="experience-title">Stage en Développement Web</h4>
-                                <p class="experience-company">Images30, mai 2024- juin 2024</p>
-                                <ul class="experience-list">
-                                    <li>Analyse de sites d'investissement et Images30</li>
-                                    <li>Cahiers des charges des sites d'investissement et Images30</li>
-                                    <li>Création de maquette sur Balsamiq</li>
-                                    <li>Création du site web Cineweb Invest sur Google Sites</li>
-                                    <li>Fiche technique des outils utilisés</li>
-                                </ul>
-                            </div>
-
-                            <div class="card-static" tabindex="0"
-                                aria-label="Expérience : Stage Bibliothécaire, Bibliothèque Valeyre, 2020">
-                                <h4 class="experience-title">Stage 3ème en tant que Bibliothécaire</h4>
-                                <p class="experience-company">Bibliothèque Valeyre, 2020</p>
-                                <ul class="experience-list">
-                                    <li>Accueil et renseignement du public</li>
-                                    <li>Numérisation de documents, scanner les journaux</li>
-                                </ul>
-                            </div>
+                        <div class="project-links">
+                            <button class="project-link detail-btn" onclick="openProjectModal('93mooveV1')">
+                                <i class="fas fa-plus"></i>
+                                <span>Voir plus de détail</span>
+                            </button>
                         </div>
                     </div>
+<<<<<<< HEAD
 >>>>>>> 41deb90 (correction)
                 </div>
             </div>
@@ -268,12 +313,395 @@
                             <h3>BAC ST2S</h3>
                             <p>Lycée Jacques Monod - 2021-2023</p>
                             <p class="card-desc">Certifications Pix, Voltaire</p>
+=======
+                </article>
+
+                <!-- Projet 2: 93Moove v2 -->
+                <article class="project-card">
+                    <div class="project-card-image"
+                        style="background-image: url('Images/93moove2.png'); background-size: cover; background-position: center;">
+                        <div class="project-card-overlay">
+                            <span class="project-year">2025</span>
+                        </div>
+                    </div>
+                    <div class="project-card-content">
+                        <span class="project-category">2ème PROJET - Full Stack</span>
+                        <h3 class="project-title">Site web 93moove - Deuxième année BTS SIO</h3>
+                        <p class="project-description">
+                            Deuxième version du site 93moove avec système d'inscription aux cours. Utilisation de la
+                            méthode Scrum et gestion de projet avec Trello.
+                        </p>
+                        <div class="project-techs">
+                            <span class="tech-tag">Angular</span>
+                            <span class="tech-tag">Spring</span>
+                            <span class="tech-tag">Java</span>
+                            <span class="tech-tag">TypeScript</span>
+                        </div>
+                        <div class="project-links">
+                            <button class="project-link detail-btn" onclick="openProjectModal('93mooveV2')">
+                                <i class="fas fa-plus"></i>
+                                <span>Voir plus de détail</span>
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Stage Images30 -->
+                <article class="project-card">
+                    <div class="project-card-image"
+                        style="background-image: url('Images/cineweb.png'); background-size: cover; background-position: center;">
+                        <div class="project-card-overlay">
+                            <span class="project-year">2024</span>
+                        </div>
+                    </div>
+                    <div class="project-card-content">
+                        <span class="project-category">STAGE - Web</span>
+                        <h3 class="project-title">Site web Cineweb Invest - Stage Images30</h3>
+                        <p class="project-description">
+                            Création d'un site web d'investissement. Réalisation complète : analyse du besoin, cahier
+                            des charges, maquettage sur Balsamiq et développement sur Google Sites.
+                        </p>
+                        <div class="project-techs">
+                            <span class="tech-tag">Google Sites</span>
+                            <span class="tech-tag">Balsamiq</span>
+                        </div>
+                        <div class="project-links">
+                            <button class="project-link detail-btn" onclick="openProjectModal('cineweb')">
+                                <i class="fas fa-plus"></i>
+                                <span>Voir plus de détail</span>
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Projet 3: Jeu 2D -->
+                <article class="project-card">
+                    <div class="project-card-image"
+                        style="background-image: url('Images/2dgame.png'); background-size: cover; background-position: center;">
+                        <div class="project-card-overlay">
+                            <span class="project-year">2023</span>
+                        </div>
+                    </div>
+                    <div class="project-card-content">
+                        <span class="project-category">3ème PROJET - Jeu</span>
+                        <h3 class="project-title">Jeu 2D - Shooter Survival</h3>
+                        <p class="project-description">
+                            Jeu de survie où le personnage doit éliminer des blobs verts en tirant pour survivre.
+                            Développé en suivant un tutoriel Godot.
+                        </p>
+                        <div class="project-techs">
+                            <span class="tech-tag">Godot</span>
+                            <span class="tech-tag">C#</span>
+                        </div>
+                        <div class="project-links">
+                            <button class="project-link detail-btn" onclick="openProjectModal('2dgame')">
+                                <i class="fas fa-plus"></i>
+                                <span>Voir plus de détail</span>
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Projet 4: SuperSimpleDev -->
+                <article class="project-card">
+                    <div class="project-card-image"
+                        style="background-image: url('Images/expractice.png'); background-size: cover; background-position: center;">
+                        <div class="project-card-overlay">
+                            <span class="project-year">2024</span>
+                        </div>
+                    </div>
+                    <div class="project-card-content">
+                        <span class="project-category">4ème PROJET - Formation</span>
+                        <h3 class="project-title">HTML CSS Course - SuperSimpleDev</h3>
+                        <p class="project-description">
+                            Réplique de l'interface YouTube pour apprendre les bases du HTML et CSS. Formation complète
+                            avec cours théoriques et exercices.
+                        </p>
+                        <div class="project-techs">
+                            <span class="tech-tag">HTML5</span>
+                            <span class="tech-tag">CSS3</span>
+                            <span class="tech-tag">VS Code</span>
+                        </div>
+                        <div class="project-links">
+                            <button class="project-link detail-btn" onclick="openProjectModal('supersimpledev')">
+                                <i class="fas fa-plus"></i>
+                                <span>Voir plus de détail</span>
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Projet 5: Snake Game -->
+                <article class="project-card">
+                    <div class="project-card-image"
+                        style="background-image: url('Images/jeusnakejouer.png'); background-size: cover; background-position: center;">
+                        <div class="project-card-overlay">
+                            <span class="project-year">2024</span>
+                        </div>
+                    </div>
+                    <div class="project-card-content">
+                        <span class="project-category">5ème PROJET - Web</span>
+                        <h3 class="project-title">Site web Snake Game</h3>
+                        <p class="project-description">
+                            Création d'un site web présentant le mini jeu Snake. Utilisation des méthodes d'IHM, codage
+                            en HTML CSS PHP et déploiement sur hébergeur web.
+                        </p>
+                        <div class="project-techs">
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">PHP</span>
+                            <span class="tech-tag">JavaScript</span>
+                        </div>
+                        <div class="project-links">
+                            <button class="project-link detail-btn" onclick="openProjectModal('snake')">
+                                <i class="fas fa-plus"></i>
+                                <span>Voir plus de détail</span>
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Projet 6: Client-Serveur -->
+                <article class="project-card">
+                    <div class="project-card-image"
+                        style="background-image: url('Images/progclient.png'); background-size: cover; background-position: center;">
+                        <div class="project-card-overlay">
+                            <span class="project-year">2024</span>
+                        </div>
+                    </div>
+                    <div class="project-card-content">
+                        <span class="project-category">6ème PROJET - API</span>
+                        <h3 class="project-title">Mini projet en programmation système répartie</h3>
+                        <p class="project-description">
+                            Application client serveur permettant de réserver des places pour des spectacles.
+                            Utilisation de Communication Inter-Processus (IPC).
+                        </p>
+                        <div class="project-techs">
+                            <span class="tech-tag">C</span>
+                            <span class="tech-tag">Linux</span>
+                        </div>
+                        <div class="project-links">
+                            <button class="project-link detail-btn" onclick="openProjectModal('clientserveur')">
+                                <i class="fas fa-plus"></i>
+                                <span>Voir plus de détail</span>
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Projet 7: App Recettes CLI -->
+                <article class="project-card">
+                    <div class="project-card-image"
+                        style="background-image: url('Images/appRecette1.png'); background-size: cover; background-position: center;">
+                        <div class="project-card-overlay">
+                            <span class="project-year">2024</span>
+                        </div>
+                    </div>
+                    <div class="project-card-content">
+                        <span class="project-category">7ème PROJET - Script</span>
+                        <h3 class="project-title">Gestionnaire de recettes - Application CLI</h3>
+                        <p class="project-description">
+                            Application en ligne de commande permettant de gérer une collection de recettes de cuisine.
+                            L'utilisateur peut ajouter, afficher, rechercher et supprimer des recettes.
+                        </p>
+                        <div class="project-techs">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">CLI</span>
+                        </div>
+                        <div class="project-links">
+                            <button class="project-link detail-btn" onclick="openProjectModal('appRecette')">
+                                <i class="fas fa-plus"></i>
+                                <span>Voir plus de détail</span>
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Projet 8: Colocation -->
+                <article class="project-card">
+                    <div class="project-card-image"
+                        style="background-image: url('Images/colocation1.png'); background-size: cover; background-position: center;">
+                        <div class="project-card-overlay">
+                            <span class="project-year">2024</span>
+                        </div>
+                    </div>
+                    <div class="project-card-content">
+                        <span class="project-category">8ème PROJET - Web</span>
+                        <h3 class="project-title">Application web de colocation</h3>
+                        <p class="project-description">
+                            Application web permettant de gérer une colocation. Les utilisateurs peuvent s'inscrire, se
+                            connecter, gérer les tâches ménagères, les courses et les charges communes.
+                        </p>
+                        <div class="project-techs">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Flask</span>
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">MySQL</span>
+                        </div>
+                        <div class="project-links">
+                            <button class="project-link detail-btn" onclick="openProjectModal('colocation')">
+                                <i class="fas fa-plus"></i>
+                                <span>Voir plus de détail</span>
+                            </button>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <!-- CTA -->
+            <div class="projects-cta">
+                <a href="https://github.com/banu005" target="_blank" class="cta-link">
+                    <span>VOIR L'INTÉGRALITÉ DU CODE</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+            </div>
+        </section>
+
+        <!-- STACK SECTION -->
+        <section id="stack" class="section stack-section">
+            <div class="section-content">
+                <div class="section-header">
+                    <div class="section-kicker">PORTFOLIO</div>
+                    <h2 class="section-title">Mes compétences informatiqueson STICKY · FLOUTÉ AU SCROLL</h2>
+                </div>
+
+                <!-- Langages -->
+                <div class="skill-category">
+                    <h3 class="skill-category-title">Langages</h3>
+                    <div class="skills-grid">
+                        <div class="skill-card">
+                            <i class="devicon-c-plain colored skill-icon"></i>
+                            <span class="skill-name">C</span>
+                        </div>
+                        <div class="skill-card">
+                            <i class="devicon-java-plain colored skill-icon"></i>
+                            <span class="skill-name">Java</span>
+                        </div>
+                        <div class="skill-card">
+                            <i class="devicon-python-plain colored skill-icon"></i>
+                            <span class="skill-name">Python</span>
+                        </div>
+                        <div class="skill-card">
+                            <i class="devicon-html5-plain colored skill-icon"></i>
+                            <span class="skill-name">HTML</span>
+                        </div>
+                        <div class="skill-card">
+                            <i class="devicon-css3-plain colored skill-icon"></i>
+                            <span class="skill-name">CSS</span>
+                        </div>
+                        <div class="skill-card">
+                            <i class="devicon-typescript-plain colored skill-icon"></i>
+                            <span class="skill-name">TypeScript</span>
+                        </div>
+                        <div class="skill-card">
+                            <i class="devicon-php-plain colored skill-icon"></i>
+                            <span class="skill-name">PHP</span>
+                        </div>
+                        <div class="skill-card">
+                            <i class="devicon-sqlite-plain colored skill-icon"></i>
+                            <span class="skill-name">SQL</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Frameworks -->
+                <div class="skill-category">
+                    <h3 class="skill-category-title">Frameworks & Libraries</h3>
+                    <div class="skills-grid">
+                        <div class="skill-card">
+                            <i class="devicon-angularjs-plain colored skill-icon"></i>
+                            <span class="skill-name">Angular</span>
+                        </div>
+                        <div class="skill-card">
+                            <i class="devicon-spring-plain colored skill-icon"></i>
+                            <span class="skill-name">Spring</span>
+                        </div>
+                        <div class="skill-card">
+                            <i class="devicon-tailwindcss-plain colored skill-icon"></i>
+                            <span class="skill-name">Tailwind</span>
+                        </div>
+                        <div class="skill-card">
+                            <i class="devicon-flask-original colored skill-icon"></i>
+                            <span class="skill-name">Flask</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Outils -->
+                <div class="skill-category">
+                    <h3 class="skill-category-title">Outils</h3>
+                    <div class="skills-grid">
+                        <div class="skill-card">
+                            <i class="devicon-intellij-plain colored skill-icon"></i>
+                            <span class="skill-name">IntelliJ</span>
+                        </div>
+                        <div class="skill-card">
+                            <i class="devicon-vscode-plain colored skill-icon"></i>
+                            <span class="skill-name">VS Code</span>
+                        </div>
+                        <div class="skill-card">
+                            <i class="devicon-git-plain colored skill-icon"></i>
+                            <span class="skill-name">Git</span>
+                        </div>
+                        <div class="skill-card">
+                            <i class="devicon-docker-plain colored skill-icon"></i>
+                            <span class="skill-name">Docker</span>
+                        </div>
+                        <div class="skill-card">
+                            <i class="devicon-linux-plain colored skill-icon"></i>
+                            <span class="skill-name">Linux</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Certifications -->
+                <div class="skill-category">
+                    <h3 class="skill-category-title">Certifications</h3>
+                    <div class="certifications-grid">
+                        <div class="certification-card">
+                            <div class="certification-icon">
+                                <i class="fas fa-certificate"></i>
+                            </div>
+                            <div class="certification-content">
+                                <h4 class="certification-title">Cisco - English for IT</h4>
+                                <p class="certification-issuer">Cisco Networking Academy</p>
+                            </div>
+                        </div>
+                        <div class="certification-card">
+                            <div class="certification-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <div class="certification-content">
+                                <h4 class="certification-title">Cisco - CyberOps Associate</h4>
+                                <p class="certification-issuer">Cisco Networking Academy</p>
+                            </div>
+                        </div>
+                        <div class="certification-card">
+                            <div class="certification-icon">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <div class="certification-content">
+                                <h4 class="certification-title">Certification Pix</h4>
+                                <p class="certification-issuer">Ministère de l'Éducation</p>
+                            </div>
+                        </div>
+                        <div class="certification-card">
+                            <div class="certification-icon">
+                                <i class="fas fa-spell-check"></i>
+                            </div>
+                            <div class="certification-content">
+                                <h4 class="certification-title">Projet Voltaire</h4>
+                                <p class="certification-issuer">Projet Voltaire</p>
+                            </div>
+>>>>>>> 8693cb2 (changement complet du design)
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
+<<<<<<< HEAD
         <!-- Contact CTA -->
         <section class="section section-alt">
             <div class="container">
@@ -284,19 +712,91 @@
                         <i class="fas fa-envelope"></i>
                         Me contacter
                     </a>
+=======
+        <!-- CONTACT SECTION -->
+        <section id="contact" class="section contact-section">
+            <div class="section-content">
+                <div class="contact-glow-1"></div>
+                <div class="contact-glow-2"></div>
+
+                <div class="contact-layout">
+                    <div class="contact-text">
+                        <h2 class="contact-title">Me contacter</h2>
+                        <p class="contact-subtitle">
+                            Je suis à la recherche d'une alternance en Développement/Réseaux/Systèmes/Cybersecurité pour
+                            2026-2028.
+                            N'hésitez pas à me contacter pour discuter de vos projets ou opportunités.
+                        </p>
+
+                        <!-- Méthodes de contact -->
+                        <div class="contact-methods">
+                            <a href="mailto:banumathey5@gmail.com" class="contact-method-card">
+                                <div class="contact-method-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div class="contact-method-info">
+                                    <span class="contact-method-label">Email</span>
+                                    <span class="contact-method-value">banumathey5@gmail.com</span>
+                                </div>
+                            </a>
+
+                            <a href="https://github.com/banu005" target="_blank" class="contact-method-card">
+                                <div class="contact-method-icon">
+                                    <i class="fab fa-github"></i>
+                                </div>
+                                <div class="contact-method-info">
+                                    <span class="contact-method-label">GitHub</span>
+                                    <span class="contact-method-value">github.com/banu005</span>
+                                </div>
+                            </a>
+
+                            <a href="https://www.linkedin.com/in/banumathey-balendran" target="_blank"
+                                class="contact-method-card">
+                                <div class="contact-method-icon">
+                                    <i class="fab fa-linkedin"></i>
+                                </div>
+                                <div class="contact-method-info">
+                                    <span class="contact-method-label">LinkedIn</span>
+                                    <span class="contact-method-value">banumathey-balendran</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+>>>>>>> 8693cb2 (changement complet du design)
+                </div>
+
+<<<<<<< HEAD
+=======
+                <div class="footer-divider"></div>
+
+                <div class="footer-bottom">
+                    <div class="footer-bottom-left">
+                        <span>BALENDRAN Banumathey</span>
+                    </div>
+                    <div class="footer-bottom-right">
+                        <span>Made with passion & code</span>
+                    </div>
                 </div>
             </div>
         </section>
-
+>>>>>>> 8693cb2 (changement complet du design)
     </main>
 
-    <footer class="footer">
-        <p>&copy; 2025 BALENDRAN Banumathey. Tous droits réservés.</p>
-        <div class="footer-links">
-            <a href="https://github.com/banu005">GitHub</a>
-            <a href="https://www.linkedin.com/in/banumathey-balendran">LinkedIn</a>
+    <!-- Modal pour les détails du projet -->
+    <div id="projectModal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeProjectModal()">
+                <i class="fas fa-times"></i>
+            </button>
+            <div id="modalContent">
+                <!-- Le contenu sera chargé dynamiquement -->
+            </div>
         </div>
+<<<<<<< HEAD
     </footer>
+=======
+    </div>
+>>>>>>> 8693cb2 (changement complet du design)
 
 </body>
 
