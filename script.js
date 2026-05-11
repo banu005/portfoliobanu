@@ -1,5 +1,40 @@
 const carouselState = {};
 
+// Heatmap génération
+function generateHeatmap() {
+    const grid = document.getElementById('heatmapGrid');
+    if (!grid) return;
+    const pattern = [0,1,0,2,3,4,2,1,0,3,4,2,1,0,1,3,2,4,1,0,2,3,1,4,2,0,1,2,
+                     1,0,2,4,3,1,0,2,4,3,1,0,2,1,3,4,2,0,1,3,2,4,1,0,3,2,4,1];
+    for (let i = 0; i < 112; i++) {
+        const cell = document.createElement('div');
+        cell.className = `heat-cell heat-${pattern[i % pattern.length]}`;
+        grid.appendChild(cell);
+    }
+}
+generateHeatmap();
+
+// Barre de progression au scroll
+window.addEventListener('scroll', () => {
+    const fill = document.getElementById('progressFill');
+    if (!fill) return;
+    const pct = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
+    fill.style.width = Math.min(pct, 100) + '%';
+});
+
+// Formulaire contact
+function handleFormSubmit(e) {
+    e.preventDefault();
+    const btn = e.target.querySelector('.form-submit');
+    btn.innerHTML = '<span>Message envoyé !</span> <i class="fas fa-check"></i>';
+    btn.style.background = '#28C840';
+    setTimeout(() => {
+        btn.innerHTML = '<span>Envoyer le message</span> <i class="fas fa-paper-plane"></i>';
+        btn.style.background = '';
+        e.target.reset();
+    }, 3000);
+}
+
 const themeButtons = document.querySelectorAll('.theme-btn, .theme-btn-small');
 const html = document.documentElement;
 
