@@ -1,128 +1,61 @@
 const carouselState = {};
 
-// Titre dashboard dynamique selon le mois courant
-(function() {
-    const months = ['JANV.','FÉVR.','MARS','AVR.','MAI','JUIN','JUIL.','AOÛT','SEPT.','OCT.','NOV.','DÉC.'];
-    const now = new Date();
-    const el = document.getElementById('dashTitle');
-    if (el) el.textContent = `DASHBOARD · ${months[now.getMonth()]} ${now.getFullYear()}`;
-})();
+// Terminal animé
+function initTerminal() {
+    const linesEl = document.getElementById('terminalLines');
+    const inputEl = document.getElementById('terminalInput');
+    if (!linesEl || !inputEl) return;
 
-// Tooltip du heatmap
-function showHeatTooltip(e) {
-    const tooltip = document.getElementById('heatTooltip');
-    if (!tooltip) return;
-    const date = e.currentTarget.dataset.date;
-    const count = e.currentTarget.dataset.count;
-    const [year, month, day] = date.split('-');
-    const d = new Date(+year, +month - 1, +day);
-    const formatted = d.toLocaleDateString('fr-FR', { weekday: 'short', day: 'numeric', month: 'long', year: 'numeric' });
-    tooltip.textContent = (count === '0' || count === 0)
-        ? `Aucune contribution · ${formatted}`
-        : `${count} contribution${+count > 1 ? 's' : ''} · ${formatted}`;
-    const rect = e.currentTarget.getBoundingClientRect();
-    tooltip.style.left = `${rect.left + rect.width / 2}px`;
-    tooltip.style.top = `${rect.top - 8}px`;
-    tooltip.style.display = 'block';
-}
+    const sequence = [
+        { cmd: 'git pull origin main',                                    out: { text: 'Already up to date.', cls: 'success' } },
+        { cmd: 'python -m venv venv && source venv/bin/activate',         out: { text: '(venv) banu@dev:~/recettes$', cls: 'info' } },
+        { cmd: 'pip install -r requirements.txt',                         out: { text: 'Successfully installed argparse json', cls: 'success' } },
+        { cmd: 'python recettes.py add "Gateau au chocolat"',             out: { text: 'Recette ajoutée avec succès.', cls: 'success' } },
+        { cmd: 'python recettes.py list',                                 out: { text: '1. Gateau au chocolat  2. Ratatouille', cls: 'info' } },
+        { cmd: 'git add .',                                               out: { text: 'Changes staged for commit', cls: '' } },
+        { cmd: 'git commit -m "feat: ajout commande recherche"',          out: { text: '[main 3a7f2c1] 2 files changed, 54 insertions(+)', cls: '' } },
+        { cmd: 'git push origin main',                                    out: { text: 'To github.com/banu005 · main → main ✓', cls: 'success' } },
+    ];
 
-function hideHeatTooltip() {
-    const tooltip = document.getElementById('heatTooltip');
-    if (tooltip) tooltip.style.display = 'none';
-}
+    const MAX_LINES = 9;
+    const displayed = [];
+    let step = 0;
 
-function attachHeatCell(cell, level, dateStr, count) {
-    cell.className = `heat-cell heat-${level}`;
-    cell.dataset.date = dateStr;
-    cell.dataset.count = count;
-    cell.addEventListener('mouseenter', showHeatTooltip);
-    cell.addEventListener('mouseleave', hideHeatTooltip);
-}
-
-// Formatte une date locale sans décalage UTC
-function toDateStr(d) {
-    return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
-}
-
-// Retourne la liste des jours du mois courant
-function buildMonthDates() {
-    const now = new Date();
-    const year = now.getFullYear();
-    const month = now.getMonth();
-    const daysInMonth = new Date(year, month + 1, 0).getDate();
-    const dates = [];
-    for (let d = 1; d <= daysInMonth; d++) {
-        dates.push(toDateStr(new Date(year, month, d)));
-    }
-    return dates;
-}
-
-function generateHeatmap(data, dates) {
-    const grid = document.getElementById('heatmapGrid');
-    if (!grid) return;
-    grid.innerHTML = '';
-
-    // Décalage : le 1er du mois tombe quel jour ? (lundi = 0)
-    if (dates.length > 0) {
-        const firstDate = new Date(dates[0] + 'T12:00:00');
-        const dayOfWeek = (firstDate.getDay() + 6) % 7;
-        for (let p = 0; p < dayOfWeek; p++) {
-            const spacer = document.createElement('div');
-            spacer.className = 'heat-cell heat-spacer';
-            grid.appendChild(spacer);
-        }
+    function addLine(text, type, modifier) {
+        const div = document.createElement('div');
+        div.className = `t-line-${type}${modifier ? ' ' + modifier : ''}`;
+        div.textContent = text;
+        linesEl.appendChild(div);
+        displayed.push(div);
+        if (displayed.length > MAX_LINES) displayed.shift().remove();
     }
 
-    const max = Math.max(...data, 1);
-    data.forEach((count, i) => {
-        const cell = document.createElement('div');
-        const level = count === 0 ? 0 : Math.min(Math.ceil((count / max) * 4), 4);
-        attachHeatCell(cell, level, dates[i], count);
-        grid.appendChild(cell);
-    });
-}
-
-// Heatmap depuis l'API GitHub réelle — mois courant uniquement
-async function fetchGitHubContributions() {
-    const monthDates = buildMonthDates();
-    try {
-        const res = await fetch('https://api.github.com/users/banu005/events?per_page=100');
-        if (!res.ok) throw new Error('API unavailable');
-        const events = await res.json();
-
-        const contributions = {};
-        let commitCount = 0;
-        let prCount = 0;
-
-        events.forEach(event => {
-            const date = event.created_at.split('T')[0];
-            contributions[date] = (contributions[date] || 0) + 1;
-            if (event.type === 'PushEvent') {
-                commitCount += event.payload.commits?.length || 0;
+    function runStep() {
+        const { cmd, out } = sequence[step % sequence.length];
+        let i = 0;
+        inputEl.textContent = '';
+        const interval = setInterval(() => {
+            inputEl.textContent = cmd.slice(0, ++i);
+            if (i >= cmd.length) {
+                clearInterval(interval);
+                setTimeout(() => {
+                    addLine(cmd, 'cmd');
+                    inputEl.textContent = '';
+                    setTimeout(() => {
+                        addLine(out.text, 'out', out.cls);
+                        step++;
+                        setTimeout(runStep, 1400);
+                    }, 350);
+                }, 180);
             }
-            if (event.type === 'PullRequestEvent' && event.payload.action === 'closed' && event.payload.pull_request?.merged) {
-                prCount++;
-            }
-        });
-
-        const heatData = monthDates.map(dateStr => contributions[dateStr] || 0);
-        generateHeatmap(heatData, monthDates);
-
-        const commitsEl = document.getElementById('commitsVal');
-        const prsEl = document.getElementById('prsVal');
-        if (commitsEl) commitsEl.textContent = commitCount || '0';
-        if (prsEl) prsEl.textContent = prCount || '0';
-
-    } catch {
-        generateHeatmap(Array(monthDates.length).fill(0), monthDates);
-        const commitsEl = document.getElementById('commitsVal');
-        const prsEl = document.getElementById('prsVal');
-        if (commitsEl) commitsEl.textContent = '0';
-        if (prsEl) prsEl.textContent = '0';
+        }, 55 + Math.random() * 25);
     }
+
+    setTimeout(runStep, 700);
 }
 
-fetchGitHubContributions();
+initTerminal();
+
 
 // Barre de progression au scroll
 window.addEventListener('scroll', () => {

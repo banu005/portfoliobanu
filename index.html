@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Portfolio de Banumathey BALENDRAN — Développeuse Full Stack">
     <title>BALENDRAN Banumathey — Développeuse Full Stack</title>
-    <link rel="stylesheet" href="style.css?v=8">
+    <link rel="stylesheet" href="style.css?v=9">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -88,52 +88,19 @@
                 </div>
 
                 <div class="hero-right">
-                    <div class="dashboard-card">
-                        <div class="dash-header">
-                            <span class="dash-title" id="dashTitle">DASHBOARD · 2026</span>
-                            <div class="dash-header-pills">
-                                <a href="https://github.com/banu005?tab=repositories" target="_blank" rel="noopener noreferrer" class="dash-pill dash-pill-link" title="Voir les dépôts" aria-label="Voir les dépôts GitHub"><i class="fab fa-github" aria-hidden="true"></i> Repository</a>
-                                <a href="https://github.com/banu005" target="_blank" rel="noopener noreferrer" class="dash-pill dash-pill-link" title="Voir le profil GitHub" aria-label="Voir le profil GitHub"><i class="fab fa-github" aria-hidden="true"></i> Profil</a>
-                            </div>
+                    <div class="terminal-window" aria-label="Terminal animé">
+                        <div class="terminal-bar">
+                            <span class="t-dot t-red"></span>
+                            <span class="t-dot t-yellow"></span>
+                            <span class="t-dot t-green"></span>
+                            <span class="t-bar-title">banu@dev · ~/projets</span>
                         </div>
-
-                        <div class="dash-heatmap">
-                            <div class="heatmap-grid" id="heatmapGrid"></div>
-                            <div class="heatmap-legend">
-                                <span class="legend-txt">Less</span>
-                                <div class="legend-scale">
-                                    <div class="legend-sq s0"></div>
-                                    <div class="legend-sq s1"></div>
-                                    <div class="legend-sq s2"></div>
-                                    <div class="legend-sq s3"></div>
-                                    <div class="legend-sq s4"></div>
-                                </div>
-                                <span class="legend-txt">More</span>
-                            </div>
-                        </div>
-
-                        <div class="dash-metrics">
-                            <div class="dash-metric">
-                                <span class="dash-val" id="commitsVal">—</span>
-                                <span class="dash-lbl">COMMITS</span>
-                                <span class="dash-sub accent">7 derniers jours</span>
-                            </div>
-                            <div class="dash-metric">
-                                <span class="dash-val" id="prsVal">—</span>
-                                <span class="dash-lbl">PULL REQUESTS</span>
-                                <span class="dash-sub">merged</span>
-                            </div>
-                        </div>
-
-                        <div class="dash-spark">
-                            <div class="spark-frame">
-                                <svg viewBox="0 0 424 72" preserveAspectRatio="none" width="100%" height="72">
-                                    <path d="M0,60 C40,58 80,45 120,35 C160,25 200,40 240,30 C280,20 320,10 360,15 C380,12 400,18 424,10" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                            </div>
-                            <div class="dash-status">
-                                <span class="status-dot-sm"></span>
-                                <span>En production · Atelier Banu</span>
+                        <div class="terminal-body">
+                            <div class="terminal-lines" id="terminalLines"></div>
+                            <div class="terminal-active">
+                                <span class="t-prompt">$</span>
+                                <span class="t-input" id="terminalInput"></span>
+                                <span class="t-cursor" aria-hidden="true"></span>
                             </div>
                         </div>
                     </div>
@@ -518,7 +485,7 @@
                         </ul>
                         <h3 class="stack-col-title stack-col-title--gap">Certifications</h3>
                         <ul class="stack-list">
-                            <li class="stack-item cert-item"><i class="devicon-cisco-plain colored"></i> Cisco English for IT</li>
+                            <li class="stack-item cert-item"><i class="devicon-cisco-plain" style="color:#049fd9"></i> Cisco English for IT</li>
                             <li class="stack-item cert-item"><img src="Images/pix.png" class="cert-logo" alt="Pix"> Certification Pix</li>
                             <li class="stack-item cert-item"><img src="Images/projetvoltaire.png" class="cert-logo" alt="Voltaire"> Projet Voltaire</li>
                         </ul>
@@ -621,8 +588,6 @@
             <div id="modalContent"></div>
         </div>
     </div>
-
-    <div id="heatTooltip" class="heat-tooltip" role="tooltip" aria-live="polite"></div>
 
     <script src="script.js"></script>
 
