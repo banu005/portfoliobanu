@@ -209,7 +209,7 @@ const projectsData = {
         title: 'Site web 93moove - Deuxième année BTS SIO',
         category: 'Full Stack',
         year: '2025',
-        description: 'Deuxième version du site 93moove, une plateforme web pour une association d\' activités sportives et créatives avec système d\'inscription aux cours. Utilisation de la méthode Scrum.',
+        description: 'Deuxième version du site 93moove, une plateforme web pour une association d\'activités sportives et créatives avec système d\'inscription aux cours. Utilisation de la méthode Scrum.',
         images: ['Images/93moove2.png', 'Images/93moove2login.png'],
         techs: ['Angular', 'Spring', 'Java', 'HTML', 'CSS', 'TypeScript', 'Supabase', 'PostgreSQL'],
         github: 'https://github.com/angelo1967817162/angular.git',
