@@ -1,382 +1,635 @@
 <!DOCTYPE html>
-<html lang="fr" data-theme="light">
+<html lang="fr" data-theme="dark">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="Portfolio de Banumathey BALENDRAN - Développeuse informatique en recherche de stage">
-    <title>BALENDRAN Banumathey - Développeuse informatique</title>
-    <link rel="stylesheet" href="style.css">
+    <meta name="description" content="Portfolio de Banumathey BALENDRAN — Développeuse Full Stack">
+    <title>BALENDRAN Banumathey — Développeuse Full Stack</title>
+    <link rel="stylesheet" href="style.css?v=9">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
 
-    <header class="header">
-        <div class="container header-content">
-            <h1 class="header-logo title-gradient">Banumathey BALENDRAN</h1>
-            <nav class="header-nav" aria-label="Navigation principale">
-                <a href="index.html" class="active" aria-current="page">Accueil</a>
-                <a href="projet.html">Projets</a>
-                <a href="certification.html">Certifications</a>
-                <a href="contact.html">Contact</a>
-                <a href="Documents/CV_2026-04-27_Banumathey_BALENDRAN.pdf" download
-                    class="btn btn-outline active">Télécharger mon CV</a>
-                <button id="theme-toggle" class="theme-toggle" aria-label="Changer de thème">
-                    <i class="fas fa-moon"></i>
-                    <span class="theme-label">Clair</span>
+    <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+
+    <!-- HEADER -->
+    <header class="header" role="banner">
+        <div class="header-bar">
+            <div class="header-logo-group">
+                <span class="header-logo-text">Portfolio · BALENDRAN Banumathey</span>
+            </div>
+            <nav class="header-right" aria-label="Navigation principale">
+                <a href="#accueil" class="nav-pill active">Accueil</a>
+                <a href="#apropos" class="nav-pill">À propos</a>
+                <a href="#etudes" class="nav-pill">Projets</a>
+                <a href="#stack" class="nav-pill">Compétences</a>
+                <a href="#contact" class="nav-pill">Contact</a>
+                <a href="Documents/CV_2026-04-27_Banumathey_BALENDRAN.pdf" download class="download-btn">
+                    <i class="fas fa-download" aria-hidden="true"></i>
+                    <span>Télécharger le CV</span>
+                </a>
+                <button class="theme-btn" aria-label="Activer le mode clair / sombre">
+                    <i class="fas fa-sun" aria-hidden="true"></i>
+                </button>
+                <button type="button" class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Ouvrir le menu"
+                    aria-expanded="false" aria-controls="mobileMenu">
+                    <i class="fas fa-bars" aria-hidden="true"></i>
                 </button>
             </nav>
+        </div>
 
+        <div class="progress-bar" role="progressbar" aria-label="Progression de lecture" aria-valuenow="0"
+            aria-valuemin="0" aria-valuemax="100">
+            <div class="progress-bar-fill" id="progressFill"></div>
+        </div>
+
+        <div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="Menu de navigation">
+            <a href="#accueil" onclick="closeMobileMenu()">Accueil</a>
+            <a href="#apropos" onclick="closeMobileMenu()">À propos</a>
+            <a href="#etudes" onclick="closeMobileMenu()">Projets</a>
+            <a href="#stack" onclick="closeMobileMenu()">Compétences</a>
+            <a href="#contact" onclick="closeMobileMenu()">Contact</a>
+            <a href="Documents/CV_2026-04-27_Banumathey_BALENDRAN.pdf" download>Télécharger le CV</a>
         </div>
     </header>
 
     <main id="main-content">
 
-        <!-- Hero Section -->
-        <section class="hero section" tabindex="0" aria-label="Présentation de Banumathey BALENDRAN">
-            <div class="container hero-grid">
-                <div class="animate-fadeInUp">
-                    <p class="hero-badge">Bonjour, je suis</p>
-                    <h2 class="title-xl">Banumathey <span class="title-gradient">BALENDRAN</span></h2>
-                    <p class="hero-subtitle">Développeuse informatique</p>
+        <!-- HERO -->
+        <section id="accueil" class="hero">
+            <div class="hero-glow-1"></div>
+            <div class="hero-glow-2"></div>
+
+            <div class="hero-content">
+                <div class="hero-left">
+                    <div class="hero-badge">
+                        <i class="fas fa-code"></i>
+                        <span>BALENDRAN Banumathey</span>
+                    </div>
+                    <h1 class="hero-title">
+                        Développeuse<br>
+                        <em class="hero-title-accent">Full Stack.</em>
+                    </h1>
                     <p class="hero-description">
-                        Actuellement en Licence Professionnelle Métiers de l'informatique : conception,
-                        développement et test de logiciels parcours chef de projet, développement, exploitation et
-                        sécurité au CNAM.
-                        Je suis à la recherche d'une alternance en Développement/Réseaux/Systèmes/Cybersecurité pour
-                        l'année 2026-2028 pour
-                        approfondir mes compétences techniques.
+                        Étudiante en Licence professionnelle au CNAM, je recherche une <strong>alternance pour préparer
+                            un Master</strong> en développement, sécurité ou systèmes — à partir de 2026.
                     </p>
                     <div class="hero-buttons">
-                        <a href="projet.html" class="btn btn-primary">
-                            <i class="fas fa-folder-open"></i>
-                            Voir mes projets
-                        </a>
-                        <a href="contact.html" class="btn btn-secondary">
-                            <i class="fas fa-envelope"></i>
-                            Me contacter
-                        </a>
-                    </div>
-                </div>
-
-                <div class="hero-image animate-fadeInUp delay-200">
-                    <div class="hero-card">
-                        <i class="fas fa-laptop-code hero-icon animate-float" aria-hidden="true"></i>
-                        <div class="hero-social">
-                            <a href="https://github.com/banu005" target="_blank" aria-label="Voir mon profil GitHub">
-                                <i class="devicon-github-original" aria-hidden="true"></i>
-                            </a>
-                            <a href="https://www.linkedin.com/in/banumathey-balendran" target="_blank"
-                                aria-label="Voir mon profil LinkedIn">
-                                <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Section Parcours -->
-        <section class="section section-alt" tabindex="0" aria-label="Mon parcours académique et professionnel">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="title-lg">Mon <span class="text-gradient">parcours</span></h2>
-                </div>
-                <div class="grid grid-2">
-
-                    <!-- Formations -->
-                    <div>
-                        <div class="section-title-icon">
-                            <i class="fas fa-graduation-cap" aria-hidden="true"></i>
-                            <h3 class="title-md text-primary">Formations</h3>
-                        </div>
-                        <div class="grid grid-1" style="gap: 1.5rem;">
-                            <div class="card-static card-accent" tabindex="0"
-                                aria-label="Formation : Licence professionnelle Métiers de l'informatique, CNAM, en cours">
-                                <h4 class="experience-title">Licence professionnelle Métiers de l'informatique :
-                                    conception, développement et test de logiciels</h4>
-                                <p class="experience-company">CNAM, En cours</p>
-                                <p class="text-muted">Parcours Chef de projet dev, sécurité et exploitation</p>
-                            </div>
-
-                            <div class="card-static card-accent" tabindex="0"
-                                aria-label="Formation : BTS SIO option SLAM, Lycée Auguste Blanqui, 2023-2025"
-                                style="border-color: var(--secondary);">
-                                <h4 class="experience-title">BTS SIO option SLAM (Solutions Logiciels et Applications
-                                    Métiers)</h4>
-                                <p class="experience-company">Lycée Auguste Blanqui, 2023-2025</p>
-                                <ul class="experience-list">
-                                    <li>Programmation API REST (Java, IntelliJ, Spring, Angular, Kotlin, PostgreSQL)
-                                    </li>
-                                    <li>Programmation web (HTML, CSS, PHP, Laragon, PhpMyAdmin, VSCode)</li>
-                                    <li>Réseau, système (Packet Tracer, Virtual Machine, Ubuntu/Windows)</li>
-                                    <li>Cybersécurité (Injection SQL, Owasp, journalisation, hachage, RGPD)</li>
-                                    <li>Projet (Trello, Slack, GitHub, Teams)</li>
-                                    <li class="text-blue-200">Auto-formations sur Cisco Netacad (<a
-                                            href="certification.html" class="link-primary">English for IT1</a>, CyberOps
-                                        Associate)</li>
-                                </ul>
-                            </div>
-
-                            <div class="card-static card-accent" tabindex="0"
-                                aria-label="Formation : BAC ST2S, Lycée Jacques Monod, 2021-2023">
-                                <h4 class="experience-title">BAC ST2S (Sciences et Technologies de la Santé et du
-                                    Social)</h4>
-                                <p class="experience-company">Lycée Jacques Monod, 2021-2023</p>
-                                <div class="flex gap-4 mt-4">
-                                    <a href="certification.html" class="badge badge-warning">Certification Pix</a>
-                                    <a href="certification.html" class="badge"
-                                        style="background-color: rgba(34, 197, 94, 0.2); color: #22c55e;">Certification
-                                        Projet Voltaire</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Expériences -->
-                    <div>
-                        <div class="section-title-icon">
-                            <i class="fas fa-briefcase" aria-hidden="true"></i>
-                            <h3 class="title-md text-primary">Expériences Professionnelles</h3>
-                        </div>
-                        <div class="grid grid-1" style="gap: 1.5rem;">
-                            <div class="card-static" tabindex="0"
-                                aria-label="Expérience : Stage Développeuse Full Stack, Sixième Etoile, en cours">
-                                <h4 class="experience-title">Stage Développeuse Full Stack</h4>
-                                <p class="experience-company">Sixième Etoile, En cours</p>
-                                <ul class="experience-list">
-                                    <li>Création d'une application full stack en groupe</li>
-                                    <li>Développement frontend et backend</li>
-                                    <li>Collaboration en équipe sur un projet complet</li>
-                                </ul>
-                            </div>
-
-                            <div class="card-static" tabindex="0"
-                                aria-label="Expérience : Stage Transformation Numérique, Conseil Régional Île-de-France, janvier 2025 à février 2025">
-                                <h4 class="experience-title">Stage au Pôle Transformation Numérique</h4>
-                                <p class="experience-company">Conseil Régional Île-de-France, janvier 2025- février 2025
-                                </p>
-                                <ul class="experience-list">
-                                    <li>Qualification des avis, utilisation PowerBI</li>
-                                    <li>Formation RGPD</li>
-                                    <li>Tester une IA qui répond aux aides régionales</li>
-                                    <li>Recherche sur le Numérique Responsable et présentation des idées</li>
-                                    <li>Accessibilité numérique</li>
-                                    <li>Concevoir un formulaire de la bourse sanitaire et social sur Microsoft Form</li>
-                                    <li>Atelier Design</li>
-                                </ul>
-                            </div>
-
-                            <div class="card-static" tabindex="0"
-                                aria-label="Expérience : Stage Développement Web, Images30, mai 2024 à juin 2024">
-                                <h4 class="experience-title">Stage en Développement Web</h4>
-                                <p class="experience-company">Images30, mai 2024- juin 2024</p>
-                                <ul class="experience-list">
-                                    <li>Analyse de sites d'investissement et Images30</li>
-                                    <li>Cahiers des charges des sites d'investissement et Images30</li>
-                                    <li>Création de maquette sur Balsamiq</li>
-                                    <li>Création du site web Cineweb Invest sur Google Sites</li>
-                                    <li>Fiche technique des outils utilisés</li>
-                                </ul>
-                            </div>
-
-                            <div class="card-static" tabindex="0"
-                                aria-label="Expérience : Stage Bibliothécaire, Bibliothèque Valeyre, 2020">
-                                <h4 class="experience-title">Stage 3ème en tant que Bibliothécaire</h4>
-                                <p class="experience-company">Bibliothèque Valeyre, 2020</p>
-                                <ul class="experience-list">
-                                    <li>Accueil et renseignement du public</li>
-                                    <li>Numérisation de documents, scanner les journaux</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Section Compétences -->
-        <section id="competences" class="section" tabindex="0" aria-label="Mes compétences techniques">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="title-lg animate-fadeInUp">Mes <span class="text-gradient">Compétences</span></h2>
-                </div>
-
-                <!-- Langages -->
-                <div class="mb-12 animate-fadeInUp delay-200" role="group" aria-label="Langages de programmation">
-                    <h3 class="skill-section-title text-primary">Langages</h3>
-                    <div class="grid grid-6">
-                        <div class="skill-card card-hover" tabindex="0" role="button" aria-label="Compétence C">
-                            <i class="devicon-c-plain skill-icon" style="color: #f97316;" aria-hidden="true"></i>
-                            <p class="skill-name">C</p>
-                        </div>
-                        <div class="skill-card card-hover" tabindex="0" role="button" aria-label="Compétence Java">
-                            <i class="devicon-java-plain skill-icon" style="color: #f97316;" aria-hidden="true"></i>
-                            <p class="skill-name">Java</p>
-                        </div>
-                        <div class="skill-card card-hover" tabindex="0" role="button" aria-label="Compétence Python">
-                            <i class="devicon-python-plain skill-icon" style="color: #f97316;" aria-hidden="true"></i>
-                            <p class="skill-name">Python</p>
-                        </div>
-                        <div class="skill-card card-hover" tabindex="0" role="button" aria-label="Compétence HTML5">
-                            <i class="devicon-html5-plain skill-icon" style="color: #ea580c;" aria-hidden="true"></i>
-                            <p class="skill-name">HTML5</p>
-                        </div>
-                        <div class="skill-card card-hover" tabindex="0" role="button" aria-label="Compétence CSS3">
-                            <i class="devicon-css3-plain skill-icon" style="color: #3b82f6;" aria-hidden="true"></i>
-                            <p class="skill-name">CSS3</p>
-                        </div>
-                        <div class="skill-card card-hover" tabindex="0" role="button"
-                            aria-label="Compétence TypeScript">
-                            <i class="devicon-typescript-plain skill-icon" style="color: #2563eb;"
-                                aria-hidden="true"></i>
-                            <p class="skill-name">TypeScript</p>
-                        </div>
-                        <div class="skill-card card-hover" tabindex="0" role="button" aria-label="Compétence PHP">
-                            <i class="devicon-php-plain skill-icon" style="color: #7c3aed;" aria-hidden="true"></i>
-                            <p class="skill-name">PHP</p>
-                        </div>
-                        <div class="skill-card card-hover" tabindex="0" role="button" aria-label="Compétence SQL">
-                            <i class="devicon-mysql-plain skill-icon" style="color: #60a5fa;" aria-hidden="true"></i>
-                            <p class="skill-name">SQL</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Frameworks & Outils -->
-                <div class="mb-12 animate-fadeInUp delay-400" role="group" aria-label="Frameworks et outils">
-                    <h3 class="skill-section-title" style="color: var(--primary-light);">Frameworks & Outils</h3>
-                    <div class="grid grid-4">
-                        <div class="skill-card card-hover" tabindex="0" role="button" aria-label="Framework Angular">
-                            <i class="devicon-angularjs-plain skill-icon" style="color: #dc2626;"
-                                aria-hidden="true"></i>
-                            <p class="skill-name">Angular</p>
-                        </div>
-                        <div class="skill-card card-hover" tabindex="0" role="button" aria-label="Framework Spring">
-                            <i class="devicon-spring-plain skill-icon" style="color: #22c55e;" aria-hidden="true"></i>
-                            <p class="skill-name">Spring</p>
-                        </div>
-                        <div class="skill-card card-hover" tabindex="0" role="button"
-                            aria-label="Framework Materialize CSS">
-                            <i class="devicon-materialui-plain skill-icon" style="color: #60a5fa;"
-                                aria-hidden="true"></i>
-                            <p class="skill-name">Materialize CSS</p>
-                        </div>
-                        <div class="skill-card card-hover" tabindex="0" role="button"
-                            aria-label="Framework Tailwind CSS">
-                            <i class="devicon-tailwindcss-plain skill-icon" style="color: #22d3ee;"
-                                aria-hidden="true"></i>
-                            <p class="skill-name">Tailwind CSS</p>
-                        </div>
-                        <div class="skill-card card-hover" tabindex="0" role="button" aria-label="Framework Flask">
-                            <i class="devicon-flask-original skill-icon" aria-hidden="true"></i>
-                            <p class="skill-name">Flask</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Environnement de développement -->
-                <div class="animate-fadeInUp delay-600" role="group" aria-label="Environnement de développement">
-                    <h3 class="skill-section-title text-primary">Environnement de développement</h3>
-                    <div class="grid grid-4">
-                        <div class="skill-card card-hover" tabindex="0" role="button" aria-label="Outil IntelliJ">
-                            <i class="devicon-intellij-plain skill-icon" aria-hidden="true"></i>
-                            <p class="skill-name">IntelliJ</p>
-                        </div>
-                        <div class="skill-card card-hover" tabindex="0" role="button" aria-label="Outil VS Code">
-                            <i class="devicon-vscode-plain skill-icon" style="color: #3b82f6;" aria-hidden="true"></i>
-                            <p class="skill-name">VS Code</p>
-                        </div>
-                        <div class="skill-card card-hover" tabindex="0" role="button" aria-label="Outil GitHub">
-                            <i class="devicon-git-plain skill-icon" style="color: #f97316;" aria-hidden="true"></i>
-                            <p class="skill-name">Git/GitHub</p>
-                        </div>
-                        <div class="skill-card card-hover" tabindex="0" role="button" aria-label="Outil Linux">
-                            <i class="devicon-linux-plain skill-icon" aria-hidden="true"></i>
-                            <p class="skill-name">Linux</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Section Domaines d'expertise -->
-        <section class="section section-alt" tabindex="0" aria-label="Domaines d'expertise">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="title-lg">Domaines d'<span class="text-gradient">expertise</span></h2>
-                </div>
-
-                <div class="grid grid-3">
-                    <div class="card text-center card-hover" tabindex="0"
-                        aria-label="Domaine d expertise : Développement Web" style="padding: 2rem;">
-                        <i class="fas fa-code card-icon" style="font-size: 3rem; color: var(--primary);"
-                            aria-hidden="true"></i>
-                        <h3 class="title-md text-primary mb-4">Développement Web</h3>
-                        <p class="text-muted">API REST, développement full-stack avec Java Spring, Angular et PostgreSQL
-                        </p>
-                    </div>
-
-                    <div class="card text-center card-hover" tabindex="0"
-                        aria-label="Domaine d expertise : Réseau et système" style="padding: 2rem;">
-                        <i class="fas fa-network-wired card-icon" style="font-size: 3rem; color: var(--primary-light);"
-                            aria-hidden="true"></i>
-                        <h3 class="title-md" style="color: var(--primary-light); margin-bottom: 1rem;">Réseau, système
-                        </h3>
-                        <p class="text-muted">TCP/IP, protocoles réseau, gestion des processus, Docker, Kubernetes</p>
-                    </div>
-
-                    <div class="card text-center card-hover" tabindex="0"
-                        aria-label="Domaine d expertise : Cybersécurité" style="padding: 2rem;">
-                        <i class="fas fa-shield-alt card-icon" style="font-size: 3rem; color: #4ade80;"
-                            aria-hidden="true"></i>
-                        <h3 class="title-md" style="color: #4ade80; margin-bottom: 1rem;">Cybersécurité</h3>
-                        <p class="text-muted">OWASP, injection SQL, hachage, RGPD et bonnes pratiques de sécurité</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Call to Action -->
-        <section class="section" tabindex="0" aria-label="Section contact" style="background-color: var(--bg-primary);">
-            <div class="container text-center">
-                <div class="animate-fadeInUp">
-                    <h2 class="title-lg mb-6">Vous pouvez me contacter :)</h2>
-                    <p class="text-lg text-muted mb-8" style="max-width: 600px; margin-left: auto; margin-right: auto;">
-                        Je suis à la recherche d'une alternance en Développement/Réseaux/Systèmes/Cybersecurité
-                        N'hésitez pas à me
-                        contacter !
-                    </p>
-                    <div class="hero-buttons justify-center">
-                        <a href="contact.html" class="btn btn-primary">
-                            <i class="fas fa-envelope"></i>
-                            Me contacter
+                        <a href="#etudes" class="btn btn-primary">
+                            <span>Voir mes projets</span>
+                            <i class="fas fa-arrow-right"></i>
                         </a>
                         <a href="Documents/CV_2026-04-27_Banumathey_BALENDRAN.pdf" download class="btn btn-secondary">
+                            <span>Télécharger le CV</span>
                             <i class="fas fa-download"></i>
-                            Télécharger mon CV
                         </a>
+                    </div>
+                </div>
+
+                <div class="hero-right">
+                    <div class="terminal-window" aria-label="Terminal animé">
+                        <div class="terminal-bar">
+                            <span class="t-dot t-red"></span>
+                            <span class="t-dot t-yellow"></span>
+                            <span class="t-dot t-green"></span>
+                            <span class="t-bar-title">banu@dev · ~/projets</span>
+                        </div>
+                        <div class="terminal-body">
+                            <div class="terminal-lines" id="terminalLines"></div>
+                            <div class="terminal-active">
+                                <span class="t-prompt">$</span>
+                                <span class="t-input" id="terminalInput"></span>
+                                <span class="t-cursor" aria-hidden="true"></span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
+
+        <!-- À PROPOS -->
+        <section id="apropos" class="section apropos-section">
+            <div class="section-content">
+                <div class="section-header">
+                    <div class="section-kicker">À PROPOS · PARCOURS</div>
+                    <h2 class="section-title">Formations et<br><em>expériences.</em></h2>
+                </div>
+
+                <div class="apropos-grid">
+
+                    <!-- FORMATIONS -->
+                    <div class="apropos-col">
+                        <div class="apropos-col-header">
+                            <i class="fas fa-graduation-cap"></i>
+                            <h3>Formations</h3>
+                        </div>
+                        <div class="timeline">
+
+                            <div class="timeline-item">
+                                <div class="timeline-dot active"></div>
+                                <div class="timeline-content">
+                                    <div class="timeline-date">En cours</div>
+                                    <h4>Licence professionnelle Métiers de l'informatique</h4>
+                                    <p class="timeline-place">CNAM</p>
+                                    <p class="timeline-desc">Parcours Chef de projet, développement, sécurité et
+                                        exploitation</p>
+                                </div>
+                            </div>
+
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-content">
+                                    <div class="timeline-date">2023 — 2025</div>
+                                    <h4>BTS SIO option SLAM</h4>
+                                    <p class="timeline-place">Lycée Auguste Blanqui</p>
+                                    <ul class="timeline-list">
+                                        <li>Programmation API REST (Java, IntelliJ, Spring, Angular, Kotlin, PostgreSQL)</li>
+                                        <li>Programmation web (HTML, CSS, PHP, Laragon, PhpMyAdmin, VSCode)</li>
+                                        <li>Réseau, système (Packet Tracer, Virtual Machine, Ubuntu/Windows)</li>
+                                        <li>Cybersécurité (Injection SQL, OWASP, journalisation, hachage, RGPD)</li>
+                                        <li>Projet (Trello, Slack, GitHub, Teams)</li>
+                                        <li>Auto-formation Cisco Netacad — English for IT, CyberOps Associate</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-content">
+                                    <div class="timeline-date">2021 — 2023</div>
+                                    <h4>BAC ST2S</h4>
+                                    <p class="timeline-place">Lycée Jacques Monod</p>
+                                    <div class="timeline-badges">
+                                        <span class="timeline-badge">Certification Pix</span>
+                                        <span class="timeline-badge">Projet Voltaire</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- EXPÉRIENCES -->
+                    <div class="apropos-col">
+                        <div class="apropos-col-header">
+                            <i class="fas fa-briefcase"></i>
+                            <h3>Expériences professionnelles</h3>
+                        </div>
+                        <div class="timeline">
+
+                            <div class="timeline-item">
+                                <div class="timeline-dot active"></div>
+                                <div class="timeline-content">
+                                    <div class="timeline-date">En cours</div>
+                                    <h4>Stage Développeuse Full Stack</h4>
+                                    <p class="timeline-place">Sixième Etoile</p>
+                                    <ul class="timeline-list">
+                                        <li>Création d'une application full stack en groupe</li>
+                                        <li>Développement frontend et backend</li>
+                                        <li>Collaboration en équipe sur un projet complet</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-content">
+                                    <div class="timeline-date">Janvier 2025 — Février 2025</div>
+                                    <h4>Stage Pôle Transformation Numérique</h4>
+                                    <p class="timeline-place">Conseil Régional Île-de-France</p>
+                                    <ul class="timeline-list">
+                                        <li>Qualification des avis, utilisation PowerBI</li>
+                                        <li>Formation RGPD</li>
+                                        <li>Tester une IA qui répond aux aides régionales</li>
+                                        <li>Recherche sur le Numérique Responsable et présentation des idées</li>
+                                        <li>Accessibilité numérique</li>
+                                        <li>Concevoir un formulaire de la bourse sanitaire et social sur Microsoft Form</li>
+                                        <li>Atelier Design</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-content">
+                                    <div class="timeline-date">Mai 2024 — Juin 2024</div>
+                                    <h4>Stage Développement Web</h4>
+                                    <p class="timeline-place">Images30</p>
+                                    <ul class="timeline-list">
+                                        <li>Analyse de sites d'investissement et Images30</li>
+                                        <li>Cahiers des charges des sites d'investissement et Images30</li>
+                                        <li>Création de maquette sur Balsamiq</li>
+                                        <li>Création du site web Cineweb Invest sur Google Sites</li>
+                                        <li>Fiche technique des outils utilisés</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-content">
+                                    <div class="timeline-date">2020</div>
+                                    <h4>Stage 3ème — Bibliothécaire</h4>
+                                    <p class="timeline-place">Bibliothèque Valeyre</p>
+                                    <ul class="timeline-list">
+                                        <li>Accueil du public, numérisation de documents</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ÉTUDES -->
+        <section id="etudes" class="section studies-section">
+            <div class="section-content">
+                <div class="section-header">
+                    <div class="section-kicker">01 · ÉTUDES · PROJETS</div>
+                    <h2 class="section-title">Mes <em>projets.</em></h2>
+                </div>
+
+                <div class="archives-sep">
+                    <span class="section-kicker">PROJETS RÉCENTS</span>
+                </div>
+                <div class="top2-grid">
+
+                    <!-- Sixième Etoile — EN COURS -->
+                    <article class="study-card">
+                        <div class="study-plate plate-blue">
+                            <div class="plate-bg-label">SIXIEME ÉTOILE</div>
+                            <div class="wip-win">
+                                <div class="wip-badge"><span class="status-dot-sm"></span> EN COURS · 2026</div>
+                                <div class="wip-lines">
+                                    <div class="wip-line wl-full"></div>
+                                    <div class="wip-line wl-half"></div>
+                                    <div class="wip-line wl-three"></div>
+                                    <div class="wip-line wl-full"></div>
+                                    <div class="wip-line wl-quarter"></div>
+                                </div>
+                                <div class="wip-footer">Captures à venir</div>
+                            </div>
+                        </div>
+                        <div class="study-info">
+                            <div class="study-meta">
+                                <span class="study-num study-num--live">EN COURS</span>
+                                <span class="study-cat">Full Stack</span>
+                                <span class="study-year">2026</span>
+                            </div>
+                            <h3 class="study-title">Application Sixième Etoile</h3>
+                            <p class="study-desc">Application full stack développée en stage — création complète du
+                                frontend et du backend en équipe pour l'entreprise Sixième Etoile.</p>
+                            <div class="study-techs">
+                                <span class="tech-tag">En cours</span>
+                            </div>
+                            <div class="study-links">
+                                <button class="study-link" onclick="openProjectModal('sixiemeEtoile')">
+                                    <i class="fas fa-plus"></i> Voir plus
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Colocation -->
+                    <article class="study-card">
+                        <div class="study-plate plate-photo">
+                            <img src="Images/colocation1.png" class="plate-direct-img" alt="Application de colocation">
+                        </div>
+                        <div class="study-info">
+                            <div class="study-meta">
+                                <span class="study-cat">Web</span>
+                                <span class="study-year">2024</span>
+                            </div>
+                            <h3 class="study-title">Application de colocation</h3>
+                            <p class="study-desc">Application web permettant de gérer une colocation. Les utilisateurs peuvent s'inscrire, se connecter, gérer les tâches ménagères, les courses et les charges communes.</p>
+                            <div class="study-techs">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">Flask</span>
+                                <span class="tech-tag">MySQL</span>
+                                <span class="tech-tag">HTML</span>
+                                <span class="tech-tag">JavaScript</span>
+                            </div>
+                            <div class="study-links">
+                                <button class="study-link" onclick="openProjectModal('colocation')">
+                                    <i class="fas fa-plus"></i> Voir plus
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Gestionnaire de recettes -->
+                    <article class="study-card">
+                        <div class="study-plate plate-photo">
+                            <img src="Images/appRecette1.png" class="plate-direct-img" alt="Gestionnaire de recettes">
+                        </div>
+                        <div class="study-info">
+                            <div class="study-meta">
+                                <span class="study-cat">CLI · Script</span>
+                                <span class="study-year">2024</span>
+                            </div>
+                            <h3 class="study-title">Gestionnaire de recettes</h3>
+                            <p class="study-desc">Application en ligne de commande permettant de gérer une collection de recettes de cuisine. L'utilisateur peut ajouter, afficher, rechercher et supprimer des recettes directement depuis le terminal.</p>
+                            <div class="study-techs">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">argparse</span>
+                                <span class="tech-tag">JSON</span>
+                                <span class="tech-tag">CLI</span>
+                            </div>
+                            <div class="study-links">
+                                <button class="study-link" onclick="openProjectModal('appRecette')">
+                                    <i class="fas fa-plus"></i> Voir plus
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Snake Game -->
+                    <article class="study-card">
+                        <div class="study-plate plate-photo">
+                            <img src="Images/jeusnakejouer.png" class="plate-direct-img" alt="Site web Snake Game">
+                        </div>
+                        <div class="study-info">
+                            <div class="study-meta">
+                                <span class="study-cat">Web · Jeu</span>
+                                <span class="study-year">2024</span>
+                            </div>
+                            <h3 class="study-title">Site web Snake Game</h3>
+                            <p class="study-desc">Création d'un site web qui présente le mini jeu Snake. Réalisation complète du projet : utiliser les méthodes d'IHM, coder le site en HTML CSS PHP et déployer le projet sur un hébergeur web.</p>
+                            <div class="study-techs">
+                                <span class="tech-tag">HTML</span>
+                                <span class="tech-tag">CSS</span>
+                                <span class="tech-tag">PHP</span>
+                                <span class="tech-tag">JavaScript</span>
+                            </div>
+                            <div class="study-links">
+                                <button class="study-link" onclick="openProjectModal('snake')">
+                                    <i class="fas fa-plus"></i> Voir plus
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- ARCHIVES -->
+                <div class="archives-sep">
+                    <span class="section-kicker">ARCHIVES</span>
+                </div>
+
+                <div class="archives-grid">
+                    <article class="archive-card" onclick="openProjectModal('93mooveV2')" tabindex="0" role="button"
+                        aria-label="Voir le projet 93Moove v2"
+                        onkeydown="if(event.key==='Enter'||event.key===' ')openProjectModal('93mooveV2')">
+                        <span class="archive-num">01</span>
+                        <h4 class="archive-title">93Moove v2</h4>
+                        <p class="archive-desc">Plateforme web pour une association d'activités sportives et créatives avec système d'inscription aux cours. Utilisation de la méthode Scrum.</p>
+                        <div class="archive-techs">
+                            <span class="tech-tag-sm">Angular</span>
+                            <span class="tech-tag-sm">Spring</span>
+                            <span class="tech-tag-sm">Java</span>
+                        </div>
+                        <span class="archive-year">2025</span>
+                    </article>
+                    <article class="archive-card" onclick="openProjectModal('93mooveV1')" tabindex="0" role="button"
+                        aria-label="Voir le projet 93Moove v1"
+                        onkeydown="if(event.key==='Enter'||event.key===' ')openProjectModal('93mooveV1')">
+                        <span class="archive-num">02</span>
+                        <h4 class="archive-title">93Moove v1</h4>
+                        <p class="archive-desc">Plateforme web complète pour une association proposant des activités sportives et créatives. Le site permet aux utilisateurs de se connecter et de s'inscrire aux cours proposés.</p>
+                        <div class="archive-techs">
+                            <span class="tech-tag-sm">PHP</span>
+                            <span class="tech-tag-sm">PostgreSQL</span>
+                        </div>
+                        <span class="archive-year">2024</span>
+                    </article>
+                    <article class="archive-card" onclick="openProjectModal('cineweb')" tabindex="0" role="button"
+                        aria-label="Voir le projet Cineweb Invest"
+                        onkeydown="if(event.key==='Enter'||event.key===' ')openProjectModal('cineweb')">
+                        <span class="archive-num">03</span>
+                        <h4 class="archive-title">Cineweb Invest</h4>
+                        <p class="archive-desc">Création d'un site web d'investissement pour Images30. Analyse du besoin, cahier des charges, maquettage sur Balsamiq et développement sur Google Sites.</p>
+                        <div class="archive-techs">
+                            <span class="tech-tag-sm">Google Sites</span>
+                            <span class="tech-tag-sm">Balsamiq</span>
+                        </div>
+                        <span class="archive-year">2024</span>
+                    </article>
+                    <article class="archive-card" onclick="openProjectModal('clientserveur')" tabindex="0" role="button"
+                        aria-label="Voir le projet Client-Serveur IPC"
+                        onkeydown="if(event.key==='Enter'||event.key===' ')openProjectModal('clientserveur')">
+                        <span class="archive-num">04</span>
+                        <h4 class="archive-title">Client-Serveur IPC</h4>
+                        <p class="archive-desc">Application client-serveur permettant de réserver des places pour un ensemble de spectacles. Utilisation de Communication Inter-Processus (IPC).</p>
+                        <div class="archive-techs">
+                            <span class="tech-tag-sm">C</span>
+                            <span class="tech-tag-sm">Linux</span>
+                        </div>
+                        <span class="archive-year">2024</span>
+                    </article>
+                    <article class="archive-card" onclick="openProjectModal('2dgame')" tabindex="0" role="button"
+                        aria-label="Voir le projet Jeu 2D Shooter"
+                        onkeydown="if(event.key==='Enter'||event.key===' ')openProjectModal('2dgame')">
+                        <span class="archive-num">05</span>
+                        <h4 class="archive-title">Jeu 2D Shooter</h4>
+                        <p class="archive-desc">Jeu de survie où le personnage doit éliminer des blobs verts en tirant pour survivre. Développé en suivant un tutoriel pour découvrir le développement de jeux vidéo avec Godot.</p>
+                        <div class="archive-techs">
+                            <span class="tech-tag-sm">Godot</span>
+                            <span class="tech-tag-sm">C#</span>
+                        </div>
+                        <span class="archive-year">2023</span>
+                    </article>
+                </div>
+
+                <div class="projects-cta">
+                    <a href="https://github.com/banu005" target="_blank" rel="noopener noreferrer" class="cta-link"
+                        aria-label="Voir l'intégralité du code sur GitHub">
+                        <span>VOIR L'INTÉGRALITÉ DU CODE DES PROJETS SUR GITHUB</span>
+                        <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- STACK -->
+        <section id="stack" class="section stack-section">
+            <div class="section-content">
+                <div class="section-header">
+                    <div class="section-kicker">02 · COMPÉTENCES PROFESSIONNELLES</div>
+                    <h2 class="section-title">Techniques, langues<br>et <em>certifications.</em></h2>
+                </div>
+
+                <div class="stack-4col">
+                    <div class="stack-col">
+                        <h3 class="stack-col-title">Langages</h3>
+                        <ul class="stack-list">
+                            <li class="stack-item"><i class="devicon-typescript-plain colored"></i> TypeScript</li>
+                            <li class="stack-item"><i class="devicon-python-plain colored"></i> Python</li>
+                            <li class="stack-item"><i class="devicon-java-plain colored"></i> Java</li>
+                            <li class="stack-item"><i class="devicon-php-plain colored"></i> PHP</li>
+                            <li class="stack-item"><i class="devicon-c-plain colored"></i> C</li>
+                            <li class="stack-item"><i class="devicon-html5-plain colored"></i> HTML / CSS</li>
+                            <li class="stack-item"><i class="devicon-sqlite-plain colored"></i> SQL</li>
+                        </ul>
+                    </div>
+
+                    <div class="stack-col">
+                        <h3 class="stack-col-title">Frameworks</h3>
+                        <ul class="stack-list">
+                            <li class="stack-item"><i class="devicon-angularjs-plain colored"></i> Angular</li>
+                            <li class="stack-item"><i class="devicon-spring-plain colored"></i> Spring Boot</li>
+                            <li class="stack-item"><i class="devicon-flask-original" style="color:#a8d8a8"></i> Flask
+                            </li>
+                            <li class="stack-item"><i class="devicon-tailwindcss-plain colored"></i> Tailwind CSS</li>
+                        </ul>
+                    </div>
+
+                    <div class="stack-col">
+                        <h3 class="stack-col-title">Outils</h3>
+                        <ul class="stack-list">
+                            <li class="stack-item"><i class="devicon-git-plain colored"></i> Git / GitHub</li>
+                            <li class="stack-item"><i class="devicon-docker-plain colored"></i> Docker</li>
+                            <li class="stack-item"><i class="devicon-vscode-plain colored"></i> VS Code</li>
+                            <li class="stack-item"><i class="devicon-intellij-plain colored"></i> IntelliJ IDEA</li>
+                            <li class="stack-item"><i class="fab fa-linux"></i> Linux</li>
+                        </ul>
+                    </div>
+
+                    <div class="stack-col">
+                        <h3 class="stack-col-title">Langues</h3>
+                        <ul class="stack-list">
+                            <li class="stack-item">🇫🇷&nbsp; Français — langue maternelle</li>
+                            <li class="stack-item">🇬🇧&nbsp; Anglais — intermédiaire</li>
+                            <li class="stack-item">🇱🇰&nbsp; Tamoul — bilingue</li>
+                        </ul>
+                        <h3 class="stack-col-title stack-col-title--gap">Certifications</h3>
+                        <ul class="stack-list">
+                            <li class="stack-item cert-item"><i class="devicon-cisco-plain" style="color:#049fd9"></i>
+                                Cisco English for IT</li>
+                            <li class="stack-item cert-item"><img src="Images/pix.png" class="cert-logo" alt="Pix">
+                                Certification Pix</li>
+                            <li class="stack-item cert-item"><img src="Images/projetvoltaire.png" class="cert-logo"
+                                    alt="Voltaire"> Projet Voltaire</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section id="contact" class="section contact-section">
+            <div class="section-content">
+                <div class="contact-glow-1"></div>
+                <div class="contact-glow-2"></div>
+
+                <div class="contact-layout">
+                    <div class="contact-left">
+                        <div class="section-kicker">03 · CONTACT</div>
+                        <h2 class="contact-title">Me <em>contacter.</em></h2>
+                        <p class="contact-subtitle">
+                            Je recherche une alternance en Développement / Réseaux / Systèmes / Cybersécurité pour
+                            2026–2028.
+                        </p>
+                        <div class="contact-methods">
+                            <a href="mailto:banumathey5@gmail.com" class="contact-method-card">
+                                <div class="contact-method-icon"><i class="fas fa-envelope"></i></div>
+                                <div class="contact-method-info">
+                                    <span class="contact-method-label">Email</span>
+                                    <span class="contact-method-value">banumathey5@gmail.com</span>
+                                </div>
+                            </a>
+                            <a href="https://github.com/banu005" target="_blank" rel="noopener noreferrer"
+                                class="contact-method-card" aria-label="Profil GitHub de Banumathey">
+                                <div class="contact-method-icon"><i class="fab fa-github" aria-hidden="true"></i></div>
+                                <div class="contact-method-info">
+                                    <span class="contact-method-label">GitHub</span>
+                                    <span class="contact-method-value">github.com/banu005</span>
+                                </div>
+                            </a>
+                            <a href="https://www.linkedin.com/in/banumathey-balendran" target="_blank"
+                                rel="noopener noreferrer" class="contact-method-card"
+                                aria-label="Profil LinkedIn de Banumathey">
+                                <div class="contact-method-icon"><i class="fab fa-linkedin"></i></div>
+                                <div class="contact-method-info">
+                                    <span class="contact-method-label">LinkedIn</span>
+                                    <span class="contact-method-value">banumathey-balendran</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="contact-right">
+                        <form class="contact-form" onsubmit="handleFormSubmit(event)" novalidate
+                            aria-label="Formulaire de contact">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label" for="contact-prenom">Prénom</label>
+                                    <input type="text" id="contact-prenom" name="prenom" class="form-input"
+                                        placeholder="Jean" autocomplete="given-name">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="contact-nom">Nom</label>
+                                    <input type="text" id="contact-nom" name="nom" class="form-input"
+                                        placeholder="Dupont" autocomplete="family-name">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="contact-email">Email</label>
+                                <input type="email" id="contact-email" name="email" class="form-input"
+                                    placeholder="jean@example.com" autocomplete="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="contact-sujet">Sujet</label>
+                                <input type="text" id="contact-sujet" name="sujet" class="form-input"
+                                    placeholder="Proposition d'alternance">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="contact-message">Message</label>
+                                <textarea id="contact-message" name="message" class="form-textarea" rows="5"
+                                    placeholder="Bonjour Banumathey, je souhaite..."></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary form-submit">
+                                <span>Envoyer le message</span>
+                                <i class="fas fa-paper-plane" aria-hidden="true"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="footer-divider"></div>
+
+                <div class="footer-bottom">
+                    <div class="footer-bottom-left">
+                        <span>BALENDRAN Banumathey</span>
+                    </div>
+                    <div class="footer-bottom-right">
+                        <span class="footer-credit">Site conçu et réalisé par Banumathey BALENDRAN</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
     </main>
 
-    <footer class="footer">
-        <p>&copy; 2025 BALENDRAN Banumathey. Tous droits réservés.</p>
-        <div class="footer-links">
-            <a href="https://github.com/banu005">GitHub</a>
-            <a href="https://www.linkedin.com/in/banumathey-balendran">LinkedIn</a>
+    <!-- Modal -->
+    <div id="projectModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeProjectModal()" aria-label="Fermer la modale">
+                <i class="fas fa-times" aria-hidden="true"></i>
+            </button>
+            <div id="modalContent"></div>
         </div>
-    </footer>
+    </div>
 
+    <script src="script.js"></script>
 
 </body>
-
-<script src="script.js"></script>
 
 </html>
