@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Portfolio de Banumathey BALENDRAN — Développeuse Full Stack">
     <title>BALENDRAN Banumathey — Développeuse Full Stack</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=8">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -14,47 +14,40 @@
 
 <body>
 
+    <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+
     <!-- HEADER -->
-    <header class="header">
+    <header class="header" role="banner">
         <div class="header-bar">
             <div class="header-logo-group">
-                <span class="header-logo-text">Banumathey</span>
+                <span class="header-logo-text">Portfolio · Banumathey</span>
             </div>
-            <div class="header-right">
+            <nav class="header-right" aria-label="Navigation principale">
                 <a href="#accueil" class="nav-pill active">Accueil</a>
+                <a href="#apropos" class="nav-pill">À propos</a>
                 <a href="#etudes" class="nav-pill">Projets</a>
                 <a href="#stack" class="nav-pill">Compétences</a>
                 <a href="#contact" class="nav-pill">Contact</a>
                 <a href="Documents/CV_2026-04-27_Banumathey_BALENDRAN.pdf" download class="download-btn">
-                    <i class="fas fa-download"></i>
+                    <i class="fas fa-download" aria-hidden="true"></i>
                     <span>Télécharger le CV</span>
                 </a>
-                <button class="theme-btn">
-                    <i class="fas fa-moon"></i>
+                <button class="theme-btn" aria-label="Activer le mode clair / sombre">
+                    <i class="fas fa-sun" aria-hidden="true"></i>
                 </button>
-                <button type="button" class="mobile-menu-btn" onclick="toggleMobileMenu()">
-                    <i class="fas fa-bars"></i>
+                <button type="button" class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobileMenu">
+                    <i class="fas fa-bars" aria-hidden="true"></i>
                 </button>
-            </div>
+            </nav>
         </div>
 
-        <div class="progress-bar">
+        <div class="progress-bar" role="progressbar" aria-label="Progression de lecture" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
             <div class="progress-bar-fill" id="progressFill"></div>
         </div>
 
-        <div class="anchor-row">
-            <div class="anchor-labels">
-                <a href="#etudes" class="anchor-label">01 · ÉTUDES · PROJETS</a>
-                <a href="#stack" class="anchor-label">02 · STACK · INSTRUMENTATION</a>
-                <a href="#contact" class="anchor-label">03 · CONTACT</a>
-            </div>
-            <div class="anchor-right">
-                <span class="anchor-status"><span class="status-dot-sm"></span> Disponible 2026–2028</span>
-            </div>
-        </div>
-
-        <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="Menu de navigation">
             <a href="#accueil" onclick="closeMobileMenu()">Accueil</a>
+            <a href="#apropos" onclick="closeMobileMenu()">À propos</a>
             <a href="#etudes" onclick="closeMobileMenu()">Projets</a>
             <a href="#stack" onclick="closeMobileMenu()">Compétences</a>
             <a href="#contact" onclick="closeMobileMenu()">Contact</a>
@@ -62,7 +55,7 @@
         </div>
     </header>
 
-    <main>
+    <main id="main-content">
 
         <!-- HERO -->
         <section id="accueil" class="hero">
@@ -76,11 +69,11 @@
                         <span>DÉVELOPPEUSE FULL STACK · PARIS</span>
                     </div>
                     <h1 class="hero-title">
-                        Architecte<br>
-                        <em class="hero-title-accent">d'interfaces.</em>
+                        Développeuse<br>
+                        <em class="hero-title-accent">Full Stack.</em>
                     </h1>
                     <p class="hero-description">
-                        Je conçois et développe des produits numériques précis comme des instruments&nbsp;— performants, lisibles, durables.
+                        Étudiante en Licence professionnelle au CNAM, je recherche une <strong>alternance pour préparer un Master</strong> en développement, sécurité ou systèmes — à partir de 2026.
                     </p>
                     <div class="hero-buttons">
                         <a href="#etudes" class="btn btn-primary">
@@ -92,23 +85,15 @@
                             <i class="fas fa-download"></i>
                         </a>
                     </div>
-                    <div class="hero-stack">
-                        <span class="stack-pill">TypeScript</span>
-                        <span class="stack-pill">Angular</span>
-                        <span class="stack-pill">Spring</span>
-                        <span class="stack-pill">Python</span>
-                        <span class="stack-pill">Flask</span>
-                        <span class="stack-pill">SQL</span>
-                    </div>
                 </div>
 
                 <div class="hero-right">
                     <div class="dashboard-card">
                         <div class="dash-header">
-                            <span class="dash-title">DASHBOARD · 7 JOURS</span>
+                            <span class="dash-title" id="dashTitle">DASHBOARD · 2026</span>
                             <div class="dash-header-pills">
-                                <div class="dash-pill">···</div>
-                                <div class="dash-pill">↗</div>
+                                <a href="https://github.com/banu005?tab=repositories" target="_blank" rel="noopener noreferrer" class="dash-pill dash-pill-link" title="Voir les dépôts" aria-label="Voir les dépôts GitHub"><i class="fab fa-github" aria-hidden="true"></i> Repository</a>
+                                <a href="https://github.com/banu005" target="_blank" rel="noopener noreferrer" class="dash-pill dash-pill-link" title="Voir le profil GitHub" aria-label="Voir le profil GitHub"><i class="fab fa-github" aria-hidden="true"></i> Profil</a>
                             </div>
                         </div>
 
@@ -129,19 +114,14 @@
 
                         <div class="dash-metrics">
                             <div class="dash-metric">
-                                <span class="dash-val">847</span>
+                                <span class="dash-val" id="commitsVal">—</span>
                                 <span class="dash-lbl">COMMITS</span>
-                                <span class="dash-sub accent">+12 % vs s. dernière</span>
+                                <span class="dash-sub accent">7 derniers jours</span>
                             </div>
                             <div class="dash-metric">
-                                <span class="dash-val">34</span>
+                                <span class="dash-val" id="prsVal">—</span>
                                 <span class="dash-lbl">PULL REQUESTS</span>
                                 <span class="dash-sub">merged</span>
-                            </div>
-                            <div class="dash-metric">
-                                <span class="dash-val">128 j</span>
-                                <span class="dash-lbl">STREAK</span>
-                                <span class="dash-sub">records</span>
                             </div>
                         </div>
 
@@ -161,50 +141,177 @@
             </div>
         </section>
 
+        <!-- À PROPOS -->
+        <section id="apropos" class="section apropos-section">
+            <div class="section-content">
+                <div class="section-header">
+                    <div class="section-kicker">À PROPOS · PARCOURS</div>
+                    <h2 class="section-title">Formations et<br><em>expériences.</em></h2>
+                </div>
+
+                <div class="apropos-grid">
+
+                    <!-- FORMATIONS -->
+                    <div class="apropos-col">
+                        <div class="apropos-col-header">
+                            <i class="fas fa-graduation-cap"></i>
+                            <h3>Formations</h3>
+                        </div>
+                        <div class="timeline">
+
+                            <div class="timeline-item">
+                                <div class="timeline-dot active"></div>
+                                <div class="timeline-content">
+                                    <div class="timeline-date">En cours</div>
+                                    <h4>Licence professionnelle Métiers de l'informatique</h4>
+                                    <p class="timeline-place">CNAM</p>
+                                    <p class="timeline-desc">Parcours Chef de projet, développement, sécurité et exploitation</p>
+                                </div>
+                            </div>
+
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-content">
+                                    <div class="timeline-date">2023 — 2025</div>
+                                    <h4>BTS SIO option SLAM</h4>
+                                    <p class="timeline-place">Lycée Auguste Blanqui</p>
+                                    <ul class="timeline-list">
+                                        <li>API REST — Java, Spring, Angular, Kotlin, TypeScript, PostgreSQL</li>
+                                        <li>Web — HTML, CSS, PHP</li>
+                                        <li>Réseau &amp; Système — Packet Tracer, Ubuntu/Windows</li>
+                                        <li>Cybersécurité — Injection SQL, OWASP, RGPD</li>
+                                        <li>Auto-formation Cisco Netacad — English for IT, CyberOps Associate</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-content">
+                                    <div class="timeline-date">2021 — 2023</div>
+                                    <h4>BAC ST2S</h4>
+                                    <p class="timeline-place">Lycée Jacques Monod</p>
+                                    <div class="timeline-badges">
+                                        <span class="timeline-badge">Certification Pix</span>
+                                        <span class="timeline-badge">Projet Voltaire</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- EXPÉRIENCES -->
+                    <div class="apropos-col">
+                        <div class="apropos-col-header">
+                            <i class="fas fa-briefcase"></i>
+                            <h3>Expériences professionnelles</h3>
+                        </div>
+                        <div class="timeline">
+
+                            <div class="timeline-item">
+                                <div class="timeline-dot active"></div>
+                                <div class="timeline-content">
+                                    <div class="timeline-date">En cours</div>
+                                    <h4>Stage Développeuse Full Stack</h4>
+                                    <p class="timeline-place">Sixième Etoile</p>
+                                    <ul class="timeline-list">
+                                        <li>Création d'une application full stack en équipe</li>
+                                        <li>Développement frontend et backend</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-content">
+                                    <div class="timeline-date">Janvier 2025 — Février 2025</div>
+                                    <h4>Stage Pôle Transformation Numérique</h4>
+                                    <p class="timeline-place">Conseil Régional Île-de-France</p>
+                                    <ul class="timeline-list">
+                                        <li>Qualification des avis, PowerBI</li>
+                                        <li>Formation RGPD, Numérique Responsable</li>
+                                        <li>Test d'une IA sur les aides régionales</li>
+                                        <li>Accessibilité numérique, Atelier Design</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-content">
+                                    <div class="timeline-date">Mai 2024 — Juin 2024</div>
+                                    <h4>Stage Développement Web</h4>
+                                    <p class="timeline-place">Images30</p>
+                                    <ul class="timeline-list">
+                                        <li>Analyse et cahier des charges</li>
+                                        <li>Maquettage sur Balsamiq</li>
+                                        <li>Création du site Cineweb Invest sur Google Sites</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-content">
+                                    <div class="timeline-date">2020</div>
+                                    <h4>Stage 3ème — Bibliothécaire</h4>
+                                    <p class="timeline-place">Bibliothèque Valeyre</p>
+                                    <ul class="timeline-list">
+                                        <li>Accueil du public, numérisation de documents</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
         <!-- ÉTUDES -->
         <section id="etudes" class="section studies-section">
             <div class="section-content">
                 <div class="section-header">
                     <div class="section-kicker">01 · ÉTUDES · PROJETS</div>
-                    <h2 class="section-title">Sept projets,<br>choisis pour leur <em>contrainte.</em></h2>
-                    <p class="section-subtitle">Trois études longues, quatre archives courtes. Chacun sur le sujet pour le voir de l'intérieur.</p>
+                    <h2 class="section-title">Mes <em>projets.</em></h2>
                 </div>
 
-                <!-- TOP 3 -->
-                <div class="top3-grid">
+                <div class="archives-sep">
+                    <span class="section-kicker">PROJETS RÉCENTS</span>
+                </div>
+                <div class="top2-grid">
 
-                    <!-- 93Moove v2 -->
+                    <!-- Sixième Etoile — EN COURS -->
                     <article class="study-card">
                         <div class="study-plate plate-blue">
-                            <div class="plate-bg-label">93MOOVE</div>
-                            <div class="browser-win">
-                                <div class="browser-top">
-                                    <span class="bdot red"></span>
-                                    <span class="bdot yellow"></span>
-                                    <span class="bdot green"></span>
+                            <div class="plate-bg-label">6ÉTOILE</div>
+                            <div class="wip-win">
+                                <div class="wip-badge"><span class="status-dot-sm"></span> EN COURS · 2026</div>
+                                <div class="wip-lines">
+                                    <div class="wip-line wl-full"></div>
+                                    <div class="wip-line wl-half"></div>
+                                    <div class="wip-line wl-three"></div>
+                                    <div class="wip-line wl-full"></div>
+                                    <div class="wip-line wl-quarter"></div>
                                 </div>
-                                <div class="browser-body">
-                                    <div class="browser-img" style="background-image:url('Images/93moove2.png')"></div>
-                                </div>
+                                <div class="wip-footer">Captures à venir</div>
                             </div>
-                            <div class="hover-badge">HOVER</div>
                         </div>
                         <div class="study-info">
                             <div class="study-meta">
-                                <span class="study-num">TOP 1</span>
+                                <span class="study-num study-num--live">EN COURS</span>
                                 <span class="study-cat">Full Stack</span>
-                                <span class="study-year">2025</span>
+                                <span class="study-year">2026</span>
                             </div>
-                            <h3 class="study-title">Site web 93Moove v2</h3>
-                            <p class="study-desc">Plateforme de gestion d'activités sportives avec système d'inscription aux cours. Méthode Scrum et gestion Trello.</p>
+                            <h3 class="study-title">Application Sixième Etoile</h3>
+                            <p class="study-desc">Application full stack développée en stage — création complète du frontend et du backend en équipe pour l'entreprise Sixième Etoile.</p>
                             <div class="study-techs">
-                                <span class="tech-tag">Angular</span>
-                                <span class="tech-tag">Spring</span>
-                                <span class="tech-tag">Java</span>
-                                <span class="tech-tag">TypeScript</span>
+                                <span class="tech-tag">En cours</span>
                             </div>
                             <div class="study-links">
-                                <button class="study-link" onclick="openProjectModal('93mooveV2')">
+                                <button class="study-link" onclick="openProjectModal('sixiemeEtoile')">
                                     <i class="fas fa-plus"></i> Voir plus
                                 </button>
                             </div>
@@ -213,32 +320,22 @@
 
                     <!-- Colocation -->
                     <article class="study-card">
-                        <div class="study-plate plate-mesh">
-                            <div class="plate-bg-label">COLOC</div>
-                            <div class="phone-win">
-                                <div class="phone-frame">
-                                    <div class="phone-notch"></div>
-                                    <div class="phone-body">
-                                        <div class="listing-card lc-accent"></div>
-                                        <div class="listing-card lc-glow"></div>
-                                        <div class="listing-card lc-ice"></div>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="study-plate plate-photo">
+                            <img src="Images/colocation1.png" class="plate-direct-img" alt="Application de colocation">
                         </div>
                         <div class="study-info">
                             <div class="study-meta">
-                                <span class="study-num">TOP 2</span>
                                 <span class="study-cat">Web</span>
                                 <span class="study-year">2024</span>
                             </div>
                             <h3 class="study-title">Application de colocation</h3>
-                            <p class="study-desc">Gestion de colocation : tâches ménagères, courses et charges communes. Inscription et connexion utilisateurs.</p>
+                            <p class="study-desc">Application web complète de gestion de colocation : tâches ménagères, courses et charges communes. Inscription et connexion utilisateurs.</p>
                             <div class="study-techs">
                                 <span class="tech-tag">Python</span>
                                 <span class="tech-tag">Flask</span>
                                 <span class="tech-tag">MySQL</span>
                                 <span class="tech-tag">HTML</span>
+                                <span class="tech-tag">JavaScript</span>
                             </div>
                             <div class="study-links">
                                 <button class="study-link" onclick="openProjectModal('colocation')">
@@ -248,37 +345,44 @@
                         </div>
                     </article>
 
-                    <!-- Snake Game -->
+                    <!-- Gestionnaire de recettes -->
                     <article class="study-card">
-                        <div class="study-plate plate-radial">
-                            <div class="plate-bg-label">SNAKE</div>
-                            <div class="code-win">
-                                <div class="code-top-bar">
-                                    <div class="code-left">
-                                        <span class="code-method">GET</span>
-                                        <span class="code-path">/api/scores</span>
-                                    </div>
-                                    <span class="code-status">200 OK</span>
-                                </div>
-                                <div class="code-body">
-                                    <div class="code-line cl-white">{</div>
-                                    <div class="code-line cl-soft">&nbsp;&nbsp;"scores": [</div>
-                                    <div class="code-line cl-accent">&nbsp;&nbsp;&nbsp;&nbsp;{ "player": "Banu",</div>
-                                    <div class="code-line cl-ice">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"score": 420, "lvl": 7 },</div>
-                                    <div class="code-line cl-muted">&nbsp;&nbsp;&nbsp;&nbsp;{ ... }</div>
-                                    <div class="code-line cl-soft">&nbsp;&nbsp;]</div>
-                                    <div class="code-line cl-white">}</div>
-                                </div>
-                            </div>
+                        <div class="study-plate plate-photo">
+                            <img src="Images/appRecette1.png" class="plate-direct-img" alt="Gestionnaire de recettes">
                         </div>
                         <div class="study-info">
                             <div class="study-meta">
-                                <span class="study-num">TOP 3</span>
+                                <span class="study-cat">CLI · Script</span>
+                                <span class="study-year">2024</span>
+                            </div>
+                            <h3 class="study-title">Gestionnaire de recettes</h3>
+                            <p class="study-desc">Application en ligne de commande pour gérer une collection de recettes. Ajout, affichage, recherche et suppression depuis le terminal.</p>
+                            <div class="study-techs">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">argparse</span>
+                                <span class="tech-tag">JSON</span>
+                                <span class="tech-tag">CLI</span>
+                            </div>
+                            <div class="study-links">
+                                <button class="study-link" onclick="openProjectModal('appRecette')">
+                                    <i class="fas fa-plus"></i> Voir plus
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Snake Game -->
+                    <article class="study-card">
+                        <div class="study-plate plate-photo">
+                            <img src="Images/jeusnakejouer.png" class="plate-direct-img" alt="Site web Snake Game">
+                        </div>
+                        <div class="study-info">
+                            <div class="study-meta">
                                 <span class="study-cat">Web · Jeu</span>
                                 <span class="study-year">2024</span>
                             </div>
                             <h3 class="study-title">Site web Snake Game</h3>
-                            <p class="study-desc">Site web complet présentant un mini jeu Snake. IHM, déploiement sur hébergeur web.</p>
+                            <p class="study-desc">Site web complet avec mini jeu Snake, gestion des scores, profils utilisateurs et déploiement sur hébergeur web.</p>
                             <div class="study-techs">
                                 <span class="tech-tag">HTML</span>
                                 <span class="tech-tag">CSS</span>
@@ -296,12 +400,23 @@
 
                 <!-- ARCHIVES -->
                 <div class="archives-sep">
-                    <span class="section-kicker">ARCHIVES · PROJETS COURTS</span>
+                    <span class="section-kicker">ARCHIVES</span>
                 </div>
 
                 <div class="archives-grid">
-                    <article class="archive-card" onclick="openProjectModal('93mooveV1')">
+                    <article class="archive-card" onclick="openProjectModal('93mooveV2')" tabindex="0" role="button" aria-label="Voir le projet 93Moove v2" onkeydown="if(event.key==='Enter'||event.key===' ')openProjectModal('93mooveV2')">
                         <span class="archive-num">01</span>
+                        <h4 class="archive-title">93Moove v2</h4>
+                        <p class="archive-desc">Plateforme sportive full stack avec Angular, Spring et Supabase.</p>
+                        <div class="archive-techs">
+                            <span class="tech-tag-sm">Angular</span>
+                            <span class="tech-tag-sm">Spring</span>
+                            <span class="tech-tag-sm">Java</span>
+                        </div>
+                        <span class="archive-year">2025</span>
+                    </article>
+                    <article class="archive-card" onclick="openProjectModal('93mooveV1')" tabindex="0" role="button" aria-label="Voir le projet 93Moove v1" onkeydown="if(event.key==='Enter'||event.key===' ')openProjectModal('93mooveV1')">
+                        <span class="archive-num">02</span>
                         <h4 class="archive-title">93Moove v1</h4>
                         <p class="archive-desc">Plateforme associative avec connexion et inscription aux cours.</p>
                         <div class="archive-techs">
@@ -310,8 +425,18 @@
                         </div>
                         <span class="archive-year">2024</span>
                     </article>
-                    <article class="archive-card" onclick="openProjectModal('clientserveur')">
-                        <span class="archive-num">02</span>
+                    <article class="archive-card" onclick="openProjectModal('cineweb')" tabindex="0" role="button" aria-label="Voir le projet Cineweb Invest" onkeydown="if(event.key==='Enter'||event.key===' ')openProjectModal('cineweb')">
+                        <span class="archive-num">03</span>
+                        <h4 class="archive-title">Cineweb Invest</h4>
+                        <p class="archive-desc">Site d'investissement créé sur Google Sites pour Images30. Analyse, cahier des charges et maquettage Balsamiq.</p>
+                        <div class="archive-techs">
+                            <span class="tech-tag-sm">Google Sites</span>
+                            <span class="tech-tag-sm">Balsamiq</span>
+                        </div>
+                        <span class="archive-year">2024</span>
+                    </article>
+                    <article class="archive-card" onclick="openProjectModal('clientserveur')" tabindex="0" role="button" aria-label="Voir le projet Client-Serveur IPC" onkeydown="if(event.key==='Enter'||event.key===' ')openProjectModal('clientserveur')">
+                        <span class="archive-num">04</span>
                         <h4 class="archive-title">Client-Serveur IPC</h4>
                         <p class="archive-desc">Réservation de places via Communication Inter-Processus.</p>
                         <div class="archive-techs">
@@ -320,18 +445,8 @@
                         </div>
                         <span class="archive-year">2024</span>
                     </article>
-                    <article class="archive-card" onclick="openProjectModal('appRecette')">
-                        <span class="archive-num">03</span>
-                        <h4 class="archive-title">Gestionnaire de recettes</h4>
-                        <p class="archive-desc">Application CLI de gestion d'une collection de recettes.</p>
-                        <div class="archive-techs">
-                            <span class="tech-tag-sm">Python</span>
-                            <span class="tech-tag-sm">CLI</span>
-                        </div>
-                        <span class="archive-year">2024</span>
-                    </article>
-                    <article class="archive-card" onclick="openProjectModal('2dgame')">
-                        <span class="archive-num">04</span>
+                    <article class="archive-card" onclick="openProjectModal('2dgame')" tabindex="0" role="button" aria-label="Voir le projet Jeu 2D Shooter" onkeydown="if(event.key==='Enter'||event.key===' ')openProjectModal('2dgame')">
+                        <span class="archive-num">05</span>
                         <h4 class="archive-title">Jeu 2D Shooter</h4>
                         <p class="archive-desc">Jeu de survie 2D développé avec Godot Engine.</p>
                         <div class="archive-techs">
@@ -343,9 +458,9 @@
                 </div>
 
                 <div class="projects-cta">
-                    <a href="https://github.com/banu005" target="_blank" class="cta-link">
+                    <a href="https://github.com/banu005" target="_blank" rel="noopener noreferrer" class="cta-link" aria-label="Voir l'intégralité du code sur GitHub">
                         <span>VOIR L'INTÉGRALITÉ DU CODE</span>
-                        <i class="fas fa-arrow-right"></i>
+                        <i class="fas fa-arrow-right" aria-hidden="true"></i>
                     </a>
                 </div>
             </div>
@@ -355,8 +470,8 @@
         <section id="stack" class="section stack-section">
             <div class="section-content">
                 <div class="section-header">
-                    <div class="section-kicker">02 · STACK · INSTRUMENTATION</div>
-                    <h2 class="section-title">L'instrumentation,<br>choisie avec soin.</h2>
+                    <div class="section-kicker">02 · COMPÉTENCES PROFESSIONNELLES</div>
+                    <h2 class="section-title">Techniques, langues<br>et <em>certifications.</em></h2>
                 </div>
 
                 <div class="stack-4col">
@@ -378,7 +493,7 @@
                         <ul class="stack-list">
                             <li class="stack-item"><i class="devicon-angularjs-plain colored"></i> Angular</li>
                             <li class="stack-item"><i class="devicon-spring-plain colored"></i> Spring Boot</li>
-                            <li class="stack-item"><i class="devicon-flask-original colored"></i> Flask</li>
+                            <li class="stack-item"><i class="devicon-flask-original" style="color:#a8d8a8"></i> Flask</li>
                             <li class="stack-item"><i class="devicon-tailwindcss-plain colored"></i> Tailwind CSS</li>
                         </ul>
                     </div>
@@ -390,23 +505,22 @@
                             <li class="stack-item"><i class="devicon-docker-plain colored"></i> Docker</li>
                             <li class="stack-item"><i class="devicon-vscode-plain colored"></i> VS Code</li>
                             <li class="stack-item"><i class="devicon-intellij-plain colored"></i> IntelliJ IDEA</li>
-                            <li class="stack-item"><i class="devicon-linux-plain colored"></i> Linux</li>
+                            <li class="stack-item"><i class="fab fa-linux"></i> Linux</li>
                         </ul>
                     </div>
 
                     <div class="stack-col">
                         <h3 class="stack-col-title">Langues</h3>
                         <ul class="stack-list">
-                            <li class="stack-item">🇫🇷&nbsp; Français — natif</li>
+                            <li class="stack-item">🇫🇷&nbsp; Français — langue maternelle</li>
                             <li class="stack-item">🇬🇧&nbsp; Anglais — intermédiaire</li>
                             <li class="stack-item">🇱🇰&nbsp; Tamoul — bilingue</li>
                         </ul>
                         <h3 class="stack-col-title stack-col-title--gap">Certifications</h3>
                         <ul class="stack-list">
-                            <li class="stack-item cert-item">Cisco CyberOps Associate</li>
-                            <li class="stack-item cert-item">Cisco English for IT</li>
-                            <li class="stack-item cert-item">Certification Pix</li>
-                            <li class="stack-item cert-item">Projet Voltaire</li>
+                            <li class="stack-item cert-item"><i class="devicon-cisco-plain colored"></i> Cisco English for IT</li>
+                            <li class="stack-item cert-item"><img src="Images/pix.png" class="cert-logo" alt="Pix"> Certification Pix</li>
+                            <li class="stack-item cert-item"><img src="Images/projetvoltaire.png" class="cert-logo" alt="Voltaire"> Projet Voltaire</li>
                         </ul>
                     </div>
                 </div>
@@ -422,7 +536,7 @@
                 <div class="contact-layout">
                     <div class="contact-left">
                         <div class="section-kicker">03 · CONTACT</div>
-                        <h2 class="contact-title">Discutons de votre<br><em>prochain projet.</em></h2>
+                        <h2 class="contact-title">Me <em>contacter.</em></h2>
                         <p class="contact-subtitle">
                             Je recherche une alternance en Développement / Réseaux / Systèmes / Cybersécurité pour 2026–2028.
                         </p>
@@ -434,14 +548,14 @@
                                     <span class="contact-method-value">banumathey5@gmail.com</span>
                                 </div>
                             </a>
-                            <a href="https://github.com/banu005" target="_blank" class="contact-method-card">
-                                <div class="contact-method-icon"><i class="fab fa-github"></i></div>
+                            <a href="https://github.com/banu005" target="_blank" rel="noopener noreferrer" class="contact-method-card" aria-label="Profil GitHub de Banumathey">
+                                <div class="contact-method-icon"><i class="fab fa-github" aria-hidden="true"></i></div>
                                 <div class="contact-method-info">
                                     <span class="contact-method-label">GitHub</span>
                                     <span class="contact-method-value">github.com/banu005</span>
                                 </div>
                             </a>
-                            <a href="https://www.linkedin.com/in/banumathey-balendran" target="_blank" class="contact-method-card">
+                            <a href="https://www.linkedin.com/in/banumathey-balendran" target="_blank" rel="noopener noreferrer" class="contact-method-card" aria-label="Profil LinkedIn de Banumathey">
                                 <div class="contact-method-icon"><i class="fab fa-linkedin"></i></div>
                                 <div class="contact-method-info">
                                     <span class="contact-method-label">LinkedIn</span>
@@ -452,32 +566,32 @@
                     </div>
 
                     <div class="contact-right">
-                        <form class="contact-form" onsubmit="handleFormSubmit(event)">
+                        <form class="contact-form" onsubmit="handleFormSubmit(event)" novalidate aria-label="Formulaire de contact">
                             <div class="form-row">
                                 <div class="form-group">
-                                    <label class="form-label">Prénom</label>
-                                    <input type="text" class="form-input" placeholder="Jean">
+                                    <label class="form-label" for="contact-prenom">Prénom</label>
+                                    <input type="text" id="contact-prenom" name="prenom" class="form-input" placeholder="Jean" autocomplete="given-name">
                                 </div>
                                 <div class="form-group">
-                                    <label class="form-label">Nom</label>
-                                    <input type="text" class="form-input" placeholder="Dupont">
+                                    <label class="form-label" for="contact-nom">Nom</label>
+                                    <input type="text" id="contact-nom" name="nom" class="form-input" placeholder="Dupont" autocomplete="family-name">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="form-label">Email</label>
-                                <input type="email" class="form-input" placeholder="jean@example.com">
+                                <label class="form-label" for="contact-email">Email</label>
+                                <input type="email" id="contact-email" name="email" class="form-input" placeholder="jean@example.com" autocomplete="email" required>
                             </div>
                             <div class="form-group">
-                                <label class="form-label">Sujet</label>
-                                <input type="text" class="form-input" placeholder="Proposition d'alternance">
+                                <label class="form-label" for="contact-sujet">Sujet</label>
+                                <input type="text" id="contact-sujet" name="sujet" class="form-input" placeholder="Proposition d'alternance">
                             </div>
                             <div class="form-group">
-                                <label class="form-label">Message</label>
-                                <textarea class="form-textarea" rows="5" placeholder="Bonjour Banumathey, je souhaite..."></textarea>
+                                <label class="form-label" for="contact-message">Message</label>
+                                <textarea id="contact-message" name="message" class="form-textarea" rows="5" placeholder="Bonjour Banumathey, je souhaite..."></textarea>
                             </div>
                             <button type="submit" class="btn btn-primary form-submit">
                                 <span>Envoyer le message</span>
-                                <i class="fas fa-paper-plane"></i>
+                                <i class="fas fa-paper-plane" aria-hidden="true"></i>
                             </button>
                         </form>
                     </div>
@@ -490,7 +604,7 @@
                         <span>BALENDRAN Banumathey</span>
                     </div>
                     <div class="footer-bottom-right">
-                        <a href="https://github.com/banu005" target="_blank" class="footer-link">GITHUB · BANU005</a>
+                        <span class="footer-credit">Site conçu et réalisé par Banumathey BALENDRAN</span>
                     </div>
                 </div>
             </div>
@@ -499,14 +613,16 @@
     </main>
 
     <!-- Modal -->
-    <div id="projectModal" class="modal">
+    <div id="projectModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
         <div class="modal-content">
-            <button class="modal-close" onclick="closeProjectModal()">
-                <i class="fas fa-times"></i>
+            <button class="modal-close" onclick="closeProjectModal()" aria-label="Fermer la modale">
+                <i class="fas fa-times" aria-hidden="true"></i>
             </button>
             <div id="modalContent"></div>
         </div>
     </div>
+
+    <div id="heatTooltip" class="heat-tooltip" role="tooltip" aria-live="polite"></div>
 
     <script src="script.js"></script>
 

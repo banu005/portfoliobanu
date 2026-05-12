@@ -1,18 +1,128 @@
 const carouselState = {};
 
-// Heatmap génération
-function generateHeatmap() {
+// Titre dashboard dynamique selon le mois courant
+(function() {
+    const months = ['JANV.','FÉVR.','MARS','AVR.','MAI','JUIN','JUIL.','AOÛT','SEPT.','OCT.','NOV.','DÉC.'];
+    const now = new Date();
+    const el = document.getElementById('dashTitle');
+    if (el) el.textContent = `DASHBOARD · ${months[now.getMonth()]} ${now.getFullYear()}`;
+})();
+
+// Tooltip du heatmap
+function showHeatTooltip(e) {
+    const tooltip = document.getElementById('heatTooltip');
+    if (!tooltip) return;
+    const date = e.currentTarget.dataset.date;
+    const count = e.currentTarget.dataset.count;
+    const [year, month, day] = date.split('-');
+    const d = new Date(+year, +month - 1, +day);
+    const formatted = d.toLocaleDateString('fr-FR', { weekday: 'short', day: 'numeric', month: 'long', year: 'numeric' });
+    tooltip.textContent = (count === '0' || count === 0)
+        ? `Aucune contribution · ${formatted}`
+        : `${count} contribution${+count > 1 ? 's' : ''} · ${formatted}`;
+    const rect = e.currentTarget.getBoundingClientRect();
+    tooltip.style.left = `${rect.left + rect.width / 2}px`;
+    tooltip.style.top = `${rect.top - 8}px`;
+    tooltip.style.display = 'block';
+}
+
+function hideHeatTooltip() {
+    const tooltip = document.getElementById('heatTooltip');
+    if (tooltip) tooltip.style.display = 'none';
+}
+
+function attachHeatCell(cell, level, dateStr, count) {
+    cell.className = `heat-cell heat-${level}`;
+    cell.dataset.date = dateStr;
+    cell.dataset.count = count;
+    cell.addEventListener('mouseenter', showHeatTooltip);
+    cell.addEventListener('mouseleave', hideHeatTooltip);
+}
+
+// Formatte une date locale sans décalage UTC
+function toDateStr(d) {
+    return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+}
+
+// Retourne la liste des jours du mois courant
+function buildMonthDates() {
+    const now = new Date();
+    const year = now.getFullYear();
+    const month = now.getMonth();
+    const daysInMonth = new Date(year, month + 1, 0).getDate();
+    const dates = [];
+    for (let d = 1; d <= daysInMonth; d++) {
+        dates.push(toDateStr(new Date(year, month, d)));
+    }
+    return dates;
+}
+
+function generateHeatmap(data, dates) {
     const grid = document.getElementById('heatmapGrid');
     if (!grid) return;
-    const pattern = [0,1,0,2,3,4,2,1,0,3,4,2,1,0,1,3,2,4,1,0,2,3,1,4,2,0,1,2,
-                     1,0,2,4,3,1,0,2,4,3,1,0,2,1,3,4,2,0,1,3,2,4,1,0,3,2,4,1];
-    for (let i = 0; i < 112; i++) {
+    grid.innerHTML = '';
+
+    // Décalage : le 1er du mois tombe quel jour ? (lundi = 0)
+    if (dates.length > 0) {
+        const firstDate = new Date(dates[0] + 'T12:00:00');
+        const dayOfWeek = (firstDate.getDay() + 6) % 7;
+        for (let p = 0; p < dayOfWeek; p++) {
+            const spacer = document.createElement('div');
+            spacer.className = 'heat-cell heat-spacer';
+            grid.appendChild(spacer);
+        }
+    }
+
+    const max = Math.max(...data, 1);
+    data.forEach((count, i) => {
         const cell = document.createElement('div');
-        cell.className = `heat-cell heat-${pattern[i % pattern.length]}`;
+        const level = count === 0 ? 0 : Math.min(Math.ceil((count / max) * 4), 4);
+        attachHeatCell(cell, level, dates[i], count);
         grid.appendChild(cell);
+    });
+}
+
+// Heatmap depuis l'API GitHub réelle — mois courant uniquement
+async function fetchGitHubContributions() {
+    const monthDates = buildMonthDates();
+    try {
+        const res = await fetch('https://api.github.com/users/banu005/events?per_page=100');
+        if (!res.ok) throw new Error('API unavailable');
+        const events = await res.json();
+
+        const contributions = {};
+        let commitCount = 0;
+        let prCount = 0;
+
+        events.forEach(event => {
+            const date = event.created_at.split('T')[0];
+            contributions[date] = (contributions[date] || 0) + 1;
+            if (event.type === 'PushEvent') {
+                commitCount += event.payload.commits?.length || 0;
+            }
+            if (event.type === 'PullRequestEvent' && event.payload.action === 'closed' && event.payload.pull_request?.merged) {
+                prCount++;
+            }
+        });
+
+        const heatData = monthDates.map(dateStr => contributions[dateStr] || 0);
+        generateHeatmap(heatData, monthDates);
+
+        const commitsEl = document.getElementById('commitsVal');
+        const prsEl = document.getElementById('prsVal');
+        if (commitsEl) commitsEl.textContent = commitCount || '0';
+        if (prsEl) prsEl.textContent = prCount || '0';
+
+    } catch {
+        generateHeatmap(Array(monthDates.length).fill(0), monthDates);
+        const commitsEl = document.getElementById('commitsVal');
+        const prsEl = document.getElementById('prsVal');
+        if (commitsEl) commitsEl.textContent = '0';
+        if (prsEl) prsEl.textContent = '0';
     }
 }
-generateHeatmap();
+
+fetchGitHubContributions();
 
 // Barre de progression au scroll
 window.addEventListener('scroll', () => {
@@ -22,16 +132,29 @@ window.addEventListener('scroll', () => {
     fill.style.width = Math.min(pct, 100) + '%';
 });
 
-// Formulaire contact
+// Formulaire contact → ouvre le client mail avec les données pré-remplies
 function handleFormSubmit(e) {
     e.preventDefault();
-    const btn = e.target.querySelector('.form-submit');
-    btn.innerHTML = '<span>Message envoyé !</span> <i class="fas fa-check"></i>';
+    const form = e.target;
+    const inputs = form.querySelectorAll('input, textarea');
+    const prenom = inputs[0]?.value.trim() || '';
+    const nom = inputs[1]?.value.trim() || '';
+    const email = inputs[2]?.value.trim() || '';
+    const sujet = inputs[3]?.value.trim() || 'Contact depuis portfolio';
+    const message = inputs[4]?.value.trim() || '';
+
+    const body = `De : ${prenom} ${nom} <${email}>\n\n${message}`;
+    const mailtoUrl = `mailto:banumathey5@gmail.com?subject=${encodeURIComponent(sujet)}&body=${encodeURIComponent(body)}`;
+
+    window.location.href = mailtoUrl;
+
+    const btn = form.querySelector('.form-submit');
+    btn.innerHTML = '<span>Client mail ouvert !</span> <i class="fas fa-check"></i>';
     btn.style.background = '#28C840';
     setTimeout(() => {
         btn.innerHTML = '<span>Envoyer le message</span> <i class="fas fa-paper-plane"></i>';
         btn.style.background = '';
-        e.target.reset();
+        form.reset();
     }, 3000);
 }
 
@@ -77,12 +200,16 @@ themeButtons.forEach(btn => {
 // Mobile menu
 function toggleMobileMenu() {
     const menu = document.getElementById('mobileMenu');
-    menu.classList.toggle('active');
+    const btn = document.querySelector('.mobile-menu-btn');
+    const isOpen = menu.classList.toggle('active');
+    if (btn) btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
 }
 
 function closeMobileMenu() {
     const menu = document.getElementById('mobileMenu');
+    const btn = document.querySelector('.mobile-menu-btn');
     menu.classList.remove('active');
+    if (btn) btn.setAttribute('aria-expanded', 'false');
 }
 
 function moveCarousel(id, direction) {
@@ -221,6 +348,17 @@ const projectsData = {
         github: 'https://github.com/banu005',
         role: 'Solo',
         roleDesc: 'Projet personnel'
+    },
+    'sixiemeEtoile': {
+        title: 'Application Sixième Etoile — Stage 2026',
+        category: 'Full Stack',
+        year: '2026',
+        description: 'Application full stack développée en stage chez Sixième Etoile. Création complète du frontend et du backend en équipe. Captures d\'écran à venir.',
+        images: [],
+        techs: ['En cours'],
+        github: null,
+        role: 'Développeuse Full Stack - Stagiaire',
+        roleDesc: 'Création d\'une application full stack en groupe, développement frontend et backend, collaboration en équipe sur un projet complet.'
     },
     'colocation': {
         title: 'Application web de colocation',
