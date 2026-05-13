@@ -1,0 +1,297 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - generic [ref=e4]: Banumathey
+      - generic [ref=e5]:
+        - link "Accueil" [ref=e6] [cursor=pointer]:
+          - /url: "#accueil"
+        - link "Projets" [ref=e7] [cursor=pointer]:
+          - /url: "#etudes"
+        - link "Compétences" [ref=e8] [cursor=pointer]:
+          - /url: "#stack"
+        - link "Contact" [ref=e9] [cursor=pointer]:
+          - /url: "#contact"
+        - link " Télécharger le CV" [ref=e10] [cursor=pointer]:
+          - /url: Documents/CV_2026-04-27_Banumathey_BALENDRAN.pdf
+          - generic [ref=e11]: 
+          - generic [ref=e12]: Télécharger le CV
+        - button "" [ref=e13] [cursor=pointer]:
+          - generic [ref=e14]: 
+        - text: 
+    - generic [ref=e16]:
+      - generic [ref=e17]:
+        - link "01 · ÉTUDES · PROJETS" [ref=e18] [cursor=pointer]:
+          - /url: "#etudes"
+        - link "02 · STACK · INSTRUMENTATION" [ref=e19] [cursor=pointer]:
+          - /url: "#stack"
+        - link "03 · CONTACT" [ref=e20] [cursor=pointer]:
+          - /url: "#contact"
+      - generic [ref=e22]: Disponible 2026–2028
+  - main [ref=e24]:
+    - generic [ref=e27]:
+      - generic [ref=e28]:
+        - generic [ref=e29]: 
+        - generic [ref=e30]: DÉVELOPPEUSE FULL STACK · PARIS
+      - heading "Architecte d'interfaces." [level=1] [ref=e31]:
+        - text: Architecte
+        - emphasis [ref=e32]: d'interfaces.
+      - paragraph [ref=e33]: Je conçois et développe des produits numériques précis comme des instruments — performants, lisibles, durables.
+      - generic [ref=e34]:
+        - link "Voir mes projets " [ref=e35] [cursor=pointer]:
+          - /url: "#etudes"
+          - generic [ref=e36]: Voir mes projets
+          - generic [ref=e37]: 
+        - link "Télécharger le CV " [ref=e38] [cursor=pointer]:
+          - /url: Documents/CV_2026-04-27_Banumathey_BALENDRAN.pdf
+          - generic [ref=e39]: Télécharger le CV
+          - generic [ref=e40]: 
+      - generic [ref=e41]:
+        - generic [ref=e42]: TypeScript
+        - generic [ref=e43]: Angular
+        - generic [ref=e44]: Spring
+        - generic [ref=e45]: Python
+        - generic [ref=e46]: Flask
+        - generic [ref=e47]: SQL
+    - generic [ref=e49]:
+      - generic [ref=e50]:
+        - generic [ref=e51]: 01 · ÉTUDES · PROJETS
+        - heading "Sept projets, choisis pour leur contrainte." [level=2] [ref=e52]:
+          - text: Sept projets,
+          - text: choisis pour leur
+          - emphasis [ref=e53]: contrainte.
+        - paragraph [ref=e54]: Trois études longues, quatre archives courtes. Chacun sur le sujet pour le voir de l'intérieur.
+      - generic [ref=e55]:
+        - article [ref=e56]:
+          - generic [ref=e57]:
+            - generic [ref=e58]: 93MOOVE
+            - generic [ref=e66]: HOVER
+          - generic [ref=e67]:
+            - generic [ref=e68]:
+              - generic [ref=e69]: TOP 1
+              - generic [ref=e70]: Full Stack
+              - generic [ref=e71]: "2025"
+            - heading "Site web 93Moove v2" [level=3] [ref=e72]
+            - paragraph [ref=e73]: Plateforme de gestion d'activités sportives avec système d'inscription aux cours. Méthode Scrum et gestion Trello.
+            - generic [ref=e74]:
+              - generic [ref=e75]: Angular
+              - generic [ref=e76]: Spring
+              - generic [ref=e77]: Java
+              - generic [ref=e78]: TypeScript
+            - button "+ Voir plus" [ref=e80] [cursor=pointer]:
+              - generic [ref=e81]: +
+              - text: Voir plus
+        - article [ref=e82]:
+          - generic [ref=e84]: COLOC
+          - generic [ref=e92]:
+            - generic [ref=e93]:
+              - generic [ref=e94]: TOP 2
+              - generic [ref=e95]: Web
+              - generic [ref=e96]: "2024"
+            - heading "Application de colocation" [level=3] [ref=e97]
+            - paragraph [ref=e98]: "Gestion de colocation : tâches ménagères, courses et charges communes. Inscription et connexion utilisateurs."
+            - generic [ref=e99]:
+              - generic [ref=e100]: Python
+              - generic [ref=e101]: Flask
+              - generic [ref=e102]: MySQL
+              - generic [ref=e103]: HTML
+            - button "+ Voir plus" [ref=e105] [cursor=pointer]:
+              - generic [ref=e106]: +
+              - text: Voir plus
+        - article [ref=e107]:
+          - generic [ref=e108]:
+            - generic [ref=e109]: SNAKE
+            - generic [ref=e110]:
+              - generic [ref=e111]:
+                - generic [ref=e112]:
+                  - generic [ref=e113]: GET
+                  - generic [ref=e114]: /api/scores
+                - generic [ref=e115]: 200 OK
+              - generic [ref=e116]:
+                - generic [ref=e117]: "{"
+                - generic [ref=e118]: "\"scores\": ["
+                - generic [ref=e119]: "{ \"player\": \"Banu\","
+                - generic [ref=e120]: "\"score\": 420, \"lvl\": 7 },"
+                - generic [ref=e121]: "{ ... }"
+                - generic [ref=e122]: "]"
+                - generic [ref=e123]: "}"
+          - generic [ref=e124]:
+            - generic [ref=e125]:
+              - generic [ref=e126]: TOP 3
+              - generic [ref=e127]: Web · Jeu
+              - generic [ref=e128]: "2024"
+            - heading "Site web Snake Game" [level=3] [ref=e129]
+            - paragraph [ref=e130]: Site web complet présentant un mini jeu Snake. IHM, déploiement sur hébergeur web.
+            - generic [ref=e131]:
+              - generic [ref=e132]: HTML
+              - generic [ref=e133]: CSS
+              - generic [ref=e134]: PHP
+              - generic [ref=e135]: JavaScript
+            - button "+ Voir plus" [ref=e137] [cursor=pointer]:
+              - generic [ref=e138]: +
+              - text: Voir plus
+      - generic [ref=e140]: ARCHIVES · PROJETS COURTS
+      - generic [ref=e141]:
+        - article [ref=e142] [cursor=pointer]:
+          - generic [ref=e143]: "01"
+          - heading "93Moove v1" [level=4] [ref=e144]
+          - paragraph [ref=e145]: Plateforme associative avec connexion et inscription aux cours.
+          - generic [ref=e146]:
+            - generic [ref=e147]: PHP
+            - generic [ref=e148]: PostgreSQL
+          - generic [ref=e149]: "2024"
+        - article [ref=e150] [cursor=pointer]:
+          - generic [ref=e151]: "02"
+          - heading "Client-Serveur IPC" [level=4] [ref=e152]
+          - paragraph [ref=e153]: Réservation de places via Communication Inter-Processus.
+          - generic [ref=e154]:
+            - generic [ref=e155]: C
+            - generic [ref=e156]: Linux
+          - generic [ref=e157]: "2024"
+        - article [ref=e158] [cursor=pointer]:
+          - generic [ref=e159]: "03"
+          - heading "Gestionnaire de recettes" [level=4] [ref=e160]
+          - paragraph [ref=e161]: Application CLI de gestion d'une collection de recettes.
+          - generic [ref=e162]:
+            - generic [ref=e163]: Python
+            - generic [ref=e164]: CLI
+          - generic [ref=e165]: "2024"
+        - article [ref=e166] [cursor=pointer]:
+          - generic [ref=e167]: "04"
+          - heading "Jeu 2D Shooter" [level=4] [ref=e168]
+          - paragraph [ref=e169]: Jeu de survie 2D développé avec Godot Engine.
+          - generic [ref=e170]:
+            - generic [ref=e171]: Godot
+            - generic [ref=e172]: C#
+          - generic [ref=e173]: "2023"
+      - link "VOIR L'INTÉGRALITÉ DU CODE " [ref=e175] [cursor=pointer]:
+        - /url: https://github.com/banu005
+        - generic [ref=e176]: VOIR L'INTÉGRALITÉ DU CODE
+        - generic [ref=e177]: 
+    - generic [ref=e179]:
+      - generic [ref=e180]:
+        - generic [ref=e181]: 02 · STACK · INSTRUMENTATION
+        - heading "L'instrumentation, choisie avec soin." [level=2] [ref=e182]:
+          - text: L'instrumentation,
+          - text: choisie avec soin.
+      - generic [ref=e183]:
+        - generic [ref=e184]:
+          - heading "Langages" [level=3] [ref=e185]
+          - list [ref=e186]:
+            - listitem [ref=e187]:
+              - generic [ref=e188]: 
+              - text: TypeScript
+            - listitem [ref=e189]:
+              - generic [ref=e190]: 
+              - text: Python
+            - listitem [ref=e191]:
+              - generic [ref=e192]: 
+              - text: Java
+            - listitem [ref=e193]:
+              - generic [ref=e194]: 
+              - text: PHP
+            - listitem [ref=e195]:
+              - generic [ref=e196]: 
+              - text: C
+            - listitem [ref=e197]:
+              - generic [ref=e198]: 
+              - text: HTML / CSS
+            - listitem [ref=e199]:
+              - generic [ref=e200]: 
+              - text: SQL
+        - generic [ref=e201]:
+          - heading "Frameworks" [level=3] [ref=e202]
+          - list [ref=e203]:
+            - listitem [ref=e204]:
+              - generic [ref=e205]: 
+              - text: Angular
+            - listitem [ref=e206]:
+              - generic [ref=e207]: 
+              - text: Spring Boot
+            - listitem [ref=e208]:
+              - generic [ref=e209]: 
+              - text: Flask
+            - listitem [ref=e210]:
+              - generic [ref=e211]: 
+              - text: Tailwind CSS
+        - generic [ref=e212]:
+          - heading "Outils" [level=3] [ref=e213]
+          - list [ref=e214]:
+            - listitem [ref=e215]:
+              - generic [ref=e216]: 
+              - text: Git / GitHub
+            - listitem [ref=e217]:
+              - generic [ref=e218]: 
+              - text: Docker
+            - listitem [ref=e219]:
+              - generic [ref=e220]: 
+              - text: VS Code
+            - listitem [ref=e221]:
+              - generic [ref=e222]: 
+              - text: IntelliJ IDEA
+            - listitem [ref=e223]:
+              - generic [ref=e224]: 
+              - text: Linux
+        - generic [ref=e225]:
+          - heading "Langues" [level=3] [ref=e226]
+          - list [ref=e227]:
+            - listitem [ref=e228]: 🇫🇷 Français — natif
+            - listitem [ref=e229]: 🇬🇧 Anglais — intermédiaire
+            - listitem [ref=e230]: 🇱🇰 Tamoul — bilingue
+          - heading "Certifications" [level=3] [ref=e231]
+          - list [ref=e232]:
+            - listitem [ref=e233]: ✓ Cisco CyberOps Associate
+            - listitem [ref=e234]: ✓ Cisco English for IT
+            - listitem [ref=e235]: ✓ Certification Pix
+            - listitem [ref=e236]: ✓ Projet Voltaire
+    - generic [ref=e238]:
+      - generic [ref=e239]:
+        - generic [ref=e240]:
+          - generic [ref=e241]: 03 · CONTACT
+          - heading "Discutons de votre prochain projet." [level=2] [ref=e242]:
+            - text: Discutons de votre
+            - emphasis [ref=e243]: prochain projet.
+          - paragraph [ref=e244]: Je recherche une alternance en Développement / Réseaux / Systèmes / Cybersécurité pour 2026–2028.
+          - generic [ref=e245]:
+            - link " Email banumathey5@gmail.com" [ref=e246] [cursor=pointer]:
+              - /url: mailto:banumathey5@gmail.com
+              - generic [ref=e248]: 
+              - generic [ref=e249]:
+                - generic [ref=e250]: Email
+                - generic [ref=e251]: banumathey5@gmail.com
+            - link " GitHub github.com/banu005" [ref=e252] [cursor=pointer]:
+              - /url: https://github.com/banu005
+              - generic [ref=e254]: 
+              - generic [ref=e255]:
+                - generic [ref=e256]: GitHub
+                - generic [ref=e257]: github.com/banu005
+            - link " LinkedIn banumathey-balendran" [ref=e258] [cursor=pointer]:
+              - /url: https://www.linkedin.com/in/banumathey-balendran
+              - generic [ref=e260]: 
+              - generic [ref=e261]:
+                - generic [ref=e262]: LinkedIn
+                - generic [ref=e263]: banumathey-balendran
+        - generic [ref=e265]:
+          - generic [ref=e266]:
+            - generic [ref=e267]:
+              - generic [ref=e268]: Prénom
+              - textbox "Jean" [ref=e269]
+            - generic [ref=e270]:
+              - generic [ref=e271]: Nom
+              - textbox "Dupont" [ref=e272]
+          - generic [ref=e273]:
+            - generic [ref=e274]: Email
+            - textbox "jean@example.com" [ref=e275]
+          - generic [ref=e276]:
+            - generic [ref=e277]: Sujet
+            - textbox "Proposition d'alternance" [ref=e278]
+          - generic [ref=e279]:
+            - generic [ref=e280]: Message
+            - textbox "Bonjour Banumathey, je souhaite..." [ref=e281]
+          - button "Envoyer le message " [ref=e282] [cursor=pointer]:
+            - generic [ref=e283]: Envoyer le message
+            - generic [ref=e284]: 
+      - generic [ref=e286]:
+        - generic [ref=e287]: BALENDRAN Banumathey
+        - link "GITHUB · BANU005" [ref=e289] [cursor=pointer]:
+          - /url: https://github.com/banu005
+  - text: 
