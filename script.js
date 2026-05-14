@@ -299,6 +299,7 @@ const projectsData = {
         year: '2024',
         description: 'Application web permettant de gérer une colocation. Les utilisateurs peuvent s\'inscrire, se connecter, gérer les tâches ménagères, les courses et les charges communes.',
         images: ['Images/colocation1.png', 'Images/colocation2.png', 'Images/colocation3.png', 'Images/colocation4.png', 'Images/colocation5.png', 'Images/colocation6.png', 'Images/colocation7.png'],
+        video: 'https://www.youtube.com/embed/Teqj2Syxauk',
         techs: ['Python', 'HTML', 'CSS', 'JavaScript', 'Flask', 'MySQL'],
         github: 'https://github.com/balletFrancois18/Projet-IHM-Colocation.git',
         role: 'Solo',
@@ -348,6 +349,7 @@ function openProjectModal(projectId) {
             <span class="modal-year">${project.year}</span>
         </div>
         <p class="modal-description">${project.description}</p>
+        ${project.video ? `<div class="modal-video"><iframe src="${project.video}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>` : ''}
         <div class="modal-images">${imagesHtml}</div>
         ${roleHtml}
         <div class="modal-techs">
