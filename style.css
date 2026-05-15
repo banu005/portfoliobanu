@@ -99,7 +99,6 @@ em    { font-style: italic; }
   z-index: 1000;
   background: var(--bg);
   backdrop-filter: blur(24px);
-  border-bottom: 1px solid var(--border-soft);
 }
 
 [data-theme="light"] .header { background: rgba(244, 246, 252, 0.95); }
