@@ -66,29 +66,57 @@ window.addEventListener('scroll', () => {
 });
 
 // Formulaire contact → ouvre le client mail avec les données pré-remplies
-function handleFormSubmit(e) {
+async function handleFormSubmit(e) {
     e.preventDefault();
     const form = e.target;
-    const inputs = form.querySelectorAll('input, textarea');
-    const prenom = inputs[0]?.value.trim() || '';
-    const nom = inputs[1]?.value.trim() || '';
-    const email = inputs[2]?.value.trim() || '';
-    const sujet = inputs[3]?.value.trim() || 'Contact depuis portfolio';
-    const message = inputs[4]?.value.trim() || '';
-
-    const body = `De : ${prenom} ${nom} <${email}>\n\n${message}`;
-    const mailtoUrl = `mailto:banumathey5@gmail.com?subject=${encodeURIComponent(sujet)}&body=${encodeURIComponent(body)}`;
-
-    window.location.href = mailtoUrl;
-
     const btn = form.querySelector('.form-submit');
-    btn.innerHTML = '<span>Client mail ouvert !</span> <i class="fas fa-check"></i>';
-    btn.style.background = '#28C840';
-    setTimeout(() => {
-        btn.innerHTML = '<span>Envoyer le message</span> <i class="fas fa-paper-plane"></i>';
-        btn.style.background = '';
-        form.reset();
-    }, 3000);
+    const defaultBtn = '<span>Envoyer le message</span> <i class="fas fa-paper-plane"></i>';
+
+    const email = form.querySelector('#contact-email')?.value.trim() || '';
+    if (!email) {
+        form.querySelector('#contact-email')?.focus();
+        return;
+    }
+
+    // Construit les données pour Web3Forms
+    const prenom = form.querySelector('#contact-prenom')?.value.trim() || '';
+    const nom = form.querySelector('#contact-nom')?.value.trim() || '';
+    const sujet = form.querySelector('#contact-sujet')?.value.trim() || 'Contact depuis le portfolio';
+
+    const formData = new FormData(form);
+    formData.set('name', `${prenom} ${nom}`.trim() || 'Visiteur');
+    formData.set('subject', sujet);
+
+    // État "envoi en cours"
+    btn.disabled = true;
+    btn.innerHTML = '<span>Envoi en cours...</span> <i class="fas fa-spinner fa-spin"></i>';
+    btn.style.background = '';
+
+    try {
+        const res = await fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            body: formData
+        });
+        const data = await res.json();
+
+        if (data.success) {
+            btn.innerHTML = '<span>Message envoyé !</span> <i class="fas fa-check"></i>';
+            btn.style.background = '#28C840';
+            form.reset();
+        } else {
+            throw new Error(data.message || 'Échec de l\'envoi');
+        }
+    } catch (err) {
+        btn.innerHTML = '<span>Erreur, réessayez</span> <i class="fas fa-exclamation-triangle"></i>';
+        btn.style.background = '#FF5F57';
+        console.error('Web3Forms:', err);
+    } finally {
+        setTimeout(() => {
+            btn.innerHTML = defaultBtn;
+            btn.style.background = '';
+            btn.disabled = false;
+        }, 4000);
+    }
 }
 
 const themeButtons = document.querySelectorAll('.theme-btn, .theme-btn-small');
