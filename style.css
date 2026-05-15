@@ -108,13 +108,13 @@ em    { font-style: italic; }
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 14px 80px;
+  padding: 14px 48px;
 }
 
 .header-logo-text {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 18px;
+  font-size: 20px;
 }
 
 .header-right {
@@ -127,7 +127,7 @@ em    { font-style: italic; }
   padding: 6px 18px;
   border-radius: var(--radius-full);
   font-family: var(--font-display);
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 500;
   color: var(--text-soft);
   transition: all 0.2s;
@@ -173,7 +173,7 @@ em    { font-style: italic; }
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 8px 80px;
+  padding: 8px 48px;
   border-top: 1px solid var(--border-soft);
 }
 
@@ -247,7 +247,7 @@ em    { font-style: italic; }
 .hero {
   position: relative;
   min-height: 100vh;
-  padding: 100px 80px 60px;
+  padding: 100px 48px 60px;
   display: flex;
   align-items: center;
   overflow: hidden;
@@ -304,7 +304,7 @@ em    { font-style: italic; }
 
 .hero-title {
   font-family: var(--font-display);
-  font-size: 72px;
+  font-size: 82px;
   font-weight: 700;
   line-height: 1.02;
   color: var(--text);
@@ -313,7 +313,7 @@ em    { font-style: italic; }
 .hero-title-accent { color: var(--primary-light); }
 
 .hero-description {
-  font-size: 17px;
+  font-size: 19px;
   line-height: 1.6;
   color: var(--text-soft);
   max-width: 520px;
@@ -436,7 +436,7 @@ em    { font-style: italic; }
    SECTIONS
    ============================================= */
 
-.section { padding: 96px 80px; }
+.section { padding: 96px 48px; }
 
 .section-content {
   max-width: 1280px;
@@ -457,7 +457,7 @@ em    { font-style: italic; }
 
 .section-title {
   font-family: var(--font-display);
-  font-size: 56px;
+  font-size: 64px;
   font-weight: 700;
   line-height: 1.05;
   color: var(--text);
@@ -465,7 +465,7 @@ em    { font-style: italic; }
 }
 
 .section-subtitle {
-  font-size: 17px;
+  font-size: 19px;
   color: var(--text-soft);
   max-width: 680px;
 }
@@ -717,13 +717,13 @@ em    { font-style: italic; }
 }
 .study-title {
   font-family: var(--font-display);
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 600;
   color: var(--text);
   margin-bottom: 10px;
 }
 .study-desc {
-  font-size: 14px;
+  font-size: 15px;
   color: var(--text-soft);
   line-height: 1.5;
   margin-bottom: 16px;
@@ -1132,9 +1132,9 @@ em    { font-style: italic; }
    ============================================= */
 
 @media (max-width: 1200px) {
-  .hero-title { font-size: 56px; }
-  .section-title { font-size: 44px; }
-  .contact-title { font-size: 42px; }
+  .hero-title { font-size: 64px; }
+  .section-title { font-size: 50px; }
+  .contact-title { font-size: 48px; }
 }
 
 @media (max-width: 1024px) {
@@ -1142,7 +1142,7 @@ em    { font-style: italic; }
   .hero { padding: 80px 24px; min-height: auto; }
   .hero-content { grid-template-columns: 1fr; gap: 48px; }
   .hero-right { display: none; }
-  .hero-title { font-size: 48px; }
+  .hero-title { font-size: 54px; }
   .section { padding: 64px 24px; }
   .top3-grid { grid-template-columns: 1fr; }
   .top2-grid { grid-template-columns: 1fr; }
@@ -1157,9 +1157,9 @@ em    { font-style: italic; }
   .mobile-menu-btn { display: flex; }
   .anchor-row { display: none; }
   .hero { padding: 60px 20px; }
-  .hero-title { font-size: 36px; }
-  .section-title { font-size: 30px; }
-  .contact-title { font-size: 30px; }
+  .hero-title { font-size: 40px; }
+  .section-title { font-size: 34px; }
+  .contact-title { font-size: 34px; }
   .section { padding: 56px 20px; }
   .top3-grid { grid-template-columns: 1fr; }
   .top2-grid { grid-template-columns: 1fr; }
@@ -1174,9 +1174,9 @@ em    { font-style: italic; }
 @media (max-width: 480px) {
   .hero { padding: 48px 16px; }
   .section { padding: 44px 16px; }
-  .hero-title { font-size: 28px; }
-  .section-title { font-size: 24px; }
-  .contact-title { font-size: 24px; }
+  .hero-title { font-size: 32px; }
+  .section-title { font-size: 28px; }
+  .contact-title { font-size: 28px; }
   .hero-buttons { flex-direction: column; }
   .top2-grid { grid-template-columns: 1fr; }
   .archives-grid { grid-template-columns: 1fr; }
