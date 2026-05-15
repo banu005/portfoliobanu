@@ -173,7 +173,6 @@ em    { font-style: italic; }
   justify-content: space-between;
   align-items: center;
   padding: 8px 48px;
-  border-top: 1px solid var(--border-soft);
 }
 
 .anchor-labels { display: flex; gap: 24px; }
