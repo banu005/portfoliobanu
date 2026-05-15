@@ -34,6 +34,10 @@
   --radius-lg:    20px;
   --radius-xl:    24px;
   --radius-full:  999px;
+
+  /* Mise en page — source unique des marges latérales et de la largeur max */
+  --page-px:   32px;
+  --page-max:  1920px;
 }
 
 /* ----- Light theme ----- */
@@ -107,9 +111,9 @@ em    { font-style: italic; }
   display: flex;
   align-items: center;
   justify-content: space-between;
-  max-width: 1440px;
+  max-width: var(--page-max);
   margin: 0 auto;
-  padding: 14px 32px;
+  padding: 14px var(--page-px);
 }
 
 .header-logo-text {
@@ -280,9 +284,9 @@ em    { font-style: italic; }
   grid-template-columns: 1fr 1fr;
   gap: 80px;
   width: 100%;
-  max-width: 1440px;
+  max-width: var(--page-max);
   margin: 0 auto;
-  padding: 0 32px;
+  padding: 0 var(--page-px);
   position: relative;
   align-items: center;
 }
@@ -440,9 +444,9 @@ em    { font-style: italic; }
 .section { padding: 96px 0; }
 
 .section-content {
-  max-width: 1440px;
+  max-width: var(--page-max);
   margin: 0 auto;
-  padding: 0 32px;
+  padding: 0 var(--page-px);
   position: relative;
 }
 
@@ -1140,13 +1144,13 @@ em    { font-style: italic; }
 }
 
 @media (max-width: 1024px) {
-  .header-bar, .anchor-row { padding: 16px 24px; }
+  :root { --page-px: 24px; }
+  .header-bar { padding: 16px var(--page-px); }
   .hero { padding: 80px 0; min-height: auto; }
-  .hero-content { grid-template-columns: 1fr; gap: 48px; padding: 0 24px; }
+  .hero-content { grid-template-columns: 1fr; gap: 48px; }
   .hero-right { display: none; }
   .hero-title { font-size: 54px; }
   .section { padding: 64px 0; }
-  .section-content { padding: 0 24px; }
   .top3-grid { grid-template-columns: 1fr; }
   .top2-grid { grid-template-columns: 1fr; }
   .archives-grid { grid-template-columns: repeat(2, 1fr); }
@@ -1156,6 +1160,7 @@ em    { font-style: italic; }
 }
 
 @media (max-width: 768px) {
+  :root { --page-px: 20px; }
   .nav-pill, .download-btn { display: none; }
   .mobile-menu-btn { display: flex; }
   .anchor-row { display: none; }
@@ -1164,8 +1169,6 @@ em    { font-style: italic; }
   .section-title { font-size: 34px; }
   .contact-title { font-size: 34px; }
   .section { padding: 56px 0; }
-  .hero-content { padding: 0 20px; }
-  .section-content { padding: 0 20px; }
   .top3-grid { grid-template-columns: 1fr; }
   .top2-grid { grid-template-columns: 1fr; }
   .archives-grid { grid-template-columns: repeat(2, 1fr); }
@@ -1177,10 +1180,9 @@ em    { font-style: italic; }
 }
 
 @media (max-width: 480px) {
+  :root { --page-px: 16px; }
   .hero { padding: 48px 0; }
   .section { padding: 44px 0; }
-  .hero-content { padding: 0 16px; }
-  .section-content { padding: 0 16px; }
   .hero-title { font-size: 32px; }
   .section-title { font-size: 28px; }
   .contact-title { font-size: 28px; }
