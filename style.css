@@ -763,8 +763,8 @@ em    { font-style: italic; }
 }
 .study-link:hover, a.study-link:hover { background: var(--primary-dark); }
 .study-links { display: flex; gap: 10px; flex-wrap: wrap; }
-.study-link-youtube { background: #FF0000; }
-.study-link-youtube:hover { background: #CC0000; }
+.study-link.study-link-youtube { background: #FF0000; }
+.study-link.study-link-youtube:hover { background: #CC0000; }
 
 /* Archives */
 .archives-sep {
