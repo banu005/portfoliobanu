@@ -280,8 +280,8 @@ em    { font-style: italic; }
 
 .hero-content {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
+  grid-template-columns: 560px 1fr;
+  gap: 48px;
   width: 100%;
   max-width: var(--page-max);
   margin: 0 auto;
