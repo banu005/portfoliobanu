@@ -245,7 +245,7 @@ em    { font-style: italic; }
 .hero {
   position: relative;
   min-height: 100vh;
-  padding: 100px 48px 60px;
+  padding: 100px 0 60px;
   display: flex;
   align-items: center;
   overflow: hidden;
@@ -280,6 +280,7 @@ em    { font-style: italic; }
   width: 100%;
   max-width: 1280px;
   margin: 0 auto;
+  padding: 0 48px;
   position: relative;
   align-items: center;
 }
@@ -434,11 +435,12 @@ em    { font-style: italic; }
    SECTIONS
    ============================================= */
 
-.section { padding: 96px 48px; }
+.section { padding: 96px 0; }
 
 .section-content {
   max-width: 1280px;
   margin: 0 auto;
+  padding: 0 48px;
   position: relative;
 }
 
@@ -1137,11 +1139,12 @@ em    { font-style: italic; }
 
 @media (max-width: 1024px) {
   .header-bar, .anchor-row { padding: 16px 24px; }
-  .hero { padding: 80px 24px; min-height: auto; }
-  .hero-content { grid-template-columns: 1fr; gap: 48px; }
+  .hero { padding: 80px 0; min-height: auto; }
+  .hero-content { grid-template-columns: 1fr; gap: 48px; padding: 0 24px; }
   .hero-right { display: none; }
   .hero-title { font-size: 54px; }
-  .section { padding: 64px 24px; }
+  .section { padding: 64px 0; }
+  .section-content { padding: 0 24px; }
   .top3-grid { grid-template-columns: 1fr; }
   .top2-grid { grid-template-columns: 1fr; }
   .archives-grid { grid-template-columns: repeat(2, 1fr); }
@@ -1154,11 +1157,13 @@ em    { font-style: italic; }
   .nav-pill, .download-btn { display: none; }
   .mobile-menu-btn { display: flex; }
   .anchor-row { display: none; }
-  .hero { padding: 60px 20px; }
+  .hero { padding: 60px 0; }
   .hero-title { font-size: 40px; }
   .section-title { font-size: 34px; }
   .contact-title { font-size: 34px; }
-  .section { padding: 56px 20px; }
+  .section { padding: 56px 0; }
+  .hero-content { padding: 0 20px; }
+  .section-content { padding: 0 20px; }
   .top3-grid { grid-template-columns: 1fr; }
   .top2-grid { grid-template-columns: 1fr; }
   .archives-grid { grid-template-columns: repeat(2, 1fr); }
@@ -1170,8 +1175,10 @@ em    { font-style: italic; }
 }
 
 @media (max-width: 480px) {
-  .hero { padding: 48px 16px; }
-  .section { padding: 44px 16px; }
+  .hero { padding: 48px 0; }
+  .section { padding: 44px 0; }
+  .hero-content { padding: 0 16px; }
+  .section-content { padding: 0 16px; }
   .hero-title { font-size: 32px; }
   .section-title { font-size: 28px; }
   .contact-title { font-size: 28px; }
