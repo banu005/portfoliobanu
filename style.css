@@ -728,7 +728,7 @@ em    { font-style: italic; }
   margin-bottom: 10px;
 }
 .study-desc {
-  font-size: 15px;
+  font-size: 16px;
   color: var(--text-soft);
   line-height: 1.5;
   margin-bottom: 16px;
@@ -754,7 +754,7 @@ em    { font-style: italic; }
   border: none;
   border-radius: var(--radius-full);
   font-family: var(--font-display);
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 500;
   color: #fff;
   cursor: pointer;
@@ -809,12 +809,12 @@ em    { font-style: italic; }
 }
 .archive-title {
   font-family: var(--font-display);
-  font-size: 16px;
+  font-size: 17px;
   font-weight: 600;
   color: var(--text);
 }
 .archive-desc {
-  font-size: 13px;
+  font-size: 14px;
   color: var(--text-soft);
   line-height: 1.4;
   flex: 1;
@@ -884,7 +884,7 @@ em    { font-style: italic; }
   padding: 10px 12px;
   border-radius: var(--radius-sm);
   font-family: var(--font-display);
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 500;
   color: var(--text-soft);
   transition: background 0.15s, color 0.15s;
@@ -893,7 +893,7 @@ em    { font-style: italic; }
 .stack-item i { font-size: 18px; flex-shrink: 0; }
 
 .cert-item {
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 400;
   color: var(--text-soft);
 }
@@ -949,7 +949,7 @@ em    { font-style: italic; }
 .contact-title em { color: var(--primary-light); }
 
 .contact-subtitle {
-  font-size: 17px;
+  font-size: 18px;
   color: var(--text-soft);
   margin-bottom: 32px;
   max-width: 480px;
@@ -989,7 +989,7 @@ em    { font-style: italic; }
 }
 .contact-method-value {
   font-family: var(--font-display);
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 500;
   color: var(--text);
 }
@@ -1003,7 +1003,7 @@ em    { font-style: italic; }
 
 .form-label {
   font-family: var(--font-display);
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 500;
   color: var(--text-soft);
 }
@@ -1014,7 +1014,7 @@ em    { font-style: italic; }
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
   font-family: var(--font-body);
-  font-size: 15px;
+  font-size: 16px;
   color: var(--text);
   transition: border-color 0.2s, box-shadow 0.2s;
   outline: none;
@@ -1098,7 +1098,7 @@ em    { font-style: italic; }
   background: var(--bg-card); border-radius: var(--radius-full);
   font-family: var(--font-mono); font-size: 12px; color: var(--text-muted);
 }
-.modal-description { font-size: 16px; line-height: 1.6; color: var(--text-soft); margin-bottom: 24px; }
+.modal-description { font-size: 17px; line-height: 1.6; color: var(--text-soft); margin-bottom: 24px; }
 .modal-images { display: flex; flex-direction: column; gap: 16px; margin-bottom: 24px; }
 .modal-video { margin-bottom: 24px; }
 .modal-video iframe { width: 100%; aspect-ratio: 16/9; border-radius: var(--radius-md); border: 1px solid var(--border); }
@@ -1118,8 +1118,8 @@ em    { font-style: italic; }
   font-family: var(--font-mono); font-size: 12px; color: var(--text-soft);
 }
 .modal-role { margin-bottom: 20px; }
-.modal-role-text { font-size: 15px; font-weight: 600; color: var(--text); margin-bottom: 6px; }
-.modal-role-desc { font-size: 14px; color: var(--text-soft); line-height: 1.5; }
+.modal-role-text { font-size: 16px; font-weight: 600; color: var(--text); margin-bottom: 6px; }
+.modal-role-desc { font-size: 15px; color: var(--text-soft); line-height: 1.5; }
 .modal-links { display: flex; gap: 12px; }
 .modal-link {
   display: flex; align-items: center; gap: 8px;
@@ -1201,7 +1201,7 @@ em    { font-style: italic; }
 /* ─── À PROPOS ─── */
 .apropos-intro {
   margin-top: 20px;
-  font-size: 16px;
+  font-size: 17px;
   line-height: 1.7;
   color: var(--text-soft);
   max-width: 680px;
@@ -1303,7 +1303,7 @@ em    { font-style: italic; }
 
 .timeline-content h4 {
   font-family: var(--font-display);
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 600;
   color: var(--text);
   margin-bottom: 3px;
@@ -1311,14 +1311,14 @@ em    { font-style: italic; }
 }
 
 .timeline-place {
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 500;
   color: var(--text-soft);
   margin-bottom: 7px;
 }
 
 .timeline-desc {
-  font-size: 13px;
+  font-size: 14px;
   color: var(--text-soft);
   line-height: 1.5;
 }
@@ -1333,7 +1333,7 @@ em    { font-style: italic; }
 }
 
 .timeline-list li {
-  font-size: 13px;
+  font-size: 14px;
   color: var(--text-soft);
   padding-left: 14px;
   position: relative;
