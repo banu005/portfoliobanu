@@ -86,6 +86,7 @@ async function handleFormSubmit(e) {
     const formData = new FormData(form);
     formData.set('name', `${prenom} ${nom}`.trim() || 'Visiteur');
     formData.set('subject', sujet);
+    formData.set('replyto', email);
 
     // État "envoi en cours"
     btn.disabled = true;
