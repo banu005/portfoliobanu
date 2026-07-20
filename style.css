@@ -664,12 +664,20 @@ em {
   margin-bottom: 64px;
 }
 
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 64px;
+}
+
 .study-card {
   background: var(--bg);
   border: 1px solid var(--border);
   border-radius: var(--radius-xl);
   overflow: hidden;
   transition: transform 0.3s, border-color 0.3s;
+  cursor: pointer;
 }
 
 .study-card:hover {
@@ -1563,6 +1571,13 @@ a.study-link:hover {
   border: 1px solid var(--border);
 }
 
+.modal-pdf {
+  width: 100%;
+  height: 600px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+}
+
 .modal-techs {
   margin-bottom: 16px;
 }
@@ -1702,6 +1717,10 @@ a.study-link:hover {
     grid-template-columns: 1fr;
   }
 
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .archives-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -1762,6 +1781,10 @@ a.study-link:hover {
     grid-template-columns: 1fr;
   }
 
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
   .archives-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -1813,6 +1836,10 @@ a.study-link:hover {
   }
 
   .top2-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .projects-grid {
     grid-template-columns: 1fr;
   }
 

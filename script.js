@@ -240,7 +240,7 @@ const projectsData = {
         year: '2025',
         description: 'Deuxième version du site 93moove, une plateforme web pour une association d\'activités sportives et créatives avec système d\'inscription aux cours. Utilisation de la méthode Scrum.',
         images: ['Images/93moove2.png', 'Images/93moove2login.png'],
-        techs: ['Angular', 'Spring', 'Java', 'HTML', 'CSS', 'TypeScript', 'Supabase', 'PostgreSQL'],
+        techs: ['Angular', 'Spring', 'Java', 'HTML', 'CSS', 'TypeScript', 'API REST', 'Supabase', 'PostgreSQL'],
         github: 'https://github.com/angelo1967817162/angular.git',
         role: 'Product Owner & Développeuse',
         roleDesc: 'Gestion du backlog, mise en sprint des fonctionnalités utilisateurs, utilisation de Trello pour la gestion des missions et suivi du projet. Développement d\'API REST et gestion de la base de données.'
@@ -316,7 +316,7 @@ const projectsData = {
         category: 'Full Stack',
         year: '2026',
         description: 'Création du Portail Agence en stage alterné de 2 mois chez Sixième Etoile (mars — juin 2026). Stack technique : Next.js, Prisma et Turborepo.',
-        images: [],
+        images: ['Images/agence-dashboard-1.png', 'Images/agence-grille-1.png', 'Images/agence-login-1.png'],
         techs: ['Next.js', 'Prisma', 'Turborepo', 'TypeScript'],
         github: null,
         role: 'Développeuse Full Stack - Stagiaire',
@@ -345,7 +345,11 @@ function openProjectModal(projectId) {
     
     let imagesHtml = '';
     project.images.forEach(img => {
-        imagesHtml += `<div class="modal-image" style="background-image: url('${img}');"></div>`;
+        if (img.endsWith('.pdf')) {
+            imagesHtml += `<embed src="${img}" type="application/pdf" class="modal-pdf">`;
+        } else {
+            imagesHtml += `<div class="modal-image" style="background-image: url('${img}');"></div>`;
+        }
     });
     
     let linksHtml = '';

@@ -6,9 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Portfolio de Banumathey BALENDRAN — Développeuse Full Stack">
     <title>BALENDRAN Banumathey — Développeuse Full Stack</title>
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#x1f4bb;</text></svg>">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#x1f4bb;</text></svg>">
     <meta property="og:title" content="BALENDRAN Banumathey — Développeuse Full Stack">
-    <meta property="og:description" content="Portfolio de Banumathey BALENDRAN — Étudiante en Licence pro au CNAM, recherche alternance en développement pour un Master / Cycle d'Ingénieur.">
+    <meta property="og:description"
+        content="Portfolio de Banumathey BALENDRAN — Étudiante en Licence pro au CNAM, recherche alternance en développement pour un Master / Cycle d'Ingénieur.">
     <meta property="og:image" content="https://banu005.github.io/portfoliobanu/Images/colocation1.png">
     <meta property="og:url" content="https://banu005.github.io/portfoliobanu/">
     <meta property="og:type" content="website">
@@ -84,7 +86,8 @@
                         <em class="hero-title-accent">Full Stack.</em>
                     </h1>
                     <p class="hero-description">
-                        Étudiante en Licence professionnelle au CNAM, je recherche une <strong>alternance en développement pour un Master / Cycle d'Ingénieur</strong> à partir de septembre 2026.
+                        Étudiante en Licence professionnelle au CNAM, je recherche une <strong>alternance en
+                            développement pour un Master / Cycle d'Ingénieur</strong> à partir de septembre 2026.
                     </p>
                     <div class="hero-buttons">
                         <a href="#etudes" class="btn btn-primary">
@@ -283,39 +286,27 @@
                     <h2 class="section-title">Mes <em>projets.</em></h2>
                 </div>
 
-                <div class="archives-sep">
-                    <span class="section-kicker">PROJETS RÉCENTS</span>
-                </div>
-                <div class="top2-grid">
+                <div class="projects-grid">
 
-                    <!-- Sixième Etoile — EN COURS -->
-                    <article class="study-card">
-                        <div class="study-plate plate-blue">
-                            <div class="plate-bg-label">SIXIEME ÉTOILE</div>
-                            <div class="wip-win">
-                                <div class="wip-badge"><span class="status-dot-sm"></span> 2026</div>
-                                <div class="wip-lines">
-                                    <div class="wip-line wl-full"></div>
-                                    <div class="wip-line wl-half"></div>
-                                    <div class="wip-line wl-three"></div>
-                                    <div class="wip-line wl-full"></div>
-                                    <div class="wip-line wl-quarter"></div>
-                                </div>
-                                <div class="wip-footer">Next.js · Prisma · Turborepo</div>
-                            </div>
+                    <!-- Sixième Etoile — 2026 -->
+                    <article class="study-card" onclick="openProjectModal('sixiemeEtoile')" tabindex="0" role="button" onkeydown="if(event.key==='Enter'||event.key===' ')openProjectModal('sixiemeEtoile')">
+                        <div class="study-plate plate-photo">
+                            <img src="Images/agence-dashboard-1.png" class="plate-direct-img" alt="Portail Agence - Dashboard">
                         </div>
                         <div class="study-info">
                             <div class="study-meta">
                                 <span class="study-cat">Full Stack</span>
-                                <span class="study-year">2026</span>
                             </div>
-                            <h3 class="study-title">Application Sixième Etoile</h3>
-                            <p class="study-desc">Création du Portail Agence en stage alterné de 2 mois — Stack technique
-                                : Next.js, Prisma et Turborepo.</p>
+                            <h3 class="study-title">Portail Agence</h3>
+                            <p class="study-desc">Création du Portail Agence : Next.js, Prisma et Turborepo.</p>
                             <div class="study-techs">
+                                <span class="tech-tag">Typescript</span>
                                 <span class="tech-tag">Next.js</span>
                                 <span class="tech-tag">Prisma</span>
                                 <span class="tech-tag">Turborepo</span>
+                                <span class="tech-tag">API Hono</span>
+                                <span class="tech-tag">Tailwind CSS</span>
+                                <span class="tech-tag">PostgreSQL</span>
                             </div>
                             <div class="study-links">
                                 <button class="study-link" onclick="openProjectModal('sixiemeEtoile')">
@@ -325,25 +316,23 @@
                         </div>
                     </article>
 
-                    <!-- Colocation -->
-                    <article class="study-card">
+                    <!-- Colocation — 2024 -->
+                    <article class="study-card" onclick="openProjectModal('colocation')" tabindex="0" role="button" onkeydown="if(event.key==='Enter'||event.key===' ')openProjectModal('colocation')">
                         <div class="study-plate plate-photo">
                             <img src="Images/colocation1.png" class="plate-direct-img" alt="Application de colocation">
                         </div>
                         <div class="study-info">
                             <div class="study-meta">
                                 <span class="study-cat">Web</span>
-                                <span class="study-year">2024</span>
                             </div>
                             <h3 class="study-title">Application de colocation</h3>
-                            <p class="study-desc">Application web permettant de gérer une colocation. Les utilisateurs
-                                peuvent s'inscrire, se connecter, gérer les tâches ménagères, les courses et les charges
-                                communes.</p>
+                            <p class="study-desc">Application web permettant de gérer une colocation : inscription, tâches ménagères, courses et charges communes.</p>
                             <div class="study-techs">
                                 <span class="tech-tag">Python</span>
                                 <span class="tech-tag">Flask</span>
                                 <span class="tech-tag">MySQL</span>
                                 <span class="tech-tag">HTML</span>
+                                <span class="tech-tag">CSS</span>
                                 <span class="tech-tag">JavaScript</span>
                             </div>
                             <div class="study-links">
@@ -358,20 +347,17 @@
                         </div>
                     </article>
 
-                    <!-- Gestionnaire de recettes -->
-                    <article class="study-card">
+                    <!-- Gestionnaire de recettes — 2024 -->
+                    <article class="study-card" onclick="openProjectModal('appRecette')" tabindex="0" role="button" onkeydown="if(event.key==='Enter'||event.key===' ')openProjectModal('appRecette')">
                         <div class="study-plate plate-photo">
                             <img src="Images/appRecette1.png" class="plate-direct-img" alt="Gestionnaire de recettes">
                         </div>
                         <div class="study-info">
                             <div class="study-meta">
                                 <span class="study-cat">CLI · Script</span>
-                                <span class="study-year">2024</span>
                             </div>
                             <h3 class="study-title">Gestionnaire de recettes</h3>
-                            <p class="study-desc">Application en ligne de commande permettant de gérer une collection de
-                                recettes de cuisine. L'utilisateur peut ajouter, afficher, rechercher et supprimer des
-                                recettes directement depuis le terminal.</p>
+                            <p class="study-desc">Application en ligne de commande pour gérer une collection de recettes de cuisine.</p>
                             <div class="study-techs">
                                 <span class="tech-tag">Python</span>
                                 <span class="tech-tag">argparse</span>
@@ -386,20 +372,40 @@
                         </div>
                     </article>
 
-                    <!-- Snake Game -->
-                    <article class="study-card">
+                    <!-- Client-Serveur IPC — 2024 -->
+                    <article class="study-card" onclick="openProjectModal('clientserveur')" tabindex="0" role="button" onkeydown="if(event.key==='Enter'||event.key===' ')openProjectModal('clientserveur')">
+                        <div class="study-plate plate-photo">
+                            <img src="Images/progserveur.png" class="plate-direct-img" alt="Client-Serveur IPC">
+                        </div>
+                        <div class="study-info">
+                            <div class="study-meta">
+                                <span class="study-cat">API</span>
+                            </div>
+                            <h3 class="study-title">Client-Serveur IPC</h3>
+                            <p class="study-desc">Application client-serveur de réservation de places pour des spectacles, avec Communication Inter-Processus (IPC).</p>
+                            <div class="study-techs">
+                                <span class="tech-tag">C</span>
+                                <span class="tech-tag">Linux</span>
+                            </div>
+                            <div class="study-links">
+                                <button class="study-link" onclick="openProjectModal('clientserveur')">
+                                    <i class="fas fa-plus"></i> Voir plus
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Snake Game — 2024 -->
+                    <article class="study-card" onclick="openProjectModal('snake')" tabindex="0" role="button" onkeydown="if(event.key==='Enter'||event.key===' ')openProjectModal('snake')">
                         <div class="study-plate plate-photo">
                             <img src="Images/jeusnakejouer.png" class="plate-direct-img" alt="Site web Snake Game">
                         </div>
                         <div class="study-info">
                             <div class="study-meta">
                                 <span class="study-cat">Web · Jeu</span>
-                                <span class="study-year">2024</span>
                             </div>
                             <h3 class="study-title">Site web Snake Game</h3>
-                            <p class="study-desc">Création d'un site web qui présente le mini jeu Snake. Réalisation
-                                complète du projet : utiliser les méthodes d'IHM, coder le site en HTML CSS PHP et
-                                déployer le projet sur un hébergeur web.</p>
+                            <p class="study-desc">Site web présentant le mini jeu Snake, codé en HTML CSS PHP et JavaScript.</p>
                             <div class="study-techs">
                                 <span class="tech-tag">HTML</span>
                                 <span class="tech-tag">CSS</span>
@@ -413,82 +419,103 @@
                             </div>
                         </div>
                     </article>
-                </div>
 
-                <!-- ARCHIVES -->
-                <div class="archives-sep">
-                    <span class="section-kicker">ARCHIVES</span>
-                </div>
+                    <!-- 93Moove v2 — 2025 -->
+                    <article class="study-card" onclick="openProjectModal('93mooveV2')" tabindex="0" role="button" onkeydown="if(event.key==='Enter'||event.key===' ')openProjectModal('93mooveV2')">
+                        <div class="study-plate plate-photo">
+                            <img src="Images/93moove2.png" class="plate-direct-img" alt="93Moove v2">
+                        </div>
+                        <div class="study-info">
+                            <div class="study-meta">
+                                <span class="study-cat">Full Stack</span>
+                            </div>
+                            <h3 class="study-title">93Moove v2</h3>
+                            <p class="study-desc">Plateforme web pour une association d'activités sportives et créatives avec système d'inscription aux cours. Méthode Scrum.</p>
+                            <div class="study-techs">
+                                <span class="tech-tag">Angular</span>
+                                <span class="tech-tag">Spring</span>
+                                <span class="tech-tag">Java</span>
+                                <span class="tech-tag">TypeScript</span>
+                                <span class="tech-tag">API REST</span>
+                                <span class="tech-tag">PostgreSQL</span>
+                            </div>
+                            <div class="study-links">
+                                <button class="study-link" onclick="openProjectModal('93mooveV2')">
+                                    <i class="fas fa-plus"></i> Voir plus
+                                </button>
+                            </div>
+                        </div>
+                    </article>
 
-                <div class="archives-grid">
-                    <article class="archive-card" onclick="openProjectModal('93mooveV2')" tabindex="0" role="button"
-                        aria-label="Voir le projet 93Moove v2"
-                        onkeydown="if(event.key==='Enter'||event.key===' ')openProjectModal('93mooveV2')">
-                        <span class="archive-num">01</span>
-                        <h4 class="archive-title">93Moove v2</h4>
-                        <p class="archive-desc">Plateforme web pour une association d'activités sportives et créatives
-                            avec système d'inscription aux cours. Utilisation de la méthode Scrum.</p>
-                        <div class="archive-techs">
-                            <span class="tech-tag-sm">Angular</span>
-                            <span class="tech-tag-sm">Spring</span>
-                            <span class="tech-tag-sm">Java</span>
+                    <!-- 2D Shooter — 2023 -->
+                    <article class="study-card" onclick="openProjectModal('2dgame')" tabindex="0" role="button" onkeydown="if(event.key==='Enter'||event.key===' ')openProjectModal('2dgame')">
+                        <div class="study-plate plate-photo">
+                            <img src="Images/2dgame.png" class="plate-direct-img" alt="Jeu 2D Shooter">
                         </div>
-                        <span class="archive-year">2025</span>
-                    </article>
-                    <article class="archive-card" onclick="openProjectModal('93mooveV1')" tabindex="0" role="button"
-                        aria-label="Voir le projet 93Moove v1"
-                        onkeydown="if(event.key==='Enter'||event.key===' ')openProjectModal('93mooveV1')">
-                        <span class="archive-num">02</span>
-                        <h4 class="archive-title">93Moove v1</h4>
-                        <p class="archive-desc">Plateforme web complète pour une association proposant des activités
-                            sportives et créatives. Le site permet aux utilisateurs de se connecter et de s'inscrire aux
-                            cours proposés.</p>
-                        <div class="archive-techs">
-                            <span class="tech-tag-sm">PHP</span>
-                            <span class="tech-tag-sm">PostgreSQL</span>
+                        <div class="study-info">
+                            <div class="study-meta">
+                                <span class="study-cat">Jeu</span>
+                            </div>
+                            <h3 class="study-title">Jeu 2D Shooter</h3>
+                            <p class="study-desc">Jeu de survie développé avec Godot pour découvrir le développement de jeux vidéo.</p>
+                            <div class="study-techs">
+                                <span class="tech-tag">Godot</span>
+                                <span class="tech-tag">C#</span>
+                            </div>
+                            <div class="study-links">
+                                <button class="study-link" onclick="openProjectModal('2dgame')">
+                                    <i class="fas fa-plus"></i> Voir plus
+                                </button>
+                            </div>
                         </div>
-                        <span class="archive-year">2024</span>
                     </article>
-                    <article class="archive-card" onclick="openProjectModal('cineweb')" tabindex="0" role="button"
-                        aria-label="Voir le projet Cineweb Invest"
-                        onkeydown="if(event.key==='Enter'||event.key===' ')openProjectModal('cineweb')">
-                        <span class="archive-num">03</span>
-                        <h4 class="archive-title">Cineweb Invest</h4>
-                        <p class="archive-desc">Création d'un site web d'investissement pour Images30. Analyse du
-                            besoin, cahier des charges, maquettage sur Balsamiq et développement sur Google Sites.</p>
-                        <div class="archive-techs">
-                            <span class="tech-tag-sm">Google Sites</span>
-                            <span class="tech-tag-sm">Balsamiq</span>
+
+                    <!-- Cineweb Invest — 2024 -->
+                    <article class="study-card" onclick="openProjectModal('cineweb')" tabindex="0" role="button" onkeydown="if(event.key==='Enter'||event.key===' ')openProjectModal('cineweb')">
+                        <div class="study-plate plate-photo">
+                            <img src="Images/cineweb.png" class="plate-direct-img" alt="Cineweb Invest">
                         </div>
-                        <span class="archive-year">2024</span>
-                    </article>
-                    <article class="archive-card" onclick="openProjectModal('clientserveur')" tabindex="0" role="button"
-                        aria-label="Voir le projet Client-Serveur IPC"
-                        onkeydown="if(event.key==='Enter'||event.key===' ')openProjectModal('clientserveur')">
-                        <span class="archive-num">04</span>
-                        <h4 class="archive-title">Client-Serveur IPC</h4>
-                        <p class="archive-desc">Application client-serveur permettant de réserver des places pour un
-                            ensemble de spectacles. Utilisation de Communication Inter-Processus (IPC).</p>
-                        <div class="archive-techs">
-                            <span class="tech-tag-sm">C</span>
-                            <span class="tech-tag-sm">Linux</span>
+                        <div class="study-info">
+                            <div class="study-meta">
+                                <span class="study-cat">Stage</span>
+                            </div>
+                            <h3 class="study-title">Cineweb Invest</h3>
+                            <p class="study-desc">Site web d'investissement pour Images30 : analyse du besoin, cahier des charges, maquettage et développement.</p>
+                            <div class="study-techs">
+                                <span class="tech-tag">Google Sites</span>
+                                <span class="tech-tag">Balsamiq</span>
+                            </div>
+                            <div class="study-links">
+                                <button class="study-link" onclick="openProjectModal('cineweb')">
+                                    <i class="fas fa-plus"></i> Voir plus
+                                </button>
+                            </div>
                         </div>
-                        <span class="archive-year">2024</span>
                     </article>
-                    <article class="archive-card" onclick="openProjectModal('2dgame')" tabindex="0" role="button"
-                        aria-label="Voir le projet Jeu 2D Shooter"
-                        onkeydown="if(event.key==='Enter'||event.key===' ')openProjectModal('2dgame')">
-                        <span class="archive-num">05</span>
-                        <h4 class="archive-title">Jeu 2D Shooter</h4>
-                        <p class="archive-desc">Jeu de survie où le personnage doit éliminer des blobs verts en tirant
-                            pour survivre. Développé en suivant un tutoriel pour découvrir le développement de jeux
-                            vidéo avec Godot.</p>
-                        <div class="archive-techs">
-                            <span class="tech-tag-sm">Godot</span>
-                            <span class="tech-tag-sm">C#</span>
+
+                    <!-- 93Moove v1 — 2024 -->
+                    <article class="study-card" onclick="openProjectModal('93mooveV1')" tabindex="0" role="button" onkeydown="if(event.key==='Enter'||event.key===' ')openProjectModal('93mooveV1')">
+                        <div class="study-plate plate-photo">
+                            <img src="Images/93moove1.png" class="plate-direct-img" alt="93Moove v1">
                         </div>
-                        <span class="archive-year">2023</span>
+                        <div class="study-info">
+                            <div class="study-meta">
+                                <span class="study-cat">Web</span>
+                            </div>
+                            <h3 class="study-title">93Moove v1</h3>
+                            <p class="study-desc">Plateforme web complète pour une association proposant des activités sportives et créatives.</p>
+                            <div class="study-techs">
+                                <span class="tech-tag">PHP</span>
+                                <span class="tech-tag">PostgreSQL</span>
+                            </div>
+                            <div class="study-links">
+                                <button class="study-link" onclick="openProjectModal('93mooveV1')">
+                                    <i class="fas fa-plus"></i> Voir plus
+                                </button>
+                            </div>
+                        </div>
                     </article>
+
                 </div>
 
                 <div class="projects-cta">
@@ -577,7 +604,8 @@
                         <div class="section-kicker">03 · CONTACT</div>
                         <h2 class="contact-title">Me <em>contacter.</em></h2>
                         <p class="contact-subtitle">
-                            Je recherche une alternance en développement pour un Master / Cycle d'Ingénieur à partir de septembre 2026.
+                            Je recherche une alternance en développement pour un Master / Cycle d'Ingénieur à partir de
+                            septembre 2026.
                         </p>
                         <div class="contact-methods">
                             <a href="mailto:banumathey5@gmail.com" class="contact-method-card">
