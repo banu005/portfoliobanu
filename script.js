@@ -11,7 +11,7 @@ function initTerminal() {
         { cmd: 'python -m venv venv && source venv/bin/activate',         out: { text: '(venv) banu@dev:~/recettes$', cls: 'info' } },
         { cmd: 'pip install -r requirements.txt',                         out: { text: 'Successfully installed argparse json', cls: 'success' } },
         { cmd: 'python recettes.py add "Gateau au chocolat"',             out: { text: 'Recette ajoutée avec succès.', cls: 'success' } },
-        { cmd: 'python recettes.py list',                                 out: { text: '1. Gateau au chocolat  2. Ratatouille', cls: 'info' } },
+        { cmd: 'python recettes.py list',                                 out: { text: '1. Gateau au chocolat', cls: 'info' } },
         { cmd: 'git add .',                                               out: { text: 'Changes staged for commit', cls: '' } },
         { cmd: 'git commit -m "feat: ajout commande recherche"',          out: { text: '[main 3a7f2c1] 2 files changed, 54 insertions(+)', cls: '' } },
         { cmd: 'git push origin main',                                    out: { text: 'To github.com/banu005 · main → main ✓', cls: 'success' } },
@@ -286,8 +286,8 @@ const projectsData = {
         images: ['Images/jeusnakelogin.png', 'Images/jeusnakejouer.png', 'Images/jeusnakegameover.png'],
         techs: ['HTML', 'CSS', 'PHP', 'JavaScript'],
         github: 'https://github.com/laize-loucia/Game_App.git',
-        role: 'Développeuse Web',
-        roleDesc: 'Choisir un mini jeu à développer, décider le langage à utiliser : HTML, CSS, PHP, JavaScript pour coder le jeu, ajouter un profil, un score et permettre aux utilisateurs de recevoir par mail leur score, ajout des logs. Respecter les consignes IHM, développer le site et tester l\'expérience utilisateur et faire de la documentation.'
+        role: 'Réalisé en groupe',
+        roleDesc: 'Site web Snake Game réalisé en groupe'
     },
     'clientserveur': {
         title: 'Mini projet en programmation système répartie',
@@ -312,15 +312,15 @@ const projectsData = {
         roleDesc: 'Projet personnel'
     },
     'sixiemeEtoile': {
-        title: 'Application Sixième Etoile — Stage 2026',
+        title: 'Application Sixième Etoile — Stage Alterné 2 mois',
         category: 'Full Stack',
         year: '2026',
-        description: 'Application full stack développée en stage chez Sixième Etoile. Création complète du frontend et du backend en équipe. Captures d\'écran à venir.',
+        description: 'Création du Portail Agence en stage alterné de 2 mois chez Sixième Etoile (mars — juin 2026). Stack technique : Next.js, Prisma et Turborepo.',
         images: [],
-        techs: ['En cours'],
+        techs: ['Next.js', 'Prisma', 'Turborepo', 'TypeScript'],
         github: null,
         role: 'Développeuse Full Stack - Stagiaire',
-        roleDesc: 'Création d\'une application full stack en groupe, développement frontend et backend, collaboration en équipe sur un projet complet.'
+        roleDesc: 'Stage alterné de 2 mois : création du Portail Agence avec Next.js, Prisma et Turborepo, collaboration en équipe sur un projet complet.'
     },
     'colocation': {
         title: 'Application web de colocation',
@@ -331,8 +331,8 @@ const projectsData = {
         video: 'https://www.youtube.com/embed/Teqj2Syxauk',
         techs: ['Python', 'HTML', 'CSS', 'JavaScript', 'Flask', 'MySQL'],
         github: 'https://github.com/balletFrancois18/Projet-IHM-Colocation.git',
-        role: 'Solo',
-        roleDesc: 'Projet de gestion de colocation'
+        role: 'Réalisé en groupe',
+        roleDesc: 'Projet de gestion de colocation réalisé en groupe'
     }
 };
 
