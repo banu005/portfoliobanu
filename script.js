@@ -1,5 +1,3 @@
-const carouselState = {};
-
 // Terminal animé
 function initTerminal() {
     const linesEl = document.getElementById('terminalLines');
@@ -58,14 +56,22 @@ initTerminal();
 
 
 // Barre de progression au scroll
+let scrollTicking = false;
 window.addEventListener('scroll', () => {
-    const fill = document.getElementById('progressFill');
-    if (!fill) return;
-    const pct = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
-    fill.style.width = Math.min(pct, 100) + '%';
+    if (!scrollTicking) {
+        requestAnimationFrame(() => {
+            const fill = document.getElementById('progressFill');
+            if (!fill) return;
+            const pct = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
+            fill.style.width = Math.min(pct, 100) + '%';
+            fill.parentElement.setAttribute('aria-valuenow', Math.round(Math.min(pct, 100)));
+            scrollTicking = false;
+        });
+        scrollTicking = true;
+    }
 });
 
-// Formulaire contact → ouvre le client mail avec les données pré-remplies
+// Formulaire contact
 async function handleFormSubmit(e) {
     e.preventDefault();
     const form = e.target;
@@ -78,7 +84,6 @@ async function handleFormSubmit(e) {
         return;
     }
 
-    // Construit les données pour Web3Forms
     const prenom = form.querySelector('#contact-prenom')?.value.trim() || '';
     const nom = form.querySelector('#contact-nom')?.value.trim() || '';
     const sujet = form.querySelector('#contact-sujet')?.value.trim() || 'Contact depuis le portfolio';
@@ -88,7 +93,6 @@ async function handleFormSubmit(e) {
     formData.set('subject', sujet);
     formData.set('replyto', email);
 
-    // État "envoi en cours"
     btn.disabled = true;
     btn.innerHTML = '<span>Envoi en cours...</span> <i class="fas fa-spinner fa-spin"></i>';
     btn.style.background = '';
@@ -123,7 +127,6 @@ async function handleFormSubmit(e) {
 const themeButtons = document.querySelectorAll('.theme-btn, .theme-btn-small');
 const html = document.documentElement;
 
-// Update all theme button icons
 function updateThemeIcons() {
     const isDark = html.getAttribute('data-theme') === 'dark';
     themeButtons.forEach(btn => {
@@ -131,6 +134,7 @@ function updateThemeIcons() {
         if (icon) {
             icon.className = isDark ? 'fas fa-sun' : 'fas fa-moon';
         }
+        btn.setAttribute('aria-label', isDark ? 'Activer le mode clair' : 'Activer le mode sombre');
     });
 }
 
@@ -140,7 +144,6 @@ function setTheme(theme) {
     updateThemeIcons();
 }
 
-// Détecter le thème système
 const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 const savedTheme = localStorage.getItem('theme');
 
@@ -150,7 +153,6 @@ if (savedTheme) {
     setTheme(prefersDark ? 'dark' : 'light');
 }
 
-// Add click event to all theme buttons
 themeButtons.forEach(btn => {
     btn.addEventListener('click', () => {
         const currentTheme = html.getAttribute('data-theme');
@@ -174,187 +176,135 @@ function closeMobileMenu() {
     if (btn) btn.setAttribute('aria-expanded', 'false');
 }
 
-function moveCarousel(id, direction) {
-    const totals = {
-        'p2': 2,
-        'colocation': 7,
-        'snake': 3,
-        'clientserveur': 2,
-        'apprecette': 2
-    };
-    const total = totals[id] || 3;
-    
-    if (!carouselState[id]) carouselState[id] = { index: 0, total: total };
-    const state = carouselState[id];
-    state.index = (state.index + direction + state.total) % state.total;
-    updateCarousel(id, state.index);
-}
-function goToSlide(id, index) {
-    const totals = {
-        'p2': 2,
-        'colocation': 7,
-        'snake': 3,
-        'clientserveur': 2,
-        'apprecette': 2
-    };
-    const total = totals[id] || 3;
-    if (!carouselState[id]) carouselState[id] = { index: 0, total: total };
-    carouselState[id].index = index;
-    updateCarousel(id, index);
-}
-function updateCarousel(id, index) {
-    const track = document.getElementById('carousel-' + id);
-    if (!track) return;
-    track.style.transform = `translateX(-${index * 100}%)`;
-    
-    const state = carouselState[id];
-    if (!state) return;
-    for (let i = 0; i < state.total; i++) {
-        const dot = document.getElementById(`dot-${id}-${i}`);
-        if (dot) {
-            dot.classList.toggle('active', i === index);
-            dot.classList.toggle('inactive', i !== index);
-        }
-    }
-}
-
 // ========================================
 // PROJECT MODAL
 // ========================================
 
 const projectsData = {
-    '93mooveV1': {
-        title: 'Site web 93moove - Première année BTS SIO',
-        category: 'Web',
-        year: '2024',
-        description: 'Plateforme web complète pour une association proposant des activités sportives et créatives. Le site permet aux utilisateurs de se connecter et de s\'inscrire aux cours proposés.',
-        images: ['Images/93moove1.png'],
-        techs: ['PHP', 'HTML', 'CSS', 'PostgreSQL', 'Laragon'],
-        github: null,
-        role: 'Développeuse',
-        roleDesc: "Développement de la page d'authentification et gestion de la base de données"
-    },
-    '93mooveV2': {
-        title: 'Site web 93moove - Deuxième année BTS SIO',
-        category: 'Full Stack',
-        year: '2025',
-        description: 'Deuxième version du site 93moove, une plateforme web pour une association d\'activités sportives et créatives avec système d\'inscription aux cours. Utilisation de la méthode Scrum.',
-        images: ['Images/93moove2.png', 'Images/93moove2login.png'],
-        techs: ['Angular', 'Spring', 'Java', 'HTML', 'CSS', 'TypeScript', 'API REST', 'Supabase', 'PostgreSQL'],
-        github: 'https://github.com/angelo1967817162/angular.git',
-        role: 'Product Owner & Développeuse',
-        roleDesc: 'Gestion du backlog, mise en sprint des fonctionnalités utilisateurs, utilisation de Trello pour la gestion des missions et suivi du projet. Développement d\'API REST et gestion de la base de données.'
-    },
-    'cineweb': {
-        title: 'Site web Cineweb Invest - Stage Images30',
-        category: 'Stage',
-        year: '2024',
-        description: 'Création d\'un site web d\'investissement pour Images30. Réalisation complète du projet : analyse du besoin, cahier des charges, maquettage sur Balsamiq et développement sur Google Sites.',
-        images: ['Images/cineweb.png'],
-        techs: ['Google Sites', 'Balsamiq', 'Cahier des charges', 'Analyse fonctionnelle'],
-        github: null,
-        role: 'Développeuse Web - Stagiaire',
-        roleDesc: 'Première année BTS SIO - Stage de 5 semaines'
-    },
-    '2dgame': {
-        title: 'Jeu 2D - Shooter Survival',
-        category: 'Jeu',
-        year: '2023',
-        description: 'Jeu de survie où le personnage doit éliminer des blobs verts en tirant pour survivre. Développé en suivant un tutoriel pour découvrir le développement de jeux vidéo avec Godot.',
-        images: ['Images/2dgame.png'],
-        techs: ['Godot', 'C#'],
-        github: 'https://github.com/banu005/2dgame.git',
-        role: 'Solo',
-        roleDesc: 'Auto-formation'
-    },
-    'supersimpledev': {
-        title: 'HTML CSS Course - SuperSimpleDev',
-        category: 'Formation',
-        year: '2024',
-        description: 'Réplique de l\'interface YouTube pour apprendre les bases du HTML et CSS. Formation complète avec cours théoriques, exemples pratiques et exercices pour maîtriser les fondamentaux du développement web.',
-        images: ['Images/expractice.png'],
-        techs: ['HTML5', 'CSS3', 'VS Code'],
-        github: null,
-        role: 'Auto-formation',
-        roleDesc: 'Formation vidéo SuperSimpleDev'
-    },
-    'snake': {
-        title: 'Site web Snake Game',
-        category: 'Web',
-        year: '2024',
-        description: 'Création d\'un site web qui présente le mini jeu Snake. Réalisation complète du projet : utiliser les méthodes d\'IHM, coder le site en HTML CSS PHP et déployer le projet sur un hébergeur web.',
-        images: ['Images/jeusnakelogin.png', 'Images/jeusnakejouer.png', 'Images/jeusnakegameover.png'],
-        techs: ['HTML', 'CSS', 'PHP', 'JavaScript'],
-        github: 'https://github.com/laize-loucia/Game_App.git',
-        role: 'Réalisé en groupe',
-        roleDesc: 'Site web Snake Game réalisé en groupe'
-    },
-    'clientserveur': {
-        title: 'Mini projet en programmation système répartie',
-        category: 'API',
-        year: '2024',
-        description: 'Création d\'une application client serveur permettant de réserver des places pour un ensemble de spectacles. Cette application dispose de deux programmes : client et serveur. Le client fait une requête de consultation ou de réservation et le serveur répond à la demande et affiche les nombres de places disponibles sur les spectacles et réserve la place du client. Utilisation de Communication Inter-Processus (IPC).',
-        images: ['Images/progclient.png', 'Images/progserveur.png'],
-        techs: ['C', 'Linux'],
-        github: 'https://github.com/banu005/Mini-projet-ProgSysRep.git',
-        role: 'En binôme',
-        roleDesc: 'Programmation système répartie'
-    },
-    'appRecette': {
-        title: 'Gestionnaire de recettes - Application CLI',
-        category: 'Script',
-        year: '2024',
-        description: 'Application en ligne de commande permettant de gérer une collection de recettes de cuisine. L\'utilisateur peut ajouter, afficher, rechercher et supprimer des recettes directement depuis le terminal.',
-        images: ['Images/appRecette1.png', 'Images/appRecette2.png'],
-        techs: ['Python', 'argparse', 'JSON', 'CLI'],
-        github: 'https://github.com/banu005',
-        role: 'Solo',
-        roleDesc: 'Projet personnel'
-    },
     'sixiemeEtoile': {
-        title: 'Application Sixième Etoile — Stage Alterné 2 mois',
+        title: 'Portail Agence',
         category: 'Full Stack',
         year: '2026',
         description: 'Création du Portail Agence en stage alterné de 2 mois chez Sixième Etoile (mars — juin 2026). Stack technique : Next.js, Prisma et Turborepo.',
         images: ['Images/agence-dashboard-1.png', 'Images/agence-grille-1.png', 'Images/agence-login-1.png'],
-        techs: ['Next.js', 'Prisma', 'Turborepo', 'TypeScript'],
+        techs: ['TypeScript', 'Next.js', 'Prisma', 'Turborepo', 'API Hono', 'Tailwind CSS', 'PostgreSQL'],
         github: null,
         role: 'Développeuse Full Stack - Stagiaire',
         roleDesc: 'Stage alterné de 2 mois : création du Portail Agence avec Next.js, Prisma et Turborepo, collaboration en équipe sur un projet complet.'
     },
     'colocation': {
-        title: 'Application web de colocation',
+        title: 'Application de colocation',
         category: 'Web',
         year: '2024',
-        description: 'Application web permettant de gérer une colocation. Les utilisateurs peuvent s\'inscrire, se connecter, gérer les tâches ménagères, les courses et les charges communes.',
+        description: 'Application web permettant de gérer une colocation : inscription, tâches ménagères, courses et charges communes.',
         images: ['Images/colocation1.png', 'Images/colocation2.png', 'Images/colocation3.png', 'Images/colocation4.png', 'Images/colocation5.png', 'Images/colocation6.png', 'Images/colocation7.png'],
         video: 'https://www.youtube.com/embed/Teqj2Syxauk',
-        techs: ['Python', 'HTML', 'CSS', 'JavaScript', 'Flask', 'MySQL'],
-        github: 'https://github.com/balletFrancois18/Projet-IHM-Colocation.git',
+        techs: ['Python', 'Flask', 'MySQL', 'HTML', 'CSS', 'JavaScript'],
+        github: null,
         role: 'Réalisé en groupe',
         roleDesc: 'Projet de gestion de colocation réalisé en groupe'
+    },
+    'appRecette': {
+        title: 'Gestionnaire de recettes',
+        category: 'CLI · Script',
+        year: '2024',
+        description: 'Application en ligne de commande pour gérer une collection de recettes de cuisine.',
+        images: ['Images/appRecette1.png', 'Images/appRecette2.png'],
+        techs: ['Python', 'argparse', 'JSON', 'CLI'],
+        github: null,
+        role: 'Solo',
+        roleDesc: 'Projet personnel'
+    },
+    'clientserveur': {
+        title: 'Client-Serveur IPC',
+        category: 'API',
+        year: '2024',
+        description: 'Application client-serveur de réservation de places pour des spectacles, avec Communication Inter-Processus (IPC).',
+        images: ['Images/progclient.png', 'Images/progserveur.png'],
+        techs: ['C', 'Linux'],
+        github: null,
+        role: 'En binôme',
+        roleDesc: 'Programmation système répartie'
+    },
+    'snake': {
+        title: 'Site web Snake Game',
+        category: 'Web · Jeu',
+        year: '2024',
+        description: 'Site web présentant le mini jeu Snake, codé en HTML CSS PHP et JavaScript.',
+        images: ['Images/jeusnakelogin.png', 'Images/jeusnakejouer.png', 'Images/jeusnakegameover.png'],
+        techs: ['HTML', 'CSS', 'PHP', 'JavaScript'],
+        github: null,
+        role: 'Réalisé en groupe',
+        roleDesc: 'Site web Snake Game réalisé en groupe'
+    },
+    '93mooveV2': {
+        title: '93Moove v2',
+        category: 'Full Stack',
+        year: '2025',
+        description: 'Plateforme web pour une association d\'activités sportives et créatives avec système d\'inscription aux cours. Méthode Scrum.',
+        images: ['Images/93moove2.png', 'Images/93moove2login.png'],
+        techs: ['Angular', 'Spring', 'Java', 'TypeScript', 'API REST', 'PostgreSQL'],
+        github: null,
+        role: 'Product Owner & Développeuse',
+        roleDesc: 'Gestion du backlog, mise en sprint des fonctionnalités utilisateurs, utilisation de Trello pour la gestion des missions et suivi du projet. Développement d\'API REST et gestion de la base de données.'
+    },
+    '2dgame': {
+        title: 'Jeu 2D Shooter',
+        category: 'Jeu',
+        year: '2023',
+        description: 'Jeu de survie développé avec Godot pour découvrir le développement de jeux vidéo.',
+        images: ['Images/2dgame.png'],
+        techs: ['Godot', 'C#'],
+        github: null,
+        role: 'Solo',
+        roleDesc: 'Auto-formation'
+    },
+    'cineweb': {
+        title: 'Cineweb Invest',
+        category: 'Stage',
+        year: '2024',
+        description: 'Site web d\'investissement pour Images30 : analyse du besoin, cahier des charges, maquettage et développement.',
+        images: ['Images/cineweb.png'],
+        techs: ['Google Sites', 'Balsamiq'],
+        github: null,
+        role: 'Développeuse Web - Stagiaire',
+        roleDesc: 'Première année BTS SIO - Stage de 5 semaines'
+    },
+    '93mooveV1': {
+        title: '93Moove v1',
+        category: 'Web',
+        year: '2024',
+        description: 'Plateforme web complète pour une association proposant des activités sportives et créatives.',
+        images: ['Images/93moove1.png'],
+        techs: ['PHP', 'PostgreSQL'],
+        github: null,
+        role: 'Développeuse',
+        roleDesc: 'Développement de la page d\'authentification et gestion de la base de données'
     }
 };
 
 function openProjectModal(projectId) {
     const project = projectsData[projectId];
     if (!project) return;
-    
+
     const modal = document.getElementById('projectModal');
     const content = document.getElementById('modalContent');
-    
+
+    // Sauvegarder l'élément focus pour le restore
+    modal._previousFocus = document.activeElement;
+
     let imagesHtml = '';
     project.images.forEach(img => {
         if (img.endsWith('.pdf')) {
             imagesHtml += `<embed src="${img}" type="application/pdf" class="modal-pdf">`;
         } else {
-            imagesHtml += `<div class="modal-image" style="background-image: url('${img}');"></div>`;
+            imagesHtml += `<div class="modal-image" style="background-image: url('${img}');" role="img" aria-label="${project.title}"></div>`;
         }
     });
-    
+
     let linksHtml = '';
     if (project.github) {
-        linksHtml += `<a href="${project.github}" target="_blank" class="modal-link primary">
+        linksHtml += `<a href="${project.github}" target="_blank" rel="noopener noreferrer" class="modal-link primary">
             <i class="fab fa-github"></i>
             <span>Voir le code</span>
         </a>`;
@@ -363,7 +313,7 @@ function openProjectModal(projectId) {
         <i class="fas fa-times"></i>
         <span>Fermer</span>
     </button>`;
-    
+
     let roleHtml = '';
     if (project.role) {
         roleHtml = `
@@ -374,11 +324,11 @@ function openProjectModal(projectId) {
             </div>
         `;
     }
-    
+
     content.innerHTML = `
         <div class="modal-header">
             <div class="modal-category">${project.category}</div>
-            <h2 class="modal-title">${project.title}</h2>
+            <h2 class="modal-title" id="modalTitle">${project.title}</h2>
             <span class="modal-year">${project.year}</span>
         </div>
         <p class="modal-description">${project.description}</p>
@@ -393,25 +343,33 @@ function openProjectModal(projectId) {
         </div>
         <div class="modal-links">${linksHtml}</div>
     `;
-    
+
     modal.classList.add('active');
     document.body.style.overflow = 'hidden';
+
+    // Focus trap : focus sur le bouton fermer
+    const closeBtn = modal.querySelector('.modal-close');
+    if (closeBtn) closeBtn.focus();
 }
 
 function closeProjectModal() {
     const modal = document.getElementById('projectModal');
     modal.classList.remove('active');
     document.body.style.overflow = '';
+
+    // Restore focus sur l'élément déclencheur
+    if (modal._previousFocus) {
+        modal._previousFocus.focus();
+        modal._previousFocus = null;
+    }
 }
 
-// Fermer la modal en cliquant à l'extérieur
 document.getElementById('projectModal').addEventListener('click', function(e) {
     if (e.target === this) {
         closeProjectModal();
     }
 });
 
-// Fermer avec la touche Escape
 document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape') {
         closeProjectModal();
