@@ -1,109 +1,11 @@
 // Portfolio Banumathey BALENDRAN — script.js
-// Ce fichier gère toutes les interactions de la page : le terminal animé,
-// la barre de progression de lecture, le formulaire de contact, le thème
-// clair/sombre, le menu mobile, le lien actif du menu (scroll-spy) et les
-// fenêtres de détail des projets (modales).
+// Ce fichier gère toutes les interactions de la page : la barre de
+// progression de lecture, le formulaire de contact, le thème clair/sombre,
+// le menu mobile, le lien actif du menu (scroll-spy) et les fenêtres de
+// détail des projets (modales).
 
 
-// 1. TERMINAL ANIMÉ
-// Simule un vrai terminal : on "tape" une commande, puis on affiche le
-// résultat, et on recommence en boucle.
-function initTerminal() {
-    // On récupère les 2 zones du terminal dans le HTML.
-    // "linesEl" = la zone où s'empilent les lignes déjà affichées.
-    // "inputEl" = la zone où l'on voit la commande en train d'être tapée.
-    const linesEl = document.getElementById('terminalLines');
-    const inputEl = document.getElementById('terminalInput');
-    // Si ces éléments n'existent pas sur la page, on arrête (sécurité).
-    if (!linesEl || !inputEl) return;
-
-    // La liste des commandes à jouer en boucle.
-    // Chaque élément a : cmd (la commande) et out (le résultat affiché).
-    // "cls" est une classe CSS qui colore le résultat ('' = gris,
-    // 'success' = vert, 'info' = bleu).
-    const sequence = [
-        { cmd: 'whoami',                                out: { text: 'banumathey — développeuse full stack', cls: 'info' } },
-        { cmd: 'ls ~/projets',                          out: { text: 'gestionnaire-recettes/  jeu-snake/', cls: '' } },
-        { cmd: 'python recettes.py add "Tiramisu"',     out: { text: 'Recette ajoutée avec succès.', cls: 'success' } },
-        { cmd: 'godot --run jeu-2d',                    out: { text: 'Niveau 1 chargé — bonne partie !', cls: 'success' } },
-        { cmd: 'git commit -m "feat: nouveau projet"',  out: { text: '[main 3a7f2c1] 2 files changed, 54 insertions(+)', cls: '' } },
-        { cmd: 'git push origin main',                  out: { text: 'To github.com/banu005 · main → main ✓', cls: 'success' } },
-    ];
-
-    // Nombre maximum de lignes gardées à l'écran.
-    // Au-delà, les plus anciennes disparaissent (pour ne pas déborder).
-    const MAX_LINES = 9;
-
-    // Petite fonction utilitaire : crée une ligne HTML prête à afficher.
-    // "type" = 'cmd' (commande) ou 'out' (résultat), "modifier" = couleur.
-    function renderLine(type, text, modifier) {
-        const div = document.createElement('div');
-        div.className = `t-line-${type}${modifier ? ' ' + modifier : ''}`;
-        div.textContent = text;
-        return div;
-    }
-
-    // Accessibilité : si l'utilisateur a activé "réduire les animations"
-    // dans son système, on n'anime rien : on affiche directement les
-    // 5 dernières commandes, et on cache le curseur clignotant.
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-        sequence.slice(-5).forEach(({ cmd, out }) => {
-            linesEl.appendChild(renderLine('cmd', cmd));
-            linesEl.appendChild(renderLine('out', out.text, out.cls));
-        });
-        document.querySelector('.terminal-active')?.style.setProperty('display', 'none');
-        return;
-    }
-
-    // Tableau qui garde la trace des lignes affichées (pour pouvoir les retirer).
-    const displayed = [];
-    // Compteur : à quelle commande de la "sequence" on est rendu.
-    let step = 0;
-
-    // Ajoute une ligne et retire la plus ancienne si on dépasse MAX_LINES.
-    function addLine(text, type, modifier) {
-        const div = renderLine(type, text, modifier);
-        linesEl.appendChild(div);
-        displayed.push(div);
-        if (displayed.length > MAX_LINES) displayed.shift().remove();
-    }
-
-    // Joue une étape : tape la commande lettre par lettre, puis affiche
-    // le résultat, puis rappelle runStep() après une courte pause.
-    function runStep() {
-        // On prend la commande courante. Le "%" permet de repartir au début
-        // quand on arrive à la fin de la liste (boucle infinie).
-        const { cmd, out } = sequence[step % sequence.length];
-        let i = 0; // nombre de lettres déjà tapées
-        inputEl.textContent = '';
-
-        // setInterval = exécute la fonction toutes les X millisecondes.
-        const interval = setInterval(() => {
-            inputEl.textContent = cmd.slice(0, ++i); // affiche 1 lettre de plus
-            if (i >= cmd.length) {
-                // La commande est entièrement tapée : on arrête le "typage".
-                clearInterval(interval);
-                setTimeout(() => {
-                    addLine(cmd, 'cmd');          // la commande rejoint les lignes du haut
-                    inputEl.textContent = '';      // on vide la zone de saisie
-                    setTimeout(() => {
-                        addLine(out.text, 'out', out.cls); // on affiche le résultat
-                        step++;                    // on passe à la commande suivante
-                        setTimeout(runStep, 1400);  // pause avant de recommencer
-                    }, 350);
-                }, 180);
-            }
-        }, 55 + Math.random() * 25); // vitesse de frappe légèrement aléatoire
-    }
-
-    // Démarre l'animation après 700 ms.
-    setTimeout(runStep, 700);
-}
-
-initTerminal(); // <- on lance le terminal au chargement du script.
-
-
-// 2. BARRE DE PROGRESSION DE LECTURE
+// 1. BARRE DE PROGRESSION DE LECTURE
 // La petite barre en haut de la page se remplit au fur et à mesure
 // qu'on descend dans la page.
 let scrollTicking = false; // évite de recalculer 100 fois par seconde
@@ -125,7 +27,7 @@ window.addEventListener('scroll', () => {
 });
 
 
-// 3. FORMULAIRE DE CONTACT
+// 2. FORMULAIRE DE CONTACT
 // Envoie le message via le service externe Web3Forms, puis affiche un
 // retour visuel sur le bouton (envoi, succès ou erreur).
 async function handleFormSubmit(e) {
@@ -193,7 +95,7 @@ async function handleFormSubmit(e) {
 }
 
 
-// 4. MODE CLAIR / SOMBRE (THÈME)
+// 3. MODE CLAIR / SOMBRE (THÈME)
 // Le thème se choisit en changeant l'attribut data-theme sur <html>.
 // Le choix est mémorisé dans le navigateur (localStorage).
 // Tous les boutons qui servent à basculer le thème.
@@ -239,7 +141,7 @@ themeButtons.forEach(btn => {
 });
 
 
-// 5. MENU MOBILE
+// 4. MENU MOBILE
 // Ouvre / ferme le menu affiché sur petit écran (téléphone).
 function toggleMobileMenu() {
     const menu = document.getElementById('mobileMenu');
@@ -258,7 +160,7 @@ function closeMobileMenu() {
 }
 
 
-// 6. SCROLL-SPY (lien actif dans le menu)
+// 5. SCROLL-SPY (lien actif dans le menu)
 // Met en surbrillance le lien du menu correspondant à la section
 // actuellement visible à l'écran.
 const navPills = document.querySelectorAll('.nav-pill');           // liens du menu (desktop)
@@ -309,7 +211,7 @@ window.addEventListener('hashchange', updateActiveNav);
 updateActiveNav(); // et une fois au démarrage
 
 
-// 7. FENÊTRES DE DÉTAIL DES PROJETS (MODALES)
+// 6. FENÊTRES DE DÉTAIL DES PROJETS (MODALES)
 
 // Toutes les informations des projets.
 // La clé (ex: 'sixiemeEtoile') correspond à l'attribut onclick dans le HTML.

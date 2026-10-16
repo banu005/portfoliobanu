@@ -418,121 +418,336 @@ em {
   align-items: center;
 }
 
-/* Terminal animé */
-.terminal-window {
+/* Scène rétro pixel-art (animée en CSS pur) */
+.pixel-scene {
+  position: relative;
   width: 100%;
-  background: #0d1117;
-  border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  max-width: 460px;
+  aspect-ratio: 5 / 4;
+  margin: 0 auto;
+  image-rendering: pixelated;
+}
+
+/* Étoiles qui scintillent */
+.px-star {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: var(--primary-light);
+  opacity: 0.6;
+  animation: px-twinkle 2.4s steps(1) infinite;
+}
+
+.px-star:nth-child(1) { top: 8%; left: 12%; }
+.px-star:nth-child(2) { top: 18%; left: 84%; animation-delay: 0.4s; }
+.px-star:nth-child(3) { top: 6%; left: 56%; width: 4px; height: 4px; animation-delay: 0.9s; }
+.px-star:nth-child(4) { top: 32%; left: 24%; width: 4px; height: 4px; animation-delay: 1.4s; }
+.px-star:nth-child(5) { top: 26%; left: 70%; animation-delay: 1.9s; }
+.px-star:nth-child(6) { top: 42%; left: 92%; width: 4px; height: 4px; animation-delay: 0.7s; }
+
+/* Bureau (bois) */
+.px-desk {
+  position: absolute;
+  left: 3%;
+  right: 3%;
+  bottom: 6%;
+  height: 5%;
+  background: #8a6034;
+  border: 3px solid #5f4123;
+  box-shadow: 0 6px 0 #4a311a;
+  z-index: 1;
+}
+
+/* Ordinateur (moniteur + pied) */
+.px-computer {
+  position: absolute;
+  left: 50%;
+  bottom: 11%;
+  transform: translateX(-50%);
+  width: 62%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 2;
+}
+
+.px-monitor {
+  position: relative;
+  width: 100%;
+  padding: 7%;
+  background: #26262d;
+  border: 4px solid #121216;
+  box-shadow: 0 6px 0 #0a0a0d, inset 0 0 0 4px #33333c;
+}
+
+.px-screen {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  background: #08170f;
+  border: 5px solid #0d0d10;
   overflow: hidden;
-  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5);
+  box-shadow: inset 0 0 34px rgba(111, 224, 122, 0.25);
+  animation: px-flicker 5s steps(1) infinite;
 }
 
-.terminal-bar {
-  background: #1c1c1e;
-  padding: 11px 16px;
-  display: flex;
-  align-items: center;
-  gap: 7px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+.px-line {
+  position: absolute;
+  left: 10%;
+  height: 7%;
+  background: #6fe07a;
+  box-shadow: 0 0 8px rgba(111, 224, 122, 0.6);
 }
 
-.t-dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  flex-shrink: 0;
+.px-line:nth-child(1) { top: 22%; width: 58%; }
+.px-line:nth-child(2) { top: 38%; width: 42%; }
+.px-line:nth-child(3) { top: 54%; width: 70%; }
+
+.px-caret {
+  position: absolute;
+  left: 10%;
+  top: 70%;
+  width: 9%;
+  height: 7%;
+  background: #6fe07a;
+  animation: px-blink 1s steps(1) infinite;
 }
 
-.t-red {
-  background: #ff5f57;
+.px-scanlines {
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0 2px, transparent 2px 4px);
+  pointer-events: none;
 }
 
-.t-yellow {
-  background: #febc2e;
+.px-screen::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 16%;
+  background: linear-gradient(transparent, rgba(111, 224, 122, 0.14), transparent);
+  animation: px-sweep 3.6s linear infinite;
+  pointer-events: none;
 }
 
-.t-green {
-  background: #28c840;
-}
-
-.t-bar-title {
-  font-family: var(--font-mono);
-  font-size: 12px;
-  color: rgba(255, 255, 255, 0.35);
-  margin-left: 6px;
-}
-
-.terminal-body {
-  padding: 18px 20px 20px;
-  font-family: var(--font-mono);
-  font-size: 13px;
-  min-height: 240px;
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
-}
-
-.terminal-lines {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  flex: 1;
-}
-
-.t-line-cmd {
-  color: #e6edf3;
-}
-
-.t-line-cmd::before {
-  content: '$ ';
-  color: #3fb950;
-}
-
-.t-line-out {
-  color: #6e7681;
-  padding-left: 16px;
-  line-height: 1.5;
-}
-
-.t-line-out.success {
-  color: #3fb950;
-}
-
-.t-line-out.info {
-  color: #58a6ff;
-}
-
-.terminal-active {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-top: 6px;
-}
-
-.t-prompt {
-  color: #3fb950;
-  flex-shrink: 0;
-}
-
-.t-input {
-  color: #e6edf3;
-}
-
-.t-cursor {
+.px-led {
+  position: absolute;
+  right: 7%;
+  bottom: 5%;
   width: 8px;
-  height: 15px;
-  background: #58a6ff;
-  display: inline-block;
-  border-radius: 1px;
-  animation: t-blink 1s step-end infinite;
-  flex-shrink: 0;
+  height: 8px;
+  background: #6fe07a;
+  box-shadow: 0 0 8px #6fe07a;
+  animation: px-led 1.8s steps(1) infinite;
 }
 
-@keyframes t-blink {
-  50% {
-    opacity: 0;
-  }
+.px-neck {
+  width: 16%;
+  height: 10px;
+  background: #1c1c22;
+  border: 3px solid #0a0a0d;
+  border-top: none;
+}
+
+.px-base {
+  width: 52%;
+  height: 14px;
+  background: #26262d;
+  border: 4px solid #121216;
+  box-shadow: 0 4px 0 #0a0a0d;
+}
+
+/* Clavier (les touches sont simulées en dégradés répétés) */
+.px-keyboard {
+  position: absolute;
+  left: 50%;
+  bottom: 9%;
+  transform: translateX(-50%);
+  width: 56%;
+  height: 9%;
+  background-color: #26262d;
+  border: 3px solid #121216;
+  box-shadow: 0 4px 0 #0a0a0d;
+  background-image:
+    repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.14) 0 2px, transparent 2px 12.5%),
+    repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.14) 0 2px, transparent 2px 50%);
+  z-index: 3;
+}
+
+/* Tasse fumante (turquoise) */
+.px-mug {
+  position: absolute;
+  right: 7%;
+  bottom: 11%;
+  width: 13%;
+  height: 13%;
+  background: #22b8c9;
+  border: 3px solid #12838f;
+  z-index: 3;
+}
+
+.px-mug::after {
+  content: '';
+  position: absolute;
+  top: 22%;
+  right: -30%;
+  width: 30%;
+  height: 46%;
+  border: 3px solid #12838f;
+  border-left: none;
+}
+
+/* Motif : étoile jaune en pixel sur la tasse */
+.px-mug::before {
+  content: '';
+  position: absolute;
+  top: 36%;
+  left: 42%;
+  width: 2px;
+  height: 2px;
+  background: #ffd23f;
+  box-shadow:
+    -2px 2px #ffd23f, 0 2px #ffd23f, 2px 2px #ffd23f,
+    -6px 4px #ffd23f, -4px 4px #ffd23f, -2px 4px #ffd23f, 0 4px #ffd23f, 2px 4px #ffd23f, 4px 4px #ffd23f, 6px 4px #ffd23f,
+    -4px 6px #ffd23f, -2px 6px #ffd23f, 0 6px #ffd23f, 2px 6px #ffd23f, 4px 6px #ffd23f,
+    -2px 8px #ffd23f, 0 8px #ffd23f, 2px 8px #ffd23f,
+    -4px 10px #ffd23f, -2px 10px #ffd23f, 2px 10px #ffd23f, 4px 10px #ffd23f,
+    -6px 12px #ffd23f, -4px 12px #ffd23f, 4px 12px #ffd23f, 6px 12px #ffd23f;
+}
+
+.px-steam {
+  position: absolute;
+  top: -34%;
+  left: 34%;
+  width: 4px;
+  height: 4px;
+  background: var(--text-muted);
+  box-shadow: -8px -4px var(--text-muted), 8px -8px var(--text-muted);
+  opacity: 0.5;
+  animation: px-steam 2.4s ease-in-out infinite;
+}
+
+/* Plante en pixel-art : vase + tulipes (rose, jaune, rouge) animées */
+.px-plant {
+  position: absolute;
+  left: 4%;
+  bottom: 11%;
+  width: 17%;
+  height: 32%;
+  z-index: 3;
+}
+
+/* Vase (corps + col + bande décorative) */
+.px-vase {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 58%;
+  height: 40%;
+  background: #8b6bd6;
+  border: 3px solid #5f47a0;
+}
+
+.px-vase::before {
+  content: '';
+  position: absolute;
+  left: -12%;
+  right: -12%;
+  top: -9px;
+  height: 8px;
+  background: #a98ce6;
+  border: 3px solid #5f47a0;
+}
+
+.px-vase::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 20%;
+  height: 4px;
+  background: #7558bd;
+}
+
+/* Tiges + fleurs */
+.px-tulip {
+  position: absolute;
+  bottom: 36%;
+  width: 3px;
+  background: #4fae5a;
+  transform-origin: bottom center;
+  animation: px-sway 3s ease-in-out infinite;
+  --tulip: #e2564f;
+}
+
+.px-tulip::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: -9px;
+  transform: translateX(-50%);
+  width: 8px;
+  height: 8px;
+  background: var(--tulip);
+  box-shadow:
+    -4px 2px var(--tulip),
+    4px 2px var(--tulip),
+    -4px -3px var(--tulip),
+    4px -3px var(--tulip),
+    0 -5px var(--tulip);
+}
+
+/* Petite feuille sur la tige */
+.px-tulip::after {
+  content: '';
+  position: absolute;
+  bottom: 34%;
+  left: 3px;
+  width: 6px;
+  height: 5px;
+  background: #5fbf6a;
+}
+
+.px-tulip--pink { left: 24%; height: 40%; animation-delay: 0s; --tulip: #ef7bb0; }
+.px-tulip--yellow { left: 46%; height: 54%; animation-delay: 0.5s; --tulip: #f2c744; }
+.px-tulip--red { left: 68%; height: 34%; animation-delay: 1s; --tulip: #e2564f; }
+
+@keyframes px-blink {
+  0%, 55% { opacity: 1; }
+  56%, 100% { opacity: 0; }
+}
+
+@keyframes px-led {
+  0%, 60% { opacity: 1; }
+  61%, 100% { opacity: 0.25; }
+}
+
+@keyframes px-sweep {
+  from { top: -16%; }
+  to { top: 100%; }
+}
+
+@keyframes px-twinkle {
+  0%, 100% { opacity: 0.25; }
+  50% { opacity: 1; }
+}
+
+@keyframes px-steam {
+  0% { transform: translateY(0); opacity: 0; }
+  30% { opacity: 0.5; }
+  100% { transform: translateY(-14px); opacity: 0; }
+}
+
+@keyframes px-sway {
+  0%, 100% { transform: rotate(-5deg); }
+  50% { transform: rotate(5deg); }
+}
+
+@keyframes px-flicker {
+  0%, 96%, 100% { opacity: 1; }
+  97% { opacity: 0.9; }
+  98% { opacity: 0.97; }
 }
 
 /* =============================================
