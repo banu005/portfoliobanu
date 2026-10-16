@@ -262,7 +262,8 @@ em {
   transition: all 0.2s;
 }
 
-.mobile-menu a:hover {
+.mobile-menu a:hover,
+.mobile-menu a.active {
   background: var(--bg-card);
   color: var(--primary);
 }

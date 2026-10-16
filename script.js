@@ -176,6 +176,40 @@ function closeMobileMenu() {
     if (btn) btn.setAttribute('aria-expanded', 'false');
 }
 
+// Scroll-spy : met en surbrillance le lien de la section visible
+const navPills = document.querySelectorAll('.nav-pill');
+const mobileLinks = document.querySelectorAll('.mobile-menu a[href^="#"]');
+const spySections = document.querySelectorAll('section[id]');
+
+function updateActiveNav() {
+    if (!navPills.length || !spySections.length) return;
+    const headerOffset = (document.querySelector('.header')?.offsetHeight || 0) + 40;
+    let current = spySections[0].id;
+    const atBottom = window.innerHeight + window.scrollY >= document.body.scrollHeight - 2;
+    if (atBottom) {
+        current = spySections[spySections.length - 1].id;
+    } else {
+        spySections.forEach(section => {
+            if (window.scrollY + headerOffset >= section.offsetTop) {
+                current = section.id;
+            }
+        });
+    }
+    navPills.forEach(pill => {
+        pill.classList.toggle('active', pill.getAttribute('href') === '#' + current);
+    });
+    mobileLinks.forEach(link => {
+        link.classList.toggle('active', link.getAttribute('href') === '#' + current);
+    });
+}
+
+window.addEventListener('scroll', () => {
+    requestAnimationFrame(updateActiveNav);
+}, { passive: true });
+window.addEventListener('load', updateActiveNav);
+window.addEventListener('hashchange', updateActiveNav);
+updateActiveNav();
+
 // ========================================
 // PROJECT MODAL
 // ========================================
