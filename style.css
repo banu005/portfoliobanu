@@ -574,27 +574,40 @@ em {
   z-index: 3;
 }
 
-/* Tasse fumante (turquoise) */
+/* Tasse sur soucoupe (turquoise) */
 .px-mug {
   position: absolute;
   right: 7%;
-  bottom: 11%;
-  width: 13%;
-  height: 13%;
+  bottom: 13%;
+  width: 12%;
+  height: 12%;
   background: #22b8c9;
   border: 3px solid #12838f;
   z-index: 3;
 }
 
+/* Anse */
 .px-mug::after {
   content: '';
   position: absolute;
   top: 22%;
-  right: -30%;
-  width: 30%;
+  right: -34%;
+  width: 34%;
   height: 46%;
   border: 3px solid #12838f;
   border-left: none;
+}
+
+/* Soucoupe */
+.px-saucer {
+  position: absolute;
+  left: 50%;
+  bottom: -7px;
+  transform: translateX(-50%);
+  width: 168%;
+  height: 7px;
+  background: #3fc9d8;
+  border: 3px solid #12838f;
 }
 
 /* Motif : étoile jaune en pixel sur la tasse */
