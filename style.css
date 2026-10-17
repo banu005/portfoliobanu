@@ -1522,7 +1522,8 @@ a.study-link:hover {
   }
 
   .hero-right {
-    display: none;
+    order: 2;
+    width: 100%;
   }
 
   .hero-title {
