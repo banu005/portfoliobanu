@@ -1018,12 +1018,6 @@ a.study-link:hover {
   font-size: 14px;
   font-weight: 500;
   color: var(--text-soft);
-  transition: background 0.15s, color 0.15s;
-}
-
-.stack-item:hover {
-  background: var(--bg-card);
-  color: var(--text);
 }
 
 .stack-item i {
