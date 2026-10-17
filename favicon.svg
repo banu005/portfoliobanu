@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="B">
+  <rect width="64" height="64" rx="14" fill="#070B1F"/>
+  <text x="32" y="45" font-family="'JetBrains Mono', monospace" font-size="38" font-weight="700" fill="#5B8DEF" text-anchor="middle">B</text>
+  <rect x="16" y="50" width="32" height="4" rx="2" fill="#8EC5FF"/>
+</svg>

@@ -950,6 +950,14 @@ a.study-link:hover {
   background: #CC0000;
 }
 
+.study-link-github {
+  background: #24292F;
+}
+
+.study-link-github:hover {
+  background: #10141A;
+}
+
 /* CTA */
 .projects-cta {
   text-align: center;
@@ -1213,6 +1221,19 @@ a.study-link:hover {
 .form-input::placeholder,
 .form-textarea::placeholder {
   color: var(--text-muted);
+}
+
+.form-input.is-invalid,
+.form-textarea.is-invalid {
+  border-color: #FF5F57;
+  box-shadow: 0 0 0 3px rgba(255, 95, 87, 0.12);
+}
+
+.form-status {
+  font-size: 14px;
+  color: #FF5F57;
+  min-height: 1.2em;
+  margin-bottom: 4px;
 }
 
 .form-textarea {
