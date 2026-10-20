@@ -3,7 +3,10 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com https://cdn.jsdelivr.net; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com https://cdn.jsdelivr.net; img-src 'self' data:; connect-src 'self' https://api.web3forms.com; object-src 'self'; base-uri 'self'; form-action 'self'">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Banumathey BALENDRAN">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
     <meta name="description" content="Portfolio de Banumathey BALENDRAN — Développeuse Full Stack">
     <title>BALENDRAN Banumathey — Développeuse Full Stack</title>
     <meta property="og:title" content="BALENDRAN Banumathey — Développeuse Full Stack">
@@ -12,11 +15,27 @@
     <meta property="og:image" content="https://banu005.github.io/portfoliobanu/Images/colocation1.webp">
     <meta property="og:url" content="https://banu005.github.io/portfoliobanu/">
     <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Portfolio Banumathey BALENDRAN">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:image:alt" content="Aperçu du portfolio de Banumathey BALENDRAN">
+    <meta property="og:image:width" content="1600">
+    <meta property="og:image:height" content="855">
     <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="BALENDRAN Banumathey — Développeuse Full Stack">
+    <meta name="twitter:description" content="Portfolio de Banumathey BALENDRAN — Développeuse Full Stack">
+    <meta name="twitter:image" content="https://banu005.github.io/portfoliobanu/Images/colocation1.webp">
+    <meta name="twitter:image:alt" content="Aperçu du portfolio de Banumathey BALENDRAN">
+    <link rel="canonical" href="https://banu005.github.io/portfoliobanu/">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <link rel="stylesheet" href="style.css?v=13">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+    <link rel="stylesheet" href="style.css?v=18">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@2.17.0/devicon.min.css"
+        integrity="sha384-6iv3tXABd3c9DYulXujJl8n22ahn/12f45MomxoPv6jBX4LBE4gNJjfkx5mAKIqR" crossorigin="anonymous">
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap"
         rel="stylesheet">
@@ -33,21 +52,21 @@
                 <span class="header-logo-text">Portfolio · BALENDRAN Banumathey</span>
             </div>
             <nav class="header-right" aria-label="Navigation principale">
-                <a href="#accueil" class="nav-pill active">Accueil</a>
+                <a href="#accueil" class="nav-pill active" aria-current="location">Accueil</a>
                 <a href="#apropos" class="nav-pill">À propos</a>
                 <a href="#etudes" class="nav-pill">Projets</a>
                 <a href="#stack" class="nav-pill">Compétences</a>
                 <a href="#contact" class="nav-pill">Contact</a>
                 <a href="Documents/CV_Banumathey__BALENDRAN.pdf" download class="download-btn">
-                    <i class="fas fa-download" aria-hidden="true"></i>
+                    <i aria-hidden="true" class="fas fa-download"></i>
                     <span>Télécharger le CV</span>
                 </a>
                 <button class="theme-btn" aria-label="Activer le mode clair / sombre">
-                    <i class="fas fa-sun" aria-hidden="true"></i>
+                    <i aria-hidden="true" class="fas fa-sun"></i>
                 </button>
                 <button type="button" class="mobile-menu-btn" aria-label="Ouvrir le menu"
                     aria-expanded="false" aria-controls="mobileMenu">
-                    <i class="fas fa-bars" aria-hidden="true"></i>
+                    <i aria-hidden="true" class="fas fa-bars"></i>
                 </button>
             </nav>
         </div>
@@ -67,7 +86,7 @@
         </div>
     </header>
 
-    <main id="main-content">
+    <main id="main-content" tabindex="-1">
 
         <!-- HERO -->
         <section id="accueil" class="hero">
@@ -88,11 +107,11 @@
                     <div class="hero-buttons">
                         <a href="#etudes" class="btn btn-primary">
                             <span>Voir mes projets</span>
-                            <i class="fas fa-arrow-right"></i>
+                            <i aria-hidden="true" class="fas fa-arrow-right"></i>
                         </a>
                         <a href="Documents/CV_Banumathey__BALENDRAN.pdf" download class="btn btn-secondary">
                             <span>Télécharger le CV</span>
-                            <i class="fas fa-download"></i>
+                            <i aria-hidden="true" class="fas fa-download"></i>
                         </a>
                     </div>
                 </div>
@@ -157,7 +176,7 @@
                     <!-- FORMATIONS -->
                     <div class="apropos-col">
                         <div class="apropos-col-header">
-                            <i class="fas fa-graduation-cap"></i>
+                            <i aria-hidden="true" class="fas fa-graduation-cap"></i>
                             <h3>Formations</h3>
                         </div>
                         <div class="timeline">
@@ -198,9 +217,8 @@
                                         <li>Auto-formation Cisco Netacad — English for IT1, CyberOps Associate</li>
                                     </ul>
                                     <div class="timeline-badges">
-                                        <span class="timeline-badge"><i class="devicon-cisco-plain"
-                                                style="color:#049fd9"></i> Cisco English for IT1</span>
-                                        <span class="timeline-badge"><img src="Images/pix.png" class="cert-logo"
+                                        <span class="timeline-badge"><i aria-hidden="true" class="fas fa-network-wired" style="color:#049fd9"></i> Cisco English for IT1</span>
+                                        <span class="timeline-badge"><img src="Images/pix.png" class="cert-logo" width="247" height="204" loading="lazy" decoding="async"
                                                 alt="Pix"> Certification Pix</span>
                                     </div>
                                 </div>
@@ -225,7 +243,7 @@
                     <!-- EXPÉRIENCES -->
                     <div class="apropos-col">
                         <div class="apropos-col-header">
-                            <i class="fas fa-briefcase"></i>
+                            <i aria-hidden="true" class="fas fa-briefcase"></i>
                             <h3>Expériences professionnelles</h3>
                         </div>
                         <div class="timeline">
@@ -309,7 +327,7 @@
                 <div class="projects-grid">
 
                     <!-- Sixième Etoile — 2026 -->
-                    <article class="study-card" data-project="sixiemeEtoile" tabindex="0" role="button">
+                    <article class="study-card" data-project="sixiemeEtoile">
                         <div class="study-plate plate-photo">
                             <img src="Images/agence-dashboard-1.webp" class="plate-direct-img" width="1600" height="1000" loading="lazy" decoding="async" alt="Portail Agence - Dashboard">
                         </div>
@@ -329,15 +347,15 @@
                                 <span class="tech-tag">PostgreSQL</span>
                             </div>
                             <div class="study-links">
-                                <button class="study-link">
-                                    <i class="fas fa-plus"></i> Voir plus
+                                <button type="button" class="study-link">
+                                    <i aria-hidden="true" class="fas fa-plus"></i> Voir plus
                                 </button>
                             </div>
                         </div>
                     </article>
 
                     <!-- Colocation — 2026 -->
-                    <article class="study-card" data-project="colocation" tabindex="0" role="button">
+                    <article class="study-card" data-project="colocation">
                         <div class="study-plate plate-photo">
                             <img src="Images/colocation1.webp" class="plate-direct-img" width="1600" height="855" loading="lazy" decoding="async" alt="Application de colocation">
                         </div>
@@ -356,21 +374,22 @@
                                 <span class="tech-tag">JavaScript</span>
                             </div>
                             <div class="study-links">
-                                <button class="study-link">
-                                    <i class="fas fa-plus"></i> Voir plus
+                                <button type="button" class="study-link">
+                                    <i aria-hidden="true" class="fas fa-plus"></i> Voir plus
                                 </button>
                                 <a href="https://www.youtube.com/watch?v=Teqj2Syxauk" target="_blank" rel="noopener noreferrer"
-                                    class="study-link study-link-youtube">
-                                    <i class="fab fa-youtube"></i> Vidéo
+                                    class="study-link study-link-youtube"
+                                    aria-label="Voir la vidéo de démonstration du projet Application de colocation sur YouTube">
+                                    <i aria-hidden="true" class="fab fa-youtube"></i> Vidéo
                                 </a>
                             
-                                <a href="https://github.com/balletFrancois18/Projet-IHM-Colocation/tree/main2" target="_blank" rel="noopener noreferrer" class="study-link study-link-github" aria-label="Voir le code de Application de colocation sur GitHub"><i class="fab fa-github" aria-hidden="true"></i> Code</a>
+                                <a href="https://github.com/balletFrancois18/Projet-IHM-Colocation/tree/main2" target="_blank" rel="noopener noreferrer" class="study-link study-link-github" aria-label="Voir le code de Application de colocation sur GitHub"><i aria-hidden="true" class="fab fa-github"></i> Code</a>
                             </div>
                         </div>
                     </article>
 
                     <!-- Gestionnaire de recettes — 2026 -->
-                    <article class="study-card" data-project="appRecette" tabindex="0" role="button">
+                    <article class="study-card" data-project="appRecette">
                         <div class="study-plate plate-photo">
                             <img src="Images/appRecette1.webp" class="plate-direct-img" width="1137" height="388" loading="lazy" decoding="async" alt="Gestionnaire de recettes">
                         </div>
@@ -387,17 +406,17 @@
                                 <span class="tech-tag">CLI</span>
                             </div>
                             <div class="study-links">
-                                <button class="study-link">
-                                    <i class="fas fa-plus"></i> Voir plus
+                                <button type="button" class="study-link">
+                                    <i aria-hidden="true" class="fas fa-plus"></i> Voir plus
                                 </button>
                             
-                                <a href="https://github.com/banu005/Application_Recettes" target="_blank" rel="noopener noreferrer" class="study-link study-link-github" aria-label="Voir le code de Gestionnaire de recettes sur GitHub"><i class="fab fa-github" aria-hidden="true"></i> Code</a>
+                                <a href="https://github.com/banu005/Application_Recettes" target="_blank" rel="noopener noreferrer" class="study-link study-link-github" aria-label="Voir le code de Gestionnaire de recettes sur GitHub"><i aria-hidden="true" class="fab fa-github"></i> Code</a>
                             </div>
                         </div>
                     </article>
 
                     <!-- Client-Serveur IPC — 2025-2026 -->
-                    <article class="study-card" data-project="clientserveur" tabindex="0" role="button">
+                    <article class="study-card" data-project="clientserveur">
                         <div class="study-plate plate-photo">
                             <img src="Images/progserveur.webp" class="plate-direct-img" width="794" height="186" loading="lazy" decoding="async" alt="Client-Serveur IPC">
                         </div>
@@ -412,17 +431,17 @@
                                 <span class="tech-tag">Linux</span>
                             </div>
                             <div class="study-links">
-                                <button class="study-link">
-                                    <i class="fas fa-plus"></i> Voir plus
+                                <button type="button" class="study-link">
+                                    <i aria-hidden="true" class="fas fa-plus"></i> Voir plus
                                 </button>
                             
-                                <a href="https://github.com/banu005/Mini-projet-ProgSysRep" target="_blank" rel="noopener noreferrer" class="study-link study-link-github" aria-label="Voir le code de Client-Serveur IPC sur GitHub"><i class="fab fa-github" aria-hidden="true"></i> Code</a>
+                                <a href="https://github.com/banu005/Mini-projet-ProgSysRep" target="_blank" rel="noopener noreferrer" class="study-link study-link-github" aria-label="Voir le code de Client-Serveur IPC sur GitHub"><i aria-hidden="true" class="fab fa-github"></i> Code</a>
                             </div>
                         </div>
                     </article>
 
                     <!-- Snake Game — 2026 -->
-                    <article class="study-card" data-project="snake" tabindex="0" role="button">
+                    <article class="study-card" data-project="snake">
                         <div class="study-plate plate-photo">
                             <img src="Images/jeusnakejouer.webp" class="plate-direct-img" width="1600" height="802" loading="lazy" decoding="async" alt="Site web Snake Game">
                         </div>
@@ -439,17 +458,17 @@
                                 <span class="tech-tag">JavaScript</span>
                             </div>
                             <div class="study-links">
-                                <button class="study-link">
-                                    <i class="fas fa-plus"></i> Voir plus
+                                <button type="button" class="study-link">
+                                    <i aria-hidden="true" class="fas fa-plus"></i> Voir plus
                                 </button>
                             
-                                <a href="https://github.com/Lazurnet/Snake" target="_blank" rel="noopener noreferrer" class="study-link study-link-github" aria-label="Voir le code de Site web Snake Game sur GitHub"><i class="fab fa-github" aria-hidden="true"></i> Code</a>
+                                <a href="https://github.com/Lazurnet/Snake" target="_blank" rel="noopener noreferrer" class="study-link study-link-github" aria-label="Voir le code de Site web Snake Game sur GitHub"><i aria-hidden="true" class="fab fa-github"></i> Code</a>
                             </div>
                         </div>
                     </article>
 
                     <!-- 93Moove v2 — 2025 -->
-                    <article class="study-card" data-project="93mooveV2" tabindex="0" role="button">
+                    <article class="study-card" data-project="93mooveV2">
                         <div class="study-plate plate-photo">
                             <img src="Images/93moove2.webp" class="plate-direct-img" width="660" height="262" loading="lazy" decoding="async" alt="93Moove v2">
                         </div>
@@ -468,18 +487,18 @@
                                 <span class="tech-tag">PostgreSQL</span>
                             </div>
                             <div class="study-links">
-                                <button class="study-link">
-                                    <i class="fas fa-plus"></i> Voir plus
+                                <button type="button" class="study-link">
+                                    <i aria-hidden="true" class="fas fa-plus"></i> Voir plus
                                 </button>
                             
-                                <a href="https://github.com/banu005/93MooveBackEnd" target="_blank" rel="noopener noreferrer" class="study-link study-link-github" aria-label="Voir le code de 93Moove v2 — back-end sur GitHub"><i class="fab fa-github" aria-hidden="true"></i> Back</a>
-                                <a href="https://github.com/banu005/93MooveFrontEnd" target="_blank" rel="noopener noreferrer" class="study-link study-link-github" aria-label="Voir le code de 93Moove v2 — front-end sur GitHub"><i class="fab fa-github" aria-hidden="true"></i> Front</a>
+                                <a href="https://github.com/banu005/93MooveBackEnd" target="_blank" rel="noopener noreferrer" class="study-link study-link-github" aria-label="Voir le code de 93Moove v2 — back-end sur GitHub"><i aria-hidden="true" class="fab fa-github"></i> Back</a>
+                                <a href="https://github.com/banu005/93MooveFrontEnd" target="_blank" rel="noopener noreferrer" class="study-link study-link-github" aria-label="Voir le code de 93Moove v2 — front-end sur GitHub"><i aria-hidden="true" class="fab fa-github"></i> Front</a>
                             </div>
                         </div>
                     </article>
 
                     <!-- 2D Shooter — 2024 -->
-                    <article class="study-card" data-project="2dgame" tabindex="0" role="button">
+                    <article class="study-card" data-project="2dgame">
                         <div class="study-plate plate-photo">
                             <img src="Images/2dgame.webp" class="plate-direct-img" width="600" height="450" loading="lazy" decoding="async" alt="Jeu 2D Shooter">
                         </div>
@@ -494,15 +513,15 @@
                                 <span class="tech-tag">C#</span>
                             </div>
                             <div class="study-links">
-                                <button class="study-link">
-                                    <i class="fas fa-plus"></i> Voir plus
+                                <button type="button" class="study-link">
+                                    <i aria-hidden="true" class="fas fa-plus"></i> Voir plus
                                 </button>
                             </div>
                         </div>
                     </article>
 
                     <!-- Cineweb Invest — 2024 -->
-                    <article class="study-card" data-project="cineweb" tabindex="0" role="button">
+                    <article class="study-card" data-project="cineweb">
                         <div class="study-plate plate-photo">
                             <img src="Images/cineweb.webp" class="plate-direct-img" width="1418" height="857" loading="lazy" decoding="async" alt="Cineweb Invest">
                         </div>
@@ -517,15 +536,15 @@
                                 <span class="tech-tag">Balsamiq</span>
                             </div>
                             <div class="study-links">
-                                <button class="study-link">
-                                    <i class="fas fa-plus"></i> Voir plus
+                                <button type="button" class="study-link">
+                                    <i aria-hidden="true" class="fas fa-plus"></i> Voir plus
                                 </button>
                             </div>
                         </div>
                     </article>
 
                     <!-- 93Moove v1 — 2024 -->
-                    <article class="study-card" data-project="93mooveV1" tabindex="0" role="button">
+                    <article class="study-card" data-project="93mooveV1">
                         <div class="study-plate plate-photo">
                             <img src="Images/93moove1.webp" class="plate-direct-img" width="958" height="555" loading="lazy" decoding="async" alt="93Moove v1">
                         </div>
@@ -540,11 +559,11 @@
                                 <span class="tech-tag">PostgreSQL</span>
                             </div>
                             <div class="study-links">
-                                <button class="study-link">
-                                    <i class="fas fa-plus"></i> Voir plus
+                                <button type="button" class="study-link">
+                                    <i aria-hidden="true" class="fas fa-plus"></i> Voir plus
                                 </button>
                             
-                                <a href="https://github.com/cisse000/lab1-93moov/tree/master" target="_blank" rel="noopener noreferrer" class="study-link study-link-github" aria-label="Voir le code de 93Moove v1 sur GitHub"><i class="fab fa-github" aria-hidden="true"></i> Code</a>
+                                <a href="https://github.com/cisse000/lab1-93moov/tree/master" target="_blank" rel="noopener noreferrer" class="study-link study-link-github" aria-label="Voir le code de 93Moove v1 sur GitHub"><i aria-hidden="true" class="fab fa-github"></i> Code</a>
                             </div>
                         </div>
                     </article>
@@ -555,7 +574,7 @@
                     <a href="https://github.com/banu005" target="_blank" rel="noopener noreferrer" class="cta-link"
                         aria-label="Voir l'intégralité du code sur GitHub">
                         <span>VOIR L'INTÉGRALITÉ DU CODE DES PROJETS SUR GITHUB</span>
-                        <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                        <i aria-hidden="true" class="fas fa-arrow-right"></i>
                     </a>
                 </div>
             </div>
@@ -573,52 +592,52 @@
                     <div class="stack-col">
                         <h3 class="stack-col-title">Langages</h3>
                         <ul class="stack-list">
-                            <li class="stack-item"><i class="devicon-typescript-plain colored"></i> TypeScript</li>
-                            <li class="stack-item"><i class="devicon-python-plain colored"></i> Python</li>
-                            <li class="stack-item"><i class="devicon-java-plain colored"></i> Java</li>
-                            <li class="stack-item"><i class="devicon-php-plain colored"></i> PHP</li>
-                            <li class="stack-item"><i class="devicon-c-plain colored"></i> C</li>
-                            <li class="stack-item"><i class="devicon-html5-plain colored"></i> HTML / CSS</li>
-                            <li class="stack-item"><i class="devicon-sqlite-plain colored"></i> SQL</li>
+                            <li class="stack-item"><i aria-hidden="true" class="devicon-typescript-plain colored"></i> TypeScript</li>
+                            <li class="stack-item"><i aria-hidden="true" class="devicon-python-plain colored"></i> Python</li>
+                            <li class="stack-item"><i aria-hidden="true" class="devicon-java-plain colored"></i> Java</li>
+                            <li class="stack-item"><i aria-hidden="true" class="devicon-php-plain colored"></i> PHP</li>
+                            <li class="stack-item"><i aria-hidden="true" class="devicon-c-plain colored"></i> C</li>
+                            <li class="stack-item"><i aria-hidden="true" class="devicon-html5-plain colored"></i> HTML / CSS</li>
+                            <li class="stack-item"><i aria-hidden="true" class="devicon-sqlite-plain colored"></i> SQL</li>
                         </ul>
                     </div>
 
                     <div class="stack-col">
                         <h3 class="stack-col-title">Frameworks</h3>
                         <ul class="stack-list">
-                            <li class="stack-item"><i class="devicon-angularjs-plain colored"></i> Angular</li>
-                            <li class="stack-item"><i class="devicon-spring-plain colored"></i> Spring Boot</li>
-                            <li class="stack-item"><i class="devicon-flask-original" style="color:#a8d8a8"></i> Flask
+                            <li class="stack-item"><i aria-hidden="true" class="devicon-angularjs-plain colored"></i> Angular</li>
+                            <li class="stack-item"><i aria-hidden="true" class="devicon-spring-plain colored"></i> Spring Boot</li>
+                            <li class="stack-item"><i aria-hidden="true" class="devicon-flask-original" style="color:#a8d8a8"></i> Flask
                             </li>
-                            <li class="stack-item"><i class="devicon-tailwindcss-plain colored"></i> Tailwind CSS</li>
+                            <li class="stack-item"><i aria-hidden="true" class="devicon-tailwindcss-plain colored"></i> Tailwind CSS</li>
                         </ul>
                     </div>
 
                     <div class="stack-col">
                         <h3 class="stack-col-title">Outils</h3>
                         <ul class="stack-list">
-                            <li class="stack-item"><i class="devicon-git-plain colored"></i> Git / GitHub</li>
-                            <li class="stack-item"><i class="devicon-docker-plain colored"></i> Docker</li>
-                            <li class="stack-item"><i class="devicon-vscode-plain colored"></i> VS Code</li>
-                            <li class="stack-item"><i class="devicon-intellij-plain colored"></i> IntelliJ IDEA</li>
-                            <li class="stack-item"><i class="fab fa-linux"></i> Linux</li>
+                            <li class="stack-item"><i aria-hidden="true" class="devicon-git-plain colored"></i> Git / GitHub</li>
+                            <li class="stack-item"><i aria-hidden="true" class="devicon-docker-plain colored"></i> Docker</li>
+                            <li class="stack-item"><i aria-hidden="true" class="devicon-vscode-plain colored"></i> VS Code</li>
+                            <li class="stack-item"><i aria-hidden="true" class="devicon-intellij-plain colored"></i> IntelliJ IDEA</li>
+                            <li class="stack-item"><i aria-hidden="true" class="fab fa-linux"></i> Linux</li>
                         </ul>
                     </div>
 
                     <div class="stack-col">
                         <h3 class="stack-col-title">Langues</h3>
                         <ul class="stack-list">
-                            <li class="stack-item">🇫🇷&nbsp; Français — langue maternelle</li>
-                            <li class="stack-item">🇬🇧&nbsp; Anglais — niveau B2 (certification English for IT Cisco)</li>
-                            <li class="stack-item">🇱🇰&nbsp; Tamoul — bilingue</li>
+                            <li class="stack-item"><span aria-hidden="true">🇫🇷</span>&nbsp; Français — langue maternelle</li>
+                            <li class="stack-item"><span aria-hidden="true">🇬🇧</span>&nbsp; Anglais — niveau B2 (certification English for IT Cisco)</li>
+                            <li class="stack-item"><span aria-hidden="true">🇱🇰</span>&nbsp; Tamoul — bilingue</li>
                         </ul>
                         <h3 class="stack-col-title stack-col-title--gap">Certifications</h3>
                         <ul class="stack-list">
-                            <li class="stack-item cert-item"><i class="devicon-cisco-plain" style="color:#049fd9"></i>
+                            <li class="stack-item cert-item"><i aria-hidden="true" class="fas fa-network-wired" style="color:#049fd9"></i>
                                 Cisco English for IT1</li>
-                            <li class="stack-item cert-item"><img src="Images/pix.png" class="cert-logo" alt="Pix">
+                            <li class="stack-item cert-item"><img src="Images/pix.png" class="cert-logo" width="247" height="204" loading="lazy" decoding="async" alt="Pix">
                                 Certification Pix</li>
-                            <li class="stack-item cert-item"><img src="Images/projetvoltaire.png" class="cert-logo"
+                            <li class="stack-item cert-item"><img src="Images/projetvoltaire.png" class="cert-logo" width="259" height="194" loading="lazy" decoding="async"
                                     alt="Voltaire"> Projet Voltaire</li>
                         </ul>
                     </div>
@@ -641,9 +660,9 @@
                         Je serais ravie de discuter avec vous.
                     </p>
                         <div class="contact-methods">
-                            <a href="#" class="contact-method-card" data-email-user="banumathey5"
+                            <a href="mailto:banumathey5@gmail.com" class="contact-method-card" data-email-user="banumathey5"
                                 data-email-domain="gmail.com" aria-label="Envoyer un email à Banumathey">
-                                <div class="contact-method-icon"><i class="fas fa-envelope"></i></div>
+                                <div class="contact-method-icon"><i aria-hidden="true" class="fas fa-envelope"></i></div>
                                 <div class="contact-method-info">
                                     <span class="contact-method-label">Email</span>
                                     <span class="contact-method-value" data-email-display>banumathey5 [at] gmail.com</span>
@@ -651,7 +670,7 @@
                             </a>
                             <a href="https://github.com/banu005" target="_blank" rel="noopener noreferrer"
                                 class="contact-method-card" aria-label="Profil GitHub de Banumathey">
-                                <div class="contact-method-icon"><i class="fab fa-github" aria-hidden="true"></i></div>
+                                <div class="contact-method-icon"><i aria-hidden="true" class="fab fa-github"></i></div>
                                 <div class="contact-method-info">
                                     <span class="contact-method-label">GitHub</span>
                                     <span class="contact-method-value">github.com/banu005</span>
@@ -660,7 +679,7 @@
                             <a href="https://www.linkedin.com/in/banumathey-balendran" target="_blank"
                                 rel="noopener noreferrer" class="contact-method-card"
                                 aria-label="Profil LinkedIn de Banumathey">
-                                <div class="contact-method-icon"><i class="fab fa-linkedin"></i></div>
+                                <div class="contact-method-icon"><i aria-hidden="true" class="fab fa-linkedin"></i></div>
                                 <div class="contact-method-info">
                                     <span class="contact-method-label">LinkedIn</span>
                                     <span class="contact-method-value">banumathey-balendran</span>
@@ -678,62 +697,79 @@
                                 aria-hidden="true">
                             <div class="form-row">
                                 <div class="form-group">
-                                    <label class="form-label" for="contact-prenom">Prénom</label>
-                                    <input type="text" id="contact-prenom" name="prenom" class="form-input"
+                                    <label class="form-label" for="contact-prenom">Prénom <span aria-hidden="true">*</span></label>
+                                    <input type="text" id="contact-prenom" name="prenom" class="form-input" maxlength="80"
                                         placeholder="..." autocomplete="given-name" required aria-required="true">
                                 </div>
                                 <div class="form-group">
-                                    <label class="form-label" for="contact-nom">Nom</label>
-                                    <input type="text" id="contact-nom" name="nom" class="form-input" placeholder="..."
+                                    <label class="form-label" for="contact-nom">Nom <span aria-hidden="true">*</span></label>
+                                    <input type="text" id="contact-nom" name="nom" class="form-input" maxlength="80" placeholder="..."
                                         autocomplete="family-name" required aria-required="true">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="form-label" for="contact-email">Email</label>
-                                    <input type="email" id="contact-email" name="email" class="form-input" placeholder="..."
+                                <label class="form-label" for="contact-email">Email <span aria-hidden="true">*</span></label>
+                                    <input type="email" id="contact-email" name="email" class="form-input" maxlength="254" placeholder="..."
                                         autocomplete="email" required aria-required="true">
                             </div>
                             <div class="form-group">
-                                <label class="form-label" for="contact-sujet">Sujet</label>
-                                <input type="text" id="contact-sujet" name="sujet" class="form-input" placeholder="...">
+                                <label class="form-label" for="contact-sujet">Sujet <span class="form-optional">(facultatif)</span></label>
+                                <input type="text" id="contact-sujet" name="sujet" class="form-input" maxlength="150" placeholder="...">
                             </div>
                             <div class="form-group">
-                                <label class="form-label" for="contact-message">Message</label>
-                                    <textarea id="contact-message" name="message" class="form-textarea" rows="5"
+                                <label class="form-label" for="contact-message">Message <span aria-hidden="true">*</span></label>
+                                    <textarea id="contact-message" name="message" class="form-textarea" rows="5" maxlength="5000"
                                         placeholder="..." required aria-required="true"></textarea>
                             </div>
-                            <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+                            <p class="form-privacy">
+                                Les données saisies (prénom, nom, email, sujet et message) sont utilisées
+                                uniquement pour répondre à votre message. Elles sont transmises à Web3Forms,
+                                puis à la boîte email de l'éditrice, et conservées 12 mois maximum.
+                                <a href="politique-confidentialite.html">Politique de confidentialité</a>.
+                            </p>
+                            <p class="form-status" id="formStatus" role="status" aria-live="polite" aria-atomic="true"></p>
                             <button type="submit" class="btn btn-primary form-submit">
                                 <span>Envoyer le message</span>
-                                <i class="fas fa-paper-plane" aria-hidden="true"></i>
+                                <i aria-hidden="true" class="fas fa-paper-plane"></i>
                             </button>
                         </form>
+                        <noscript>
+                            <p class="form-privacy">
+                                Le formulaire nécessite JavaScript. Vous pouvez aussi m'écrire
+                                directement à <a href="mailto:banumathey5@gmail.com">banumathey5@gmail.com</a>.
+                            </p>
+                        </noscript>
                     </div>
                 </div>
 
-                <div class="footer-divider"></div>
-
-                <div class="footer-bottom">
-                    <div class="footer-bottom-right">
-                        <span class="footer-credit">Site conçu et réalisé par Banumathey BALENDRAN</span>
-                    </div>
-                </div>
             </div>
         </section>
 
     </main>
 
+    <footer class="site-footer">
+        <div class="site-footer-inner">
+            <p class="site-footer-credit">Site conçu et réalisé par Banumathey BALENDRAN</p>
+            <nav class="site-footer-nav" aria-label="Informations légales">
+                <a href="mentions-legales.html">Mentions légales</a>
+                <a href="politique-confidentialite.html">Politique de confidentialité</a>
+                <a href="politique-confidentialite.html#cookies">Cookies</a>
+                <a href="mailto:banumathey5@gmail.com">Contact</a>
+            </nav>
+        </div>
+    </footer>
+
     <!-- Modal -->
     <div id="projectModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
         <div class="modal-content">
             <button class="modal-close" aria-label="Fermer la modale">
-                <i class="fas fa-times" aria-hidden="true"></i>
+                <i aria-hidden="true" class="fas fa-times"></i>
             </button>
             <div id="modalContent"></div>
         </div>
     </div>
 
-    <script src="script.js?v=13"></script>
+    <script src="script.js?v=21"></script>
 
 </body>
 

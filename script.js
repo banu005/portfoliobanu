@@ -35,7 +35,7 @@ async function handleFormSubmit(e) {
     const form = e.target;
     const btn = form.querySelector('.form-submit');
     // Texte d'origine du bouton, pour le remettre à la fin.
-    const defaultBtn = '<span>Envoyer le message</span> <i class="fas fa-paper-plane"></i>';
+    const defaultBtn = '<span>Envoyer le message</span> <i class="fas fa-paper-plane" aria-hidden="true"></i>';
 
     // Validation : on contrôle chaque champ obligatoire et le format de l'email.
     const statusEl = form.querySelector('#formStatus');
@@ -84,7 +84,8 @@ async function handleFormSubmit(e) {
 
     // On désactive le bouton et on affiche "Envoi en cours...".
     btn.disabled = true;
-    btn.innerHTML = '<span>Envoi en cours...</span> <i class="fas fa-spinner fa-spin"></i>';
+    btn.setAttribute('aria-busy', 'true');
+    btn.innerHTML = '<span>Envoi en cours...</span> <i class="fas fa-spinner fa-spin" aria-hidden="true"></i>';
     btn.style.background = '';
 
     try {
@@ -97,8 +98,9 @@ async function handleFormSubmit(e) {
 
         if (data.success) {
             // Succès : bouton vert + on vide le formulaire.
-            btn.innerHTML = '<span>Message envoyé !</span> <i class="fas fa-check"></i>';
+            btn.innerHTML = '<span>Message envoyé !</span> <i class="fas fa-check" aria-hidden="true"></i>';
             btn.style.background = '#28C840';
+            if (statusEl) statusEl.textContent = 'Votre message a bien été envoyé.';
             form.reset();
         } else {
             // L'API a répondu mais a refusé : on déclenche le "catch".
@@ -106,8 +108,9 @@ async function handleFormSubmit(e) {
         }
     } catch (err) {
         // Erreur (réseau ou refus) : bouton rouge.
-        btn.innerHTML = '<span>Erreur, réessayez</span> <i class="fas fa-exclamation-triangle"></i>';
+        btn.innerHTML = '<span>Erreur, réessayez</span> <i class="fas fa-exclamation-triangle" aria-hidden="true"></i>';
         btn.style.background = '#FF5F57';
+        if (statusEl) statusEl.textContent = 'Une erreur est survenue. Vous pouvez réessayer ou écrire à banumathey5@gmail.com.';
         console.error('Web3Forms:', err);
     } finally {
         // Dans tous les cas, après 4 secondes on remet le bouton à l'état normal.
@@ -115,6 +118,7 @@ async function handleFormSubmit(e) {
             btn.innerHTML = defaultBtn;
             btn.style.background = '';
             btn.disabled = false;
+            btn.removeAttribute('aria-busy');
         }, 4000);
     }
 }
@@ -139,21 +143,39 @@ function updateThemeIcons() {
     });
 }
 
-// Applique un thème ("light" ou "dark"), le mémorise et met à jour l'icône.
-function setTheme(theme) {
+// Lecture / écriture tolérantes aux navigateurs qui bloquent le stockage local.
+function getStoredTheme() {
+    try {
+        return localStorage.getItem('theme');
+    } catch {
+        return null;
+    }
+}
+
+function storeTheme(theme) {
+    try {
+        localStorage.setItem('theme', theme);
+    } catch {
+        // Le thème reste appliqué pour la visite en cours.
+    }
+}
+
+// Applique un thème ("light" ou "dark") et met à jour l'icône.
+// Le stockage n'a lieu que si l'utilisateur a explicitement choisi un thème.
+function setTheme(theme, persist = true) {
     html.setAttribute('data-theme', theme);
-    localStorage.setItem('theme', theme);
+    if (persist) storeTheme(theme);
     updateThemeIcons();
 }
 
 // Au chargement : on regarde la préférence système et le choix déjà mémorisé.
 const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-const savedTheme = localStorage.getItem('theme');
+const savedTheme = getStoredTheme();
 
-if (savedTheme) {
-    setTheme(savedTheme); // on réutilise le dernier choix de l'utilisateur
+if (savedTheme === 'light' || savedTheme === 'dark') {
+    setTheme(savedTheme, false); // on réutilise le dernier choix, sans réécrire
 } else {
-    setTheme(prefersDark ? 'dark' : 'light'); // sinon, on suit le système
+    setTheme(prefersDark ? 'dark' : 'light', false); // sinon, on suit le système
 }
 
 // Au clic sur un bouton, on inverse le thème actuel.
@@ -219,10 +241,16 @@ function updateActiveNav() {
 
     // On ajoute la classe 'active' au bon lien, et on la retire des autres.
     navPills.forEach(pill => {
-        pill.classList.toggle('active', pill.getAttribute('href') === '#' + current);
+        const isActive = pill.getAttribute('href') === '#' + current;
+        pill.classList.toggle('active', isActive);
+        if (isActive) pill.setAttribute('aria-current', 'location');
+        else pill.removeAttribute('aria-current');
     });
     mobileLinks.forEach(link => {
-        link.classList.toggle('active', link.getAttribute('href') === '#' + current);
+        const isActive = link.getAttribute('href') === '#' + current;
+        link.classList.toggle('active', isActive);
+        if (isActive) link.setAttribute('aria-current', 'location');
+        else link.removeAttribute('aria-current');
     });
 }
 
@@ -259,7 +287,6 @@ const projectsData = {
         year: '2024',
         description: 'Application web permettant de gérer une colocation : inscription, tâches ménagères, courses et charges communes.',
         images: ['Images/colocation1.webp', 'Images/colocation2.webp', 'Images/colocation3.webp', 'Images/colocation4.webp', 'Images/colocation5.webp', 'Images/colocation6.webp', 'Images/colocation7.webp'],
-        video: 'https://www.youtube.com/embed/Teqj2Syxauk',
         techs: ['Python', 'Flask', 'MySQL', 'HTML', 'CSS', 'JavaScript'],
         github: 'https://github.com/balletFrancois18/Projet-IHM-Colocation/tree/main2',
         role: 'Réalisé en groupe',
@@ -363,11 +390,11 @@ function openProjectModal(projectId) {
     // Construction des images du projet.
     // Si c'est un PDF, on l'intègre ; sinon, on affiche l'image en fond.
     let imagesHtml = '';
-    project.images.forEach(img => {
+    project.images.forEach((img, index) => {
         if (img.endsWith('.pdf')) {
-            imagesHtml += `<embed src="${img}" type="application/pdf" class="modal-pdf">`;
+            imagesHtml += `<embed src="${img}" type="application/pdf" class="modal-pdf" title="Document PDF — ${project.title}">`;
         } else {
-            imagesHtml += `<div class="modal-image" style="background-image: url('${img}');" role="img" aria-label="${project.title}"></div>`;
+            imagesHtml += `<div class="modal-image" style="background-image: url('${img}');" role="img" aria-label="${project.title} — image ${index + 1}"></div>`;
         }
     });
 
@@ -387,7 +414,7 @@ function openProjectModal(projectId) {
         });
     }
     linksHtml += `<button class="modal-link secondary" data-modal-close>
-        <i class="fas fa-times"></i>
+        <i class="fas fa-times" aria-hidden="true"></i>
         <span>Fermer</span>
     </button>`;
 
@@ -396,7 +423,7 @@ function openProjectModal(projectId) {
     if (project.role) {
         roleHtml = `
             <div class="modal-role">
-                <h4 class="modal-techs-title">Rôle</h4>
+                <h3 class="modal-techs-title">Rôle</h3>
                 <p class="modal-role-text"><strong>${project.role}</strong></p>
                 <p class="modal-role-desc">${project.roleDesc}</p>
             </div>
@@ -411,11 +438,10 @@ function openProjectModal(projectId) {
             <span class="modal-year">${project.year}</span>
         </div>
         <p class="modal-description">${project.description}</p>
-        ${project.video ? `<div class="modal-video"><iframe src="${project.video}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>` : ''}
         <div class="modal-images">${imagesHtml}</div>
         ${roleHtml}
         <div class="modal-techs">
-            <h4 class="modal-techs-title">Technologies utilisées</h4>
+            <h3 class="modal-techs-title">Technologies utilisées</h3>
             <div class="modal-techs-list">
                 ${project.techs.map(tech => `<span class="modal-tech-tag">${tech}</span>`).join('')}
             </div>
@@ -527,12 +553,13 @@ document.addEventListener('DOMContentLoaded', () => {
             openProjectModal(id);
         });
 
-        card.addEventListener('keydown', e => {
-            if (e.key === 'Enter' || e.key === ' ') {
-                e.preventDefault(); // évite de faire défiler la page avec Espace
-                openProjectModal(id);
-            }
-        });
+        const seeMore = card.querySelector('.study-link');
+        if (seeMore) {
+            const title = card.querySelector('.study-title')?.textContent.trim() || '';
+            seeMore.setAttribute('aria-label', `Voir le détail du projet ${title}`);
+            seeMore.setAttribute('aria-haspopup', 'dialog');
+            seeMore.setAttribute('aria-controls', 'projectModal');
+        }
     });
 
     // Bouton "croix" qui ferme la modale.
